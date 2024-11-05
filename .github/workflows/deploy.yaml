@@ -1,0 +1,95 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+env:
+  IMAGE_URL: ghcr.io/edvardsen-dev/tf2dle/sveltekit:latest
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Log in to GitHub Container Registry
+        run: echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Build Docker Image
+        run: |
+          docker build -t $IMAGE_URL .
+
+      - name: Push Docker Image
+        run: |
+          docker push $IMAGE_URL
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build-and-publish
+    env:
+      APP_DIR: /root/apps/tf2dle
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY }}
+
+      - name: Create directory if not already exists
+        uses: appleboy/ssh-action@v1.1.0
+        with:
+          host: ${{ secrets.VM_IP }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          envs: APP_DIR
+          script: |
+            mkdir -p $APP_DIR
+
+      - name: Copy docker-compose file to VM
+        run: |
+          scp -o StrictHostKeyChecking=no ./docker-compose.prod.yaml ${{ secrets.SSH_USER }}@${{ secrets.VM_IP }}:$APP_DIR/docker-compose.prod.yaml
+
+      - name: Deploy to VM
+        uses: appleboy/ssh-action@v1.1.0
+        env:
+          GHCR_TOKEN: ${{ secrets.GHCR_TOKEN }}
+          GHCR_USER: ${{ github.actor }}
+          ORIGIN: ${{ secrets.ORIGIN }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DATABASE_USER: ${{ secrets.DATABASE_USER }}
+          DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+          DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
+        with:
+          host: ${{ secrets.VM_IP }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          envs: GHCR_TOKEN, GHCR_USER, IMAGE_URL, APP_DIR, ORIGIN, DATABASE_URL, DATABASE_USER, DATABASE_PASSWORD, DATABASE_NAME
+          script: |
+            # Log in to GitHub Container Registry
+            echo "${GHCR_TOKEN}" | docker login ghcr.io -u $GHCR_USER --password-stdin
+
+            # Change directory
+            cd $APP_DIR
+
+            # Pull the lates images as per docker-compose.prod.yaml
+            docker-compose -f docker-compose.prod.yaml pull
+
+            # Run the docker-compose file with env variables
+            DATABASE_URL=$DATABASE_URL \
+            DATABASE_USER=$DATABASE_USER \
+            DATABASE_PASSWORD=$DATABASE_PASSWORD \
+            DATABASE_NAME=$DATABASE_NAME \
+            ORIGIN=$ORIGIN \
+            docker-compose -f docker-compose.prod.yaml up -d
+
+            # Clean up dangling images
+            docker image prune -f
