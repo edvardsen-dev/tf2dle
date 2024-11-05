@@ -1,0 +1,32 @@
+# Docker
+
+Dockerfile
+.dockerignore
+
+# Git
+
+.git
+.gitignore
+.gitattributes
+
+# Registeries
+
+.npmrc
+.prettierrc
+.eslintrc.cjs
+.graphqlrc
+.editorconfig
+
+# App
+
+.svelte-kit
+node_modules
+build
+package
+\*\*/.end
+README.md
+scripts
+
+# Tools
+
+.vscode

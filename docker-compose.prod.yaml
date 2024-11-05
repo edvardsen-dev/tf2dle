@@ -1,0 +1,33 @@
+services:
+  app:
+    image: ghcr.io/edvardsen-dev/tf2dle/sveltekit:latest
+    environment:
+      ORIGIN: ${ORIGIN}
+      DATABASE_URL: ${DATABASE_URL}
+    ports:
+      - 3010:3000
+    depends_on:
+      - db
+    networks:
+      - tf2dle_network
+
+  db:
+    image: postgres:14-alpine
+    environment:
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+    ports:
+      - 3011:5432
+    volumes:
+      - tf2dle-db:/var/lib/postgresql/data
+    networks:
+      - tf2dle_network
+
+volumes:
+  tf2dle-db:
+
+networks:
+  tf2dle_network:
+    name: tf2dle_network
+    driver: bridge
