@@ -59,6 +59,8 @@
 		>
 		| Found a bug? Report it to me
 		<a href="https://www.reddit.com/user/jaakim" target="_blank" class="underline">here!</a>
+		| Want to contribute? Check out the project
+		<a href="https://github.com/edvardsen-dev/tf2dle" target="_blank" class="underline">here!</a>
 	</p>
 </footer>
 
