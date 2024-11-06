@@ -80,15 +80,17 @@ jobs:
             # Change directory
             cd $APP_DIR
 
+            # Create/Update the .env file with environment variables, append only if not already there
+            grep -qF "DATABASE_URL" .env || echo "DATABASE_URL=${DATABASE_URL}" >> .env
+            grep -qF "DATABASE_USER" .env || echo "DATABASE_USER=${DATABASE_USER}" >> .env
+            grep -qF "DATABASE_PASSWORD" .env || echo "DATABASE_PASSWORD=${DATABASE_PASSWORD}" >> .env
+            grep -qF "DATABASE_NAME" .env || echo "DATABASE_NAME=${DATABASE_NAME}" >> .env
+            grep -qF "ORIGIN" .env || echo "ORIGIN=${ORIGIN}" >> .env
+
             # Pull the lates images as per docker-compose.prod.yaml
             docker-compose -f docker-compose.prod.yaml pull
 
             # Run the docker-compose file with env variables
-            DATABASE_URL=$DATABASE_URL \
-            DATABASE_USER=$DATABASE_USER \
-            DATABASE_PASSWORD=$DATABASE_PASSWORD \
-            DATABASE_NAME=$DATABASE_NAME \
-            ORIGIN=$ORIGIN \
             docker-compose -f docker-compose.prod.yaml up -d
 
             # Clean up dangling images
