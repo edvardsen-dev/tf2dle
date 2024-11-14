@@ -12,6 +12,7 @@
 	import ColorExplanation from '$lib/components/games/ColorExplanation.svelte';
 	import StatsDialog from '$lib/components/games/StatsDialog.svelte';
 	import VictoryDialog from '$lib/components/games/VictoryDialog.svelte';
+	import XmasDecore from '$lib/components/XmasDecore.svelte';
 
 	export let data;
 
@@ -150,7 +151,7 @@
 </script>
 
 <div class="grid gap-4">
-	<Card.Root>
+	<Card.Root class="relative">
 		<Card.Header>
 			<div class="flex justify-between">
 				<div>
@@ -167,6 +168,8 @@
 			</div>
 		</Card.Header>
 		<Card.Content>
+			<!-- TODO: Remove after xmas -->
+			<XmasDecore />
 			<div class="grid gap-4">
 				{#await data.todaysWeapon}
 					<div class="flex justify-center p-4">

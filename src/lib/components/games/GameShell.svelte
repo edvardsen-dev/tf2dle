@@ -7,6 +7,7 @@
 	import type { Writable } from 'svelte/store';
 	import type { UseStats } from '$lib/composables/useStats';
 	import { page } from '$app/stores';
+	import XmasDecore from '../XmasDecore.svelte';
 
 	export let title: string;
 	export let description: string;
@@ -25,7 +26,7 @@
 </script>
 
 <div class="grid gap-4">
-	<Card.Root>
+	<Card.Root class="relative">
 		<Card.Header>
 			<div class="flex items-center justify-between">
 				<div>
@@ -48,6 +49,8 @@
 			</div>
 		</Card.Header>
 		<Card.Content>
+			<!-- TODO: Remove after xmas -->
+			<XmasDecore />
 			{#if loadingState === 'loading'}
 				<div class="flex justify-center p-4">
 					<Loader2 class="h-4 w-4 animate-spin" />

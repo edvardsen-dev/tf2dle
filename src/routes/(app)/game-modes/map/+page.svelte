@@ -13,6 +13,7 @@
 	import { toast } from 'svelte-sonner';
 	import { useStats } from '$lib/composables/useStats';
 	import StatsDialog from '$lib/components/games/StatsDialog.svelte';
+	import XmasDecore from '$lib/components/XmasDecore.svelte';
 
 	export let data;
 
@@ -152,7 +153,7 @@
 </script>
 
 <div class="grid gap-4">
-	<Card.Root>
+	<Card.Root class="relative">
 		<Card.Header>
 			<div class="flex justify-between">
 				<div>
@@ -172,6 +173,8 @@
 			</div>
 		</Card.Header>
 		<Card.Content>
+			<!-- TODO: Remove after xmas -->
+			<XmasDecore />
 			<div class="grid gap-4">
 				{#await data.todaysMap}
 					<div class="aspect-video bg-muted animate-pulse"></div>

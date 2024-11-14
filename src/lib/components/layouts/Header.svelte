@@ -11,7 +11,16 @@
 
 <header class="flex items-center justify-center">
 	<Settings />
-	<a href="/" class="cursor-pointer"><img class="w-80" src="/images/logo.png" alt="logo" /></a>
+	<a href="/" class="cursor-pointer relative">
+		<!-- TODO: Remove after xmas -->
+		<img
+			class="absolute w-20 -right-5 rotate-[15deg] -top-7"
+			src="/images/xmas_hat.webp"
+			alt="B.M.O.C"
+			aria-hidden="true"
+		/>
+		<img class="w-80" src="/images/logo.png" alt="logo" />
+	</a>
 	<a
 		href="/patch-notes"
 		class="text-muted-foreground relative"

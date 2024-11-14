@@ -14,6 +14,7 @@
 	import { useStats } from '$lib/composables/useStats';
 	import StatsDialog from '$lib/components/games/StatsDialog.svelte';
 	import CosmeticShowcase from '$lib/components/games/IconShowcase.svelte';
+	import XmasDecore from '$lib/components/XmasDecore.svelte';
 
 	export let data;
 
@@ -166,7 +167,7 @@
 </script>
 
 <div class="grid gap-4">
-	<Card.Root>
+	<Card.Root class="relative">
 		<Card.Header>
 			<div class="flex justify-between">
 				<div>
@@ -189,6 +190,8 @@
 			</div>
 		</Card.Header>
 		<Card.Content>
+			<!-- TODO: Remove after xmas -->
+			<XmasDecore />
 			{#if loadingState === 'loading'}
 				<div class="flex justify-center p-4">
 					<Loader2 class="h-4 w-4 animate-spin" />
