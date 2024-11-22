@@ -4,8 +4,6 @@
 	import TwitterShare from '$lib/components/games/TwitterShare.svelte';
 	import { Dices, Flame } from 'lucide-svelte';
 
-	// TODO: Swap share button with next and place share somewhere else
-
 	// Image of the correct guess
 	export let img: { src: string; alt: string };
 	export let imgSize: string = '100%';

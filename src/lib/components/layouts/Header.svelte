@@ -3,6 +3,7 @@
 	import Settings from '$lib/components/Settings.svelte';
 	import patchNotes from '$lib/patchNotes';
 	import { lastViewedPatchNote } from '$lib/patchNotes';
+	import LogoHat from '$lib/features/theme/components/LogoHat.svelte';
 
 	const lastPatchNote = patchNotes[0];
 
@@ -12,13 +13,7 @@
 <header class="flex items-center justify-center">
 	<Settings />
 	<a href="/" class="cursor-pointer relative">
-		<!-- TODO: Remove after xmas -->
-		<img
-			class="absolute w-20 -right-5 rotate-[15deg] -top-7"
-			src="/images/xmas_hat.webp"
-			alt="B.M.O.C"
-			aria-hidden="true"
-		/>
+		<LogoHat />
 		<img class="w-80" src="/images/logo.png" alt="logo" />
 	</a>
 	<a

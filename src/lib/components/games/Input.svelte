@@ -18,8 +18,6 @@
 	let selectTimeout = false;
 	let sliceAmount = 10;
 
-	// TODO: Add virtual scroll bar to dropdown
-
 	$: filteredData = data
 		.filter(
 			(d) => !guessed.includes(d.value) && d.value.toLowerCase().includes(value.toLowerCase())

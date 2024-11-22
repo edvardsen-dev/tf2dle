@@ -1,6 +1,6 @@
 <script lang="ts">
 	import * as Card from '$lib/components/ui/card';
-	import XmasDecore from '$lib/components/XmasDecore.svelte';
+	import WinterDecore from '$lib/features/theme/components/winter/WinterDecore.svelte';
 	import { gameModes } from '$lib/game-modes';
 </script>
 
@@ -10,8 +10,7 @@
 		<Card.Description>Choose a game mode to play</Card.Description>
 	</Card.Header>
 	<Card.Content>
-		<!-- TODO: Remove after xmas -->
-		<XmasDecore />
+		<WinterDecore />
 		<ul class="grid gap-2">
 			{#each gameModes.filter((g) => !g.disabled) as gameMode}
 				<a

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { isWinter } from '../../utils';
 
 	let canvas: HTMLCanvasElement;
 	let particles: Particle[] = [];
@@ -77,6 +78,8 @@
 
 	// Initialize and start animation on mount
 	onMount(() => {
+		if (!isWinter()) return;
+
 		const { width, height } = canvas.getBoundingClientRect();
 		canvas.width = width;
 		canvas.height = height;
@@ -85,7 +88,9 @@
 	});
 </script>
 
-<canvas bind:this={canvas}></canvas>
+{#if isWinter()}
+	<canvas bind:this={canvas}></canvas>
+{/if}
 
 <style>
 	canvas {

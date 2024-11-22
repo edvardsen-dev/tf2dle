@@ -14,7 +14,7 @@
 	import { useStats } from '$lib/composables/useStats';
 	import StatsDialog from '$lib/components/games/StatsDialog.svelte';
 	import CosmeticShowcase from '$lib/components/games/IconShowcase.svelte';
-	import XmasDecore from '$lib/components/XmasDecore.svelte';
+	import WinterDecore from '$lib/features/theme/components/winter/WinterDecore.svelte';
 
 	export let data;
 
@@ -190,8 +190,7 @@
 			</div>
 		</Card.Header>
 		<Card.Content>
-			<!-- TODO: Remove after xmas -->
-			<XmasDecore />
+			<WinterDecore />
 			{#if loadingState === 'loading'}
 				<div class="flex justify-center p-4">
 					<Loader2 class="h-4 w-4 animate-spin" />

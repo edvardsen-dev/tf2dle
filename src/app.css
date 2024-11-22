@@ -73,8 +73,7 @@
 	body {
 		@apply bg-background text-foreground;
 
-		/* <!-- TODO: Swap back to default img after xmas --> */
-		background: linear-gradient(rgba(0 0 0 / 0.7), rgba(0 0 0 / 1)), url('/images/tf2_xmas.webp');
+		background: linear-gradient(rgba(0 0 0 / 0.7), rgba(0 0 0 / 1)), url('/images/tf2.jpg');
 		background-size: cover;
 		background-attachment: fixed;
 		background-repeat: no-repeat;

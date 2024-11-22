@@ -12,7 +12,7 @@
 	import ColorExplanation from '$lib/components/games/ColorExplanation.svelte';
 	import StatsDialog from '$lib/components/games/StatsDialog.svelte';
 	import VictoryDialog from '$lib/components/games/VictoryDialog.svelte';
-	import XmasDecore from '$lib/components/XmasDecore.svelte';
+	import WinterDecore from '$lib/features/theme/components/winter/WinterDecore.svelte';
 
 	export let data;
 
@@ -168,8 +168,7 @@
 			</div>
 		</Card.Header>
 		<Card.Content>
-			<!-- TODO: Remove after xmas -->
-			<XmasDecore />
+			<WinterDecore />
 			<div class="grid gap-4">
 				{#await data.todaysWeapon}
 					<div class="flex justify-center p-4">

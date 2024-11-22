@@ -13,7 +13,7 @@
 	import { toast } from 'svelte-sonner';
 	import { useStats } from '$lib/composables/useStats';
 	import StatsDialog from '$lib/components/games/StatsDialog.svelte';
-	import XmasDecore from '$lib/components/XmasDecore.svelte';
+	import WinterDecore from '$lib/features/theme/components/winter/WinterDecore.svelte';
 
 	export let data;
 
@@ -173,8 +173,7 @@
 			</div>
 		</Card.Header>
 		<Card.Content>
-			<!-- TODO: Remove after xmas -->
-			<XmasDecore />
+			<WinterDecore />
 			<div class="grid gap-4">
 				{#await data.todaysMap}
 					<div class="aspect-video bg-muted animate-pulse"></div>

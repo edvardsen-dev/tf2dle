@@ -5,8 +5,9 @@
 	import { Toaster } from '$lib/components/ui/sonner';
 	import { ModeWatcher, setMode } from 'mode-watcher';
 	import Command from '$lib/components/command/Command.svelte';
-	import XmasLights from '$lib/components/XmasLights.svelte';
-	import SnowParticles from '$lib/components/SnowParticles.svelte';
+	import SnowParticles from '$lib/features/theme/components/winter/SnowParticles.svelte';
+	import XmasLights from '$lib/features/theme/components/x-mas/XmasLights.svelte';
+	import Background from '$lib/features/theme/components/Background.svelte';
 
 	setMode('dark');
 </script>
@@ -26,9 +27,10 @@
 
 <Command />
 
-<!-- TODO: Remove after xmas -->
 <XmasLights />
 <SnowParticles />
+
+<Background />
 
 <div class="flex flex-col gap-10 px-2 m-auto pt-14 pb-10 min-h-screen">
 	<Header />
