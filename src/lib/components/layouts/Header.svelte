@@ -3,6 +3,7 @@
 	import Settings from '$lib/components/Settings.svelte';
 	import patchNotes from '$lib/patchNotes';
 	import { lastViewedPatchNote } from '$lib/patchNotes';
+	import LogoHat from '$lib/features/theme/components/LogoHat.svelte';
 
 	const lastPatchNote = patchNotes[0];
 
@@ -11,7 +12,10 @@
 
 <header class="flex items-center justify-center">
 	<Settings />
-	<a href="/" class="cursor-pointer"><img class="w-80" src="/images/logo.png" alt="logo" /></a>
+	<a href="/" class="cursor-pointer relative">
+		<LogoHat />
+		<img class="w-80" src="/images/logo.png" alt="logo" />
+	</a>
 	<a
 		href="/patch-notes"
 		class="text-muted-foreground relative"

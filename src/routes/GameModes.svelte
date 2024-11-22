@@ -1,14 +1,16 @@
 <script lang="ts">
 	import * as Card from '$lib/components/ui/card';
+	import WinterDecore from '$lib/features/theme/components/winter/WinterDecore.svelte';
 	import { gameModes } from '$lib/game-modes';
 </script>
 
-<Card.Root>
+<Card.Root class="relative">
 	<Card.Header>
 		<Card.Title>Game mode</Card.Title>
 		<Card.Description>Choose a game mode to play</Card.Description>
 	</Card.Header>
 	<Card.Content>
+		<WinterDecore />
 		<ul class="grid gap-2">
 			{#each gameModes.filter((g) => !g.disabled) as gameMode}
 				<a

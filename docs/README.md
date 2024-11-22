@@ -51,13 +51,13 @@ docker compose up -d
 4. Generate prisma client
 
 ```
-npx prisma generate
+pnpm dlx prisma generate
 ```
 
 5. Apply prisma migration to your local database
 
 ```
-npx prisma migrate deploy
+pnpm dlx prisma migrate deploy
 ```
 
 6. Run application
