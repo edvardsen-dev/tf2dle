@@ -9,6 +9,7 @@
 	import { openSettings } from '$lib/stores/settings';
 	import { gameModes } from '$lib/game-modes';
 	import * as AlertDialog from '$lib/components/ui/alert-dialog/index.js';
+	import DisableExtraVisualsToggle from '$lib/features/theme/components/DisableExtraVisualsToggle.svelte';
 
 	function clearStat(gamemode: string, stat: UseStats) {
 		stat.clearStats();
@@ -31,9 +32,10 @@
 		<Dialog.Title>Settings</Dialog.Title>
 		<Dialog.Description>Change your settings here</Dialog.Description>
 		<div class="grid gap-8 py-4">
-			<div class="grid gap-2">
+			<div class="grid gap-4">
 				<h2 class="text-muted-foreground text-sm">Accessibility</h2>
 				<ColorblindModeToggler />
+				<DisableExtraVisualsToggle />
 			</div>
 			<div class="grid gap-2">
 				<h2 class="text-muted-foreground text-sm">Local Data</h2>

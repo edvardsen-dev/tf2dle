@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { isWinter } from '../../utils';
+	import { disableExtraVisuals } from '../../composables/useDisableTheme';
 
+	let animationFrameId: number;
 	let canvas: HTMLCanvasElement;
 	let particles: Particle[] = [];
 	const particleCount = 100; // Adjust the number of particles for density
@@ -72,25 +74,43 @@
 			const { width, height } = canvas;
 			updateParticles(width, height);
 			drawParticles(ctx);
-			requestAnimationFrame(animate);
+			animationFrameId = requestAnimationFrame(animate);
 		}
 	}
 
-	// Initialize and start animation on mount
-	onMount(() => {
-		if (!isWinter()) return;
-
+	function init() {
 		const { width, height } = canvas.getBoundingClientRect();
 		canvas.width = width;
 		canvas.height = height;
 		initParticles(width, height);
 		animate();
+	}
+
+	function stop() {
+		cancelAnimationFrame(animationFrameId);
+		particles = [];
+
+		const ctx = canvas.getContext('2d');
+		if (ctx) {
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+		}
+	}
+
+	// Initialize and start animation on mount
+	onMount(() => {
+		const unsubscribe = disableExtraVisuals.subscribe((disabled) => {
+			if (!disabled && isWinter()) {
+				init();
+			} else {
+				stop();
+			}
+		});
+
+		return () => unsubscribe();
 	});
 </script>
 
-{#if isWinter()}
-	<canvas bind:this={canvas}></canvas>
-{/if}
+<canvas bind:this={canvas}></canvas>
 
 <style>
 	canvas {

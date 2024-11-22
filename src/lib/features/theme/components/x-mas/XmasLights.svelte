@@ -1,8 +1,9 @@
 <script lang="ts">
+	import { disableExtraVisuals } from '../../composables/useDisableTheme';
 	import { isDecember } from '../../utils';
 </script>
 
-{#if isDecember()}
+{#if !$disableExtraVisuals && isDecember()}
 	<img
 		src="/images/xmas_lights.webp"
 		alt="Xmas lights"
