@@ -1,5 +1,8 @@
-FROM node:18.15-alpine AS builder
+FROM node:23-alpine AS builder
 WORKDIR /app
+
+# Install necessary system packages, including OpenSSL
+RUN apk add --no-cache openssl
 
 # Install pnpm
 RUN npm install -g pnpm
