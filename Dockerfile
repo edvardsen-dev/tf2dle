@@ -1,9 +1,6 @@
 FROM node:23-alpine AS builder
 WORKDIR /app
 
-# Install necessary system packages, including OpenSSL
-RUN apk add --no-cache openssl
-
 # Install pnpm
 RUN npm install -g pnpm
 
@@ -22,6 +19,9 @@ RUN pnpm prune --production
 
 FROM node:20-alpine
 WORKDIR /app
+
+# Install necessary system packages, including OpenSSL
+RUN apk add --no-cache openssl
 
 COPY --from=builder /app/build build/
 COPY --from=builder /app/node_modules node_modules/
