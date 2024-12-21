@@ -1,4 +1,4 @@
-FROM node:23-alpine AS builder
+FROM node:20.0-alpine AS builder
 WORKDIR /app
 
 # Install pnpm
@@ -17,12 +17,11 @@ RUN npx prisma generate
 RUN pnpm build
 RUN pnpm prune --production
 
-FROM node:20-alpine
+FROM node:20.0-alpine
 WORKDIR /app
 
 # Install necessary system packages, including OpenSSL
 RUN apk add --no-cache openssl
-
 COPY --from=builder /app/build build/
 COPY --from=builder /app/node_modules node_modules/
 COPY --from=builder /app/prisma prisma/
