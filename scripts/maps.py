@@ -63,7 +63,7 @@ for tr in trs:
   tds = tr.find_all("td")
 
   # If there are not 7 table data, skip
-  if not len(tds) == 7:
+  if not len(tds) == 6:
     continue
 
   map_name = tds[1].find("a").text
