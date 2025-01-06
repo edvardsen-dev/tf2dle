@@ -5,6 +5,7 @@ export function isDecember() {
 }
 
 export function isWinter() {
-	const month = dayjs().month();
-	return month === 11 || month === 0 || month === 1;
+	if (dayjs().month() === 11) return true;
+	if (dayjs().month() === 0 && dayjs().date() < 15) return true;
+	return false;
 }
