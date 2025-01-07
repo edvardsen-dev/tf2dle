@@ -25,7 +25,7 @@ class WeaponTwoService {
 		let weapon = await this.repo.findWeapon(date);
 
 		if (!weapon) {
-			weapon = await this.selectRandomWeapon();
+			weapon = await this.selectRandomWeapon(date);
 		}
 
 		const foundWeapon = this.weapons.find((w) => w.name === weapon.name);
@@ -44,21 +44,6 @@ class WeaponTwoService {
 			...foundWeapon!,
 			hasWon: weapon.hasWon
 		};
-	}
-
-	/**
-	 * Saves a random weapon that is set as the selected weapon
-	 * for the current day
-	 * @returns the selected weapon
-	 */
-	private async selectRandomWeapon() {
-		const randomIndex = generateRandomInteger(this.weapons.length);
-
-		const selectedWeapon = this.weapons[randomIndex];
-
-		LogService.log('WeaponTwo', `Selected weapon: ${selectedWeapon.name}`);
-
-		return this.repo.saveWeaponForCurrentDate(selectedWeapon);
 	}
 
 	/**
@@ -89,6 +74,34 @@ class WeaponTwoService {
 				? todaysWeapon.attributes.slice(1, tries + 2)
 				: todaysWeapon.attributes.slice(1)
 		};
+	}
+
+	/**
+	 * Returns the name of yesterdays weapon
+	 *
+	 * @returns name of yesterdays weapon
+	 */
+	public async getYesterdaysAnswer() {
+		const yesterday = dayjs.utc().subtract(1, 'day');
+
+		const weapon = await this.getWeaponByDay(yesterday);
+
+		return weapon!.name;
+	}
+
+	/**
+	 * Saves a random weapon that is set as the selected weapon
+	 * for the current day
+	 * @returns the selected weapon
+	 */
+	private async selectRandomWeapon(date: Dayjs) {
+		const randomIndex = generateRandomInteger(this.weapons.length);
+
+		const selectedWeapon = this.weapons[randomIndex];
+
+		LogService.log('WeaponTwo', `Selected weapon: ${selectedWeapon.name}`);
+
+		return this.repo.saveWeapon(selectedWeapon, date);
 	}
 }
 
