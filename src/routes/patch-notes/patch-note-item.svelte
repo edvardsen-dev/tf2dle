@@ -10,7 +10,9 @@
 	{#if item.reportedBy}
 		<p class="text-sm text-muted-foreground mt-2">
 			Reported by:
-			<a href={item.reportedBy.user.link} class="patch-link">{item.reportedBy.user.name}</a>
+			<a href={item.reportedBy.user.link} target="_blank" class="patch-link"
+				>{item.reportedBy.user.name}</a
+			>
 			-
 			{item.reportedBy.note}
 		</p>
