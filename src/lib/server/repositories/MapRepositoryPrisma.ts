@@ -4,10 +4,10 @@ import { db } from '../prisma';
 import type { MapRepository } from './MapRepository';
 
 class MapRepositoryPrisma implements MapRepository {
-	public async save(name: string, pos: { x: number; y: number }) {
+	public async save(name: string, pos: { x: number; y: number }, date: Dayjs) {
 		return await db.dailyMaps.create({
 			data: {
-				selectedAt: dayjs.utc().toDate(),
+				selectedAt: date.toDate(),
 				name,
 				startingPosX: pos.x,
 				startingPosY: pos.y

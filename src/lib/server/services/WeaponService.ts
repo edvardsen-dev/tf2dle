@@ -4,8 +4,8 @@ import { weaponRepository } from '$lib/server/repositories/WeaponRepositoryPrism
 import type { WeaponRepository } from '$lib/server/repositories/WeaponRepository';
 import LogService from './LogService';
 import dayjs from '$lib/configs/dayjsConfig';
-import type { Dayjs } from 'dayjs';
 import { generateRandomInteger } from 'oslo/crypto';
+import type { Dayjs } from 'dayjs';
 
 class WeaponService {
 	private weapons: Weapon[];
@@ -189,7 +189,7 @@ class WeaponService {
 	 * @returns name of yesterdays weapon
 	 */
 	public async getYesterdaysAnswer() {
-		const yesterday = dayjs.utc().subtract(1, 'day');
+		const yesterday = dayjs().subtract(1, 'day');
 
 		const weapon = await this.getWeapon(yesterday);
 
