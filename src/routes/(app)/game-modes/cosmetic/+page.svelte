@@ -234,6 +234,11 @@
 				</div>
 			{/if}
 		</Card.Content>
+		<Card.Footer class="text-sm text-muted-foreground justify-center">
+			{#await data.yesterdaysAnswer then yesterdaysAnswer}
+				<p>Yesterday's cosmetic was: <span class="text-foreground">{yesterdaysAnswer}</span></p>
+			{/await}
+		</Card.Footer>
 	</Card.Root>
 
 	<ColorExplanation />

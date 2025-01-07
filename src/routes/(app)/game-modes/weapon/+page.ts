@@ -54,12 +54,11 @@ export const load = async ({ fetch }) => {
 	}
 
 	async function fetchYesterdaysAnswer() {
-		let res;
 		let data;
 		let errorMessage: string | null = null;
 
 		try {
-			res = await fetch('/api/v1/game-modes/weapon/yesterday');
+			const res = await fetch('/api/v1/game-modes/weapon/yesterday');
 			data = (await res.json()) as string;
 
 			if (!res.ok) {

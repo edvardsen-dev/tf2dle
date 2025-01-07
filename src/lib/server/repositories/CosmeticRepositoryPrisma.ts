@@ -1,4 +1,3 @@
-import dayjs from '$lib/configs/dayjsConfig';
 import type { Cosmetic } from '$lib/types';
 import type { Dayjs } from 'dayjs';
 import { db } from '../prisma';
@@ -13,10 +12,10 @@ class CosmeticRepositoryPrisma implements CosmeticRepository {
 		});
 	}
 
-	public async saveTodaysCosmetic(cosmetic: Cosmetic, rotation: number) {
+	public async saveTodaysCosmetic(cosmetic: Cosmetic, rotation: number, date: Dayjs) {
 		return await db.dailyCosmetics.create({
 			data: {
-				selectedAt: dayjs.utc().toDate(),
+				selectedAt: date.toDate(),
 				name: cosmetic.name,
 				thumbnail: cosmetic.image,
 				rotation: rotation,

@@ -189,7 +189,7 @@ class WeaponService {
 	 * @returns name of yesterdays weapon
 	 */
 	public async getYesterdaysAnswer() {
-		const yesterday = dayjs().subtract(1, 'day');
+		const yesterday = dayjs.utc().subtract(1, 'day');
 
 		const weapon = await this.getWeapon(yesterday);
 

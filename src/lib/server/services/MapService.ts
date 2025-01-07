@@ -39,7 +39,7 @@ class MapService {
 	 * @returns info of todays map
 	 */
 	public async getTodaysMap() {
-		const today = dayjs();
+		const today = dayjs.utc();
 
 		let map = await this.repo.getTodaysMap();
 

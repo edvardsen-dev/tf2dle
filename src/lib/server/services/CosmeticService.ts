@@ -36,7 +36,7 @@ class CosmeticService {
 		let cosmetic = await this.repo.findCosmetic(date);
 
 		if (!cosmetic) {
-			cosmetic = await this.selectRandomCosmetic();
+			cosmetic = await this.selectRandomCosmetic(date);
 		}
 
 		return cosmetic;
@@ -44,9 +44,10 @@ class CosmeticService {
 
 	/**
 	 * Selects a random cosmetic that is used for the current day
+	 * @param date the date to select the cosmetic for
 	 * @returns the selected cosmetic
 	 */
-	private async selectRandomCosmetic() {
+	private async selectRandomCosmetic(date: Dayjs) {
 		const randomIndex = generateRandomInteger(this.cosmetics.length);
 		const randomRotation = generateRandomInteger(4) * 90;
 
@@ -55,7 +56,7 @@ class CosmeticService {
 			`Selected cosmetic: ${this.cosmetics[randomIndex].name} with rotation ${randomRotation} degrees`
 		);
 
-		return this.repo.saveTodaysCosmetic(this.cosmetics[randomIndex], randomRotation);
+		return this.repo.saveTodaysCosmetic(this.cosmetics[randomIndex], randomRotation, date);
 	}
 
 	/**
@@ -89,6 +90,14 @@ class CosmeticService {
 			guessedAt: currentTime.format(),
 			usedBy
 		};
+	}
+
+	public async getYesterdaysAnswer() {
+		const yesterday = dayjs.utc().subtract(1, 'day');
+
+		const cosmetic = await this.getCosmetic(yesterday);
+
+		return cosmetic.name;
 	}
 }
 
