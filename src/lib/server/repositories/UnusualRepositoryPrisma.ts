@@ -13,10 +13,10 @@ class UnusualRepositoryPrisma implements UnusualRepository {
 		});
 	}
 
-	public async saveUnusualForCurrentDate(unusual: Unusual, rotation: number) {
+	public async saveUnusualForCurrentDate(unusual: Unusual, rotation: number, date: Dayjs) {
 		return await db.dailyUnusuals.create({
 			data: {
-				selectedAt: dayjs.utc().toDate(),
+				selectedAt: date.toDate(),
 				name: unusual.name,
 				thumbnail: unusual.image,
 				rotation,

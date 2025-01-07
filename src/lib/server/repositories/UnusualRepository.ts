@@ -14,8 +14,13 @@ export interface UnusualRepository {
 	 * Saves an unusual as the selected unusual for the current date
 	 * @param unusual to save
 	 * @param rotation to display the unusual (0, 90, 180, 270)
+	 * @param date to save the unusual for
 	 */
-	saveUnusualForCurrentDate(unusual: Unusual, rotation: number): Promise<DailyUnusuals>;
+	saveUnusualForCurrentDate(
+		unusual: Unusual,
+		rotation: number,
+		date: Dayjs
+	): Promise<DailyUnusuals>;
 
 	/**
 	 * Increments the number of correct guesses for the unusual
