@@ -184,6 +184,19 @@ class WeaponService {
 	}
 
 	/**
+	 * Returns the name of yesterdays weapon
+	 *
+	 * @returns name of yesterdays weapon
+	 */
+	public async getYesterdaysAnswer() {
+		const yesterday = dayjs.utc().subtract(1, 'day');
+
+		const weapon = await this.getWeapon(yesterday);
+
+		return weapon!.name;
+	}
+
+	/**
 	 * Returns the selected weapon for a given date
 	 * @param date to get weapon for
 	 * @returns name of todays weapon
@@ -192,7 +205,7 @@ class WeaponService {
 		let weapon = await this.repo.getWeapon(date);
 
 		if (!weapon) {
-			weapon = await this.selectNewRandomWeapon();
+			weapon = await this.selectNewRandomWeapon(date);
 		}
 
 		return this.weapons.find((w) => w.name === weapon);
@@ -202,10 +215,10 @@ class WeaponService {
 	 * Selects a new random weapon
 	 * @returns the name of the selected weapon
 	 */
-	public async selectNewRandomWeapon() {
+	public async selectNewRandomWeapon(date: Dayjs) {
 		const weapon = this.weapons[generateRandomInteger(this.weapons.length)];
 
-		await this.repo.save(weapon);
+		await this.repo.save(weapon, date);
 
 		LogService.log('weapon', `Selected weapon: ${weapon.name}`);
 

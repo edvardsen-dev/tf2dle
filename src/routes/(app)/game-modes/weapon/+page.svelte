@@ -66,4 +66,9 @@
 		{/if}
 		<GuessesList guesses={$guesses} />
 	</div>
+	<div slot="footer" class="flex justify-center w-full">
+		{#await data.yesterdaysAnswer then yesterdaysAnswer}
+			<p>Yesterday's weapon was: <span class="text-foreground">{yesterdaysAnswer}</span></p>
+		{/await}
+	</div>
 </GameShell>

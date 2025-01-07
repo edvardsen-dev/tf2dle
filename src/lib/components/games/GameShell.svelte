@@ -68,6 +68,9 @@
 				<slot />
 			{/if}
 		</Card.Content>
+		<Card.Footer class="text-sm text-muted-foreground">
+			<slot name="footer" />
+		</Card.Footer>
 	</Card.Root>
 
 	<ColorExplanation />
