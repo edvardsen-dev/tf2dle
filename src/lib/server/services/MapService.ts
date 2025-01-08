@@ -19,7 +19,7 @@ class MapService {
 	/**
 	 * Selects a random map for the current day
 	 */
-	public async selectRandomMap() {
+	public async selectRandomMap(date: Dayjs) {
 		// Select a random map
 		const map = this.maps[generateRandomInteger(this.maps.length)];
 
@@ -31,7 +31,7 @@ class MapService {
 
 		LogService.log('map', `Selected map: ${map.name}`);
 
-		return await this.repo.save(map.name, startingPos);
+		return await this.repo.save(map.name, startingPos, date);
 	}
 
 	/**
@@ -39,10 +39,12 @@ class MapService {
 	 * @returns info of todays map
 	 */
 	public async getTodaysMap() {
+		const today = dayjs.utc();
+
 		let map = await this.repo.getTodaysMap();
 
 		if (!map) {
-			map = await this.selectRandomMap();
+			map = await this.selectRandomMap(today);
 		}
 
 		return {
@@ -54,16 +56,6 @@ class MapService {
 			},
 			hasWon: map.hasWon
 		};
-	}
-
-	private async getMap(date: Dayjs) {
-		let savedMap = await this.repo.getMap(date);
-
-		if (!savedMap) {
-			savedMap = await this.selectRandomMap();
-		}
-
-		return this.maps.find((map) => map.name === savedMap?.name);
 	}
 
 	/**
@@ -134,6 +126,28 @@ class MapService {
 	 */
 	public getMaps() {
 		return this.maps.map((map) => ({ thumbnail: map.thumbnail, name: map.name }));
+	}
+
+	/**
+	 * Returns the name of yesterdays map
+	 * @returns name of yesterdays map
+	 */
+	public async getYesterdaysAnswer() {
+		const yesterday = dayjs.utc().subtract(1, 'day');
+
+		const map = await this.getMap(yesterday);
+
+		return map!.name;
+	}
+
+	private async getMap(date: Dayjs) {
+		let savedMap = await this.repo.getMap(date);
+
+		if (!savedMap) {
+			savedMap = await this.selectRandomMap(date);
+		}
+
+		return this.maps.find((map) => map.name === savedMap?.name);
 	}
 }
 

@@ -13,9 +13,10 @@ export interface WeaponTwoRepository {
 	/**
 	 * Saves a weapon as the selected weapon for the current dat
 	 * @param weapon to save
+	 * @param date to save the weapon for
 	 * @returns the saves weapon
 	 */
-	saveWeaponForCurrentDate(weapon: Weapon): Promise<DailyWeaponsTwo>;
+	saveWeapon(weapon: Weapon, date: Dayjs): Promise<DailyWeaponsTwo>;
 
 	/**
 	 * Increments the number of correct guesses for the weapon

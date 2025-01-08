@@ -14,8 +14,9 @@ export interface CosmeticRepository {
 	 * Saves a cosmetic as the selected cosmetic for the current day
 	 * @param cosmetic the cosmetic to save
 	 * @param rotation the rotation to display the cosmetic (0, 90, 180, 270)
+	 * @param date the date the cosmetic is selected for
 	 */
-	saveTodaysCosmetic(cosmetic: Cosmetic, rotation: number): Promise<DailyCosmetics>;
+	saveTodaysCosmetic(cosmetic: Cosmetic, rotation: number, date: Dayjs): Promise<DailyCosmetics>;
 
 	/**
 	 * Increments the number of correct guesses for a given cosmetic

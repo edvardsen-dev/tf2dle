@@ -1,8 +1,7 @@
 import type { CurrentUnusualDto, UnusualResponse } from '$lib/dtos';
 import { error } from '@sveltejs/kit';
-import type { PageLoad } from './$types';
 
-export const load: PageLoad = async () => {
+export const load = async ({ fetch }) => {
 	async function fetchTodaysUnusual() {
 		let data;
 		let errorMessage: string | null = null;
@@ -47,8 +46,31 @@ export const load: PageLoad = async () => {
 		return data;
 	}
 
+	async function fetchYesterdaysAnswer() {
+		let data;
+		let errorMessage: string | null = null;
+
+		try {
+			const res = await fetch('/api/v1/game-modes/unusual/yesterday');
+			data = (await res.json()) as string;
+
+			if (!res.ok) {
+				errorMessage = 'Something went wrong. Please refresh the page.';
+			}
+		} catch (err) {
+			errorMessage = 'Something went wrong. Please refresh the page.';
+		}
+
+		if (errorMessage) {
+			error(500, errorMessage);
+		}
+
+		return data;
+	}
+
 	return {
 		todaysUnusual: await fetchTodaysUnusual(),
-		unusuals: await fetchUnusuals()
+		unusuals: await fetchUnusuals(),
+		yesterdaysAnswer: fetchYesterdaysAnswer()
 	};
 };

@@ -9,8 +9,9 @@ export interface MapRepository {
 	 * Saves the given map as todays map
 	 * @param name of the map
 	 * @param pos start position of where to zoom in on the map image
+	 * @param date date the map was selected
 	 */
-	save(name: string, pos: { x: number; y: number }): Promise<DailyMaps>;
+	save(name: string, pos: { x: number; y: number }, date: Dayjs): Promise<DailyMaps>;
 
 	/**
 	 * Returns the name of todays map

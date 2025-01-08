@@ -33,7 +33,7 @@ class UnusualService {
 		let unusual = await this.repo.findUnusual(date);
 
 		if (!unusual) {
-			unusual = await this.selectRandomUnusual();
+			unusual = await this.selectRandomUnusual(date);
 		}
 
 		return unusual;
@@ -42,9 +42,10 @@ class UnusualService {
 	/**
 	 * Saves a random unusual that is set as the selected unusual
 	 * for the current day
+	 * @param date to save the unusual for
 	 * @return the selected unusual
 	 */
-	private async selectRandomUnusual() {
+	private async selectRandomUnusual(date: Dayjs) {
 		const randomIndex = generateRandomInteger(this.unusuals.length);
 		const randomRotation = generateRandomInteger(4) * 90;
 
@@ -53,7 +54,7 @@ class UnusualService {
 			`Selected unusual: ${this.unusuals[randomIndex].name} with rotation ${randomRotation} degrees`
 		);
 
-		return this.repo.saveUnusualForCurrentDate(this.unusuals[randomIndex], randomRotation);
+		return this.repo.saveUnusualForCurrentDate(this.unusuals[randomIndex], randomRotation, date);
 	}
 
 	/**
@@ -87,6 +88,14 @@ class UnusualService {
 			guessedAt: currentTime.format(),
 			series
 		};
+	}
+
+	public async getYesterdaysAnswer() {
+		const yesterday = dayjs.utc().subtract(1, 'day');
+
+		const unusual = await this.getUnusualByDay(yesterday);
+
+		return unusual!.name;
 	}
 }
 

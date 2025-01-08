@@ -42,10 +42,10 @@ class WeaponRepositoryPrisma implements WeaponRepository {
 		return weapon.name;
 	}
 
-	async save(weapon: Weapon) {
+	async save(weapon: Weapon, date: Dayjs) {
 		await db.dailyWeapons.create({
 			data: {
-				selectedAt: dayjs.utc().toDate(),
+				selectedAt: date.toDate(),
 				name: weapon.name,
 				hasWon: 0
 			}

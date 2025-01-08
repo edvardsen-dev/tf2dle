@@ -13,7 +13,7 @@ export interface WeaponRepository {
 	 * Saves a weapon as the selected weapon for the current day
 	 * @param weapon the weapon to save
 	 */
-	save(weapon: Weapon): Promise<void>;
+	save(weapon: Weapon, date: Dayjs): Promise<void>;
 
 	/**
 	 * Returns how many have guessed the correct weapon for the current day

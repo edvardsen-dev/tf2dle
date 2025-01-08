@@ -46,8 +46,31 @@ export const load = async ({ fetch }) => {
 		return data;
 	}
 
+	async function fetchYesterdaysAnswer() {
+		let data;
+		let errorMessage: string | null = null;
+
+		try {
+			const res = await fetch('/api/v1/game-modes/weapon-2/yesterday');
+			data = (await res.json()) as string;
+
+			if (!res.ok) {
+				errorMessage = 'Something went wrong. Please refresh the page.';
+			}
+		} catch (err) {
+			errorMessage = 'Something went wrong. Please refresh the page.';
+		}
+
+		if (errorMessage) {
+			error(500, errorMessage);
+		}
+
+		return data;
+	}
+
 	return {
 		todaysWeapon: fetchTodaysWeapon(),
-		weapons: fetchWeapons()
+		weapons: fetchWeapons(),
+		yesterdaysAnswer: fetchYesterdaysAnswer()
 	};
 };
