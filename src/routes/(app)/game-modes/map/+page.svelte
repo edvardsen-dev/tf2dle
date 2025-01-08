@@ -223,12 +223,12 @@
 					</a>
 				{/await}
 			</div>
-			<Card.Footer class="text-sm text-muted-foreground justify-center mt-4">
-				{#await data.yesterdaysAnswer then yesterdaysAnswer}
-					<p>Yesterday's map was: <span class="text-foreground">{yesterdaysAnswer}</span></p>
-				{/await}
-			</Card.Footer>
 		</Card.Content>
+		<Card.Footer class="text-sm text-muted-foreground justify-center">
+			{#await data.yesterdaysAnswer then yesterdaysAnswer}
+				<p>Yesterday's map was: <span class="text-foreground">{yesterdaysAnswer}</span></p>
+			{/await}
+		</Card.Footer>
 	</Card.Root>
 
 	<ColorExplanation />
