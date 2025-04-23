@@ -1764,45 +1764,6 @@
 		]
 	},
 	{
-		"name": "Contract",
-		"link": "/wiki/Dragon%27s_Fury",
-		"image": "/w/images/thumb/1/1f/Item_icon_Dragon%27s_Fury.png/100px-Item_icon_Dragon%27s_Fury.png",
-		"killIcon": "/w/images/2/20/Killicon_dragon%27s_fury.png",
-		"releaseDate": "October 20, 2017 Patch(Jungle Inferno Update)",
-		"usedBy": ["Pyro"],
-		"slot": ["Primary"],
-		"ammoLoaded": "40",
-		"ammoCarried": null,
-		"reloadType": "No reload\n  ",
-		"qualities": ["Unique", "Decorated"],
-		"attributes": [
-			{
-				"text": "Level 1 - 100 Flame Launcher",
-				"variant": "level"
-			},
-			{
-				"text": " Uses a shared pressure tank for Primary Fire and Alt-Fire.\n\nPrimary Fire: Launches a fast-moving projectile that briefly ignites enemies\n\nAlt-Fire: Release a blast of air that pushes enemies and projectiles, and extinguishes teammates that are on fire. ",
-				"variant": "neutral"
-			},
-			{
-				"text": "Extinguishing teammates restores 20 health",
-				"variant": "positive"
-			},
-			{
-				"text": "Deals 300% damage to burning players\n+50% re-pressurization rate on hit",
-				"variant": "positive"
-			},
-			{
-				"text": "-50% repressurization rate on Alt-Fire",
-				"variant": "negative"
-			},
-			{
-				"text": "This powerful, single-shot flamethrower rewards consecutive hits with faster reloads and bonus damage.",
-				"variant": "neutral"
-			}
-		]
-	},
-	{
 		"name": "Flare Gun",
 		"link": "/wiki/Flare_Gun",
 		"image": "/w/images/thumb/7/7b/Item_icon_Flare_Gun.png/100px-Item_icon_Flare_Gun.png",
