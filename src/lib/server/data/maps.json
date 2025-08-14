@@ -1440,5 +1440,75 @@
 		"image": "-7861415016257164214",
 		"gameModes": ["Tug of War"],
 		"releaseDate": "2024-10-10"
+	},
+	{
+		"name": "Pressure",
+		"thumbnail": "-8852752354603677019",
+		"image": "-8852752354603677019",
+		"gameModes": ["Capture the Flag"],
+		"releaseDate": "2025-07-24"
+	},
+	{
+		"name": "Cargo",
+		"thumbnail": "-8715172581890198722",
+		"image": "-8715172581890198722",
+		"gameModes": ["Attack/Defend"],
+		"releaseDate": "2025-07-24"
+	},
+	{
+		"name": "Conifer",
+		"thumbnail": "2441671316609319560",
+		"image": "2441671316609319560",
+		"gameModes": ["Attack/Defend"],
+		"releaseDate": "2025-07-24"
+	},
+	{
+		"name": "Fulgur",
+		"thumbnail": "-8324283035639709056",
+		"image": "-8324283035639709056",
+		"gameModes": ["Attack/Defend"],
+		"releaseDate": "2025-07-24"
+	},
+	{
+		"name": "Aquarius",
+		"thumbnail": "6905558769202597565",
+		"image": "6905558769202597565",
+		"gameModes": ["Payload"],
+		"releaseDate": "2025-07-24"
+	},
+	{
+		"name": "Citadel",
+		"thumbnail": "-8423282641470706366",
+		"image": "-8423282641470706366",
+		"gameModes": ["Payload"],
+		"releaseDate": "2025-07-24"
+	},
+	{
+		"name": "Blowout",
+		"thumbnail": "-2912814632747926650",
+		"image": "-2912814632747926650",
+		"gameModes": ["King of the Hill"],
+		"releaseDate": "2025-07-24"
+	},
+	{
+		"name": "Boardwalk",
+		"thumbnail": "6027954045210058613",
+		"image": "6027954045210058613",
+		"gameModes": ["King of the Hill"],
+		"releaseDate": "2025-07-24"
+	},
+	{
+		"name": "Demolition",
+		"thumbnail": "-7931499484017216801",
+		"image": "-7931499484017216801",
+		"gameModes": ["King of the Hill"],
+		"releaseDate": "2025-07-24"
+	},
+	{
+		"name": "Mannhole",
+		"thumbnail": "-4493599208058467134",
+		"image": "-4493599208058467134",
+		"gameModes": ["King of the Hill"],
+		"releaseDate": "2025-07-24"
 	}
 ]
