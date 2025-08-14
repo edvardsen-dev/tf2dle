@@ -5,7 +5,7 @@ import type { WeaponTwoRepository } from '../repositories/WeaponTwoRepository';
 import type { Dayjs } from 'dayjs';
 import LogService from './LogService';
 import dayjs from '$lib/configs/dayjsConfig';
-import { generateRandomInteger } from 'oslo/crypto';
+import { generateRandomNumber } from '../utils';
 
 class WeaponTwoService {
 	private weapons: Weapon[];
@@ -95,7 +95,7 @@ class WeaponTwoService {
 	 * @returns the selected weapon
 	 */
 	private async selectRandomWeapon(date: Dayjs) {
-		const randomIndex = generateRandomInteger(this.weapons.length);
+		const randomIndex = generateRandomNumber(this.weapons.length);
 
 		const selectedWeapon = this.weapons[randomIndex];
 

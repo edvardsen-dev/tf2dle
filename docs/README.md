@@ -45,7 +45,7 @@ pnpm install
 3. Run local postgres with docker:
 
 ```
-docker compose up -d
+pnpm db:up
 ```
 
 4. Generate prisma client
