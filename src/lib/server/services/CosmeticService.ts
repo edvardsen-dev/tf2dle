@@ -5,7 +5,7 @@ import { cosmeticRepository } from '$lib/server/repositories/CosmeticRepositoryP
 import LogService from './LogService';
 import dayjs from '$lib/configs/dayjsConfig';
 import type { Dayjs } from 'dayjs';
-import { generateRandomInteger } from 'oslo/crypto';
+import { generateRandomNumber } from '../utils';
 
 /**
  * Service for handling cosmetics
@@ -48,8 +48,8 @@ class CosmeticService {
 	 * @returns the selected cosmetic
 	 */
 	private async selectRandomCosmetic(date: Dayjs) {
-		const randomIndex = generateRandomInteger(this.cosmetics.length);
-		const randomRotation = generateRandomInteger(4) * 90;
+		const randomIndex = generateRandomNumber(this.cosmetics.length);
+		const randomRotation = generateRandomNumber(4) * 90;
 
 		LogService.log(
 			'Cosmetic',

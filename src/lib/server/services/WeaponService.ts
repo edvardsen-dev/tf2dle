@@ -4,8 +4,8 @@ import { weaponRepository } from '$lib/server/repositories/WeaponRepositoryPrism
 import type { WeaponRepository } from '$lib/server/repositories/WeaponRepository';
 import LogService from './LogService';
 import dayjs from '$lib/configs/dayjsConfig';
-import { generateRandomInteger } from 'oslo/crypto';
 import type { Dayjs } from 'dayjs';
+import { generateRandomNumber } from '../utils';
 
 class WeaponService {
 	private weapons: Weapon[];
@@ -216,7 +216,7 @@ class WeaponService {
 	 * @returns the name of the selected weapon
 	 */
 	public async selectNewRandomWeapon(date: Dayjs) {
-		const weapon = this.weapons[generateRandomInteger(this.weapons.length)];
+		const weapon = this.weapons[generateRandomNumber(this.weapons.length)];
 
 		await this.repo.save(weapon, date);
 
