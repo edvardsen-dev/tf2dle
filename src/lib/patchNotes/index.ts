@@ -16,9 +16,11 @@ import patch_1_7_2 from './patch_1_7_2';
 import patch_1_7_3 from './patch_1_7_3';
 import patch_1_7_4 from './patch_1_7_4';
 import patch_1_7_5 from './patch_1_7_5';
+import patch_1_7_6 from './patch_1_7_6';
 import type { PatchNote } from './types';
 
 const patchNotes = [
+	patch_1_7_6,
 	patch_1_7_5,
 	patch_1_7_4,
 	patch_1_7_3,
