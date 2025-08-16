@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { CDN_URL } from '$lib/constants';
 	import { scale } from 'svelte/transition';
 
 	export let guesses: { name: string; correct: boolean }[];
@@ -13,7 +14,7 @@
 				: 'bg-incorrect text-incorrect-foreground'}"
 		>
 			<img
-				src={`/images/weapons/thumbnails/${guess.name}.png`}
+				src="{CDN_URL}/weapons/thumbnails/{guess.name}.png"
 				alt={guess.name}
 				class="size-10 object-contain"
 			/>

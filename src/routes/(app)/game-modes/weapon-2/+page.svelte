@@ -13,6 +13,7 @@
 	import StatsDialog from '$lib/components/games/StatsDialog.svelte';
 	import VictoryDialog from '$lib/components/games/VictoryDialog.svelte';
 	import WinterDecore from '$lib/features/theme/components/winter/WinterDecore.svelte';
+	import { CDN_URL } from '$lib/constants';
 
 	export let data;
 
@@ -179,7 +180,7 @@
 						<div class="grid gap-4 text-sm justify-items-center mb-8">
 							{#if $correctWeapon}
 								<img
-									src="/images/weapons/thumbnails/{$correctWeapon}.png"
+									src="{CDN_URL}/weapons/thumbnails/{$correctWeapon}.png"
 									alt={$correctWeapon}
 									class="size-20 object-contain border rounded-md"
 								/>
@@ -219,7 +220,7 @@
 								</p>
 								<Input
 									data={weapons?.map((weapon) => ({
-										img: `/images/weapons/thumbnails/${weapon}.png`,
+										img: `${CDN_URL}/weapons/thumbnails/${weapon}.png`,
 										value: weapon
 									}))}
 									guessed={$guesses.map((guess) => guess.name)}
