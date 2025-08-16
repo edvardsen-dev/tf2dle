@@ -8,6 +8,7 @@
 	import IconShowcase from '$lib/components/games/IconShowcase.svelte';
 	import { useLocalStorage } from '$lib/composables/useLocalStorage';
 	import GuessesList from './GuessesList.svelte';
+	import { CDN_URL } from '$lib/constants';
 
 	export let data;
 
@@ -39,7 +40,7 @@
 <GameShell
 	title="Unusuals"
 	description="Guess today's unusual effect"
-	img={{ basePath: '/images/unusuals/', guessKey: 'thumbnail' }}
+	img={{ basePath: `${CDN_URL}/unusuals/`, guessKey: 'thumbnail' }}
 	{loadingState}
 	{guesses}
 	{streak}
@@ -65,7 +66,7 @@
 			</p>
 			<Input
 				data={unusuals?.map((u) => ({
-					img: `/images/unusuals/${u.thumbnail}.png`,
+					img: `${CDN_URL}/unusuals/${u.thumbnail}.png`,
 					value: u.name
 				}))}
 				guessed={$guesses.map((guess) => guess.name)}
