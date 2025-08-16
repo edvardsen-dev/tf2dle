@@ -14,6 +14,7 @@
 	import { useStats } from '$lib/composables/useStats';
 	import StatsDialog from '$lib/components/games/StatsDialog.svelte';
 	import WinterDecore from '$lib/features/theme/components/winter/WinterDecore.svelte';
+	import { CDN_URL } from '$lib/constants';
 
 	export let data;
 
@@ -180,7 +181,7 @@
 				{:then todaysMap}
 					{#if todaysMap}
 						<ImageShowcase
-							url={`/images/maps/originals/${todaysMap.image.url}.png`}
+							url="{CDN_URL}/maps/originals/{todaysMap.image.url}.png"
 							startingPos={todaysMap.image.startingPos}
 							numberOfGuesses={$guesses.length}
 							hasWon={gameState === 'won'}
@@ -197,7 +198,7 @@
 								<Input
 									on:select={(event) => handleSelect(event.detail)}
 									data={maps?.map((map) => ({
-										img: `/images/maps/thumbnails/${map.thumbnail}.png`,
+										img: `${CDN_URL}/maps/thumbnails/${map.thumbnail}.png`,
 										value: map.name
 									}))}
 									guessed={$guesses.map((guess) => guess.name.value)}
@@ -239,7 +240,7 @@
 		<VictoryDialog
 			bind:open={openDialog}
 			img={{
-				src: `/images/maps/originals/${todaysMap?.image.url}.png`,
+				src: `${CDN_URL}/maps/originals/${todaysMap?.image.url}.png`,
 				alt: $todaysMapName
 			}}
 			challenge="Map"

@@ -15,6 +15,7 @@
 	import StatsDialog from '$lib/components/games/StatsDialog.svelte';
 	import CosmeticShowcase from '$lib/components/games/IconShowcase.svelte';
 	import WinterDecore from '$lib/features/theme/components/winter/WinterDecore.svelte';
+	import { CDN_URL } from '$lib/constants';
 
 	export let data;
 
@@ -218,7 +219,7 @@
 						</p>
 						<Input
 							data={cosmetics?.map((c) => ({
-								img: `/images/cosmetics/${c.thumbnail}.png`,
+								img: `${CDN_URL}/cosmetics/${c.thumbnail}.png`,
 								value: c.name
 							}))}
 							guessed={$guesses.map((guess) => guess.name)}
@@ -249,7 +250,7 @@
 		<VictoryDialog
 			bind:open={openDialog}
 			img={{
-				src: `/images/cosmetics/${todaysCosmetic?.cosmetic.thumbnail}.png`,
+				src: `${CDN_URL}/cosmetics/${todaysCosmetic?.cosmetic.thumbnail}.png`,
 				alt: 'Todays cosmetic'
 			}}
 			imgSize="96px"

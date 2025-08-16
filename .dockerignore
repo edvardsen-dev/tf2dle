@@ -27,6 +27,13 @@ package
 README.md
 scripts
 
+# Images
+
+static/images/cosmetics/**
+static/images/maps/**
+static/images/unusuals/**
+static/images/weapons/**
+
 # Tools
 
 .vscode

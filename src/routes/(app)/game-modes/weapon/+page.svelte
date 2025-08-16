@@ -6,6 +6,7 @@
 	import { useGameEngine } from '$lib/composables/useGameEngine';
 	import { writable } from 'svelte/store';
 	import GameShell from '$lib/components/games/GameShell.svelte';
+	import { CDN_URL } from '$lib/constants';
 
 	// Data
 	export let data;
@@ -35,7 +36,7 @@
 <GameShell
 	title="Weapon"
 	description="Guess today's weapon"
-	img={{ basePath: '/images/weapons/thumbnails/', guessKey: 'name' }}
+	img={{ basePath: `${CDN_URL}/weapons/thumbnails/`, guessKey: 'name' }}
 	nextChallenge="/game-modes/weapon-2"
 	{loadingState}
 	{guesses}
@@ -52,7 +53,7 @@
 			</p>
 			<Input
 				data={weapons?.map((weapon) => ({
-					img: `/images/weapons/thumbnails/${weapon}.png`,
+					img: `${CDN_URL}/weapons/thumbnails/${weapon}.png`,
 					value: weapon
 				}))}
 				guessed={$guesses.map((guess) => guess.name)}
