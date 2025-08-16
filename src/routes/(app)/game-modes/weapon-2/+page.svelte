@@ -263,7 +263,7 @@
 		<VictoryDialog
 			bind:open={openVictoryDialog}
 			img={{
-				src: `/images/weapons/thumbnails/${$correctWeapon}.png`,
+				src: `${CDN_URL}/weapons/thumbnails/${$correctWeapon}.png`,
 				alt: $correctWeapon ?? ''
 			}}
 			imgSize="10rem"

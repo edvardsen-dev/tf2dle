@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { CDN_URL } from '$lib/constants';
 	import type { MapGuessResponse } from '$lib/dtos';
 	import { ArrowBigDown, ArrowBigUp } from 'lucide-svelte';
 	import { fade } from 'svelte/transition';
@@ -23,7 +24,7 @@
 				class={`w-full aspect-video object-cover rounded border-4 ${
 					guess.correct ? 'border-correct' : 'border-incorrect'
 				}`}
-				src={`/images/maps/thumbnails/${guess.thumbnail}.png`}
+				src="{CDN_URL}/maps/thumbnails/{guess.thumbnail}.png"
 				alt={guess.name.value}
 			/>
 			<p
