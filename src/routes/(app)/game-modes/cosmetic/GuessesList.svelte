@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { CDN_URL } from '$lib/constants';
 	import type { CosmeticGuessResponse } from '$lib/dtos';
 	import { scale } from 'svelte/transition';
 
@@ -14,7 +15,7 @@
 				? 'bg-correct text-correct-foreground'
 				: 'bg-incorrect text-incorrect-foreground'}"
 		>
-			<img src={`/images/cosmetics/${guess.thumbnail}.png`} alt={guess.name} />
+			<img src="{CDN_URL}/cosmetics/{guess.thumbnail}.png" alt={guess.name} />
 			<p class="text-sm">{guess.name}</p>
 		</div>
 	{/each}
