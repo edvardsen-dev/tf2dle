@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { CDN_URL } from '$lib/constants';
 	import type { WeaponGuessResponse } from '$lib/dtos';
 	import { ArrowBigDown, ArrowBigUp, MoveLeft, MoveRight } from 'lucide-svelte';
 	import { fade } from 'svelte/transition';
@@ -29,7 +30,7 @@
 					/>
 					<img
 						in:fade={{ duration: fadeDuration }}
-						src={`/images/weapons/thumbnails/${guess.name}.png`}
+						src={`${CDN_URL}/weapons/thumbnails/${guess.name}.png`}
 						alt={guess.name}
 						class="w-20 relative z-10"
 					/>
