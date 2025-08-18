@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { CDN_URL } from '$lib/constants';
 	import { onMount } from 'svelte';
 
 	// Gamemode
@@ -24,7 +25,7 @@
 		drawCanvas();
 
 		img = new Image();
-		img.src = `/images/${gamemode}/${icon.thumbnail}.png`;
+		img.src = `${CDN_URL}/${gamemode}/${icon.thumbnail}.png`;
 		img.onload = () => {
 			drawImage(img, guesses, hasWon);
 		};
