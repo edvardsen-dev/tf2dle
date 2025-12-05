@@ -60,3 +60,12 @@ export const flyAndScale = (
         easing: cubicOut
     };
 };
+
+export const pickRandom = <T>(
+    array: T[]
+): T | undefined => {
+    if(array.length === 0) return undefined;
+
+    const index = Math.floor(Math.random() * array.length);
+    return array[index];
+}
