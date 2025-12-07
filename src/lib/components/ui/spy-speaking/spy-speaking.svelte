@@ -6,7 +6,7 @@
 
     type $$Props = Props;
     
-    const quote = 'I should have let the Engineer write the routing file.';//pickRandom(spyQuotes);
+    const quote = pickRandom(spyQuotes);
 
     let className: $$Props['class'] = undefined;
     export { className as class };
