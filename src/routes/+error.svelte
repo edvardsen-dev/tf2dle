@@ -4,6 +4,7 @@
 	
     import { page } from '$app/state';
 	import { SpySpeaking } from '$lib/components/ui/spy-speaking';
+	import Button from '$lib/components/ui/button/button.svelte';
 
     const status: number = page.status;
     const error: App.Error | null | undefined = page.error;
@@ -26,14 +27,14 @@
         <Card.Content>
             <WinterDecore />
             <SpySpeaking />
-            <a
-                href='/'
-                class="block relative overflow-hidden hover:scale-[1.02] transition-transform"
+
+			<Button 
+                href={'/'} 
+                class="mb-2 w-full"
+                variant="secondary"
             >
-                <div class="flex w-full justify-center gap-4 bg-secondary rounded px-4 py-2">
-                    <p class="font-semibold">Abort!</p>
-                </div>
-            </a>           
+                Abort!
+            </Button>
         </Card.Content>
     </Card.Root>
 </div>
