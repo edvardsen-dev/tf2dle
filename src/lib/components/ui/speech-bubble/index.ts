@@ -3,7 +3,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 import { tv, type VariantProps } from 'tailwind-variants';
 
 const speechBubbleVariants = tv({
-    base: 'relative bg-white text-black p-4 text-center text-xl leading-none speech-bubble font-bold uppercase w-60 h-min rounded-2xl scale-y-90 border-[3px] border-black',
+    base: 'relative bg-white text-black p-4 text-center text-base sm:text-xl leading-none speech-bubble font-bold uppercase w-60 h-min rounded-2xl scale-y-90 border-[3px] border-black',
     variants: {
         arrowSide: {
             left: [

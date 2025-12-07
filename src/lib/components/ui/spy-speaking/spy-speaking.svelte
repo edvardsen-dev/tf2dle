@@ -6,7 +6,7 @@
 
     type $$Props = Props;
     
-    const quote = pickRandom(spyQuotes);
+    const quote = 'I should have let the Engineer write the routing file.';//pickRandom(spyQuotes);
 
     let className: $$Props['class'] = undefined;
     export { className as class };
@@ -14,13 +14,16 @@
 
             
 <div 
-    class={cn('w-full flex flex-row justify-end gap-2', className)}
+    class={cn('w-full flex flex-row justify-start gap-2 overflow-x-auto', className)}
 	{...$$restProps}
 >
-    <SpeechBubble arrowSide="right">
+    <SpeechBubble 
+        arrowSide="right"
+        class="ms-auto"
+    >
         {quote}
     </SpeechBubble>
-    <img 
+    <img
         src="/images/404_spy.png"
         alt="The default main menu Spy from TF2"
         class="spy-height"
