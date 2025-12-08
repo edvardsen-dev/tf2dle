@@ -1,4 +1,4 @@
-FROM node:20.0-alpine AS builder
+FROM node:20.19-alpine AS builder
 WORKDIR /app
 
 # Install pnpm
@@ -17,7 +17,7 @@ RUN npx prisma generate
 RUN pnpm build
 RUN pnpm prune --production
 
-FROM node:20.0-alpine
+FROM node:20.19-alpine
 WORKDIR /app
 
 # Install necessary system packages, including OpenSSL
