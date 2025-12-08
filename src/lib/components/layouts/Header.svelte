@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { Scroll } from 'lucide-svelte';
 	import Settings from '$lib/components/Settings.svelte';
-	import patchNotes from '$lib/patchNotes';
-	import { lastViewedPatchNote } from '$lib/patchNotes';
+	import patchNotes from '$lib/features/patchNotes';
+	import { lastViewedPatchNote } from '$lib/features/patchNotes';
 	import LogoHat from '$lib/features/theme/components/LogoHat.svelte';
 
 	const lastPatchNote = patchNotes[0];

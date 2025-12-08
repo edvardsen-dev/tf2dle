@@ -7,7 +7,11 @@ export default {
 			title: 'Updated randomizer',
 			description:
 				'Noticed that the same items were being selected too frequently. The randomizer has been updated, hoping to fix this issue.',
-			gameMode: 'All Game Modes'
+			gameMode: 'All Game Modes',
+			author: {
+				name: 'Joakim Edvardsen',
+				link: 'https://github.com/jKm00'
+			}
 		}
 	],
 	bugFixes: [
@@ -22,6 +26,10 @@ export default {
 					link: 'https://www.reddit.com/user/VaniRabbit/'
 				},
 				note: 'Thanks for reporting this issue!'
+			},
+			author: {
+				name: 'Joakim Edvardsen',
+				link: 'https://github.com/jKm00'
 			}
 		}
 	]

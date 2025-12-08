@@ -15,6 +15,10 @@ export default {
 					link: 'https://www.reddit.com/user/_Klush_/"'
 				},
 				note: 'Thanks for bringing this to my attention!'
+			},
+			author: {
+				name: 'Joakim Edvardsen',
+				link: 'https://github.com/jKm00'
 			}
 		}
 	]

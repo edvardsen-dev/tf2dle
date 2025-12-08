@@ -10,6 +10,10 @@ export type Change = {
 	title: string;
 	description: string;
 	gameMode: string | string[];
+	author: {
+		name: string;
+		link: string;
+	};
 	reportedBy?: {
 		user: {
 			name: string;

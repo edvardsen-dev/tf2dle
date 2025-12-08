@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import * as Card from '$lib/components/ui/card';
-	import patchNotes from '$lib/patchNotes';
+	import patchNotes from '$lib/features/patchNotes';
 	import { onMount } from 'svelte';
 
 	let activePatchNote = patchNotes[0].version;

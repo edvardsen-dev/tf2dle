@@ -13,6 +13,10 @@ export default {
 					link: 'https://www.reddit.com/user/Kalikq-p/'
 				},
 				note: 'Thanks for the suggestion!'
+			},
+			author: {
+				name: 'Joakim Edvardsen',
+				link: 'https://github.com/jKm00'
 			}
 		}
 	],
