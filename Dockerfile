@@ -20,6 +20,9 @@ RUN pnpm prune --production
 FROM node:20.19-alpine
 WORKDIR /app
 
+# Prisma CLI
+RUN npm install -g prisma@6.14.0
+
 # Install necessary system packages, including OpenSSL
 RUN apk add --no-cache openssl
 COPY --from=builder /app/build build/
