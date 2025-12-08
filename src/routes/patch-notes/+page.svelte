@@ -1,9 +1,9 @@
 <script lang="ts">
 	import * as Card from '$lib/components/ui/card';
-	import patchNotes, { lastViewedPatchNote } from '$lib/patchNotes';
+	import patchNotes, { lastViewedPatchNote } from '$lib/features/patchNotes';
 	import { onMount } from 'svelte';
-	import PatchNoteItem from './patch-note-item.svelte';
-	import PatchNoteSidebar from './patch-note-sidebar.svelte';
+	import PatchNoteItem from '$lib/features/patchNotes/components/patch-note-item.svelte';
+	import PatchNoteSidebar from '$lib/features/patchNotes/components/patch-note-sidebar.svelte';
 
 	onMount(() => {
 		lastViewedPatchNote.set(patchNotes[0].version);

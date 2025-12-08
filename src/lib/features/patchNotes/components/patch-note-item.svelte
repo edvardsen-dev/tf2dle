@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Change } from '$lib/patchNotes/types';
+	import type { Change } from '$lib/features/patchNotes/types';
 
 	export let item: Change;
 </script>
@@ -17,6 +17,10 @@
 			{item.reportedBy.note}
 		</p>
 	{/if}
+	<p class="text-sm text-muted-foreground mt-2">
+		Author:
+		<a href={item.author.link} target="_blank" class="patch-link">{item.author.name}</a>
+	</p>
 	<div class="flex gap-1 mt-4">
 		{#if item.gameMode instanceof Array}
 			{#each item.gameMode as mode}

@@ -13,6 +13,10 @@ export default {
 					link: 'https://www.reddit.com/user/becausewhybnot/'
 				},
 				note: 'Big thanks for the suggestion!'
+			},
+			author: {
+				name: 'Joakim Edvardsen',
+				link: 'https://github.com/jKm00'
 			}
 		}
 	],

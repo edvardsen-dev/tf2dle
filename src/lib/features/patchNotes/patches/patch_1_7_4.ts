@@ -6,7 +6,11 @@ export default {
 		{
 			title: 'New content',
 			description: 'Added all new maps introduced to Team Fortress 2 during 2024.',
-			gameMode: 'Map'
+			gameMode: 'Map',
+			author: {
+				name: 'Joakim Edvardsen',
+				link: 'https://github.com/jKm00'
+			}
 		}
 	],
 	bugFixes: []

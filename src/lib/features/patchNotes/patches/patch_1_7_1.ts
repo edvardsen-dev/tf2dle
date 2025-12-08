@@ -8,7 +8,11 @@ export default {
 			title: 'Add error page',
 			description:
 				'New game mode (weapon 2) had no error page when something went wrong. This has been fixed.',
-			gameMode: 'Weapon 2'
+			gameMode: 'Weapon 2',
+			author: {
+				name: 'Joakim Edvardsen',
+				link: 'https://github.com/jKm00'
+			}
 		}
 	]
 };

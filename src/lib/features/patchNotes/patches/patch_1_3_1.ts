@@ -7,7 +7,11 @@ export default {
 		{
 			title: 'Color explination',
 			description: 'Added color explination panel to the cosmetic page',
-			gameMode: 'Cosmetic'
+			gameMode: 'Cosmetic',
+			author: {
+				name: 'Joakim Edvardsen',
+				link: 'https://github.com/jKm00'
+			}
 		}
 	]
 };

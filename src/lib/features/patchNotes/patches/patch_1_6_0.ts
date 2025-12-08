@@ -6,7 +6,11 @@ export default {
 			title: 'New game mode: Unusual Effects',
 			description:
 				'A new game mode has been added. <a href="/game-modes/unusual" class="patch-link">Try it out here.</a> The objective is to guess the unusual effect of the item shown on screen.',
-			gameMode: 'Unusuals'
+			gameMode: 'Unusuals',
+			author: {
+				name: 'Joakim Edvardsen',
+				link: 'https://github.com/jKm00'
+			}
 		}
 	],
 	improvements: [],
