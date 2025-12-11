@@ -1,6 +1,6 @@
 import type { Cosmetic } from '$lib/types';
 import type { Dayjs } from 'dayjs';
-import { db } from '../prisma';
+import { db } from '$lib/prisma';
 import type { CosmeticRepository } from './CosmeticRepository';
 
 class CosmeticRepositoryPrisma implements CosmeticRepository {

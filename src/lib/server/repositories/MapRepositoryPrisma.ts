@@ -1,6 +1,6 @@
 import dayjs from '$lib/configs/dayjsConfig';
 import type { Dayjs } from 'dayjs';
-import { db } from '../prisma';
+import { db } from '$lib/prisma';
 import type { MapRepository } from './MapRepository';
 
 class MapRepositoryPrisma implements MapRepository {

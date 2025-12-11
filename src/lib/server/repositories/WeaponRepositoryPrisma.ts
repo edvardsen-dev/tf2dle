@@ -1,7 +1,7 @@
 import dayjs from '$lib/configs/dayjsConfig';
 import type { Weapon } from '$lib/types';
 import type { Dayjs } from 'dayjs';
-import { db } from '../prisma';
+import { db } from '$lib/prisma';
 import type { WeaponRepository } from './WeaponRepository';
 
 class WeaponRepositoryPrisma implements WeaponRepository {

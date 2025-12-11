@@ -1,7 +1,7 @@
 import type { Unusual } from '$lib/types';
 import type { Dayjs } from 'dayjs';
 import type { UnusualRepository } from './UnusualRepository';
-import { db } from '../prisma';
+import { db } from '$lib/prisma';
 import dayjs from '$lib/configs/dayjsConfig';
 
 class UnusualRepositoryPrisma implements UnusualRepository {

@@ -1,4 +1,4 @@
-FROM node:20.19-alpine AS builder
+FROM node:24.11-alpine AS builder
 WORKDIR /app
 
 # Install pnpm
@@ -17,11 +17,11 @@ RUN npx prisma generate
 RUN pnpm build
 RUN pnpm prune --production
 
-FROM node:20.19-alpine
+FROM node:24.11-alpine
 WORKDIR /app
 
 # Prisma CLI
-RUN npm install -g prisma@6.14.0
+RUN npm install -g prisma@7.1.0
 
 # Install necessary system packages, including OpenSSL
 RUN apk add --no-cache openssl
