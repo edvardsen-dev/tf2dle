@@ -44,6 +44,9 @@ importers:
       pg:
         specifier: ^8.16.3
         version: 8.16.3
+      prisma:
+        specifier: ^7.1.0
+        version: 7.1.0(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(typescript@5.9.2)
       svelte-sonner:
         specifier: ^0.3.28
         version: 0.3.28(svelte@4.2.20)
@@ -90,9 +93,6 @@ importers:
       prettier-plugin-svelte:
         specifier: ^3.4.0
         version: 3.4.0(prettier@3.6.2)(svelte@4.2.20)
-      prisma:
-        specifier: 7.1.0
-        version: 7.1.0(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(typescript@5.9.2)
       svelte:
         specifier: ^4.2.20
         version: 4.2.20

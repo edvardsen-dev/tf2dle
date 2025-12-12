@@ -31,7 +31,7 @@ A worlde like game for TF2. Inspired by [wordle](https://www.nytimes.com/games/w
 Prerequisites
 
 - Docker
-- Node
+- Node 24.x
 
 ### Step by step
 

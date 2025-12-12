@@ -4,9 +4,9 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build",
+		"build": "npx prisma generate && vite build",
 		"preview": "vite preview",
-    "prepare": "svelte-kit sync || echo''",
+		"prepare": "svelte-kit sync || echo''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"db:client": "pnpm dlx prisma generate",
@@ -32,7 +32,6 @@
 		"postcss": "^8.5.6",
 		"prettier": "^3.6.2",
 		"prettier-plugin-svelte": "^3.4.0",
-		"prisma": "7.1.0",
 		"svelte": "^4.2.20",
 		"svelte-check": "^3.8.6",
 		"tailwindcss": "^3.4.17",
@@ -56,6 +55,7 @@
 		"mode-watcher": "^0.1.2",
 		"node-schedule": "^2.1.1",
 		"pg": "^8.16.3",
+		"prisma": "^7.1.0",
 		"svelte-sonner": "^0.3.28",
 		"tailwind-merge": "^2.6.0",
 		"tailwind-variants": "^0.1.20"
