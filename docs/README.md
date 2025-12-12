@@ -51,8 +51,10 @@ pnpm db:up
 4. Generate prisma client
 
 ```
-pnpm dlx prisma generate
+pnpm dlx prisma@6.14.0 generate
 ```
+
+> **Note:** Need to specify prisma version otherwise it uses the latest which may have breaking changes
 
 5. Apply prisma migration to your local database
 
