@@ -1,4 +1,5 @@
 import test, { expect, type Page } from '@playwright/test';
+import dayjs from 'dayjs';
 
 test.beforeEach(async ({ page }) => {
 	await page.goto('/');
@@ -109,16 +110,19 @@ test('Toast is shown when guess fetch fails', async ({ page }) => {
 test('Won state is reset when new day starts', async ({ page }) => {
 	await mockCorrectGuess(page);
 
+	const date = dayjs();
+	await page.clock.setFixedTime(date.toDate());
+
 	await page.goto('/game-modes/weapon');
 
 	await page.getByTestId('input').fill('scattergun');
 	await page.getByRole('button', { name: 'Scattergun' }).click();
 
-	await page.waitForTimeout(3000);
+	await page.waitForTimeout(8000);
 
 	await page.goto('/');
 
-	await updateDate(page, 1);
+	await page.clock.setFixedTime(date.add(1, 'day').add(10, 'minutes').toDate());
 
 	await page.goto('/game-modes/weapon');
 
