@@ -46,7 +46,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Setup environment variables
         run: |
@@ -61,10 +61,10 @@ jobs:
           EOF
 
       - name: Generate Prisma client
-        run: pnpm dlx prisma@7.1.0 generate
+        run: pnpm dlx prisma@6.14.0 generate
 
       - name: Apply Prisma migrations
-        run: pnpm dlx prisma migrate deploy
+        run: pnpm dlx prisma@6.14.0 migrate deploy
 
       - name: Install Playwright browsers
         run: pnpm exec playwright install --with-deps
