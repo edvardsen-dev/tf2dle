@@ -8,6 +8,7 @@
 	import SnowParticles from '$lib/features/theme/components/winter/SnowParticles.svelte';
 	import XmasLights from '$lib/features/theme/components/x-mas/XmasLights.svelte';
 	import Background from '$lib/features/theme/components/Background.svelte';
+	import { DevBanner } from '$lib/components/ui/dev-banner';
 
 	setMode('dark');
 </script>
@@ -31,6 +32,8 @@
 <SnowParticles />
 
 <Background />
+
+<DevBanner />
 
 <div class="flex flex-col gap-10 px-2 m-auto pt-14 pb-10 min-h-screen">
 	<Header />
