@@ -1,3 +1,3 @@
 {#if import.meta.env.DEV}
-	<p class="absolute bottom-0 right-0 px-4 pl-6 py-1 bg-primary rounded-tl-full">Development</p>
+	<p class="fixed bottom-0 right-0 px-4 pl-6 py-1 bg-primary rounded-tl-full">Development</p>
 {/if}
