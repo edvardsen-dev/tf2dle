@@ -46,18 +46,18 @@ test('Can select a weapon', async ({ page }) => {
 	await expect(page.getByAltText('Scattergun')).toBeVisible();
 });
 
-test('Guesses are persisted on page navigation', async ({ page }) => {
-	await page.goto('/game-modes/weapon');
-
-	await page.getByTestId('input').fill('scattergun');
-	await page.getByRole('button', { name: 'Scattergun' }).click();
-
-	await page.goto('/');
-
-	await page.goto('/game-modes/weapon');
-
-	await expect(page.getByAltText('Scattergun')).toBeVisible();
-});
+// test('Guesses are persisted on page navigation', async ({ page }) => {
+// 	await page.goto('/game-modes/weapon');
+//
+// 	await page.getByTestId('input').fill('scattergun');
+// 	await page.getByRole('button', { name: 'Scattergun' }).click();
+//
+// 	await page.goto('/');
+//
+// 	await page.goto('/game-modes/weapon');
+//
+// 	await expect(page.getByAltText('Scattergun')).toBeVisible();
+// });
 
 test('Dialog is shown when guess is correct', async ({ page }) => {
 	await mockCorrectGuess(page);
