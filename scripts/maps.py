@@ -1,7 +1,7 @@
-import requests
-from bs4 import BeautifulSoup
+import argparse
+from datetime import datetime
 import json
-import sys
+from pathlib import Path
 
 class Map:
   """Class representing a TF2 map"""
@@ -38,8 +38,29 @@ def convert_to_full_image_url(thumbnail_url):
 
   return full_image_url
 
+def parse_date(value):
+  """Parses a YYYY-MM-DD date string"""
+  try:
+    return datetime.strptime(value, "%Y-%m-%d").date()
+  except ValueError:
+    raise argparse.ArgumentTypeError("expected date format YYYY-MM-DD")
+
+def release_date_sort_key(map_instance):
+  if map_instance.release_date == "unknown":
+    return datetime.max.date()
+
+  return parse_date(map_instance.release_date)
+
+parser = argparse.ArgumentParser(description="Scrape official TF2 maps")
+parser.add_argument("--img-download", action="store_true", help="Download map thumbnails and full images")
+parser.add_argument("--start-date", type=parse_date, help="Only include maps released on or after this date (YYYY-MM-DD)")
+args = parser.parse_args()
+
+import requests
+from bs4 import BeautifulSoup
+
 # If the script should download images (map thumbnails an original images)
-enable_img_download = '--img-download' in sys.argv
+enable_img_download = args.img_download
 
 # Go to the wiki page
 URL = "https://wiki.teamfortress.com/wiki/List_of_maps"
@@ -56,6 +77,8 @@ trs = tbody.find_all("tr")
 # Initialize empty hashmap. Some maps have multiple rows where 
 # each row represents a different game mode. We want to combine these rows into one map object.
 hashmap = {}
+skipped_older_maps = 0
+skipped_unknown_date_maps = 0
 
 # Loop through each row
 for tr in trs:
@@ -73,6 +96,23 @@ for tr in trs:
   if map_name in hashmap.keys():
     hashmap[map_name].add_game_mode(map_game_mode)
   else:
+    map_release_date = tds[4].find("span")
+
+    # Not all maps have a release date
+    if map_release_date:
+      map_release_date = map_release_date.text.strip()
+    else:
+      map_release_date = "unknown"
+
+    if args.start_date:
+      if map_release_date == "unknown":
+        skipped_unknown_date_maps += 1
+        continue
+
+      if parse_date(map_release_date) < args.start_date:
+        skipped_older_maps += 1
+        continue
+
     # Else, create new game
     map_thumbnail = "https://wiki.teamfortress.com" + tds[0].find("img")["src"]
     map_image = convert_to_full_image_url(map_thumbnail)
@@ -90,19 +130,17 @@ for tr in trs:
       with open(f"images/maps/{hahsed_map_name}.png", "wb") as file:
         file.write(img_data)
 
-    map_release_date = tds[4].find("span")
-
-    # Not all maps have a release date
-    if map_release_date:
-      map_release_date = map_release_date.text
-    else:
-      map_release_date = "unknown"
-
     hashmap[map_name] = Map(map_name, hahsed_map_name, hahsed_map_name, map_game_mode, map_release_date)
 
 # Convert hashmap to json
-maps_json = json.dumps([map_instance.to_dict() for map_instance in hashmap.values()], indent=4)
+maps_json = json.dumps([map_instance.to_dict() for map_instance in sorted(hashmap.values(), key=release_date_sort_key)], indent=4)
 
 # Write json to file
-with open("maps.json", "w") as file:
+output_path = Path("maps.json")
+with output_path.open("w") as file:
   file.write(maps_json)
+
+print(f"Wrote {len(hashmap)} maps to {output_path.resolve()}")
+if args.start_date:
+  print(f"Filter: releaseDate >= {args.start_date}")
+  print(f"Skipped {skipped_older_maps} older maps and {skipped_unknown_date_maps} maps with unknown release dates")

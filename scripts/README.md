@@ -20,6 +20,17 @@ Scrapes the web for all official tf2 maps. This is what it collects for each map
 - release date  # The release date of the map
 ```
 
+Options:
+
+```
+python maps.py --start-date 2024-01-28
+python maps.py --start-date 2024-01-28 --img-download
+```
+
+`--start-date` only includes maps released on or after the given `YYYY-MM-DD` date. When combined with `--img-download`, only images for included maps are downloaded.
+
+The script writes `maps.json` to the directory where the command is run, sorted by release date, and prints the resolved output path when it finishes.
+
 <h3 id="weapons">Weapons</h3>
 
 Scrapes the web for all official tf2 weapons.
