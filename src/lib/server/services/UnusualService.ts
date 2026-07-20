@@ -6,6 +6,7 @@ import type { Dayjs } from 'dayjs';
 import LogService from './LogService';
 import dayjs from '$lib/configs/dayjsConfig';
 import { generateRandomNumber } from '../utils';
+import type { DailyUnusuals } from '@prisma/client';
 
 class UnusualService {
 	private unusuals: Unusual[];
@@ -36,7 +37,17 @@ class UnusualService {
 			unusual = await this.selectRandomUnusual(date);
 		}
 
-		return unusual;
+		return this.resolveUnusualData(unusual);
+	}
+
+	private resolveUnusualData(unusual: DailyUnusuals) {
+		const unusualData = this.unusuals.find((u) => u.name === unusual.name);
+
+		return {
+			...unusual,
+			thumbnail: unusualData?.image ?? unusual.thumbnail,
+			series: unusualData?.series ?? unusual.series
+		};
 	}
 
 	/**
