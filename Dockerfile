@@ -1,6 +1,9 @@
 FROM node:20.19-alpine AS builder
 WORKDIR /app
 
+ARG PUBLIC_CDN_URL
+ENV PUBLIC_CDN_URL=$PUBLIC_CDN_URL
+
 # Install pnpm
 RUN npm install -g pnpm
 
