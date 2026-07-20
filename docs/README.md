@@ -74,6 +74,10 @@ pnpm dev
 2. Create a merge request to main when done. Make sure all workflows pass and wait for approval.
 3. When approved, merge and delete the branch.
 
+## Deployment
+
+The deploy workflow builds the Docker image with `PUBLIC_CDN_URL` pinned to the deployed commit SHA, so production image URLs resolve to the same repository revision as the app build. Local development ignores this value and serves images from `/images`.
+
 ## Testing
 
 ### Prerequisites
