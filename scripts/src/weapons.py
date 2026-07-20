@@ -92,15 +92,16 @@ for table in tables:
     if row_header is None:
       continue
 
-    links = row_header.find_all("a")
-    if len(links) < 2:
+    name_node = row_header.find("b")
+    name_link = name_node.find_parent("a") if name_node else None
+    if name_link is None:
       continue
 
-    name = links[1].text.strip()
+    name = name_link.text.strip()
     if name in weapon_index:
       continue
 
-    href = row_header.find("a").get("href")
+    href = name_link.get("href")
     image_link = row_header.find("img").get("src")
     weapon_index[name] = Weapon(name, href, image_link)
 
