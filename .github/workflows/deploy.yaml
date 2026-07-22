@@ -75,6 +75,9 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           envs: GHCR_TOKEN, GHCR_USER, IMAGE_URL, APP_DIR, ORIGIN, DATABASE_URL, DATABASE_USER, DATABASE_PASSWORD, DATABASE_NAME
           script: |
+            # Match the older Docker daemon API version installed on the VM.
+            export DOCKER_API_VERSION=1.43
+
             # Log in to GitHub Container Registry
             echo "${GHCR_TOKEN}" | docker login ghcr.io -u $GHCR_USER --password-stdin
 
