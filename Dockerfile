@@ -5,7 +5,7 @@ ARG PUBLIC_CDN_URL
 ENV PUBLIC_CDN_URL=$PUBLIC_CDN_URL
 
 # Install pnpm
-RUN npm install -g pnpm
+RUN npm install -g pnpm@10.21.0
 
 # Copy dependencies
 COPY package.json pnpm-lock.yaml .
