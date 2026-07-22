@@ -95,8 +95,19 @@ jobs:
       - name: Apply Prisma migrations
         run: pnpm dlx prisma@6.14.0 migrate deploy
 
+      - name: Cache Playwright browsers
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Install Playwright browser dependencies
+        run: pnpm exec playwright install-deps
+
       - name: Install Playwright browsers
-        run: pnpm exec playwright install --with-deps
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: pnpm exec playwright install
 
       - name: Run integration tests
         run: pnpm test:integration
