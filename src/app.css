@@ -56,6 +56,18 @@
 		--input: 12 6.5% 15.1%;
 		--ring: 20.5 90.2% 48.2%;
 	}
+	html.dark[data-season='halloween'] {
+		--background: 271 50% 5%;
+		--card: 271 35% 7%;
+		--popover: 271 35% 7%;
+		--primary: 28 95% 53%;
+		--secondary: 271 26% 16%;
+		--muted: 271 26% 16%;
+		--accent: 285 36% 22%;
+		--border: 285 34% 18%;
+		--input: 285 34% 18%;
+		--ring: 28 95% 53%;
+	}
 	html[data-colorblind='true'] {
 		--correct: 221 83% 70%;
 		--correct-foreground: 0 0% 100%;
