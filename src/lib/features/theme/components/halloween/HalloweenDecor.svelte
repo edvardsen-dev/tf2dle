@@ -1,6 +1,55 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { get } from 'svelte/store';
+	import dayjs from '$lib/configs/dayjsConfig';
 	import { disableExtraVisuals } from '../../composables/useDisableTheme';
 	import { isHalloween } from '../../utils';
+
+	const SWARM_STORAGE_KEY = 'halloween_bat_swarm_seen_year';
+	const SWARM_DURATION_MS = 5200;
+
+	let showBatSwarm = false;
+	let hideBatSwarmTimeout: ReturnType<typeof setTimeout> | undefined;
+
+	const swarmBats = [
+		{ top: 10, delay: 0, duration: 3.4, scale: 0.95, rise: 18, rotation: -5, size: 5.4 },
+		{ top: 18, delay: 0.1, duration: 3.1, scale: 0.7, rise: 8, rotation: 6, size: 4.2 },
+		{ top: 27, delay: 0.22, duration: 3.55, scale: 1.12, rise: -12, rotation: -8, size: 6.1 },
+		{ top: 35, delay: 0.34, duration: 3.2, scale: 0.82, rise: 14, rotation: 9, size: 4.7 },
+		{ top: 46, delay: 0.46, duration: 3.7, scale: 1.25, rise: -6, rotation: -3, size: 6.8 },
+		{ top: 58, delay: 0.58, duration: 3.45, scale: 0.74, rise: 10, rotation: 7, size: 4.3 },
+		{ top: 67, delay: 0.72, duration: 3.6, scale: 1.04, rise: -16, rotation: -9, size: 5.8 },
+		{ top: 75, delay: 0.86, duration: 3.15, scale: 0.63, rise: 7, rotation: 5, size: 3.8 },
+		{ top: 22, delay: 1, duration: 3.1, scale: 0.88, rise: 20, rotation: -7, size: 5 },
+		{ top: 51, delay: 1.14, duration: 3.45, scale: 1.1, rise: -10, rotation: 4, size: 6 },
+		{ top: 82, delay: 1.28, duration: 3.25, scale: 0.8, rise: -18, rotation: -6, size: 4.6 },
+		{ top: 14, delay: 1.42, duration: 3.65, scale: 1.2, rise: 12, rotation: 8, size: 6.4 }
+	];
+
+	onMount(() => {
+		if (!isHalloween() || get(disableExtraVisuals)) return;
+
+		const year = dayjs().year().toString();
+
+		try {
+			if (localStorage.getItem(SWARM_STORAGE_KEY) === year) return;
+
+			localStorage.setItem(SWARM_STORAGE_KEY, year);
+		} catch {
+			return;
+		}
+
+		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+		showBatSwarm = true;
+		hideBatSwarmTimeout = setTimeout(() => {
+			showBatSwarm = false;
+		}, SWARM_DURATION_MS);
+
+		return () => {
+			if (hideBatSwarmTimeout) clearTimeout(hideBatSwarmTimeout);
+		};
+	});
 </script>
 
 {#if !$disableExtraVisuals && isHalloween()}
@@ -48,6 +97,23 @@
 			<div class="mouth"></div>
 		</div>
 	</div>
+
+	{#if showBatSwarm}
+		<div class="bat-swarm" aria-hidden="true">
+			{#each swarmBats as bat}
+				<div
+					class="swarm-bat"
+					style={`--top: ${bat.top}%; --delay: ${bat.delay}s; --duration: ${bat.duration}s; --scale: ${bat.scale}; --rise: ${bat.rise}vh; --rotation: ${bat.rotation}deg; --size: ${bat.size}rem;`}
+				>
+					<svg class="swarm-bat-shape" viewBox="0 0 120 48">
+						<path
+							d="M4 25 C18 4 31 5 39 22 C43 13 50 9 60 9 C70 9 77 13 81 22 C89 5 102 4 116 25 C99 20 91 24 84 36 C74 28 66 39 60 46 C54 39 46 28 36 36 C29 24 21 20 4 25 Z"
+						/>
+					</svg>
+				</div>
+			{/each}
+		</div>
+	{/if}
 {/if}
 
 <style>
@@ -57,6 +123,30 @@
 		z-index: -1;
 		overflow: hidden;
 		pointer-events: none;
+	}
+
+	.bat-swarm {
+		position: fixed;
+		inset: 0;
+		z-index: 50;
+		overflow: hidden;
+		pointer-events: none;
+	}
+
+	.swarm-bat {
+		position: absolute;
+		left: -9rem;
+		top: var(--top);
+		width: var(--size);
+		opacity: 0;
+		animation: swarm-flight var(--duration) cubic-bezier(0.32, 0.02, 0.42, 1) var(--delay) forwards;
+		filter: drop-shadow(0 0 0.45rem rgba(249, 115, 22, 0.45));
+	}
+
+	.swarm-bat-shape {
+		width: 100%;
+		fill: rgba(5, 0, 8, 0.95);
+		animation: swarm-flap 0.28s ease-in-out var(--delay) infinite alternate;
 	}
 
 	.moon {
@@ -190,6 +280,30 @@
 		}
 	}
 
+	@keyframes swarm-flight {
+		0% {
+			opacity: 0;
+			transform: translate3d(-8vw, 0, 0) scale(var(--scale)) rotate(var(--rotation));
+		}
+		8%,
+		86% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+			transform: translate3d(126vw, var(--rise), 0) scale(var(--scale)) rotate(var(--rotation));
+		}
+	}
+
+	@keyframes swarm-flap {
+		from {
+			transform: scaleY(0.75);
+		}
+		to {
+			transform: scaleY(1.08);
+		}
+	}
+
 	@media (max-width: 640px) {
 		.web,
 		.bat-2,
@@ -199,6 +313,8 @@
 	}
 
 	@media (prefers-reduced-motion: reduce) {
+		.swarm-bat,
+		.swarm-bat-shape,
 		.bat {
 			animation: none;
 		}
