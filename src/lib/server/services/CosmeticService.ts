@@ -6,6 +6,7 @@ import LogService from './LogService';
 import dayjs from '$lib/configs/dayjsConfig';
 import type { Dayjs } from 'dayjs';
 import { generateRandomNumber } from '../utils';
+import type { DailyCosmetics } from '@prisma/client';
 
 /**
  * Service for handling cosmetics
@@ -39,7 +40,17 @@ class CosmeticService {
 			cosmetic = await this.selectRandomCosmetic(date);
 		}
 
-		return cosmetic;
+		return this.resolveCosmeticData(cosmetic);
+	}
+
+	private resolveCosmeticData(cosmetic: DailyCosmetics) {
+		const cosmeticData = this.cosmetics.find((c) => c.name === cosmetic.name);
+
+		return {
+			...cosmetic,
+			thumbnail: cosmeticData?.image ?? cosmetic.thumbnail,
+			usedBy: cosmeticData?.usedBy ?? cosmetic.usedBy
+		};
 	}
 
 	/**

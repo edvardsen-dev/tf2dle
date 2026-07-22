@@ -51,15 +51,15 @@ pnpm db:up
 4. Generate prisma client
 
 ```
-pnpm dlx prisma@6.14.0 generate
+pnpm db:client
 ```
 
-> **Note:** Need to specify prisma version otherwise it uses the latest which may have breaking changes
+> **Note:** The script pins the Prisma CLI version to avoid pulling a newer major version with breaking changes.
 
 5. Apply prisma migration to your local database
 
 ```
-pnpm dlx prisma migrate deploy
+pnpm db:migrate
 ```
 
 6. Run application
@@ -73,6 +73,10 @@ pnpm dev
 1. Create a new branch from main where you can develop your feature in piece. Remember to commit regularly!
 2. Create a merge request to main when done. Make sure all workflows pass and wait for approval.
 3. When approved, merge and delete the branch.
+
+## Deployment
+
+The deploy workflow builds the Docker image with `PUBLIC_CDN_URL` pinned to the deployed commit SHA, so production image URLs resolve to the same repository revision as the app build. Local development ignores this value and serves images from `/images`.
 
 ## Testing
 

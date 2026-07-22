@@ -1,90 +1,49 @@
-# Scraper
+# TF2DLE Scripts
 
-This folder contains python file that scrapes for different thing. Belove is a list of all the files and what the scrape:
+Python scrapers and image utilities for generating TF2DLE data. Scripts live in `src/` and write generated files to `output/`.
 
-## List of scrapers
+`output/` is a local ignored cache. After reviewing generated data/images, copy the relevant files into the app manually. See `docs/runbook.md` for the app update flow.
 
-- [maps.py](#maps)
-- [weapons.py](#weapons)
-- [cosmetics.py](#cosmetics)
+## Setup
 
-<h3 id="maps">Maps</h3>
-
-Scrapes the web for all official tf2 maps. This is what it collects for each map:
-
-```
-- name          # Name of the map
-- thumbnail     # A link to the thumbnail
-- image         # A link to full size image
-- game modes    # A list of all available game mode for the map
-- release date  # The release date of the map
-```
-
-<h3 id="weapons">Weapons</h3>
-
-Scrapes the web for all official tf2 weapons.
-
-```
-- name          # Name of weapon
-- link          # Link to weapon wiki page
-- image         # Image icon
-- killIcon      # Icon shown in kill feed
-- releaseDate   # The date / patch the weapon was release
-- usedBy        # Array of class names
-- slot          # Array of slots
-- ammoLoaded
-- ammoCarried
-- reloadType    # How the weapon is reloaded
-- qualitities   # Array of available qualities for the weapons
-- attributes    # Array of attributes
-    - text      # Text description of weapon
-    - variant   # Type of attribute (level, neutral, positive, negative)
-```
-
-#### Manual changes
-
-Some manual changes has been done to the `weapons.json`:
-
-- The script does not add weapons from the jungle inferno update. These has been manually added as there is only 5-6 weapons. (Check if this still is true when running the script)
-
-<h3 id="cosmetics">Cosmetics</h3>
-
-## Setting up python environment
-
-1. Cd into folder
-
-```
+```sh
 cd scripts
+uv sync
 ```
 
-3. Create environment
+## Run
 
-```
-python -m venv .
-```
-
-4. Activate environment:
-
-```
-./Scripts/activate
+```sh
+uv run python src/maps.py
+uv run python src/weapons.py --limit 5 --dry-run
+uv run python src/cosmetics.py --start-date 2025-01-01 --img-download
+uv run python src/unusuals.py --start-date 2025-10-09
+uv run python src/compress.py --path output/maps/images --ext png
 ```
 
-5. Install requirements
+## Common Scraper Args
 
-```
-pip install -r requirements.txt
-```
+| Arg | Description |
+| --- | --- |
+| `--start-date YYYY-MM-DD` | Include records released on or after the date. |
+| `--img-download` | Download images for included records. Ignored by `--dry-run`. |
+| `--dry-run` | Scrape and print a summary without writing JSON or images. |
+| `--limit N` | Stop after N included records. Useful for testing. |
 
-## Running python files
+These args are supported by `maps.py`, `weapons.py`, `cosmetics.py`, and `unusuals.py`.
 
-1. Make sure you have activated your python environment
+## Output
 
-```
-./Scripts/activate
-```
+Scrapers write to `output/<name>/data.json`. Images, when enabled, are written under that scraper's output folder:
 
-2. Run a python file
+| Script | JSON | Images |
+| --- | --- | --- |
+| `maps.py` | `output/maps/data.json` | `output/maps/images/`, `output/maps/thumbnails/` |
+| `weapons.py` | `output/weapons/data.json` | `output/weapons/images/`, `output/weapons/kill-icons/` |
+| `cosmetics.py` | `output/cosmetics/data.json` | `output/cosmetics/images/` |
+| `unusuals.py` | `output/unusuals/data.json` | `output/unusuals/images/` |
+| `compress.py` | `output/compress/` | compressed copies from the requested input path |
 
-```
-python <filename>
-```
+If `output/<name>/data.json` already exists, scraper records with the same `name` are skipped and preserved. Scrapers save progress after each new record, so failed runs can usually be resumed by running the same command again. JSON output is sorted by `releaseDate` and `name` for deterministic diffs.
+
+More detail: `docs/scrapers.md` and `docs/runbook.md`.

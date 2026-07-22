@@ -22,7 +22,9 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t $IMAGE_URL .
+          docker build \
+            --build-arg PUBLIC_CDN_URL="https://cdn.jsdelivr.net/gh/edvardsen-dev/tf2dle@${{ github.sha }}/static/images" \
+            -t $IMAGE_URL .
 
       - name: Push Docker Image
         run: |

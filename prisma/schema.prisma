@@ -41,7 +41,7 @@ model DailyCosmetics {
   id         Int      @id @default(autoincrement())
   selectedAt DateTime @default(now()) @db.Date
   name       String
-  thumbnail  String
+  thumbnail  String // Deprecated: No longer used, but keeping in-case we need to roll back
   rotation   Int
   usedBy     String
   hasWon     Int      @default(0)
@@ -51,7 +51,7 @@ model DailyUnusuals {
   id          Int @id @default(autoincrement())
   selectedAt  DateTime @default(now()) @db.Date
   name        String
-  thumbnail   String
+  thumbnail   String // Deprecated: No longer used, but keeping in-case we need to roll back
   rotation    Int
   series      String
   hasWon      Int @default(0)

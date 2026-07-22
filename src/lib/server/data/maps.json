@@ -1,1514 +1,2072 @@
 [
-	{
-		"name": "2Fort",
-		"thumbnail": "-6990488982893793238",
-		"image": "-6990488982893793238",
-		"gameModes": ["Capture the Flag"],
-		"releaseDate": "2007-10-10"
-	},
-	{
-		"name": "2Fort Invasion",
-		"thumbnail": "-8922892670767690377",
-		"image": "-8922892670767690377",
-		"gameModes": ["Capture the Flag"],
-		"releaseDate": "2015-10-06"
-	},
-	{
-		"name": "Applejack",
-		"thumbnail": "5489493878402879604",
-		"image": "5489493878402879604",
-		"gameModes": ["Capture the Flag"],
-		"releaseDate": "2024-07-18"
-	},
-	{
-		"name": "Crasher",
-		"thumbnail": "-6141771528610431333",
-		"image": "-6141771528610431333",
-		"gameModes": ["Capture the Flag"],
-		"releaseDate": "2022-10-05"
-	},
-	{
-		"name": "Double Cross",
-		"thumbnail": "-2950101539716610900",
-		"image": "-2950101539716610900",
-		"gameModes": ["Capture the Flag"],
-		"releaseDate": "2009-12-17"
-	},
-	{
-		"name": "Doublefrost",
-		"thumbnail": "-1023270330529696100",
-		"image": "-1023270330529696100",
-		"gameModes": ["Capture the Flag"],
-		"releaseDate": "2021-12-02"
-	},
-	{
-		"name": "Frosty",
-		"thumbnail": "-6787125719807441137",
-		"image": "-6787125719807441137",
-		"gameModes": ["Capture the Flag"],
-		"releaseDate": "2022-12-05"
-	},
-	{
-		"name": "Helltrain",
-		"thumbnail": "3948920103185038407",
-		"image": "3948920103185038407",
-		"gameModes": ["Capture the Flag"],
-		"releaseDate": "2022-10-05"
-	},
-	{
-		"name": "Landfall",
-		"thumbnail": "78709482581607823",
-		"image": "78709482581607823",
-		"gameModes": ["Capture the Flag"],
-		"releaseDate": "2015-12-17"
-	},
-	{
-		"name": "Pelican Peak",
-		"thumbnail": "-5319253124663497317",
-		"image": "-5319253124663497317",
-		"gameModes": ["Capture the Flag"],
-		"releaseDate": "2023-07-12"
-	},
-	{
-		"name": "Penguin Peak",
-		"thumbnail": "7273496898359360549",
-		"image": "7273496898359360549",
-		"gameModes": ["Capture the Flag"],
-		"releaseDate": "2024-12-11"
-	},
-	{
-		"name": "Sawmill (Capture the Flag)",
-		"thumbnail": "5167192725665257575",
-		"image": "5167192725665257575",
-		"gameModes": ["Capture the Flag"],
-		"releaseDate": "2009-08-13"
-	},
-	{
-		"name": "Snowfall",
-		"thumbnail": "-9201918484819475797",
-		"image": "-9201918484819475797",
-		"gameModes": ["Capture the Flag"],
-		"releaseDate": "2020-12-03"
-	},
-	{
-		"name": "Turbine",
-		"thumbnail": "-6257208320637755377",
-		"image": "-6257208320637755377",
-		"gameModes": ["Capture the Flag"],
-		"releaseDate": "2008-06-19"
-	},
-	{
-		"name": "Turbine Center",
-		"thumbnail": "-5749492050573839042",
-		"image": "-5749492050573839042",
-		"gameModes": ["Capture the Flag"],
-		"releaseDate": "2023-12-07"
-	},
-	{
-		"name": "Well (Capture the Flag)",
-		"thumbnail": "3950005883352385690",
-		"image": "3950005883352385690",
-		"gameModes": ["Capture the Flag"],
-		"releaseDate": "2008-01-25"
-	},
-	{
-		"name": "5Gorge",
-		"thumbnail": "-4290021709430403091",
-		"image": "-4290021709430403091",
-		"gameModes": ["Control Point"],
-		"releaseDate": "2011-01-19"
-	},
-	{
-		"name": "Badlands (Control Point)",
-		"thumbnail": "-5036766988416861882",
-		"image": "-5036766988416861882",
-		"gameModes": ["Control Point"],
-		"releaseDate": "2008-02-14"
-	},
-	{
-		"name": "Canaveral",
-		"thumbnail": "1460918632910155427",
-		"image": "1460918632910155427",
-		"gameModes": ["Control Point"],
-		"releaseDate": "2024-07-18"
-	},
-	{
-		"name": "Coldfront",
-		"thumbnail": "8265651240519119293",
-		"image": "8265651240519119293",
-		"gameModes": ["Control Point"],
-		"releaseDate": "2010-07-08"
-	},
-	{
-		"name": "Fastlane",
-		"thumbnail": "-8549998291878333097",
-		"image": "-8549998291878333097",
-		"gameModes": ["Control Point"],
-		"releaseDate": "2008-06-19"
-	},
-	{
-		"name": "Foundry (Control Point)",
-		"thumbnail": "-2527981132790133435",
-		"image": "-2527981132790133435",
-		"gameModes": ["Control Point"],
-		"releaseDate": "2011-12-15"
-	},
-	{
-		"name": "Freaky Fair",
-		"thumbnail": "7303268111824932569",
-		"image": "7303268111824932569",
-		"gameModes": ["Control Point"],
-		"releaseDate": "2024-10-10"
-	},
-	{
-		"name": "Freight",
-		"thumbnail": "-3010820336501900475",
-		"image": "-3010820336501900475",
-		"gameModes": ["Control Point"],
-		"releaseDate": "2010-04-28"
-	},
-	{
-		"name": "Granary (Control Point)",
-		"thumbnail": "-5993374777815393994",
-		"image": "-5993374777815393994",
-		"gameModes": ["Control Point"],
-		"releaseDate": "2007-10-10"
-	},
-	{
-		"name": "Gullywash",
-		"thumbnail": "-6701865505682605458",
-		"image": "-6701865505682605458",
-		"gameModes": ["Control Point"],
-		"releaseDate": "2011-10-13"
-	},
-	{
-		"name": "Metalworks",
-		"thumbnail": "-4082992785191396882",
-		"image": "-4082992785191396882",
-		"gameModes": ["Control Point"],
-		"releaseDate": "2016-07-07"
-	},
-	{
-		"name": "Powerhouse",
-		"thumbnail": "2665986054156497385",
-		"image": "2665986054156497385",
-		"gameModes": ["Control Point"],
-		"releaseDate": "2015-07-02"
-	},
-	{
-		"name": "Process",
-		"thumbnail": "4585178442351066999",
-		"image": "4585178442351066999",
-		"gameModes": ["Control Point"],
-		"releaseDate": "2013-07-10"
-	},
-	{
-		"name": "Reckoner",
-		"thumbnail": "-6721238232583653425",
-		"image": "-6721238232583653425",
-		"gameModes": ["Control Point"],
-		"releaseDate": "2023-07-12"
-	},
-	{
-		"name": "Sinshine",
-		"thumbnail": "819110245884429703",
-		"image": "819110245884429703",
-		"gameModes": ["Control Point"],
-		"releaseDate": "2015-10-28"
-	},
-	{
-		"name": "Snakewater",
-		"thumbnail": "-5860890331179460017",
-		"image": "-5860890331179460017",
-		"gameModes": ["Control Point"],
-		"releaseDate": "2013-11-21"
-	},
-	{
-		"name": "Sunshine",
-		"thumbnail": "3599470598523451545",
-		"image": "3599470598523451545",
-		"gameModes": ["Control Point"],
-		"releaseDate": "2016-07-07"
-	},
-	{
-		"name": "Vanguard",
-		"thumbnail": "1610105955610967453",
-		"image": "1610105955610967453",
-		"gameModes": ["Control Point"],
-		"releaseDate": "2015-12-17"
-	},
-	{
-		"name": "Well (Control Point)",
-		"thumbnail": "-401726738796618746",
-		"image": "-401726738796618746",
-		"gameModes": ["Control Point"],
-		"releaseDate": "2007-10-10"
-	},
-	{
-		"name": "Yukon",
-		"thumbnail": "8580125077875074279",
-		"image": "8580125077875074279",
-		"gameModes": ["Control Point"],
-		"releaseDate": "2009-08-13"
-	},
-	{
-		"name": "Altitude",
-		"thumbnail": "-8961430856763258409",
-		"image": "-8961430856763258409",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2021-12-02"
-	},
-	{
-		"name": "Brew",
-		"thumbnail": "-3284416866713825091",
-		"image": "-3284416866713825091",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2023-12-07"
-	},
-	{
-		"name": "Carrier",
-		"thumbnail": "-1194910912868396232",
-		"image": "-1194910912868396232",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2023-12-07"
-	},
-	{
-		"name": "Fortezza",
-		"thumbnail": "-2805548501523825730",
-		"image": "-2805548501523825730",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2024-12-11"
-	},
-	{
-		"name": "Coal Pit",
-		"thumbnail": "229748239887418719",
-		"image": "229748239887418719",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2022-12-05"
-	},
-	{
-		"name": "Darkmarsh",
-		"thumbnail": "8837056375990789721",
-		"image": "8837056375990789721",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2024-10-10"
-	},
-	{
-		"name": "Dustbowl",
-		"thumbnail": "-4885685988040465010",
-		"image": "-4885685988040465010",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2007-10-10"
-	},
-	{
-		"name": "Erebus",
-		"thumbnail": "-4119560848375272138",
-		"image": "-4119560848375272138",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2021-10-05"
-	},
-	{
-		"name": "Egypt",
-		"thumbnail": "-3662859615063420037",
-		"image": "-3662859615063420037",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2009-02-24"
-	},
-	{
-		"name": "Frostwatch",
-		"thumbnail": "-2159052223137077459",
-		"image": "-2159052223137077459",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2022-12-05"
-	},
-	{
-		"name": "Gorge",
-		"thumbnail": "4643287145812241394",
-		"image": "4643287145812241394",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2009-12-17"
-	},
-	{
-		"name": "Gorge Event",
-		"thumbnail": "5861260064904686988",
-		"image": "5861260064904686988",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2015-10-28"
-	},
-	{
-		"name": "Gravel Pit",
-		"thumbnail": "4425831644139232945",
-		"image": "4425831644139232945",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2007-10-10"
-	},
-	{
-		"name": "Haarp",
-		"thumbnail": "439970491654162524",
-		"image": "439970491654162524",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2023-12-07"
-	},
-	{
-		"name": "Hadal",
-		"thumbnail": "8040590952311451428",
-		"image": "8040590952311451428",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2024-07-18"
-	},
-	{
-		"name": "Hardwood",
-		"thumbnail": "2410594789032813408",
-		"image": "2410594789032813408",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2023-07-12"
-	},
-	{
-		"name": "Junction",
-		"thumbnail": "6714881421803247974",
-		"image": "6714881421803247974",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2009-02-24"
-	},
-	{
-		"name": "Lava Pit",
-		"thumbnail": "3355903142441478959",
-		"image": "3355903142441478959",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2023-10-09"
-	},
-	{
-		"name": "Mann Manor",
-		"thumbnail": "2158092434771941270",
-		"image": "2158092434771941270",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2010-10-27"
-	},
-	{
-		"name": "Mercenary Park",
-		"thumbnail": "2697500340398841138",
-		"image": "2697500340398841138",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2017-10-20"
-	},
-	{
-		"name": "Mossrock",
-		"thumbnail": "-2477830534169272704",
-		"image": "-2477830534169272704",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2017-10-20"
-	},
-	{
-		"name": "Mountain Lab",
-		"thumbnail": "-8550787808497720938",
-		"image": "-8550787808497720938",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2010-10-27"
-	},
-	{
-		"name": "Snowplow",
-		"thumbnail": "-5849438794495788113",
-		"image": "-5849438794495788113",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2015-07-02"
-	},
-	{
-		"name": "Spookeyridge",
-		"thumbnail": "-7531655734351663835",
-		"image": "-7531655734351663835",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2022-10-05"
-	},
-	{
-		"name": "Steel",
-		"thumbnail": "-4573135098085581971",
-		"image": "-4573135098085581971",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2008-08-19"
-	},
-	{
-		"name": "Sulfur",
-		"thumbnail": "-5215880463167357234",
-		"image": "-5215880463167357234",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2023-07-12"
-	},
-	{
-		"name": "Overgrown",
-		"thumbnail": "-7286543080263323751",
-		"image": "-7286543080263323751",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2024-07-18"
-	},
-	{
-		"name": "Burghausen",
-		"thumbnail": "-6694261048537851057",
-		"image": "-6694261048537851057",
-		"gameModes": ["Medieval Mode"],
-		"releaseDate": "2024-07-18"
-	},
-	{
-		"name": "DeGroot Keep",
-		"thumbnail": "-6791763171644497060",
-		"image": "-6791763171644497060",
-		"gameModes": ["Medieval Mode"],
-		"releaseDate": "2010-12-17"
-	},
-	{
-		"name": "Sandcastle",
-		"thumbnail": "3033297607186067349",
-		"image": "3033297607186067349",
-		"gameModes": ["Medieval Mode"],
-		"releaseDate": "2023-10-09"
-	},
-	{
-		"name": "Standin",
-		"thumbnail": "1445499723587332885",
-		"image": "1445499723587332885",
-		"gameModes": ["Domination"],
-		"releaseDate": "2013-07-10"
-	},
-	{
-		"name": "Hydro",
-		"thumbnail": "-1496746068893160614",
-		"image": "-1496746068893160614",
-		"gameModes": ["Territorial Control"],
-		"releaseDate": "2007-10-10"
-	},
-	{
-		"name": "Badwater Basin",
-		"thumbnail": "-2244781919844443304",
-		"image": "-2244781919844443304",
-		"gameModes": ["Payload"],
-		"releaseDate": "2008-08-19"
-	},
-	{
-		"name": "Barnblitz",
-		"thumbnail": "-3306266072032226085",
-		"image": "-3306266072032226085",
-		"gameModes": ["Payload"],
-		"releaseDate": "2011-06-23"
-	},
-	{
-		"name": "Bloodwater",
-		"thumbnail": "8688736637861042908",
-		"image": "8688736637861042908",
-		"gameModes": ["Payload"],
-		"releaseDate": "2020-10-01"
-	},
-	{
-		"name": "Borneo",
-		"thumbnail": "5468946264216165893",
-		"image": "5468946264216165893",
-		"gameModes": ["Payload"],
-		"releaseDate": "2015-07-02"
-	},
-	{
-		"name": "Bread Space",
-		"thumbnail": "-559713105067143222",
-		"image": "-559713105067143222",
-		"gameModes": ["Payload"],
-		"releaseDate": "2021-12-02"
-	},
-	{
-		"name": "Cactus Canyon",
-		"thumbnail": "-3588636098292660221",
-		"image": "-3588636098292660221",
-		"gameModes": ["Payload"],
-		"releaseDate": "2014-07-08"
-	},
-	{
-		"name": "Brimstone",
-		"thumbnail": "-8623014522858455746",
-		"image": "-8623014522858455746",
-		"gameModes": ["Payload"],
-		"releaseDate": "2016-10-21"
-	},
-	{
-		"name": "Camber",
-		"thumbnail": "3460252260920232655",
-		"image": "3460252260920232655",
-		"gameModes": ["Payload"],
-		"releaseDate": "2023-12-07"
-	},
-	{
-		"name": "Cashworks",
-		"thumbnail": "4936337296444964138",
-		"image": "4936337296444964138",
-		"gameModes": ["Payload"],
-		"releaseDate": "2023-07-12"
-	},
-	{
-		"name": "Chilly",
-		"thumbnail": "-4946665451797266608",
-		"image": "-4946665451797266608",
-		"gameModes": ["Payload"],
-		"releaseDate": "2021-12-02"
-	},
-	{
-		"name": "Corruption",
-		"thumbnail": "-1343871505596197079",
-		"image": "-1343871505596197079",
-		"gameModes": ["Payload"],
-		"releaseDate": "2023-10-09"
-	},
-	{
-		"name": "Embargo",
-		"thumbnail": "8545035381404628022",
-		"image": "8545035381404628022",
-		"gameModes": ["Payload"],
-		"releaseDate": "2024-07-18"
-	},
-	{
-		"name": "Emerge",
-		"thumbnail": "-823359860191741628",
-		"image": "-823359860191741628",
-		"gameModes": ["Payload"],
-		"releaseDate": "2023-12-07"
-	},
-	{
-		"name": "Enclosure",
-		"thumbnail": "2540258593949960451",
-		"image": "2540258593949960451",
-		"gameModes": ["Payload"],
-		"releaseDate": "2017-10-20"
-	},
-	{
-		"name": "Frontier",
-		"thumbnail": "6409605195324205975",
-		"image": "6409605195324205975",
-		"gameModes": ["Payload"],
-		"releaseDate": "2011-02-24"
-	},
-	{
-		"name": "Frostcliff",
-		"thumbnail": "-7966533165090486118",
-		"image": "-7966533165090486118",
-		"gameModes": ["Payload"],
-		"releaseDate": "2022-12-05"
-	},
-	{
-		"name": "Gold Rush",
-		"thumbnail": "-5171503478003800526",
-		"image": "-5171503478003800526",
-		"gameModes": ["Payload"],
-		"releaseDate": "2008-04-29"
-	},
-	{
-		"name": "Gravestone",
-		"thumbnail": "2381692743804834669",
-		"image": "2381692743804834669",
-		"gameModes": ["Payload"],
-		"releaseDate": "2018-10-19"
-	},
-	{
-		"name": "Ghoulpit",
-		"thumbnail": "-4476345883392804970",
-		"image": "-4476345883392804970",
-		"gameModes": ["Payload"],
-		"releaseDate": "2022-10-05"
-	},
-	{
-		"name": "Hassle Castle",
-		"thumbnail": "-8790142089103692532",
-		"image": "-8790142089103692532",
-		"gameModes": ["Payload"],
-		"releaseDate": "2020-10-01"
-	},
-	{
-		"name": "Hellstone",
-		"thumbnail": "5593804498870454245",
-		"image": "5593804498870454245",
-		"gameModes": ["Payload"],
-		"releaseDate": "2015-10-28"
-	},
-	{
-		"name": "Hoodoo",
-		"thumbnail": "-7392043600550846572",
-		"image": "-7392043600550846572",
-		"gameModes": ["Payload"],
-		"releaseDate": "2009-05-21"
-	},
-	{
-		"name": "Odyssey",
-		"thumbnail": "7708395545319208591",
-		"image": "7708395545319208591",
-		"gameModes": ["Payload"],
-		"releaseDate": "2024-07-18"
-	},
-	{
-		"name": "Patagonia",
-		"thumbnail": "-380880263938121639",
-		"image": "-380880263938121639",
-		"gameModes": ["Payload"],
-		"releaseDate": "2024-12-11"
-	},
-	{
-		"name": "Phoenix",
-		"thumbnail": "5807871867186496210",
-		"image": "5807871867186496210",
-		"gameModes": ["Payload"],
-		"releaseDate": "2023-07-12"
-	},
-	{
-		"name": "Pier",
-		"thumbnail": "6284732207434746240",
-		"image": "6284732207434746240",
-		"gameModes": ["Payload"],
-		"releaseDate": "2020-12-03"
-	},
-	{
-		"name": "Polar",
-		"thumbnail": "-2780914711681122206",
-		"image": "-2780914711681122206",
-		"gameModes": ["Payload"],
-		"releaseDate": "2021-12-02"
-	},
-	{
-		"name": "Precipice",
-		"thumbnail": "7240308726981018113",
-		"image": "7240308726981018113",
-		"gameModes": ["Payload"],
-		"releaseDate": "2019-10-10"
-	},
-	{
-		"name": "Rumford",
-		"thumbnail": "3555074022568945901",
-		"image": "3555074022568945901",
-		"gameModes": ["Payload"],
-		"releaseDate": "2022-12-05"
-	},
-	{
-		"name": "Snowycoast",
-		"thumbnail": "-6936809685024853977",
-		"image": "-6936809685024853977",
-		"gameModes": ["Payload"],
-		"releaseDate": "2015-12-17"
-	},
-	{
-		"name": "Spineyard",
-		"thumbnail": "135354431255395001",
-		"image": "135354431255395001",
-		"gameModes": ["Payload"],
-		"releaseDate": "2023-10-09"
-	},
-	{
-		"name": "Swiftwater",
-		"thumbnail": "1053905193150239411",
-		"image": "1053905193150239411",
-		"gameModes": ["Payload"],
-		"releaseDate": "2016-07-07"
-	},
-	{
-		"name": "Terror",
-		"thumbnail": "1506727892352441688",
-		"image": "1506727892352441688",
-		"gameModes": ["Payload"],
-		"releaseDate": "2021-10-05"
-	},
-	{
-		"name": "Thunder Mountain",
-		"thumbnail": "8007290994531791640",
-		"image": "8007290994531791640",
-		"gameModes": ["Payload"],
-		"releaseDate": "2010-07-08"
-	},
-	{
-		"name": "Upward",
-		"thumbnail": "7175246611523533695",
-		"image": "7175246611523533695",
-		"gameModes": ["Payload"],
-		"releaseDate": "2010-07-08"
-	},
-	{
-		"name": "Venice",
-		"thumbnail": "787841219240956683",
-		"image": "787841219240956683",
-		"gameModes": ["Payload"],
-		"releaseDate": "2023-07-12"
-	},
-	{
-		"name": "Wutville",
-		"thumbnail": "2409452027931261823",
-		"image": "2409452027931261823",
-		"gameModes": ["Payload"],
-		"releaseDate": "2020-12-03"
-	},
-	{
-		"name": "Banana Bay",
-		"thumbnail": "289813987694161602",
-		"image": "289813987694161602",
-		"gameModes": ["Payload Race"],
-		"releaseDate": "2017-10-20"
-	},
-	{
-		"name": "Bonesaw",
-		"thumbnail": "5203054947212101374",
-		"image": "5203054947212101374",
-		"gameModes": ["Payload Race"],
-		"releaseDate": "2022-10-05"
-	},
-	{
-		"name": "Cutter",
-		"thumbnail": "-8660497124951533401",
-		"image": "-8660497124951533401",
-		"gameModes": ["Payload Race"],
-		"releaseDate": "2024-12-11"
-	},
-	{
-		"name": "Hacksaw",
-		"thumbnail": "-8835064563731193540",
-		"image": "-8835064563731193540",
-		"gameModes": ["Payload Race"],
-		"releaseDate": "2023-12-07"
-	},
-	{
-		"name": "Helltower",
-		"thumbnail": "-5438283797361349337",
-		"image": "-5438283797361349337",
-		"gameModes": ["Payload Race"],
-		"releaseDate": "2013-10-29"
-	},
-	{
-		"name": "Hightower",
-		"thumbnail": "-7184285271723019868",
-		"image": "-7184285271723019868",
-		"gameModes": ["Payload Race"],
-		"releaseDate": "2010-07-08"
-	},
-	{
-		"name": "Nightfall",
-		"thumbnail": "512405117594369569",
-		"image": "512405117594369569",
-		"gameModes": ["Payload Race"],
-		"releaseDate": "2011-02-24"
-	},
-	{
-		"name": "Pipeline",
-		"thumbnail": "-5822443425683866458",
-		"image": "-5822443425683866458",
-		"gameModes": ["Payload Race"],
-		"releaseDate": "2009-05-21"
-	},
-	{
-		"name": "Badlands (Arena)",
-		"thumbnail": "-7754384399832120789",
-		"image": "-7754384399832120789",
-		"gameModes": ["Arena"],
-		"releaseDate": "2008-08-19"
-	},
-	{
-		"name": "Byre",
-		"thumbnail": "-645557165906597860",
-		"image": "-645557165906597860",
-		"gameModes": ["Arena"],
-		"releaseDate": "2015-10-06"
-	},
-	{
-		"name": "Granary (Arena)",
-		"thumbnail": "8819677470967866460",
-		"image": "8819677470967866460",
-		"gameModes": ["Arena"],
-		"releaseDate": "2008-08-19"
-	},
-	{
-		"name": "Graveyard",
-		"thumbnail": "8560481792589500331",
-		"image": "8560481792589500331",
-		"gameModes": ["Arena"],
-		"releaseDate": "2021-10-05"
-	},
-	{
-		"name": "Lumberyard",
-		"thumbnail": "346636977639053275",
-		"image": "346636977639053275",
-		"gameModes": ["Arena"],
-		"releaseDate": "2008-08-19"
-	},
-	{
-		"name": "Nucleus (Arena)",
-		"thumbnail": "2378603545296827478",
-		"image": "2378603545296827478",
-		"gameModes": ["Arena"],
-		"releaseDate": "2009-05-21"
-	},
-	{
-		"name": "Offblast",
-		"thumbnail": "-1949885728342856407",
-		"image": "-1949885728342856407",
-		"gameModes": ["Arena"],
-		"releaseDate": "2009-08-13"
-	},
-	{
-		"name": "Perks",
-		"thumbnail": "-6862763404817804494",
-		"image": "-6862763404817804494",
-		"gameModes": ["Arena"],
-		"releaseDate": "2023-10-09"
-	},
-	{
-		"name": "Ravine",
-		"thumbnail": "530050264777294136",
-		"image": "530050264777294136",
-		"gameModes": ["Arena"],
-		"releaseDate": "2008-08-19"
-	},
-	{
-		"name": "Sawmill (Arena)",
-		"thumbnail": "-1946357335805474131",
-		"image": "-1946357335805474131",
-		"gameModes": ["Arena"],
-		"releaseDate": "2009-05-21"
-	},
-	{
-		"name": "Watchtower",
-		"thumbnail": "-2763401823576812951",
-		"image": "-2763401823576812951",
-		"gameModes": ["Arena"],
-		"releaseDate": "2009-02-24"
-	},
-	{
-		"name": "Well (Arena)",
-		"thumbnail": "-6327770498335033050",
-		"image": "-6327770498335033050",
-		"gameModes": ["Arena"],
-		"releaseDate": "2008-08-19"
-	},
-	{
-		"name": "Badlands (King of the Hill)",
-		"thumbnail": "-7423011340447455580",
-		"image": "-7423011340447455580",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2011-04-14"
-	},
-	{
-		"name": "Brazil",
-		"thumbnail": "-6134113818901584210",
-		"image": "-6134113818901584210",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2017-10-20"
-	},
-	{
-		"name": "Cachoeira",
-		"thumbnail": "1379688895814857666",
-		"image": "1379688895814857666",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2024-07-18"
-	},
-	{
-		"name": "Cascade",
-		"thumbnail": "-7448147592823299553",
-		"image": "-7448147592823299553",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2021-12-02"
-	},
-	{
-		"name": "Cauldron",
-		"thumbnail": "6370130047631415359",
-		"image": "6370130047631415359",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2018-10-19"
-	},
-	{
-		"name": "Eyeaduct",
-		"thumbnail": "-6735017482119709264",
-		"image": "-6735017482119709264",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2011-10-27"
-	},
-	{
-		"name": "Ghost Fort",
-		"thumbnail": "-8287635372729053454",
-		"image": "-8287635372729053454",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2012-10-26"
-	},
-	{
-		"name": "Harvest",
-		"thumbnail": "-6417015145407026099",
-		"image": "-6417015145407026099",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2009-10-29"
-	},
-	{
-		"name": "Harvest Event",
-		"thumbnail": "-4196595318557471135",
-		"image": "-4196595318557471135",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2009-10-29"
-	},
-	{
-		"name": "Highpass",
-		"thumbnail": "-8132654288390554433",
-		"image": "-8132654288390554433",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2015-12-17"
-	},
-	{
-		"name": "Kong King",
-		"thumbnail": "-5460191723015205905",
-		"image": "-5460191723015205905",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2012-08-10"
-	},
-	{
-		"name": "Krampus",
-		"thumbnail": "5558636247125331975",
-		"image": "5558636247125331975",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2023-12-07"
-	},
-	{
-		"name": "Lakeside",
-		"thumbnail": "-3177690447775796164",
-		"image": "-3177690447775796164",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2011-02-24"
-	},
-	{
-		"name": "Laughter",
-		"thumbnail": "-8849330405850256345",
-		"image": "-8849330405850256345",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2019-10-10"
-	},
-	{
-		"name": "Lazarus",
-		"thumbnail": "7189271643221516884",
-		"image": "7189271643221516884",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2017-10-20"
-	},
-	{
-		"name": "Los Muertos",
-		"thumbnail": "-948406308473867957",
-		"image": "-948406308473867957",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2021-10-05"
-	},
-	{
-		"name": "Maple Ridge Event",
-		"thumbnail": "5589951579635398861",
-		"image": "5589951579635398861",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2016-10-21"
-	},
-	{
-		"name": "Megalo",
-		"thumbnail": "-8872949372861315303",
-		"image": "-8872949372861315303",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2020-10-01"
-	},
-	{
-		"name": "Megaton",
-		"thumbnail": "9002351881492239425",
-		"image": "9002351881492239425",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2024-07-18"
-	},
-	{
-		"name": "Moldergrove",
-		"thumbnail": "7624319290864920624",
-		"image": "7624319290864920624",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2020-10-01"
-	},
-	{
-		"name": "Moonshine Event",
-		"thumbnail": "-3394986429070124328",
-		"image": "-3394986429070124328",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2015-10-28"
-	},
-	{
-		"name": "Nucleus (King of the Hill)",
-		"thumbnail": "-4905486004276796326",
-		"image": "-4905486004276796326",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2009-08-13"
-	},
-	{
-		"name": "Overcast",
-		"thumbnail": "-178749562342662369",
-		"image": "-178749562342662369",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2024-12-11"
-	},
-	{
-		"name": "Probed",
-		"thumbnail": "8893483557863198605",
-		"image": "8893483557863198605",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2015-10-06"
-	},
-	{
-		"name": "Rotunda",
-		"thumbnail": "-4216435568227257776",
-		"image": "-4216435568227257776",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2023-07-12"
-	},
-	{
-		"name": "Sawmill (King of the Hill)",
-		"thumbnail": "-8411112726005507935",
-		"image": "-8411112726005507935",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2009-08-13"
-	},
-	{
-		"name": "Sharkbay",
-		"thumbnail": "7743081076106037422",
-		"image": "7743081076106037422",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2023-07-12"
-	},
-	{
-		"name": "Sinthetic",
-		"thumbnail": "3651995625984057313",
-		"image": "3651995625984057313",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2021-10-05"
-	},
-	{
-		"name": "Slasher",
-		"thumbnail": "7472716390635692916",
-		"image": "7472716390635692916",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2018-10-19"
-	},
-	{
-		"name": "Slime",
-		"thumbnail": "-4771676398347130561",
-		"image": "-4771676398347130561",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2023-10-09"
-	},
-	{
-		"name": "Snowtower",
-		"thumbnail": "1613022882122681387",
-		"image": "1613022882122681387",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2023-12-07"
-	},
-	{
-		"name": "Soul-Mill",
-		"thumbnail": "323837647252857821",
-		"image": "323837647252857821",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2022-10-05"
-	},
-	{
-		"name": "Suijin",
-		"thumbnail": "-1730195850449433864",
-		"image": "-1730195850449433864",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2015-07-02"
-	},
-	{
-		"name": "Toxic",
-		"thumbnail": "-3478921265512103281",
-		"image": "-3478921265512103281",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2024-10-10"
-	},
-	{
-		"name": "Viaduct",
-		"thumbnail": "6113192989790778250",
-		"image": "6113192989790778250",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2009-08-13"
-	},
-	{
-		"name": "Carnival of Carnage",
-		"thumbnail": "8025153319680172222",
-		"image": "8025153319680172222",
-		"gameModes": ["Special Delivery"],
-		"releaseDate": "2014-10-29"
-	},
-	{
-		"name": "Doomsday",
-		"thumbnail": "6074847954843033899",
-		"image": "6074847954843033899",
-		"gameModes": ["Special Delivery"],
-		"releaseDate": "2012-06-27"
-	},
-	{
-		"name": "Dustbowl (Training)",
-		"thumbnail": "4122741217894433198",
-		"image": "4122741217894433198",
-		"gameModes": ["Training Mode"],
-		"releaseDate": "2010-06-10"
-	},
-	{
-		"name": "Target",
-		"thumbnail": "-8167053754918207093",
-		"image": "-8167053754918207093",
-		"gameModes": ["Training Mode"],
-		"releaseDate": "2010-06-10"
-	},
-	{
-		"name": "Itemtest",
-		"thumbnail": "-7644492924836444891",
-		"image": "-7644492924836444891",
-		"gameModes": ["Test"],
-		"releaseDate": "2010-06-10"
-	},
-	{
-		"name": "Cloak (Control Point)",
-		"thumbnail": "-187306661012473894",
-		"image": "-187306661012473894",
-		"gameModes": ["N/A"],
-		"releaseDate": "2010-12-17"
-	},
-	{
-		"name": "Bigrock",
-		"thumbnail": "3548663208061138622",
-		"image": "3548663208061138622",
-		"gameModes": ["Mann vs. Machine"],
-		"releaseDate": "2012-12-20"
-	},
-	{
-		"name": "Coal Town",
-		"thumbnail": "-5910776720147243023",
-		"image": "-5910776720147243023",
-		"gameModes": ["Mann vs. Machine"],
-		"releaseDate": "2012-08-15"
-	},
-	{
-		"name": "Decoy",
-		"thumbnail": "6684578431857962699",
-		"image": "6684578431857962699",
-		"gameModes": ["Mann vs. Machine"],
-		"releaseDate": "2012-08-15"
-	},
-	{
-		"name": "Example",
-		"thumbnail": "8963959189450932840",
-		"image": "8963959189450932840",
-		"gameModes": ["Mann vs. Machine"],
-		"releaseDate": "2012-08-15"
-	},
-	{
-		"name": "Ghost Town",
-		"thumbnail": "-412544309479953433",
-		"image": "-412544309479953433",
-		"gameModes": ["Mann vs. Machine"],
-		"releaseDate": "2012-10-26"
-	},
-	{
-		"name": "Mannhattan",
-		"thumbnail": "4616155506271740267",
-		"image": "4616155506271740267",
-		"gameModes": ["Mann vs. Machine"],
-		"releaseDate": "2013-11-21"
-	},
-	{
-		"name": "Mannworks",
-		"thumbnail": "3636700778915295788",
-		"image": "3636700778915295788",
-		"gameModes": ["Mann vs. Machine"],
-		"releaseDate": "2012-08-15"
-	},
-	{
-		"name": "Rottenburg",
-		"thumbnail": "4351943302388880400",
-		"image": "4351943302388880400",
-		"gameModes": ["Mann vs. Machine"],
-		"releaseDate": "2013-11-21"
-	},
-	{
-		"name": "Asteroid",
-		"thumbnail": "-6090515305453928484",
-		"image": "-6090515305453928484",
-		"gameModes": ["Robot Destruction"],
-		"releaseDate": "2014-07-08"
-	},
-	{
-		"name": "Foundry (Capture the Flag)",
-		"thumbnail": "-6098925480838827052",
-		"image": "-6098925480838827052",
-		"gameModes": ["Mannpower"],
-		"releaseDate": "2014-12-22"
-	},
-	{
-		"name": "Gorge (Capture the Flag)",
-		"thumbnail": "841384051907170211",
-		"image": "841384051907170211",
-		"gameModes": ["Mannpower"],
-		"releaseDate": "2014-12-22"
-	},
-	{
-		"name": "Hellfire",
-		"thumbnail": "6959854158514060814",
-		"image": "6959854158514060814",
-		"gameModes": ["Mannpower"],
-		"releaseDate": "2015-10-28"
-	},
-	{
-		"name": "Thunder Mountain (Capture the Flag)",
-		"thumbnail": "23667586893509584",
-		"image": "23667586893509584",
-		"gameModes": ["Mannpower"],
-		"releaseDate": "2015-03-12"
-	},
-	{
-		"name": "Brickyard",
-		"thumbnail": "-8109634171158165212",
-		"image": "-8109634171158165212",
-		"gameModes": ["PASS Time"],
-		"releaseDate": "2015-08-18"
-	},
-	{
-		"name": "District",
-		"thumbnail": "1823963443705510273",
-		"image": "1823963443705510273",
-		"gameModes": ["PASS Time"],
-		"releaseDate": "2016-07-07"
-	},
-	{
-		"name": "Timbertown",
-		"thumbnail": "-3589815797076357131",
-		"image": "-3589815797076357131",
-		"gameModes": ["PASS Time"],
-		"releaseDate": "2015-11-25"
-	},
-	{
-		"name": "Atom Smash",
-		"thumbnail": "-3578940596437631741",
-		"image": "-3578940596437631741",
-		"gameModes": ["Player Destruction"],
-		"releaseDate": "2024-07-18"
-	},
-	{
-		"name": "Circus",
-		"thumbnail": "2163585908683570896",
-		"image": "2163585908683570896",
-		"gameModes": ["Player Destruction"],
-		"releaseDate": "2024-10-10"
-	},
-	{
-		"name": "Cursed Cove",
-		"thumbnail": "-5527665915461326502",
-		"image": "-5527665915461326502",
-		"gameModes": ["Player Destruction"],
-		"releaseDate": "2018-10-19"
-	},
-	{
-		"name": "Farmageddon",
-		"thumbnail": "8345512073473458403",
-		"image": "8345512073473458403",
-		"gameModes": ["Player Destruction"],
-		"releaseDate": "2021-10-05"
-	},
-	{
-		"name": "Galleria",
-		"thumbnail": "-8351921640594389658",
-		"image": "-8351921640594389658",
-		"gameModes": ["Player Destruction"],
-		"releaseDate": "2023-12-07"
-	},
-	{
-		"name": "Mannsylvania",
-		"thumbnail": "6709696716108805030",
-		"image": "6709696716108805030",
-		"gameModes": ["Player Destruction"],
-		"releaseDate": "2023-10-09"
-	},
-	{
-		"name": "Monster Bash",
-		"thumbnail": "2672948341975955518",
-		"image": "2672948341975955518",
-		"gameModes": ["Player Destruction"],
-		"releaseDate": "2018-10-19"
-	},
-	{
-		"name": "Pit of Death",
-		"thumbnail": "775490038831811761",
-		"image": "775490038831811761",
-		"gameModes": ["Player Destruction"],
-		"releaseDate": "2016-10-21"
-	},
-	{
-		"name": "Selbyen",
-		"thumbnail": "6605081660089514501",
-		"image": "6605081660089514501",
-		"gameModes": ["Player Destruction"],
-		"releaseDate": "2023-07-12"
-	},
-	{
-		"name": "SnowVille",
-		"thumbnail": "8920993529781170773",
-		"image": "8920993529781170773",
-		"gameModes": ["Player Destruction"],
-		"releaseDate": "2020-12-03"
-	},
-	{
-		"name": "Watergate",
-		"thumbnail": "5085105396225042578",
-		"image": "5085105396225042578",
-		"gameModes": ["Player Destruction"],
-		"releaseDate": "2015-10-06"
-	},
-	{
-		"name": "Distillery",
-		"thumbnail": "3239021153526100162",
-		"image": "3239021153526100162",
-		"gameModes": ["Versus Saxton Hale"],
-		"releaseDate": "2023-07-12"
-	},
-	{
-		"name": "Maul",
-		"thumbnail": "6082499910414135335",
-		"image": "6082499910414135335",
-		"gameModes": ["Versus Saxton Hale"],
-		"releaseDate": "2024-12-11"
-	},
-	{
-		"name": "Nucleus VSH",
-		"thumbnail": "-7530902052390294180",
-		"image": "-7530902052390294180",
-		"gameModes": ["Versus Saxton Hale"],
-		"releaseDate": "2023-07-12"
-	},
-	{
-		"name": "Outburst",
-		"thumbnail": "-4485908826772061671",
-		"image": "-4485908826772061671",
-		"gameModes": ["Versus Saxton Hale"],
-		"releaseDate": "2024-10-10"
-	},
-	{
-		"name": "Skirmish",
-		"thumbnail": "-2341539794084988549",
-		"image": "-2341539794084988549",
-		"gameModes": ["Versus Saxton Hale"],
-		"releaseDate": "2023-07-12"
-	},
-	{
-		"name": "Tiny Rock",
-		"thumbnail": "1831289129165148866",
-		"image": "1831289129165148866",
-		"gameModes": ["Versus Saxton Hale"],
-		"releaseDate": "2023-07-12"
-	},
-	{
-		"name": "Atoll",
-		"thumbnail": "7790725222803275017",
-		"image": "7790725222803275017",
-		"gameModes": ["Zombie Infection"],
-		"releaseDate": "2023-10-09"
-	},
-	{
-		"name": "Blazehattan",
-		"thumbnail": "1805539260566439416",
-		"image": "1805539260566439416",
-		"gameModes": ["Zombie Infection"],
-		"releaseDate": "2024-10-10"
-	},
-	{
-		"name": "Devastation",
-		"thumbnail": "3345616417581491582",
-		"image": "3345616417581491582",
-		"gameModes": ["Zombie Infection"],
-		"releaseDate": "2023-10-09"
-	},
-	{
-		"name": "Murky",
-		"thumbnail": "8849793952754050611",
-		"image": "8849793952754050611",
-		"gameModes": ["Zombie Infection"],
-		"releaseDate": "2023-10-09"
-	},
-	{
-		"name": "Sanitarium",
-		"thumbnail": "6430132297935072623",
-		"image": "6430132297935072623",
-		"gameModes": ["Zombie Infection"],
-		"releaseDate": "2023-10-09"
-	},
-	{
-		"name": "Woods",
-		"thumbnail": "4730302420077244410",
-		"image": "4730302420077244410",
-		"gameModes": ["Zombie Infection"],
-		"releaseDate": "2023-10-09"
-	},
-	{
-		"name": "Dynamite",
-		"thumbnail": "-7861415016257164214",
-		"image": "-7861415016257164214",
-		"gameModes": ["Tug of War"],
-		"releaseDate": "2024-10-10"
-	},
-	{
-		"name": "Pressure",
-		"thumbnail": "-8852752354603677019",
-		"image": "-8852752354603677019",
-		"gameModes": ["Capture the Flag"],
-		"releaseDate": "2025-07-24"
-	},
-	{
-		"name": "Cargo",
-		"thumbnail": "-8715172581890198722",
-		"image": "-8715172581890198722",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2025-07-24"
-	},
-	{
-		"name": "Conifer",
-		"thumbnail": "2441671316609319560",
-		"image": "2441671316609319560",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2025-07-24"
-	},
-	{
-		"name": "Fulgur",
-		"thumbnail": "-8324283035639709056",
-		"image": "-8324283035639709056",
-		"gameModes": ["Attack/Defend"],
-		"releaseDate": "2025-07-24"
-	},
-	{
-		"name": "Aquarius",
-		"thumbnail": "6905558769202597565",
-		"image": "6905558769202597565",
-		"gameModes": ["Payload"],
-		"releaseDate": "2025-07-24"
-	},
-	{
-		"name": "Citadel",
-		"thumbnail": "-8423282641470706366",
-		"image": "-8423282641470706366",
-		"gameModes": ["Payload"],
-		"releaseDate": "2025-07-24"
-	},
-	{
-		"name": "Blowout",
-		"thumbnail": "-2912814632747926650",
-		"image": "-2912814632747926650",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2025-07-24"
-	},
-	{
-		"name": "Boardwalk",
-		"thumbnail": "6027954045210058613",
-		"image": "6027954045210058613",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2025-07-24"
-	},
-	{
-		"name": "Demolition",
-		"thumbnail": "-7931499484017216801",
-		"image": "-7931499484017216801",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2025-07-24"
-	},
-	{
-		"name": "Mannhole",
-		"thumbnail": "-4493599208058467134",
-		"image": "-4493599208058467134",
-		"gameModes": ["King of the Hill"],
-		"releaseDate": "2025-07-24"
-	}
+    {
+        "name": "2Fort",
+        "thumbnail": "16711355445123759298",
+        "image": "16711355445123759298",
+        "gameModes": [
+            "Capture the Flag"
+        ],
+        "releaseDate": "2007-10-10"
+    },
+    {
+        "name": "Dustbowl",
+        "thumbnail": "7858461064959035596",
+        "image": "7858461064959035596",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2007-10-10"
+    },
+    {
+        "name": "Granary (Control Point)",
+        "thumbnail": "17822483388406861043",
+        "image": "17822483388406861043",
+        "gameModes": [
+            "Control Point"
+        ],
+        "releaseDate": "2007-10-10"
+    },
+    {
+        "name": "Gravel Pit",
+        "thumbnail": "3219589182475361272",
+        "image": "3219589182475361272",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2007-10-10"
+    },
+    {
+        "name": "Hydro",
+        "thumbnail": "9292811153875003169",
+        "image": "9292811153875003169",
+        "gameModes": [
+            "Territorial Control"
+        ],
+        "releaseDate": "2007-10-10"
+    },
+    {
+        "name": "Well (Control Point)",
+        "thumbnail": "4356975451631819626",
+        "image": "4356975451631819626",
+        "gameModes": [
+            "Control Point"
+        ],
+        "releaseDate": "2007-10-10"
+    },
+    {
+        "name": "Well (Capture the Flag)",
+        "thumbnail": "12992972914060450989",
+        "image": "12992972914060450989",
+        "gameModes": [
+            "Capture the Flag"
+        ],
+        "releaseDate": "2008-01-25"
+    },
+    {
+        "name": "Badlands (Control Point)",
+        "thumbnail": "17818034564577229741",
+        "image": "17818034564577229741",
+        "gameModes": [
+            "Control Point"
+        ],
+        "releaseDate": "2008-02-14"
+    },
+    {
+        "name": "Gold Rush",
+        "thumbnail": "7854211493566243321",
+        "image": "7854211493566243321",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2008-04-29"
+    },
+    {
+        "name": "Fastlane",
+        "thumbnail": "9010374862976103091",
+        "image": "9010374862976103091",
+        "gameModes": [
+            "Control Point"
+        ],
+        "releaseDate": "2008-06-19"
+    },
+    {
+        "name": "Turbine",
+        "thumbnail": "2569016254701152982",
+        "image": "2569016254701152982",
+        "gameModes": [
+            "Capture the Flag"
+        ],
+        "releaseDate": "2008-06-19"
+    },
+    {
+        "name": "Badlands (Arena)",
+        "thumbnail": "2181178929413136783",
+        "image": "2181178929413136783",
+        "gameModes": [
+            "Arena"
+        ],
+        "releaseDate": "2008-08-19"
+    },
+    {
+        "name": "Badwater Basin",
+        "thumbnail": "13627014948509911017",
+        "image": "13627014948509911017",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2008-08-19"
+    },
+    {
+        "name": "Granary (Arena)",
+        "thumbnail": "16077533841108191742",
+        "image": "16077533841108191742",
+        "gameModes": [
+            "Arena"
+        ],
+        "releaseDate": "2008-08-19"
+    },
+    {
+        "name": "Lumberyard",
+        "thumbnail": "15430526272583235124",
+        "image": "15430526272583235124",
+        "gameModes": [
+            "Arena"
+        ],
+        "releaseDate": "2008-08-19"
+    },
+    {
+        "name": "Ravine",
+        "thumbnail": "16669543537616987634",
+        "image": "16669543537616987634",
+        "gameModes": [
+            "Arena"
+        ],
+        "releaseDate": "2008-08-19"
+    },
+    {
+        "name": "Steel",
+        "thumbnail": "16904670018972608860",
+        "image": "16904670018972608860",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2008-08-19"
+    },
+    {
+        "name": "Well (Arena)",
+        "thumbnail": "2292985826702696565",
+        "image": "2292985826702696565",
+        "gameModes": [
+            "Arena"
+        ],
+        "releaseDate": "2008-08-19"
+    },
+    {
+        "name": "Egypt",
+        "thumbnail": "6159822140861335701",
+        "image": "6159822140861335701",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2009-02-24"
+    },
+    {
+        "name": "Junction",
+        "thumbnail": "17206998281481658607",
+        "image": "17206998281481658607",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2009-02-24"
+    },
+    {
+        "name": "Watchtower",
+        "thumbnail": "3691043346844316694",
+        "image": "3691043346844316694",
+        "gameModes": [
+            "Arena"
+        ],
+        "releaseDate": "2009-02-24"
+    },
+    {
+        "name": "Hoodoo",
+        "thumbnail": "9529168120604653162",
+        "image": "9529168120604653162",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2009-05-21"
+    },
+    {
+        "name": "Nucleus (Arena)",
+        "thumbnail": "10967666711429095186",
+        "image": "10967666711429095186",
+        "gameModes": [
+            "Arena"
+        ],
+        "releaseDate": "2009-05-21"
+    },
+    {
+        "name": "Pipeline",
+        "thumbnail": "4026718851270104725",
+        "image": "4026718851270104725",
+        "gameModes": [
+            "Payload Race"
+        ],
+        "releaseDate": "2009-05-21"
+    },
+    {
+        "name": "Sawmill (Arena)",
+        "thumbnail": "12633370210693826087",
+        "image": "12633370210693826087",
+        "gameModes": [
+            "Arena"
+        ],
+        "releaseDate": "2009-05-21"
+    },
+    {
+        "name": "Nucleus (King of the Hill)",
+        "thumbnail": "6663725751562111970",
+        "image": "6663725751562111970",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2009-08-13"
+    },
+    {
+        "name": "Offblast",
+        "thumbnail": "12491664793161203220",
+        "image": "12491664793161203220",
+        "gameModes": [
+            "Arena"
+        ],
+        "releaseDate": "2009-08-13"
+    },
+    {
+        "name": "Sawmill (Capture the Flag)",
+        "thumbnail": "3825515793233361093",
+        "image": "3825515793233361093",
+        "gameModes": [
+            "Capture the Flag"
+        ],
+        "releaseDate": "2009-08-13"
+    },
+    {
+        "name": "Sawmill (King of the Hill)",
+        "thumbnail": "5340286164387907347",
+        "image": "5340286164387907347",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2009-08-13"
+    },
+    {
+        "name": "Viaduct",
+        "thumbnail": "9878388607043278730",
+        "image": "9878388607043278730",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2009-08-13"
+    },
+    {
+        "name": "Yukon",
+        "thumbnail": "2282916441441402416",
+        "image": "2282916441441402416",
+        "gameModes": [
+            "Control Point"
+        ],
+        "releaseDate": "2009-08-13"
+    },
+    {
+        "name": "Harvest",
+        "thumbnail": "14491097843331709964",
+        "image": "14491097843331709964",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2009-10-29"
+    },
+    {
+        "name": "Harvest Event",
+        "thumbnail": "10027735457897422576",
+        "image": "10027735457897422576",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2009-10-29"
+    },
+    {
+        "name": "Double Cross",
+        "thumbnail": "12545790894728218412",
+        "image": "12545790894728218412",
+        "gameModes": [
+            "Capture the Flag"
+        ],
+        "releaseDate": "2009-12-17"
+    },
+    {
+        "name": "Gorge",
+        "thumbnail": "5750838272020783369",
+        "image": "5750838272020783369",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2009-12-17"
+    },
+    {
+        "name": "Freight",
+        "thumbnail": "10195397560680569843",
+        "image": "10195397560680569843",
+        "gameModes": [
+            "Control Point"
+        ],
+        "releaseDate": "2010-04-28"
+    },
+    {
+        "name": "Dustbowl (Training)",
+        "thumbnail": "5410255251982240638",
+        "image": "5410255251982240638",
+        "gameModes": [
+            "Training Mode"
+        ],
+        "releaseDate": "2010-06-10"
+    },
+    {
+        "name": "Target",
+        "thumbnail": "10917663221452176504",
+        "image": "10917663221452176504",
+        "gameModes": [
+            "Training Mode"
+        ],
+        "releaseDate": "2010-06-10"
+    },
+    {
+        "name": "Coldfront",
+        "thumbnail": "6390015094239320912",
+        "image": "6390015094239320912",
+        "gameModes": [
+            "Control Point"
+        ],
+        "releaseDate": "2010-07-08"
+    },
+    {
+        "name": "Hightower",
+        "thumbnail": "5304852097677369709",
+        "image": "5304852097677369709",
+        "gameModes": [
+            "Payload Race"
+        ],
+        "releaseDate": "2010-07-08"
+    },
+    {
+        "name": "Thunder Mountain",
+        "thumbnail": "11898629925783508089",
+        "image": "11898629925783508089",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2010-07-08"
+    },
+    {
+        "name": "Upward",
+        "thumbnail": "869663617305374780",
+        "image": "869663617305374780",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2010-07-08"
+    },
+    {
+        "name": "Mann Manor",
+        "thumbnail": "2685507260003028841",
+        "image": "2685507260003028841",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2010-10-27"
+    },
+    {
+        "name": "Mountain Lab",
+        "thumbnail": "11573117220746893240",
+        "image": "11573117220746893240",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2010-10-27"
+    },
+    {
+        "name": "DeGroot Keep",
+        "thumbnail": "16905158678663241296",
+        "image": "16905158678663241296",
+        "gameModes": [
+            "Medieval Mode"
+        ],
+        "releaseDate": "2010-12-17"
+    },
+    {
+        "name": "5Gorge",
+        "thumbnail": "18436010459537100793",
+        "image": "18436010459537100793",
+        "gameModes": [
+            "Control Point"
+        ],
+        "releaseDate": "2011-01-19"
+    },
+    {
+        "name": "Frontier",
+        "thumbnail": "9645376782583082630",
+        "image": "9645376782583082630",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2011-02-24"
+    },
+    {
+        "name": "Lakeside",
+        "thumbnail": "2090428520470664553",
+        "image": "2090428520470664553",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2011-02-24"
+    },
+    {
+        "name": "Nightfall",
+        "thumbnail": "15920531481402001051",
+        "image": "15920531481402001051",
+        "gameModes": [
+            "Payload Race"
+        ],
+        "releaseDate": "2011-02-24"
+    },
+    {
+        "name": "Badlands (King of the Hill)",
+        "thumbnail": "1069509460814016067",
+        "image": "1069509460814016067",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2011-04-14"
+    },
+    {
+        "name": "Barnblitz",
+        "thumbnail": "11307044174416609129",
+        "image": "11307044174416609129",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2011-06-23"
+    },
+    {
+        "name": "Gullywash",
+        "thumbnail": "10346234215736301862",
+        "image": "10346234215736301862",
+        "gameModes": [
+            "Control Point"
+        ],
+        "releaseDate": "2011-10-13"
+    },
+    {
+        "name": "Eyeaduct",
+        "thumbnail": "16787191142597637369",
+        "image": "16787191142597637369",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2011-10-27"
+    },
+    {
+        "name": "Foundry (Control Point)",
+        "thumbnail": "6894429070618869590",
+        "image": "6894429070618869590",
+        "gameModes": [
+            "Control Point"
+        ],
+        "releaseDate": "2011-12-15"
+    },
+    {
+        "name": "Doomsday",
+        "thumbnail": "1999529585564509048",
+        "image": "1999529585564509048",
+        "gameModes": [
+            "Special Delivery"
+        ],
+        "releaseDate": "2012-06-27"
+    },
+    {
+        "name": "Kong King",
+        "thumbnail": "3887155507233720877",
+        "image": "3887155507233720877",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2012-08-10"
+    },
+    {
+        "name": "Coal Town",
+        "thumbnail": "11462985556222266504",
+        "image": "11462985556222266504",
+        "gameModes": [
+            "Mann vs. Machine"
+        ],
+        "releaseDate": "2012-08-15"
+    },
+    {
+        "name": "Decoy",
+        "thumbnail": "1984065753109691649",
+        "image": "1984065753109691649",
+        "gameModes": [
+            "Mann vs. Machine"
+        ],
+        "releaseDate": "2012-08-15"
+    },
+    {
+        "name": "Mannworks",
+        "thumbnail": "1834969004560084190",
+        "image": "1834969004560084190",
+        "gameModes": [
+            "Mann vs. Machine"
+        ],
+        "releaseDate": "2012-08-15"
+    },
+    {
+        "name": "Ghost Fort",
+        "thumbnail": "14185209873930126630",
+        "image": "14185209873930126630",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2012-10-26"
+    },
+    {
+        "name": "Ghost Town",
+        "thumbnail": "2364964617006894112",
+        "image": "2364964617006894112",
+        "gameModes": [
+            "Mann vs. Machine"
+        ],
+        "releaseDate": "2012-10-26"
+    },
+    {
+        "name": "Bigrock",
+        "thumbnail": "12958710227471633211",
+        "image": "12958710227471633211",
+        "gameModes": [
+            "Mann vs. Machine"
+        ],
+        "releaseDate": "2012-12-20"
+    },
+    {
+        "name": "Process",
+        "thumbnail": "16177982660706298238",
+        "image": "16177982660706298238",
+        "gameModes": [
+            "Control Point"
+        ],
+        "releaseDate": "2013-07-10"
+    },
+    {
+        "name": "Standin",
+        "thumbnail": "9170624944435581513",
+        "image": "9170624944435581513",
+        "gameModes": [
+            "Domination"
+        ],
+        "releaseDate": "2013-07-10"
+    },
+    {
+        "name": "Helltower",
+        "thumbnail": "12819820442790416726",
+        "image": "12819820442790416726",
+        "gameModes": [
+            "Payload Race"
+        ],
+        "releaseDate": "2013-10-29"
+    },
+    {
+        "name": "Mannhattan",
+        "thumbnail": "13721999670074957352",
+        "image": "13721999670074957352",
+        "gameModes": [
+            "Mann vs. Machine"
+        ],
+        "releaseDate": "2013-11-21"
+    },
+    {
+        "name": "Rottenburg",
+        "thumbnail": "636149018132596409",
+        "image": "636149018132596409",
+        "gameModes": [
+            "Mann vs. Machine"
+        ],
+        "releaseDate": "2013-11-21"
+    },
+    {
+        "name": "Snakewater",
+        "thumbnail": "2051181325276993581",
+        "image": "2051181325276993581",
+        "gameModes": [
+            "Control Point"
+        ],
+        "releaseDate": "2013-11-21"
+    },
+    {
+        "name": "Asteroid",
+        "thumbnail": "7991566067512689620",
+        "image": "7991566067512689620",
+        "gameModes": [
+            "Robot Destruction"
+        ],
+        "releaseDate": "2014-07-08"
+    },
+    {
+        "name": "Cactus Canyon",
+        "thumbnail": "6066517538164103597",
+        "image": "6066517538164103597",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2014-07-08"
+    },
+    {
+        "name": "Carnival of Carnage",
+        "thumbnail": "16268958894856601289",
+        "image": "16268958894856601289",
+        "gameModes": [
+            "Special Delivery"
+        ],
+        "releaseDate": "2014-10-29"
+    },
+    {
+        "name": "Foundry (Capture the Flag)",
+        "thumbnail": "11366071444983229614",
+        "image": "11366071444983229614",
+        "gameModes": [
+            "Mannpower"
+        ],
+        "releaseDate": "2014-12-22"
+    },
+    {
+        "name": "Gorge (Capture the Flag)",
+        "thumbnail": "11521593738966899092",
+        "image": "11521593738966899092",
+        "gameModes": [
+            "Mannpower"
+        ],
+        "releaseDate": "2014-12-22"
+    },
+    {
+        "name": "Thunder Mountain (Capture the Flag)",
+        "thumbnail": "16389673239246593119",
+        "image": "16389673239246593119",
+        "gameModes": [
+            "Mannpower"
+        ],
+        "releaseDate": "2015-03-12"
+    },
+    {
+        "name": "Borneo",
+        "thumbnail": "17309061192338368752",
+        "image": "17309061192338368752",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2015-07-02"
+    },
+    {
+        "name": "Powerhouse",
+        "thumbnail": "1540717888768509537",
+        "image": "1540717888768509537",
+        "gameModes": [
+            "Control Point"
+        ],
+        "releaseDate": "2015-07-02"
+    },
+    {
+        "name": "Snowplow",
+        "thumbnail": "14165551164843925817",
+        "image": "14165551164843925817",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2015-07-02"
+    },
+    {
+        "name": "Suijin",
+        "thumbnail": "15815027948392500355",
+        "image": "15815027948392500355",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2015-07-02"
+    },
+    {
+        "name": "Brickyard",
+        "thumbnail": "15615889268107590953",
+        "image": "15615889268107590953",
+        "gameModes": [
+            "PASS Time"
+        ],
+        "releaseDate": "2015-08-18"
+    },
+    {
+        "name": "2Fort Invasion",
+        "thumbnail": "718315720521317549",
+        "image": "718315720521317549",
+        "gameModes": [
+            "Capture the Flag"
+        ],
+        "releaseDate": "2015-10-06"
+    },
+    {
+        "name": "Byre",
+        "thumbnail": "8928212020310819171",
+        "image": "8928212020310819171",
+        "gameModes": [
+            "Arena"
+        ],
+        "releaseDate": "2015-10-06"
+    },
+    {
+        "name": "Probed",
+        "thumbnail": "17853206164554771182",
+        "image": "17853206164554771182",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2015-10-06"
+    },
+    {
+        "name": "Watergate",
+        "thumbnail": "1973815539364825232",
+        "image": "1973815539364825232",
+        "gameModes": [
+            "Player Destruction"
+        ],
+        "releaseDate": "2015-10-06"
+    },
+    {
+        "name": "Gorge Event",
+        "thumbnail": "587515067034287512",
+        "image": "587515067034287512",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2015-10-28"
+    },
+    {
+        "name": "Hellfire",
+        "thumbnail": "7107017663505557697",
+        "image": "7107017663505557697",
+        "gameModes": [
+            "Mannpower"
+        ],
+        "releaseDate": "2015-10-28"
+    },
+    {
+        "name": "Hellstone",
+        "thumbnail": "11573390621271451819",
+        "image": "11573390621271451819",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2015-10-28"
+    },
+    {
+        "name": "Moonshine Event",
+        "thumbnail": "4101701353468425047",
+        "image": "4101701353468425047",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2015-10-28"
+    },
+    {
+        "name": "Sinshine",
+        "thumbnail": "9386063624457186722",
+        "image": "9386063624457186722",
+        "gameModes": [
+            "Control Point"
+        ],
+        "releaseDate": "2015-10-28"
+    },
+    {
+        "name": "Timbertown",
+        "thumbnail": "9914960610915607939",
+        "image": "9914960610915607939",
+        "gameModes": [
+            "PASS Time"
+        ],
+        "releaseDate": "2015-11-25"
+    },
+    {
+        "name": "Highpass",
+        "thumbnail": "17902080248427820906",
+        "image": "17902080248427820906",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2015-12-17"
+    },
+    {
+        "name": "Landfall",
+        "thumbnail": "337840860221813381",
+        "image": "337840860221813381",
+        "gameModes": [
+            "Capture the Flag"
+        ],
+        "releaseDate": "2015-12-17"
+    },
+    {
+        "name": "Snowycoast",
+        "thumbnail": "6692003935431354806",
+        "image": "6692003935431354806",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2015-12-17"
+    },
+    {
+        "name": "Vanguard",
+        "thumbnail": "14852554819065580578",
+        "image": "14852554819065580578",
+        "gameModes": [
+            "Control Point"
+        ],
+        "releaseDate": "2015-12-17"
+    },
+    {
+        "name": "District",
+        "thumbnail": "5832592032702293733",
+        "image": "5832592032702293733",
+        "gameModes": [
+            "PASS Time"
+        ],
+        "releaseDate": "2016-07-07"
+    },
+    {
+        "name": "Metalworks",
+        "thumbnail": "9008098326629747959",
+        "image": "9008098326629747959",
+        "gameModes": [
+            "Control Point"
+        ],
+        "releaseDate": "2016-07-07"
+    },
+    {
+        "name": "Sunshine",
+        "thumbnail": "16719526762190681911",
+        "image": "16719526762190681911",
+        "gameModes": [
+            "Control Point"
+        ],
+        "releaseDate": "2016-07-07"
+    },
+    {
+        "name": "Swiftwater",
+        "thumbnail": "18127702441362635098",
+        "image": "18127702441362635098",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2016-07-07"
+    },
+    {
+        "name": "Brimstone",
+        "thumbnail": "14275732652192055635",
+        "image": "14275732652192055635",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2016-10-21"
+    },
+    {
+        "name": "Maple Ridge Event",
+        "thumbnail": "5033982600563530035",
+        "image": "5033982600563530035",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2016-10-21"
+    },
+    {
+        "name": "Pit of Death",
+        "thumbnail": "2813632977491345110",
+        "image": "2813632977491345110",
+        "gameModes": [
+            "Player Destruction"
+        ],
+        "releaseDate": "2016-10-21"
+    },
+    {
+        "name": "Banana Bay",
+        "thumbnail": "16265089415251451800",
+        "image": "16265089415251451800",
+        "gameModes": [
+            "Payload Race"
+        ],
+        "releaseDate": "2017-10-20"
+    },
+    {
+        "name": "Brazil",
+        "thumbnail": "573693290519581647",
+        "image": "573693290519581647",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2017-10-20"
+    },
+    {
+        "name": "Enclosure",
+        "thumbnail": "251911240467676839",
+        "image": "251911240467676839",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2017-10-20"
+    },
+    {
+        "name": "Lazarus",
+        "thumbnail": "82946953456243186",
+        "image": "82946953456243186",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2017-10-20"
+    },
+    {
+        "name": "Mercenary Park",
+        "thumbnail": "8431338414168842694",
+        "image": "8431338414168842694",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2017-10-20"
+    },
+    {
+        "name": "Mossrock",
+        "thumbnail": "2065316191728971690",
+        "image": "2065316191728971690",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2017-10-20"
+    },
+    {
+        "name": "Cauldron",
+        "thumbnail": "12147660959270719255",
+        "image": "12147660959270719255",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2018-10-19"
+    },
+    {
+        "name": "Cursed Cove",
+        "thumbnail": "10448877956959947132",
+        "image": "10448877956959947132",
+        "gameModes": [
+            "Player Destruction"
+        ],
+        "releaseDate": "2018-10-19"
+    },
+    {
+        "name": "Gravestone",
+        "thumbnail": "16800032982516639781",
+        "image": "16800032982516639781",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2018-10-19"
+    },
+    {
+        "name": "Monster Bash",
+        "thumbnail": "15093871926817355050",
+        "image": "15093871926817355050",
+        "gameModes": [
+            "Player Destruction"
+        ],
+        "releaseDate": "2018-10-19"
+    },
+    {
+        "name": "Slasher",
+        "thumbnail": "550846996343266334",
+        "image": "550846996343266334",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2018-10-19"
+    },
+    {
+        "name": "Laughter",
+        "thumbnail": "4209883087900634958",
+        "image": "4209883087900634958",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2019-10-10"
+    },
+    {
+        "name": "Precipice",
+        "thumbnail": "9973990457256865501",
+        "image": "9973990457256865501",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2019-10-10"
+    },
+    {
+        "name": "Bloodwater",
+        "thumbnail": "17376897714101638956",
+        "image": "17376897714101638956",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2020-10-01"
+    },
+    {
+        "name": "Hassle Castle",
+        "thumbnail": "8209663266640363792",
+        "image": "8209663266640363792",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2020-10-01"
+    },
+    {
+        "name": "Megalo",
+        "thumbnail": "17086605373299305746",
+        "image": "17086605373299305746",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2020-10-01"
+    },
+    {
+        "name": "Moldergrove",
+        "thumbnail": "9393525503652382704",
+        "image": "9393525503652382704",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2020-10-01"
+    },
+    {
+        "name": "Pier",
+        "thumbnail": "1707754857688978164",
+        "image": "1707754857688978164",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2020-12-03"
+    },
+    {
+        "name": "Snowfall",
+        "thumbnail": "13298210723631416669",
+        "image": "13298210723631416669",
+        "gameModes": [
+            "Capture the Flag"
+        ],
+        "releaseDate": "2020-12-03"
+    },
+    {
+        "name": "SnowVille",
+        "thumbnail": "3767417099003214085",
+        "image": "3767417099003214085",
+        "gameModes": [
+            "Player Destruction"
+        ],
+        "releaseDate": "2020-12-03"
+    },
+    {
+        "name": "Wutville",
+        "thumbnail": "17095566091578491354",
+        "image": "17095566091578491354",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2020-12-03"
+    },
+    {
+        "name": "Erebus",
+        "thumbnail": "11086104155546117509",
+        "image": "11086104155546117509",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2021-10-05"
+    },
+    {
+        "name": "Farmageddon",
+        "thumbnail": "12768991332430470964",
+        "image": "12768991332430470964",
+        "gameModes": [
+            "Player Destruction"
+        ],
+        "releaseDate": "2021-10-05"
+    },
+    {
+        "name": "Graveyard",
+        "thumbnail": "3846536669596556440",
+        "image": "3846536669596556440",
+        "gameModes": [
+            "Arena"
+        ],
+        "releaseDate": "2021-10-05"
+    },
+    {
+        "name": "Los Muertos",
+        "thumbnail": "5036919973426763262",
+        "image": "5036919973426763262",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2021-10-05"
+    },
+    {
+        "name": "Sinthetic",
+        "thumbnail": "3320634728493657955",
+        "image": "3320634728493657955",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2021-10-05"
+    },
+    {
+        "name": "Terror",
+        "thumbnail": "4897577508660918604",
+        "image": "4897577508660918604",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2021-10-05"
+    },
+    {
+        "name": "Altitude",
+        "thumbnail": "14682552097116420856",
+        "image": "14682552097116420856",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2021-12-02"
+    },
+    {
+        "name": "Bread Space",
+        "thumbnail": "10108223052158410991",
+        "image": "10108223052158410991",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2021-12-02"
+    },
+    {
+        "name": "Cascade",
+        "thumbnail": "10747835198874635106",
+        "image": "10747835198874635106",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2021-12-02"
+    },
+    {
+        "name": "Chilly",
+        "thumbnail": "2836594415320007486",
+        "image": "2836594415320007486",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2021-12-02"
+    },
+    {
+        "name": "Doublefrost",
+        "thumbnail": "11794931334333960873",
+        "image": "11794931334333960873",
+        "gameModes": [
+            "Capture the Flag"
+        ],
+        "releaseDate": "2021-12-02"
+    },
+    {
+        "name": "Polar",
+        "thumbnail": "513245584416682009",
+        "image": "513245584416682009",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2021-12-02"
+    },
+    {
+        "name": "Bonesaw",
+        "thumbnail": "10004363438779595667",
+        "image": "10004363438779595667",
+        "gameModes": [
+            "Payload Race"
+        ],
+        "releaseDate": "2022-10-05"
+    },
+    {
+        "name": "Crasher",
+        "thumbnail": "1834561803186488320",
+        "image": "1834561803186488320",
+        "gameModes": [
+            "Capture the Flag"
+        ],
+        "releaseDate": "2022-10-05"
+    },
+    {
+        "name": "Ghoulpit",
+        "thumbnail": "13763387041114047229",
+        "image": "13763387041114047229",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2022-10-05"
+    },
+    {
+        "name": "Helltrain",
+        "thumbnail": "5741210325284230176",
+        "image": "5741210325284230176",
+        "gameModes": [
+            "Capture the Flag"
+        ],
+        "releaseDate": "2022-10-05"
+    },
+    {
+        "name": "Soul-Mill",
+        "thumbnail": "18368612727557718158",
+        "image": "18368612727557718158",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2022-10-05"
+    },
+    {
+        "name": "Spookeyridge",
+        "thumbnail": "8813814879680835286",
+        "image": "8813814879680835286",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2022-10-05"
+    },
+    {
+        "name": "Coal Pit",
+        "thumbnail": "7774066843134249990",
+        "image": "7774066843134249990",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2022-12-05"
+    },
+    {
+        "name": "Frostcliff",
+        "thumbnail": "3373871491213153187",
+        "image": "3373871491213153187",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2022-12-05"
+    },
+    {
+        "name": "Frostwatch",
+        "thumbnail": "1822490009337920261",
+        "image": "1822490009337920261",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2022-12-05"
+    },
+    {
+        "name": "Frosty",
+        "thumbnail": "17612413546405937908",
+        "image": "17612413546405937908",
+        "gameModes": [
+            "Capture the Flag"
+        ],
+        "releaseDate": "2022-12-05"
+    },
+    {
+        "name": "Rumford",
+        "thumbnail": "10842237911780141452",
+        "image": "10842237911780141452",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2022-12-05"
+    },
+    {
+        "name": "Cashworks",
+        "thumbnail": "4287408067658807790",
+        "image": "4287408067658807790",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2023-07-12"
+    },
+    {
+        "name": "Distillery",
+        "thumbnail": "16101985031603922193",
+        "image": "16101985031603922193",
+        "gameModes": [
+            "Versus Saxton Hale"
+        ],
+        "releaseDate": "2023-07-12"
+    },
+    {
+        "name": "Hardwood",
+        "thumbnail": "9030854791101447430",
+        "image": "9030854791101447430",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2023-07-12"
+    },
+    {
+        "name": "Nucleus VSH",
+        "thumbnail": "5819670071105651740",
+        "image": "5819670071105651740",
+        "gameModes": [
+            "Versus Saxton Hale"
+        ],
+        "releaseDate": "2023-07-12"
+    },
+    {
+        "name": "Pelican Peak",
+        "thumbnail": "2507314311889528507",
+        "image": "2507314311889528507",
+        "gameModes": [
+            "Capture the Flag"
+        ],
+        "releaseDate": "2023-07-12"
+    },
+    {
+        "name": "Phoenix",
+        "thumbnail": "1100284646043949961",
+        "image": "1100284646043949961",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2023-07-12"
+    },
+    {
+        "name": "Reckoner",
+        "thumbnail": "4726653545728823681",
+        "image": "4726653545728823681",
+        "gameModes": [
+            "Control Point"
+        ],
+        "releaseDate": "2023-07-12"
+    },
+    {
+        "name": "Rotunda",
+        "thumbnail": "741076062178937674",
+        "image": "741076062178937674",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2023-07-12"
+    },
+    {
+        "name": "Selbyen",
+        "thumbnail": "6896146124733062042",
+        "image": "6896146124733062042",
+        "gameModes": [
+            "Player Destruction"
+        ],
+        "releaseDate": "2023-07-12"
+    },
+    {
+        "name": "Sharkbay",
+        "thumbnail": "165897950742497726",
+        "image": "165897950742497726",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2023-07-12"
+    },
+    {
+        "name": "Skirmish",
+        "thumbnail": "12774590542535814531",
+        "image": "12774590542535814531",
+        "gameModes": [
+            "Versus Saxton Hale"
+        ],
+        "releaseDate": "2023-07-12"
+    },
+    {
+        "name": "Sulfur",
+        "thumbnail": "3196642277872811766",
+        "image": "3196642277872811766",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2023-07-12"
+    },
+    {
+        "name": "Tiny Rock",
+        "thumbnail": "16601704940903671911",
+        "image": "16601704940903671911",
+        "gameModes": [
+            "Versus Saxton Hale"
+        ],
+        "releaseDate": "2023-07-12"
+    },
+    {
+        "name": "Venice",
+        "thumbnail": "13000384457182037481",
+        "image": "13000384457182037481",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2023-07-12"
+    },
+    {
+        "name": "Atoll",
+        "thumbnail": "9345285380188140826",
+        "image": "9345285380188140826",
+        "gameModes": [
+            "Zombie Infection"
+        ],
+        "releaseDate": "2023-10-09"
+    },
+    {
+        "name": "Corruption",
+        "thumbnail": "12390920268058171647",
+        "image": "12390920268058171647",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2023-10-09"
+    },
+    {
+        "name": "Devastation",
+        "thumbnail": "16258587975107239986",
+        "image": "16258587975107239986",
+        "gameModes": [
+            "Zombie Infection"
+        ],
+        "releaseDate": "2023-10-09"
+    },
+    {
+        "name": "Lava Pit",
+        "thumbnail": "4834257574464066187",
+        "image": "4834257574464066187",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2023-10-09"
+    },
+    {
+        "name": "Mannsylvania",
+        "thumbnail": "15020169023791331679",
+        "image": "15020169023791331679",
+        "gameModes": [
+            "Player Destruction"
+        ],
+        "releaseDate": "2023-10-09"
+    },
+    {
+        "name": "Murky",
+        "thumbnail": "12254452265008485128",
+        "image": "12254452265008485128",
+        "gameModes": [
+            "Zombie Infection"
+        ],
+        "releaseDate": "2023-10-09"
+    },
+    {
+        "name": "Perks",
+        "thumbnail": "14067485413560951051",
+        "image": "14067485413560951051",
+        "gameModes": [
+            "Arena"
+        ],
+        "releaseDate": "2023-10-09"
+    },
+    {
+        "name": "Sandcastle",
+        "thumbnail": "2566781047556844156",
+        "image": "2566781047556844156",
+        "gameModes": [
+            "Medieval Mode"
+        ],
+        "releaseDate": "2023-10-09"
+    },
+    {
+        "name": "Sanitarium",
+        "thumbnail": "6285448192663040214",
+        "image": "6285448192663040214",
+        "gameModes": [
+            "Zombie Infection"
+        ],
+        "releaseDate": "2023-10-09"
+    },
+    {
+        "name": "Slime",
+        "thumbnail": "12555891260683226686",
+        "image": "12555891260683226686",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2023-10-09"
+    },
+    {
+        "name": "Spineyard",
+        "thumbnail": "363783201136136860",
+        "image": "363783201136136860",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2023-10-09"
+    },
+    {
+        "name": "Woods",
+        "thumbnail": "13086390521427139944",
+        "image": "13086390521427139944",
+        "gameModes": [
+            "Zombie Infection"
+        ],
+        "releaseDate": "2023-10-09"
+    },
+    {
+        "name": "Brew",
+        "thumbnail": "12330956107535385841",
+        "image": "12330956107535385841",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2023-12-07"
+    },
+    {
+        "name": "Camber",
+        "thumbnail": "5339399586557363072",
+        "image": "5339399586557363072",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2023-12-07"
+    },
+    {
+        "name": "Carrier",
+        "thumbnail": "2818219096498192189",
+        "image": "2818219096498192189",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2023-12-07"
+    },
+    {
+        "name": "Emerge",
+        "thumbnail": "13708284838660034937",
+        "image": "13708284838660034937",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2023-12-07"
+    },
+    {
+        "name": "Galleria",
+        "thumbnail": "4840336214376325094",
+        "image": "4840336214376325094",
+        "gameModes": [
+            "Player Destruction"
+        ],
+        "releaseDate": "2023-12-07"
+    },
+    {
+        "name": "Haarp",
+        "thumbnail": "12923877592320018592",
+        "image": "12923877592320018592",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2023-12-07"
+    },
+    {
+        "name": "Hacksaw",
+        "thumbnail": "1365233818705370047",
+        "image": "1365233818705370047",
+        "gameModes": [
+            "Payload Race"
+        ],
+        "releaseDate": "2023-12-07"
+    },
+    {
+        "name": "Krampus",
+        "thumbnail": "6737418958073268461",
+        "image": "6737418958073268461",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2023-12-07"
+    },
+    {
+        "name": "Snowtower",
+        "thumbnail": "12723653261861156183",
+        "image": "12723653261861156183",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2023-12-07"
+    },
+    {
+        "name": "Turbine Center",
+        "thumbnail": "6322425952282167588",
+        "image": "6322425952282167588",
+        "gameModes": [
+            "Capture the Flag"
+        ],
+        "releaseDate": "2023-12-07"
+    },
+    {
+        "name": "Applejack",
+        "thumbnail": "12964794606217240680",
+        "image": "12964794606217240680",
+        "gameModes": [
+            "Capture the Flag"
+        ],
+        "releaseDate": "2024-07-18"
+    },
+    {
+        "name": "Atom Smash",
+        "thumbnail": "6061009975850105274",
+        "image": "6061009975850105274",
+        "gameModes": [
+            "Player Destruction"
+        ],
+        "releaseDate": "2024-07-18"
+    },
+    {
+        "name": "Burghausen",
+        "thumbnail": "7947844875416021066",
+        "image": "7947844875416021066",
+        "gameModes": [
+            "Medieval Mode"
+        ],
+        "releaseDate": "2024-07-18"
+    },
+    {
+        "name": "Cachoeira",
+        "thumbnail": "5917429988283322303",
+        "image": "5917429988283322303",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2024-07-18"
+    },
+    {
+        "name": "Canaveral",
+        "thumbnail": "13039004709835507617",
+        "image": "13039004709835507617",
+        "gameModes": [
+            "Control Point"
+        ],
+        "releaseDate": "2024-07-18"
+    },
+    {
+        "name": "Embargo",
+        "thumbnail": "8110117447317425946",
+        "image": "8110117447317425946",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2024-07-18"
+    },
+    {
+        "name": "Hadal",
+        "thumbnail": "4237870929701567847",
+        "image": "4237870929701567847",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2024-07-18"
+    },
+    {
+        "name": "Megaton",
+        "thumbnail": "15979628192398567099",
+        "image": "15979628192398567099",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2024-07-18"
+    },
+    {
+        "name": "Odyssey",
+        "thumbnail": "2963750446199884418",
+        "image": "2963750446199884418",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2024-07-18"
+    },
+    {
+        "name": "Overgrown",
+        "thumbnail": "9823729157584202643",
+        "image": "9823729157584202643",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2024-07-18"
+    },
+    {
+        "name": "Blazehattan",
+        "thumbnail": "2604932258287407823",
+        "image": "2604932258287407823",
+        "gameModes": [
+            "Zombie Infection"
+        ],
+        "releaseDate": "2024-10-10"
+    },
+    {
+        "name": "Circus",
+        "thumbnail": "13923521244413237397",
+        "image": "13923521244413237397",
+        "gameModes": [
+            "Player Destruction"
+        ],
+        "releaseDate": "2024-10-10"
+    },
+    {
+        "name": "Darkmarsh",
+        "thumbnail": "15796589204081215955",
+        "image": "15796589204081215955",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2024-10-10"
+    },
+    {
+        "name": "Dynamite",
+        "thumbnail": "5317607099976201041",
+        "image": "5317607099976201041",
+        "gameModes": [
+            "Tug of War"
+        ],
+        "releaseDate": "2024-10-10"
+    },
+    {
+        "name": "Freaky Fair",
+        "thumbnail": "17381300728297526043",
+        "image": "17381300728297526043",
+        "gameModes": [
+            "Control Point"
+        ],
+        "releaseDate": "2024-10-10"
+    },
+    {
+        "name": "Outburst",
+        "thumbnail": "11228493327716517200",
+        "image": "11228493327716517200",
+        "gameModes": [
+            "Versus Saxton Hale"
+        ],
+        "releaseDate": "2024-10-10"
+    },
+    {
+        "name": "Toxic",
+        "thumbnail": "13559772347530811784",
+        "image": "13559772347530811784",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2024-10-10"
+    },
+    {
+        "name": "Cutter",
+        "thumbnail": "1892442264433858255",
+        "image": "1892442264433858255",
+        "gameModes": [
+            "Payload Race"
+        ],
+        "releaseDate": "2024-12-11"
+    },
+    {
+        "name": "Fortezza",
+        "thumbnail": "1579306884353347728",
+        "image": "1579306884353347728",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2024-12-11"
+    },
+    {
+        "name": "Maul",
+        "thumbnail": "5566552734970523861",
+        "image": "5566552734970523861",
+        "gameModes": [
+            "Versus Saxton Hale"
+        ],
+        "releaseDate": "2024-12-11"
+    },
+    {
+        "name": "Overcast",
+        "thumbnail": "8222523287247526996",
+        "image": "8222523287247526996",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2024-12-11"
+    },
+    {
+        "name": "Patagonia",
+        "thumbnail": "8885690353608348579",
+        "image": "8885690353608348579",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2024-12-11"
+    },
+    {
+        "name": "Penguin Peak",
+        "thumbnail": "10991673608422695020",
+        "image": "10991673608422695020",
+        "gameModes": [
+            "Capture the Flag"
+        ],
+        "releaseDate": "2024-12-11"
+    },
+    {
+        "name": "Aquarius",
+        "thumbnail": "1814238808858601192",
+        "image": "1814238808858601192",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2025-07-24"
+    },
+    {
+        "name": "Blowout",
+        "thumbnail": "14479566261295349548",
+        "image": "14479566261295349548",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2025-07-24"
+    },
+    {
+        "name": "Boardwalk",
+        "thumbnail": "8458028472395636423",
+        "image": "8458028472395636423",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2025-07-24"
+    },
+    {
+        "name": "Cargo",
+        "thumbnail": "18161244400002618558",
+        "image": "18161244400002618558",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2025-07-24"
+    },
+    {
+        "name": "Citadel",
+        "thumbnail": "16563874503695427898",
+        "image": "16563874503695427898",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2025-07-24"
+    },
+    {
+        "name": "Conifer",
+        "thumbnail": "746173865337701649",
+        "image": "746173865337701649",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2025-07-24"
+    },
+    {
+        "name": "Demolition",
+        "thumbnail": "1465882462690869270",
+        "image": "1465882462690869270",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2025-07-24"
+    },
+    {
+        "name": "Fulgur",
+        "thumbnail": "3247935445869208384",
+        "image": "3247935445869208384",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2025-07-24"
+    },
+    {
+        "name": "Mannhole",
+        "thumbnail": "16196243957491813747",
+        "image": "16196243957491813747",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2025-07-24"
+    },
+    {
+        "name": "Pressure",
+        "thumbnail": "2270948882134405787",
+        "image": "2270948882134405787",
+        "gameModes": [
+            "Capture the Flag"
+        ],
+        "releaseDate": "2025-07-24"
+    },
+    {
+        "name": "Afterlife",
+        "thumbnail": "1078310383409795315",
+        "image": "1078310383409795315",
+        "gameModes": [
+            "Arena"
+        ],
+        "releaseDate": "2025-10-09"
+    },
+    {
+        "name": "Cowerhouse",
+        "thumbnail": "7719819288029863070",
+        "image": "7719819288029863070",
+        "gameModes": [
+            "Control Point"
+        ],
+        "releaseDate": "2025-10-09"
+    },
+    {
+        "name": "Devilcross",
+        "thumbnail": "13005273582700935293",
+        "image": "13005273582700935293",
+        "gameModes": [
+            "Capture the Flag"
+        ],
+        "releaseDate": "2025-10-09"
+    },
+    {
+        "name": "Dusker",
+        "thumbnail": "2710660870972551614",
+        "image": "2710660870972551614",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2025-10-09"
+    },
+    {
+        "name": "Marshlands",
+        "thumbnail": "7025974762672514926",
+        "image": "7025974762672514926",
+        "gameModes": [
+            "Hold the Flag"
+        ],
+        "releaseDate": "2025-10-09"
+    },
+    {
+        "name": "Abbey",
+        "thumbnail": "7513930857656793170",
+        "image": "7513930857656793170",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2025-12-09"
+    },
+    {
+        "name": "Gavle",
+        "thumbnail": "1244570824401764292",
+        "image": "1244570824401764292",
+        "gameModes": [
+            "Attack/DefendPayload"
+        ],
+        "releaseDate": "2025-12-09"
+    },
+    {
+        "name": "Matterhorn",
+        "thumbnail": "5480322610642883886",
+        "image": "5480322610642883886",
+        "gameModes": [
+            "Payload Race"
+        ],
+        "releaseDate": "2025-12-09"
+    },
+    {
+        "name": "Nutcracker",
+        "thumbnail": "14497383473339441697",
+        "image": "14497383473339441697",
+        "gameModes": [
+            "Player Destruction"
+        ],
+        "releaseDate": "2025-12-09"
+    },
+    {
+        "name": "Sidewinder",
+        "thumbnail": "18221579827851751707",
+        "image": "18221579827851751707",
+        "gameModes": [
+            "Capture the Flag"
+        ],
+        "releaseDate": "2025-12-09"
+    },
+    {
+        "name": "Winter Ridge",
+        "thumbnail": "1054211997159247849",
+        "image": "1054211997159247849",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2025-12-09"
+    },
+    {
+        "name": "Camp Saxton",
+        "thumbnail": "7675843559321598576",
+        "image": "7675843559321598576",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2026-07-07"
+    },
+    {
+        "name": "Dryfield",
+        "thumbnail": "4047861700173045954",
+        "image": "4047861700173045954",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2026-07-07"
+    },
+    {
+        "name": "Mojave",
+        "thumbnail": "8154075776828505112",
+        "image": "8154075776828505112",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2026-07-07"
+    },
+    {
+        "name": "Premuda",
+        "thumbnail": "871092677824578272",
+        "image": "871092677824578272",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2026-07-07"
+    },
+    {
+        "name": "Redwood",
+        "thumbnail": "17207761947707053296",
+        "image": "17207761947707053296",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2026-07-07"
+    },
+    {
+        "name": "Shorelight",
+        "thumbnail": "5209764570356930413",
+        "image": "5209764570356930413",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2026-07-07"
+    }
 ]

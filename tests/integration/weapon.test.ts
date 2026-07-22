@@ -222,6 +222,7 @@ async function mockCorrectGuess(page: Page) {
 			status: 200,
 			body: JSON.stringify({
 				correct: true,
+				guessedAt: new Date().toISOString(),
 				name: 'Scattergun',
 				releaseDate: {
 					status: 'correct',

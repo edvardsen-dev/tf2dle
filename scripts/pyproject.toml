@@ -1,0 +1,10 @@
+[project]
+name = "tf2dle-scripts"
+version = "0.1.0"
+description = "Scrapers and image utilities for TF2DLE data"
+requires-python = ">=3.12"
+dependencies = [
+  "beautifulsoup4>=4.12.3",
+  "pillow>=10.3.0",
+  "requests>=2.32.3",
+]
