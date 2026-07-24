@@ -1,10 +1,14 @@
 <script lang="ts">
 	import { Scroll } from 'lucide-svelte';
 	import Settings from '$lib/components/Settings.svelte';
-	import { latestUpdateId, lastViewedUpdate } from '$lib/features/patchNotes';
+	import {
+		latestUpdateId,
+		lastViewedUpdate,
+		muteUpdateNotifications
+	} from '$lib/features/patchNotes';
 	import LogoHat from '$lib/features/theme/components/LogoHat.svelte';
 
-	$: hasViewedUpdates = $lastViewedUpdate === latestUpdateId;
+	$: hasViewedUpdates = $muteUpdateNotifications || $lastViewedUpdate === latestUpdateId;
 </script>
 
 <header class="flex items-center justify-center">

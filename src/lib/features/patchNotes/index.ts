@@ -51,6 +51,7 @@ export const latestUpdateId = updates.reduce((latest, update) => {
 }, '0.0');
 
 export const lastViewedUpdate = useLocalStorage('last_viewed_update', '0.0');
+export const muteUpdateNotifications = useLocalStorage('mute_update_notifications', false);
 
 function groupUpdatesByMonth(updateDates: UpdateDate[]) {
 	return updateDates.reduce<UpdateMonth[]>((months, updateDate) => {
