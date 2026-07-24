@@ -87,6 +87,7 @@ jobs:
           POSTGRES_HOST=localhost
           DATABASE_URL="postgresql://test_user:test_password@localhost:5432/tf2dle_test"
           CRON_SECRET=test_secret
+          PUBLIC_APP_VERSION=dev
           EOF
 
       - name: Generate Prisma client

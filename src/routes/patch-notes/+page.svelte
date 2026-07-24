@@ -1,12 +1,12 @@
 <script lang="ts">
 	import * as Card from '$lib/components/ui/card';
-	import patchNotes, { lastViewedPatchNote } from '$lib/features/patchNotes';
+	import { latestUpdateId, lastViewedUpdate, updateMonths } from '$lib/features/patchNotes';
 	import { onMount } from 'svelte';
 	import PatchNoteItem from '$lib/features/patchNotes/components/patch-note-item.svelte';
 	import PatchNoteSidebar from '$lib/features/patchNotes/components/patch-note-sidebar.svelte';
 
 	onMount(() => {
-		lastViewedPatchNote.set(patchNotes[0].version);
+		lastViewedUpdate.set(latestUpdateId);
 	});
 </script>
 
@@ -18,34 +18,40 @@ in the center of the screen
 <div class="flex gap-2 justify-center xl:-translate-x-[121px]">
 	<PatchNoteSidebar />
 	<div class="width">
-		{#each patchNotes as patch}
-			<Card.Root class="mb-4 patch-note" id={patch.version}>
+		{#each updateMonths as month}
+			<Card.Root class="mb-4 update-month" id={month.id}>
 				<Card.Header>
 					<div class="border-b-2 pb-4">
-						<Card.Title class="text-2xl">Patch {patch.version}</Card.Title>
-						<Card.Description>{patch.date}</Card.Description>
+						<Card.Title class="text-2xl">{month.title}</Card.Title>
 					</div>
 				</Card.Header>
 				<Card.Content>
-					<!-- New Features -->
-					{#if patch.newFeatures.length > 0}
-						<h3 class="text-sm text-primary font-semibold mb-2">New Features</h3>
-						{#each patch.newFeatures as feature}
-							<PatchNoteItem item={feature} />
-						{/each}
-					{/if}
-					{#if patch.improvements.length > 0}
-						<h3 class="text-sm text-primary font-semibold mb-2">Improvements</h3>
-						{#each patch.improvements as improvement}
-							<PatchNoteItem item={improvement} />
-						{/each}
-					{/if}
-					{#if patch.bugFixes.length > 0}
-						<h3 class="text-sm text-primary font-semibold mb-2">Bug fixes</h3>
-						{#each patch.bugFixes as fix}
-							<PatchNoteItem item={fix} />
-						{/each}
-					{/if}
+					{#each month.dates as updateDate}
+						<section class="mb-8 last:mb-0">
+							<h3 class="text-lg font-semibold mb-4">{updateDate.title}</h3>
+
+							{#if updateDate.new.length > 0}
+								<h4 class="text-sm text-primary font-semibold mb-2">New</h4>
+								{#each updateDate.new as item}
+									<PatchNoteItem {item} />
+								{/each}
+							{/if}
+
+							{#if updateDate.improved.length > 0}
+								<h4 class="text-sm text-primary font-semibold mb-2">Improved</h4>
+								{#each updateDate.improved as item}
+									<PatchNoteItem {item} />
+								{/each}
+							{/if}
+
+							{#if updateDate.fixed.length > 0}
+								<h4 class="text-sm text-primary font-semibold mb-2">Fixed</h4>
+								{#each updateDate.fixed as item}
+									<PatchNoteItem {item} />
+								{/each}
+							{/if}
+						</section>
+					{/each}
 				</Card.Content>
 			</Card.Root>
 		{/each}

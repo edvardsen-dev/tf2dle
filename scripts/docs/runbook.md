@@ -43,7 +43,9 @@ scripts/output/cosmetics/images/* -> static/images/cosmetics/
 scripts/output/unusuals/images/* -> static/images/unusuals/
 ```
 
-6. Run the app checks from the repo root.
+6. Update `DATA_LAST_UPDATED` in `src/lib/appMetadata.ts` to the date the app data was refreshed.
+
+7. Run the app checks from the repo root.
 
 ```sh
 npm run check
@@ -81,7 +83,9 @@ If the command fails part way through, run the same command again. The scraper s
 
 5. Copy only the new image files into the matching `static/images/...` folder listed in the full refresh section.
 
-6. Run checks and inspect the game mode that uses the changed data.
+6. Update `DATA_LAST_UPDATED` in `src/lib/appMetadata.ts` to the date the app data was refreshed.
+
+7. Run checks and inspect the game mode that uses the changed data.
 
 ```sh
 npm run check

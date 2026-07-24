@@ -1,4 +1,4 @@
-import type { Handle, MaybePromise } from '@sveltejs/kit';
+import type { Handle } from '@sveltejs/kit';
 
 export const handle = (async ({ event, resolve }) => {
 	let colorBlindMode = event.cookies.get('colorBlindMode') === 'true';
@@ -9,7 +9,7 @@ export const handle = (async ({ event, resolve }) => {
 	}
 
 	return await resolve(event, {
-		transformPageChunk: ({ html }): MaybePromise<string | undefined> =>
+		transformPageChunk: ({ html }) =>
 			html.replace('data-colorblind=""', `data-colorblind="${colorBlindMode}"`)
 	});
 }) satisfies Handle;
