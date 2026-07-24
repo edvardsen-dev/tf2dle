@@ -2,6 +2,7 @@
 	import { PUBLIC_APP_VERSION } from '$env/static/public';
 	import { DATA_LAST_UPDATED_DISPLAY } from '$lib/appMetadata';
 	import dayjs from '$lib/configs/dayjsConfig';
+	import { hideResetTimer } from '$lib/stores/settings';
 	import { getGameModeResetTime } from '$lib/utils/reset';
 	import { onDestroy } from 'svelte';
 
@@ -49,7 +50,7 @@
 </script>
 
 <footer class="width m-auto text-center text-xs text-muted-foreground/75">
-	<div class="mb-5">
+	<div class:invisible={$hideResetTimer} class="mb-5" aria-hidden={$hideResetTimer}>
 		<p class="mb-1 uppercase tracking-[0.2em] text-muted-foreground/60">Games reset in</p>
 		<p class="text-3xl font-semibold tabular-nums text-foreground" data-testId="timer">
 			{hours}:{minutes}:{seconds}

@@ -11,6 +11,7 @@
 	import * as AlertDialog from '$lib/components/ui/alert-dialog/index.js';
 	import DisableExtraVisualsToggle from '$lib/features/theme/components/DisableExtraVisualsToggle.svelte';
 	import MuteUpdateNotificationsToggle from '$lib/features/patchNotes/components/mute-update-notifications-toggle.svelte';
+	import HideTimerToggle from '$lib/components/HideTimerToggle.svelte';
 
 	function clearStat(gamemode: string, stat: UseStats) {
 		stat.clearStats();
@@ -37,6 +38,7 @@
 				<h2 class="text-muted-foreground text-sm">Accessibility</h2>
 				<ColorblindModeToggler />
 				<DisableExtraVisualsToggle />
+				<HideTimerToggle />
 			</div>
 			<div class="grid gap-4">
 				<h2 class="text-muted-foreground text-sm">Notifications</h2>
