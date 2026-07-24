@@ -7,6 +7,7 @@
 	import Command from '$lib/components/command/Command.svelte';
 	import SnowParticles from '$lib/features/theme/components/winter/SnowParticles.svelte';
 	import XmasLights from '$lib/features/theme/components/x-mas/XmasLights.svelte';
+	import HalloweenDecor from '$lib/features/theme/components/halloween/HalloweenDecor.svelte';
 	import Background from '$lib/features/theme/components/Background.svelte';
 	import { DevBanner } from '$lib/components/ui/dev-banner';
 
@@ -29,6 +30,7 @@
 <Command />
 
 <XmasLights />
+<HalloweenDecor />
 <SnowParticles />
 
 <Background />
