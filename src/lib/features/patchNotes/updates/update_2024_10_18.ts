@@ -7,8 +7,7 @@ export default {
 			id: '2024-10-18.1',
 			improved: [
 				{
-					title: 'Improved daily answer selection so repeats are less frequent.',
-					gameModes: ['All modes']
+					title: 'Improved daily answer selection so repeats are less frequent.'
 				}
 			],
 			fixed: [

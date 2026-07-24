@@ -8,7 +8,6 @@ export default {
 			improved: [
 				{
 					title: 'Added a custom 404 page for missing pages.',
-					gameModes: ['All modes'],
 					credit: {
 						type: 'contribution',
 						user: {

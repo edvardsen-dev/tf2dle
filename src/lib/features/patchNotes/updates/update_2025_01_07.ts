@@ -8,7 +8,6 @@ export default {
 			new: [
 				{
 					title: "Added yesterday's answer to each game mode.",
-					gameModes: ['All modes'],
 					credit: {
 						type: 'suggestion',
 						user: {

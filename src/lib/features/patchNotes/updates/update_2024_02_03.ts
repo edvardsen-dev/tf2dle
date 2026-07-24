@@ -17,12 +17,10 @@ export default {
 					gameModes: ['Map']
 				},
 				{
-					title: 'Fixed the reset timer continuing past midnight.',
-					gameModes: ['All modes']
+					title: 'Fixed the reset timer continuing past midnight.'
 				},
 				{
-					title: 'Fixed completed challenges sometimes being shown before playing.',
-					gameModes: ['All modes']
+					title: 'Fixed completed challenges sometimes being shown before playing.'
 				}
 			]
 		}

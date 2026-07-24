@@ -9,14 +9,12 @@ export default {
 				{
 					title: 'Added color-blind mode.',
 					description:
-						'Enable it from settings to make correct, partial, and incorrect feedback easier to distinguish.',
-					gameModes: ['All modes']
+						'Enable it from settings to make correct, partial, and incorrect feedback easier to distinguish.'
 				}
 			],
 			fixed: [
 				{
-					title: 'Fixed shared posts using the wrong site URL.',
-					gameModes: ['All modes']
+					title: 'Fixed shared posts using the wrong site URL.'
 				}
 			]
 		}

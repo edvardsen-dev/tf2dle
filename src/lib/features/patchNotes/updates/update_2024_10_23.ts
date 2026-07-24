@@ -13,8 +13,7 @@ export default {
 			],
 			fixed: [
 				{
-					title: 'Made the color-blind mode toggle work with keyboard controls.',
-					gameModes: ['Settings']
+					title: 'Made the color-blind mode toggle work with keyboard controls.'
 				},
 				{
 					title: 'Fixed Weapon 2 stats not clearing from settings.',

@@ -8,8 +8,7 @@ export default {
 			new: [
 				{
 					title: 'Added local stats for completed daily challenges.',
-					description: 'Stats are stored in your browser and can be cleared from settings.',
-					gameModes: ['All modes']
+					description: 'Stats are stored in your browser and can be cleared from settings.'
 				}
 			]
 		}

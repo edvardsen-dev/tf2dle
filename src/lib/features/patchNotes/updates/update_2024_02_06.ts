@@ -7,8 +7,7 @@ export default {
 			id: '2024-02-06.1',
 			new: [
 				{
-					title: 'Added navigation to the next game mode from the victory dialog.',
-					gameModes: ['All modes']
+					title: 'Added navigation to the next game mode from the victory dialog.'
 				}
 			],
 			improved: [

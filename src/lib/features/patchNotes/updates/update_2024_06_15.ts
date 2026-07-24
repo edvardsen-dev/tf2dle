@@ -8,8 +8,7 @@ export default {
 			new: [
 				{
 					title: 'Added quick commands.',
-					description: 'Open them from the top-left button or with Ctrl/Cmd + K.',
-					gameModes: ['All modes']
+					description: 'Open them from the top-left button or with Ctrl/Cmd + K.'
 				}
 			]
 		}

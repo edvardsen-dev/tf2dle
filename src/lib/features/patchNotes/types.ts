@@ -25,7 +25,7 @@ export type UpdateCredit = {
 
 export type UpdateCreditUser = {
 	name: string;
-	link: string;
+	link?: string;
 };
 
 export type UpdateMonth = {

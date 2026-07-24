@@ -7,18 +7,15 @@ export default {
 			id: '2024-01-30.1',
 			new: [
 				{
-					title: 'Added the Updates page.',
-					gameModes: ['All modes']
+					title: 'Added the Updates page.'
 				}
 			],
 			improved: [
 				{
-					title: 'Improved search so partial words are easier to find.',
-					gameModes: ['All modes']
+					title: 'Improved search so partial words are easier to find.'
 				},
 				{
-					title: 'Made feedback messages consistent across game modes.',
-					gameModes: ['All modes']
+					title: 'Made feedback messages consistent across game modes.'
 				},
 				{
 					title: 'Made map images start less zoomed in.',
@@ -27,8 +24,7 @@ export default {
 			],
 			fixed: [
 				{
-					title: 'Fixed games resetting more than once per day.',
-					gameModes: ['All modes']
+					title: 'Fixed games resetting more than once per day.'
 				}
 			]
 		}

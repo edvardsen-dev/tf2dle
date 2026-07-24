@@ -7,8 +7,7 @@ export default {
 			id: '2024-02-14.1',
 			fixed: [
 				{
-					title: 'Fixed guesses made around midnight being saved to the wrong daily puzzle.',
-					gameModes: ['All modes']
+					title: 'Fixed guesses made around midnight being saved to the wrong daily puzzle.'
 				},
 				{
 					title:
