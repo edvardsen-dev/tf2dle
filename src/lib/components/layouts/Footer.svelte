@@ -1,7 +1,16 @@
 <script lang="ts">
+	import { PUBLIC_APP_VERSION } from '$env/static/public';
+	import { DATA_LAST_UPDATED_DISPLAY } from '$lib/appMetadata';
 	import dayjs from '$lib/configs/dayjsConfig';
 	import { getGameModeResetTime } from '$lib/utils/reset';
 	import { onDestroy } from 'svelte';
+
+	const appVersion = PUBLIC_APP_VERSION || 'dev';
+	const appVersionLabel = `v${appVersion}`;
+	const releaseUrl =
+		appVersion === 'dev'
+			? undefined
+			: `https://github.com/edvardsen-dev/tf2dle/releases/tag/${appVersion}`;
 
 	let interval: number;
 	let timeTilReset = initializeResetTime();
@@ -61,6 +70,15 @@
 		<a href="https://www.reddit.com/user/jaakim" target="_blank" class="underline">here!</a>
 		| Want to contribute? Check out the project
 		<a href="https://github.com/edvardsen-dev/tf2dle" target="_blank" class="underline">here!</a>
+	</p>
+	<p class="mt-2">
+		Version:
+		{#if releaseUrl}
+			<a href={releaseUrl} target="_blank" class="underline">{appVersionLabel}</a>
+		{:else}
+			{appVersionLabel}
+		{/if}
+		| Data updated: {DATA_LAST_UPDATED_DISPLAY}
 	</p>
 </footer>
 

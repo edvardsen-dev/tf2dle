@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/edvardsen-dev/tf2dle/sveltekit:latest
+    image: ${IMAGE_URL}
     environment:
       ORIGIN: ${ORIGIN}
       DATABASE_URL: ${DATABASE_URL}

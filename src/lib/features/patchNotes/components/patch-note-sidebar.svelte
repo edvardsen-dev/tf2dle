@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import * as Card from '$lib/components/ui/card';
-	import patchNotes from '$lib/features/patchNotes';
+	import { updateMonths } from '$lib/features/patchNotes';
 	import { onMount } from 'svelte';
 
-	let activePatchNote = patchNotes[0].version;
+	let activeMonth = updateMonths[0].id;
 	let disableObserver = false;
 
 	onMount(() => {
@@ -17,8 +17,8 @@
 
 			const observer = new IntersectionObserver(handleIntersect, options);
 
-			const pacthNotes = document.querySelectorAll('.patch-note');
-			pacthNotes.forEach((patchNote) => observer.observe(patchNote));
+			const updateMonthCards = document.querySelectorAll('.update-month');
+			updateMonthCards.forEach((updateMonthCard) => observer.observe(updateMonthCard));
 
 			function handleIntersect(entries: IntersectionObserverEntry[]) {
 				if (disableObserver) return;
@@ -27,16 +27,16 @@
 					const id = entry.target.id;
 
 					if (entry.isIntersecting) {
-						activePatchNote = id;
+						activeMonth = id;
 					}
 				});
 			}
 		}
 	});
 
-	function handleClick(patchNote: string) {
+	function handleClick(monthId: string) {
 		disableObserver = true;
-		activePatchNote = patchNote;
+		activeMonth = monthId;
 
 		setTimeout(() => {
 			disableObserver = false;
@@ -50,12 +50,12 @@
 	</Card.Header>
 	<Card.Content class="w-[250px] p-0">
 		<div class="flex flex-col sidebar max-height overflow-y-auto overflow-x-hidden px-6 pb-6">
-			{#each patchNotes as patch}
+			{#each updateMonths as month}
 				<a
-					href="#{patch.version}"
-					on:click={() => handleClick(patch.version)}
-					class={activePatchNote === patch.version ? 'text-primary' : 'text-muted-foreground'}
-					>Patch {patch.version}</a
+					href="#{month.id}"
+					on:click={() => handleClick(month.id)}
+					class={activeMonth === month.id ? 'text-primary' : 'text-muted-foreground'}
+					>{month.title}</a
 				>
 			{/each}
 		</div>

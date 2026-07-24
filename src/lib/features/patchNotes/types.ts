@@ -1,24 +1,43 @@
-export type PatchNote = {
-	version: string;
+export type UpdateDate = {
 	date: string;
-	newFeatures: Change[];
-	improvements: Change[];
-	bugFixes: Change[];
+	revisions: UpdateRevision[];
 };
 
-export type Change = {
+export type UpdateRevision = {
+	id: `${string}.${number}`;
+	new?: UpdateEntry[];
+	improved?: UpdateEntry[];
+	fixed?: UpdateEntry[];
+};
+
+export type UpdateEntry = {
 	title: string;
-	description: string;
-	gameMode: string | string[];
-	author: {
-		name: string;
-		link: string;
-	};
-	reportedBy?: {
-		user: {
-			name: string;
-			link: string;
-		};
-		note: string;
-	};
+	description?: string;
+	href?: string;
+	gameModes?: string[];
+	credit?: UpdateCredit;
+};
+
+export type UpdateCredit = {
+	type: 'contribution' | 'report' | 'suggestion';
+	user: UpdateCreditUser;
+};
+
+export type UpdateCreditUser = {
+	name: string;
+	link: string;
+};
+
+export type UpdateMonth = {
+	id: string;
+	title: string;
+	dates: GroupedUpdateDate[];
+};
+
+export type GroupedUpdateDate = {
+	id: string;
+	title: string;
+	new: UpdateEntry[];
+	improved: UpdateEntry[];
+	fixed: UpdateEntry[];
 };
