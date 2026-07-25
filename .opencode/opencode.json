@@ -1,0 +1,12 @@
+{
+	"$schema": "https://opencode.ai/config.json",
+	"skills": {
+		"paths": [".opencode/skills"]
+	},
+	"command": {
+		"patch-notes": {
+			"description": "Create user-facing patch notes from the current branch compared to main.",
+			"template": "Use the create-patch-notes skill to inspect the current checkout branch compared to main and create patch notes for relevant user-facing changes. Ignore purely technical changes that do not affect users."
+		}
+	}
+}
