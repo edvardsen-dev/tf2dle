@@ -116,7 +116,7 @@
 				headers: {
 					'Content-Type': 'application/json'
 				},
-				body: JSON.stringify({ guess: value })
+				body: JSON.stringify({ guess: value, numberOfGuesses: $guesses.length + 1 })
 			});
 			const data = (await res.json()) as MapGuessResponse;
 

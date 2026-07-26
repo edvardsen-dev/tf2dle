@@ -1,4 +1,5 @@
 import { mapService } from '$lib/server/services/MapService.js';
+import MetricsService from '$lib/server/services/MetricsService';
 import { json } from '@sveltejs/kit';
 
 /**
@@ -26,9 +27,10 @@ export async function GET() {
  * @returns MapGuessResponse
  */
 export async function POST({ request }) {
-	const { guess } = await request.json();
+	const { guess, numberOfGuesses } = await request.json();
 
 	const result = await mapService.validateGuess(guess);
+	await MetricsService.recordGameGuess('map', numberOfGuesses, result.correct);
 
 	return json(result);
 }

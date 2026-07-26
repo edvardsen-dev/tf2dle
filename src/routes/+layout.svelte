@@ -10,8 +10,11 @@
 	import HalloweenDecor from '$lib/features/theme/components/halloween/HalloweenDecor.svelte';
 	import Background from '$lib/features/theme/components/Background.svelte';
 	import { DevBanner } from '$lib/components/ui/dev-banner';
+	import { page } from '$app/stores';
 
 	setMode('dark');
+
+	$: isAdminRoute = $page.url.pathname.startsWith('/admin');
 </script>
 
 <svelte:head>
@@ -27,26 +30,24 @@
 <ModeWatcher />
 <Toaster />
 
-<Command />
+{#if isAdminRoute}
+	<slot />
+{:else}
+	<Command />
 
-<XmasLights />
-<HalloweenDecor />
-<SnowParticles />
+	<XmasLights />
+	<HalloweenDecor />
+	<SnowParticles />
 
-<Background />
+	<Background />
 
-<DevBanner />
+	<DevBanner />
 
-<div class="flex flex-col gap-10 px-2 m-auto pt-14 pb-10 min-h-screen">
-	<Header />
-	<div class="flex-grow">
-		<slot />
+	<div class="flex flex-col gap-10 px-2 m-auto pt-14 pb-10 min-h-screen">
+		<Header />
+		<div class="flex-grow">
+			<slot />
+		</div>
+		<Footer />
 	</div>
-	<Footer />
-</div>
-
-<style scoped>
-	.width {
-		width: min(100%, 700px);
-	}
-</style>
+{/if}

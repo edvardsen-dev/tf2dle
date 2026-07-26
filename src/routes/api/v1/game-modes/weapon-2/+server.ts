@@ -1,4 +1,5 @@
 import dayjs from '$lib/configs/dayjsConfig';
+import MetricsService from '$lib/server/services/MetricsService';
 import { weaponTwoService } from '$lib/server/services/WeaponTwoService';
 import { json } from '@sveltejs/kit';
 
@@ -23,6 +24,7 @@ export async function POST({ request }) {
 	const { guess, numberOfGuesses } = await request.json();
 
 	const result = await weaponTwoService.validateGuess(guess, numberOfGuesses);
+	await MetricsService.recordGameGuess('weapon-2', numberOfGuesses, result.correct);
 
 	return json(result);
 }

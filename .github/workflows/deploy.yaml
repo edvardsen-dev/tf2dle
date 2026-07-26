@@ -89,11 +89,12 @@ jobs:
           DATABASE_USER: ${{ secrets.DATABASE_USER }}
           DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
           DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
+          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
         with:
           host: ${{ secrets.VM_IP }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
-          envs: GHCR_TOKEN, GHCR_USER, IMAGE_URL, DEPLOY_TAG, APP_DIR, ORIGIN, DATABASE_URL, DATABASE_USER, DATABASE_PASSWORD, DATABASE_NAME
+          envs: GHCR_TOKEN, GHCR_USER, IMAGE_URL, DEPLOY_TAG, APP_DIR, ORIGIN, DATABASE_URL, DATABASE_USER, DATABASE_PASSWORD, DATABASE_NAME, ADMIN_PASSWORD
           script: |
             # Match the older Docker daemon API version installed on the VM.
             export DOCKER_API_VERSION=1.43
@@ -110,6 +111,7 @@ jobs:
             grep -qF "DATABASE_PASSWORD" .env || echo "DATABASE_PASSWORD=${DATABASE_PASSWORD}" >> .env
             grep -qF "DATABASE_NAME" .env || echo "DATABASE_NAME=${DATABASE_NAME}" >> .env
             grep -qF "ORIGIN" .env || echo "ORIGIN=${ORIGIN}" >> .env
+            grep -qF "ADMIN_PASSWORD" .env || echo "ADMIN_PASSWORD=${ADMIN_PASSWORD}" >> .env
 
             # Pull the selected release image as per docker-compose.prod.yaml
             docker-compose -f docker-compose.prod.yaml pull
