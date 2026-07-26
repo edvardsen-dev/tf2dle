@@ -4,6 +4,7 @@ services:
     environment:
       ORIGIN: ${ORIGIN}
       DATABASE_URL: ${DATABASE_URL}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
     ports:
       - 3010:3000
     depends_on:
