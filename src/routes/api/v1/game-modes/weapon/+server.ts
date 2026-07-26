@@ -1,4 +1,5 @@
 import { weaponService } from '$lib/server/services/WeaponService';
+import MetricsService from '$lib/server/services/MetricsService';
 import { json } from '@sveltejs/kit';
 
 /**
@@ -18,10 +19,11 @@ export async function GET() {
  * @returns WeaponGuessResponse
  */
 export async function POST({ request }) {
-	const { guess } = await request.json();
+	const { guess, numberOfGuesses } = await request.json();
 
 	try {
 		const result = await weaponService.validateGuess(guess);
+		await MetricsService.recordGameGuess('weapon', numberOfGuesses, result.correct);
 
 		return json(result, { status: 200 });
 	} catch (err) {

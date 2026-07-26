@@ -56,3 +56,24 @@ model DailyUnusuals {
   series      String
   hasWon      Int @default(0)
 }
+
+model DailyGameModeMetrics {
+  id                 Int      @id @default(autoincrement())
+  date               DateTime @db.Date
+  gameMode           String
+  starts             Int      @default(0)
+  guesses            Int      @default(0)
+  wins               Int      @default(0)
+  totalGuessesToWin  Int      @default(0)
+
+  @@unique([date, gameMode])
+}
+
+model DailyPageMetrics {
+  id    Int      @id @default(autoincrement())
+  date  DateTime @db.Date
+  path  String
+  views Int      @default(0)
+
+  @@unique([date, path])
+}

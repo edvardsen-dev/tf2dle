@@ -1,5 +1,6 @@
 import dayjs from '$lib/configs/dayjsConfig';
 import { cosmeticService } from '$lib/server/services/CosmeticService';
+import MetricsService from '$lib/server/services/MetricsService';
 import { json } from '@sveltejs/kit';
 
 /**
@@ -31,6 +32,7 @@ export async function POST({ request }) {
 	const { guess, numberOfGuesses } = await request.json();
 
 	const result = await cosmeticService.validateGuess(guess, numberOfGuesses);
+	await MetricsService.recordGameGuess('cosmetic', numberOfGuesses, result.correct);
 
 	return json(result);
 }
