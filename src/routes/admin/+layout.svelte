@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { Activity, ChevronLeft, ChevronRight, ExternalLink, LogOut, ShieldCheck } from 'lucide-svelte';
+	import { Activity, ChevronLeft, ChevronRight, ExternalLink, LogOut } from 'lucide-svelte';
 
 	$: metrics = $page.data.metrics;
 </script>
@@ -56,10 +56,6 @@
 			{/if}
 
 			<div class="flex items-center gap-3 text-sm text-muted-foreground">
-				<span class="hidden items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 md:inline-flex">
-					<ShieldCheck size={16} />
-					Protected
-				</span>
 				<a class="inline-flex items-center gap-2 rounded-md border border-border bg-card px-3 py-2 hover:bg-accent hover:text-accent-foreground" href="/">
 					Open app
 					<ExternalLink size={14} />
