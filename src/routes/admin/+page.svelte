@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Button from '$lib/components/ui/button/button.svelte';
 	import * as Card from '$lib/components/ui/card';
+	import AdminLogs from './AdminLogs.svelte';
 	import KpiCard from './KpiCard.svelte';
 
 	export let data;
@@ -259,6 +260,10 @@
 				</div>
 			</Card.Content>
 		</Card.Root>
+	</section>
+
+	<section>
+		<AdminLogs />
 	</section>
 </main>
 
