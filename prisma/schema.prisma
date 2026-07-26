@@ -77,3 +77,9 @@ model DailyPageMetrics {
 
   @@unique([date, path])
 }
+
+model AdminSettings {
+  id                    Int      @id
+  metricsLoggingEnabled Boolean  @default(true)
+  updatedAt             DateTime @updatedAt
+}

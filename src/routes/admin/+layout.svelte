@@ -1,8 +1,22 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
 	import { page } from '$app/stores';
 	import { Activity, ChevronLeft, ChevronRight, ExternalLink, LogOut } from 'lucide-svelte';
+	import type { SubmitFunction } from '@sveltejs/kit';
+
+	let pendingMetricsLoggingEnabled: boolean | null = null;
 
 	$: metrics = $page.data.metrics;
+	$: metricsLoggingEnabled = pendingMetricsLoggingEnabled ?? $page.data.metricsLoggingEnabled;
+
+	const optimisticallyToggleMetrics: SubmitFunction = () => {
+		pendingMetricsLoggingEnabled = !metricsLoggingEnabled;
+
+		return async ({ update }) => {
+			await update();
+			pendingMetricsLoggingEnabled = null;
+		};
+	};
 </script>
 
 <div class="min-h-screen bg-background text-foreground">
@@ -56,6 +70,22 @@
 			{/if}
 
 			<div class="flex items-center gap-3 text-sm text-muted-foreground">
+				{#if metrics}
+					<form method="POST" action="/admin?/setMetricsLogging" use:enhance={optimisticallyToggleMetrics}>
+						<input type="hidden" name="enabled" value={metricsLoggingEnabled ? 'false' : 'true'} />
+						<button
+							class="inline-flex items-center gap-2 rounded-md border border-border bg-card px-3 py-2 hover:bg-accent hover:text-accent-foreground"
+							type="submit"
+							aria-pressed={metricsLoggingEnabled}
+							title={metricsLoggingEnabled ? 'Pause metrics logging' : 'Resume metrics logging'}
+						>
+							<span class:enabled={metricsLoggingEnabled} class="metrics-switch" aria-hidden="true">
+								<span></span>
+							</span>
+							<span class="hidden md:inline">Metrics</span>
+						</button>
+					</form>
+				{/if}
 				<a class="inline-flex items-center gap-2 rounded-md border border-border bg-card px-3 py-2 hover:bg-accent hover:text-accent-foreground" href="/">
 					Open app
 					<ExternalLink size={14} />
@@ -79,3 +109,32 @@
 		<slot />
 	</div>
 </div>
+
+<style>
+	.metrics-switch {
+		display: inline-flex;
+		width: 1.9rem;
+		height: 1rem;
+		align-items: center;
+		border-radius: 9999px;
+		background: hsl(var(--muted));
+		padding: 0.125rem;
+		transition: background-color 150ms ease;
+	}
+
+	.metrics-switch.enabled {
+		background: hsl(var(--primary));
+	}
+
+	.metrics-switch span {
+		height: 0.75rem;
+		width: 0.75rem;
+		border-radius: 9999px;
+		background: hsl(var(--background));
+		transition: transform 150ms ease;
+	}
+
+	.metrics-switch.enabled span {
+		transform: translateX(0.9rem);
+	}
+</style>

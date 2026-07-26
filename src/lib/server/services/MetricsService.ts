@@ -8,14 +8,51 @@ import {
 } from '$lib/server/metricsUtils';
 import { db } from '../prisma';
 
+const ADMIN_SETTINGS_ID = 1;
+
 class MetricsService {
 	private constructor() {}
+
+	public static async isMetricsLoggingEnabled() {
+		const settings = await db.adminSettings.findUnique({
+			where: {
+				id: ADMIN_SETTINGS_ID
+			},
+			select: {
+				metricsLoggingEnabled: true
+			}
+		});
+
+		return settings?.metricsLoggingEnabled ?? true;
+	}
+
+	public static async setMetricsLoggingEnabled(enabled: boolean) {
+		const settings = await db.adminSettings.upsert({
+			where: {
+				id: ADMIN_SETTINGS_ID
+			},
+			create: {
+				id: ADMIN_SETTINGS_ID,
+				metricsLoggingEnabled: enabled
+			},
+			update: {
+				metricsLoggingEnabled: enabled
+			},
+			select: {
+				metricsLoggingEnabled: true
+			}
+		});
+
+		return settings.metricsLoggingEnabled;
+	}
 
 	public static async recordGameGuess(gameMode: GameMode, attempt: unknown, correct: boolean) {
 		const attemptNumber = normalizeAttemptNumber(attempt);
 		const date = dayjs.utc().startOf('day').toDate();
 
 		try {
+			if (!(await this.isMetricsLoggingEnabled())) return;
+
 			await db.dailyGameModeMetrics.upsert({
 				where: {
 					date_gameMode: {
@@ -55,6 +92,8 @@ class MetricsService {
 		const date = dayjs.utc().startOf('day').toDate();
 
 		try {
+			if (!(await this.isMetricsLoggingEnabled())) return;
+
 			await db.dailyPageMetrics.upsert({
 				where: {
 					date_path: {
