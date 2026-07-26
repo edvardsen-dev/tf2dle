@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button/button.svelte';
 	import * as Card from '$lib/components/ui/card';
 	import AdminLogs from './AdminLogs.svelte';
 	import KpiCard from './KpiCard.svelte';
@@ -52,33 +51,7 @@
 	}
 </script>
 
-<main class="mx-auto grid w-full max-w-6xl gap-6 px-4">
-	<section
-		class="flex flex-col gap-4 rounded-xl border border-primary/20 bg-card/80 p-5 shadow-2xl shadow-black/30 backdrop-blur md:flex-row md:items-end md:justify-between"
-	>
-		<div>
-			<p class="text-sm uppercase tracking-[0.35em] text-primary">TF2DLE Intel</p>
-			<h1 class="mt-2 text-3xl font-bold tracking-tight md:text-4xl">Business metrics</h1>
-			<p class="mt-2 text-sm text-muted-foreground">
-				Anonymous aggregate usage for {metrics.month.label}, UTC.
-			</p>
-		</div>
-
-		<div class="flex flex-wrap items-center gap-2">
-			<a class="month-button" href="/admin?month={metrics.month.previousMonthParam}"
-				>Previous month</a
-			>
-			{#if metrics.month.isCurrentMonth}
-				<span class="month-button-disabled">Next month</span>
-			{:else}
-				<a class="month-button" href="/admin?month={metrics.month.nextMonthParam}">Next month</a>
-			{/if}
-			<form method="POST" action="?/logout">
-				<Button type="submit" variant="secondary">Logout</Button>
-			</form>
-		</div>
-	</section>
-
+<main class="mx-auto grid w-full max-w-7xl gap-6 px-4">
 	<section class="grid gap-3 md:grid-cols-3 xl:grid-cols-6">
 		<KpiCard label="Starts" value={formatNumber(metrics.kpis.starts)} />
 		<KpiCard label="Wins" value={formatNumber(metrics.kpis.wins)} />
@@ -268,29 +241,6 @@
 </main>
 
 <style>
-	.month-button,
-	.month-button-disabled {
-		border-radius: 0.375rem;
-		border: 1px solid hsl(var(--border));
-		padding: 0.5rem 0.75rem;
-		font-size: 0.875rem;
-		font-weight: 500;
-	}
-
-	.month-button {
-		background: hsl(var(--secondary));
-		color: hsl(var(--secondary-foreground));
-	}
-
-	.month-button:hover {
-		background: hsl(var(--accent));
-	}
-
-	.month-button-disabled {
-		cursor: not-allowed;
-		opacity: 0.45;
-	}
-
 	.stroke-starts {
 		stroke: hsl(var(--primary));
 	}
