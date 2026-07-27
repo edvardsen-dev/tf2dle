@@ -118,10 +118,11 @@ export function getMonthBounds(selection: Pick<MonthSelection, 'year' | 'month'>
 export function buildDashboardMetrics(
 	selection: MonthSelection,
 	gameRows: GameMetricRow[],
-	pageRows: PageMetricRow[]
+	pageRows: PageMetricRow[],
+	now = dayjs.utc()
 ) {
 	const monthStart = dayjs.utc(`${selection.year}-${String(selection.month).padStart(2, '0')}-01`);
-	const visibleDaysInMonth = selection.isCurrentMonth ? dayjs.utc().date() : monthStart.daysInMonth();
+	const visibleDaysInMonth = selection.isCurrentMonth ? now.utc().date() : monthStart.daysInMonth();
 	const daily = Array.from({ length: visibleDaysInMonth }, (_, index) => {
 		const date = monthStart.add(index, 'day');
 
