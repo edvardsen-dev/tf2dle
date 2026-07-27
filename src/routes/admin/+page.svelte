@@ -1,20 +1,38 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import type { Chart as ChartInstance, ChartConfiguration } from 'chart.js';
 	import * as Card from '$lib/components/ui/card';
 	import AdminLogs from './AdminLogs.svelte';
 	import KpiCard from './KpiCard.svelte';
 
 	export let data;
 
-	const width = 720;
-	const height = 240;
-	const padding = 30;
+	type TrendChart = ChartInstance<'line', number[], string>;
 
+	let trendCanvas: HTMLCanvasElement;
+	let trendChart: TrendChart | undefined;
+	let ChartConstructor: typeof import('chart.js/auto').default | undefined;
 	$: metrics = data.metrics;
-	$: trendMax = Math.max(1, ...metrics.daily.flatMap((day) => [day.starts, day.guesses, day.wins]));
 	$: modeStartsMax = Math.max(1, ...metrics.modes.map((mode) => mode.starts));
-	$: guessesPath = linePath(metrics.daily, trendMax, 'guesses');
-	$: startsPath = linePath(metrics.daily, trendMax, 'starts');
-	$: winsPath = linePath(metrics.daily, trendMax, 'wins');
+	$: if (trendChart) {
+		updateTrendChart();
+	}
+
+	onMount(() => {
+		let disposed = false;
+
+		import('chart.js/auto').then(({ default: Chart }) => {
+			if (disposed) return;
+
+			ChartConstructor = Chart;
+			createTrendChart();
+		});
+
+		return () => {
+			disposed = true;
+			trendChart?.destroy();
+		};
+	});
 
 	function formatNumber(value: number) {
 		return new Intl.NumberFormat('en-US').format(value);
@@ -31,19 +49,122 @@
 		return value === 0 ? '0' : value.toFixed(1);
 	}
 
-	function linePath(
-		daily: typeof metrics.daily,
-		max: number,
-		metric: 'starts' | 'guesses' | 'wins'
-	) {
-		return daily
-			.map((day, index) => {
-				const x = padding + (index / Math.max(daily.length - 1, 1)) * (width - padding * 2);
-				const y = height - padding - (day[metric] / max) * (height - padding * 2);
+	function createTrendChart() {
+		if (!ChartConstructor || !trendCanvas) return;
 
-				return `${index === 0 ? 'M' : 'L'} ${x} ${y}`;
-			})
-			.join(' ');
+		trendChart = new ChartConstructor(trendCanvas, getTrendChartConfig()) as TrendChart;
+	}
+
+	function updateTrendChart() {
+		if (!trendChart) return;
+
+		const config = getTrendChartConfig();
+		trendChart.data = config.data;
+		trendChart.options = config.options ?? {};
+		trendChart.update();
+	}
+
+	function getTrendChartConfig(): ChartConfiguration<'line', number[], string> {
+		const startsColor = cssHsl('--primary', 'rgb(234 88 12)');
+		const mutedColor = cssHsl('--muted-foreground', 'rgb(120 113 108)');
+		const borderColor = cssHsl('--border', 'rgb(214 211 209)');
+		const cardColor = cssHsl('--card', 'rgb(255 255 255)');
+
+		return {
+			type: 'line',
+			data: {
+				labels: metrics.daily.map((day) => day.label),
+				datasets: [
+					{
+						label: 'Starts',
+						data: metrics.daily.map((day) => day.starts),
+						borderColor: startsColor,
+						backgroundColor: startsColor,
+						tension: 0.35
+					},
+					{
+						label: 'Guesses',
+						data: metrics.daily.map((day) => day.guesses),
+						borderColor: 'rgb(56 189 248)',
+						backgroundColor: 'rgb(56 189 248)',
+						tension: 0.35
+					},
+					{
+						label: 'Wins',
+						data: metrics.daily.map((day) => day.wins),
+						borderColor: 'rgb(34 197 94)',
+						backgroundColor: 'rgb(34 197 94)',
+						tension: 0.35
+					}
+				]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				interaction: {
+					intersect: false,
+					mode: 'index'
+				},
+				elements: {
+					line: {
+						borderWidth: 3
+					},
+					point: {
+						hoverRadius: 5,
+						radius: 2.5
+					}
+				},
+				plugins: {
+					legend: {
+						align: 'start',
+						labels: {
+							boxHeight: 8,
+							boxWidth: 8,
+							color: mutedColor,
+							usePointStyle: true
+						}
+					},
+					tooltip: {
+						backgroundColor: cardColor,
+						borderColor,
+						borderWidth: 1,
+						bodyColor: mutedColor,
+						padding: 12,
+						titleColor: startsColor
+					}
+				},
+				scales: {
+					x: {
+						grid: {
+							display: false
+						},
+						ticks: {
+							autoSkip: true,
+							color: mutedColor,
+							maxRotation: 0
+						}
+					},
+					y: {
+						beginAtZero: true,
+						grid: {
+							color: borderColor
+						},
+						ticks: {
+							color: mutedColor,
+							precision: 0
+						}
+					}
+				}
+			}
+		};
+	}
+
+	function cssHsl(variableName: string, fallback: string) {
+		if (typeof window === 'undefined') return fallback;
+
+		const value = getComputedStyle(document.documentElement).getPropertyValue(variableName).trim();
+
+		return value ? `hsl(${value})` : fallback;
 	}
 
 	function barWidth(value: number, max: number) {
@@ -68,50 +189,10 @@
 				<Card.Description>Starts, guesses, and wins across the selected month.</Card.Description>
 			</Card.Header>
 			<Card.Content class="flex flex-1 flex-col">
-				<div class="flex min-h-[360px] flex-1 overflow-x-auto">
-					<svg
-						class="h-full min-w-[720px] flex-1 overflow-visible"
-						viewBox="0 0 {width} {height}"
-						role="img"
-						aria-label="Daily gameplay trend chart"
-					>
-						<line
-							x1={padding}
-							y1={height - padding}
-							x2={width - padding}
-							y2={height - padding}
-							class="stroke-border"
-						/>
-						<line
-							x1={padding}
-							y1={padding}
-							x2={padding}
-							y2={height - padding}
-							class="stroke-border"
-						/>
-						<path d={guessesPath} fill="none" class="stroke-guesses" stroke-width="3" />
-						<path d={startsPath} fill="none" class="stroke-starts" stroke-width="3" />
-						<path d={winsPath} fill="none" class="stroke-wins" stroke-width="3" />
-						{#each metrics.daily as day, index}
-							{#if index === 0 || index === metrics.daily.length - 1 || day.date.endsWith('-15')}
-								<text
-									x={padding +
-										(index / Math.max(metrics.daily.length - 1, 1)) * (width - padding * 2)}
-									y={height - 7}
-									text-anchor="middle"
-									class="fill-muted-foreground text-[11px]"
-								>
-									{day.label}
-								</text>
-							{/if}
-						{/each}
-					</svg>
-				</div>
-
-				<div class="mt-4 flex flex-wrap gap-4 text-sm text-muted-foreground">
-					<span class="legend"><span class="legend-dot bg-primary"></span>Starts</span>
-					<span class="legend"><span class="legend-dot bg-sky-400"></span>Guesses</span>
-					<span class="legend"><span class="legend-dot bg-green-500"></span>Wins</span>
+				<div class="min-h-[360px] flex-1">
+					<canvas bind:this={trendCanvas} aria-label="Daily gameplay trend chart">
+						Daily gameplay trend chart
+					</canvas>
 				</div>
 			</Card.Content>
 		</Card.Root>
@@ -239,29 +320,3 @@
 		<AdminLogs />
 	</section>
 </main>
-
-<style>
-	.stroke-starts {
-		stroke: hsl(var(--primary));
-	}
-
-	.stroke-guesses {
-		stroke: rgb(56 189 248);
-	}
-
-	.stroke-wins {
-		stroke: rgb(34 197 94);
-	}
-
-	.legend {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.4rem;
-	}
-
-	.legend-dot {
-		height: 0.65rem;
-		width: 0.65rem;
-		border-radius: 9999px;
-	}
-</style>
