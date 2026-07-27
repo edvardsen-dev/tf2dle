@@ -21,7 +21,7 @@
 	<link rel="icon" href="/favicon/favicon.ico" />
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 
-	<title>TF2DLE</title>
+	<title>{isAdminRoute ? 'TF2DLE - Admin' : 'TF2DLE'}</title>
 	<meta name="description" content="A wordle like game for TF2" />
 	<meta name="keywords" content="tf2, wordle, tf2dle, tf2 wordle, tf2 wordle game, tf2 wordle" />
 	<meta name="author" content="Joakim Edvardsen" />
