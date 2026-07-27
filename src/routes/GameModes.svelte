@@ -34,12 +34,4 @@
 			{/each}
 		</ul>
 	</Card.Content>
-	<Card.Footer>
-		<p class="text-muted-foreground text-sm">
-			Have suggestions for other game modes? <a
-				href="https://www.reddit.com/user/jaakim"
-				class="underline">Send me a DM!</a
-			>
-		</p>
-	</Card.Footer>
 </Card.Root>
