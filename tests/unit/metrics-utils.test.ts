@@ -24,7 +24,7 @@ test('resolves invalid and future months to current UTC month', () => {
 });
 
 test('builds zero-filled monthly dashboard metrics', () => {
-	const selection = resolveMonthSelection('2026-07', dayjs.utc('2026-07-26T12:00:00Z'));
+	const selection = resolveMonthSelection('2026-07', dayjs.utc('2026-08-01T12:00:00Z'));
 	const metrics = buildDashboardMetrics(
 		selection,
 		[
@@ -51,7 +51,8 @@ test('builds zero-filled monthly dashboard metrics', () => {
 				path: '/patch-notes',
 				views: 5
 			}
-		]
+		],
+		dayjs.utc('2026-08-01T12:00:00Z')
 	);
 
 	expect(metrics.daily).toHaveLength(31);
@@ -67,4 +68,14 @@ test('builds zero-filled monthly dashboard metrics', () => {
 		wins: 3,
 		solveRate: 1
 	});
+});
+
+test('hides future days for the selected current month', () => {
+	const now = dayjs.utc('2026-07-26T12:00:00Z');
+	const selection = resolveMonthSelection('2026-07', now);
+	const metrics = buildDashboardMetrics(selection, [], [], now);
+
+	expect(metrics.daily).toHaveLength(26);
+	expect(metrics.dailyModes).toHaveLength(26);
+	expect(metrics.daily.at(-1)?.date).toBe('2026-07-26');
 });

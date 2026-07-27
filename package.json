@@ -46,6 +46,7 @@
 		"@oslojs/crypto": "^1.0.1",
 		"@prisma/client": "^6.15.0",
 		"@types/node-schedule": "^2.1.8",
+		"chart.js": "^4.5.1",
 		"clsx": "^2.1.1",
 		"cmdk-sv": "^0.0.13",
 		"dayjs": "^1.11.18",
