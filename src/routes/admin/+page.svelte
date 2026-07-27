@@ -8,14 +8,22 @@
 	export let data;
 
 	type TrendChart = ChartInstance<'line', number[], string>;
+	type DailyModeChart = ChartInstance<'bar', number[], string>;
+	type DailyModeMetric = 'guesses' | 'wins';
+	type ModeKey = 'weapon' | 'weapon-2' | 'map' | 'cosmetic' | 'unusual';
 
 	let trendCanvas: HTMLCanvasElement;
+	let modeGuessesCanvas: HTMLCanvasElement;
+	let modeWinsCanvas: HTMLCanvasElement;
 	let trendChart: TrendChart | undefined;
+	let modeGuessesChart: DailyModeChart | undefined;
+	let modeWinsChart: DailyModeChart | undefined;
 	let ChartConstructor: typeof import('chart.js/auto').default | undefined;
 	$: metrics = data.metrics;
+	$: dailyTotals = [...metrics.daily].reverse();
 	$: modeStartsMax = Math.max(1, ...metrics.modes.map((mode) => mode.starts));
-	$: if (trendChart) {
-		updateTrendChart();
+	$: if (metrics && (trendChart || modeGuessesChart || modeWinsChart)) {
+		updateCharts();
 	}
 
 	onMount(() => {
@@ -25,12 +33,14 @@
 			if (disposed) return;
 
 			ChartConstructor = Chart;
-			createTrendChart();
+			createCharts();
 		});
 
 		return () => {
 			disposed = true;
 			trendChart?.destroy();
+			modeGuessesChart?.destroy();
+			modeWinsChart?.destroy();
 		};
 	});
 
@@ -55,6 +65,33 @@
 		trendChart = new ChartConstructor(trendCanvas, getTrendChartConfig()) as TrendChart;
 	}
 
+	function createCharts() {
+		createTrendChart();
+		createDailyModeChart('guesses');
+		createDailyModeChart('wins');
+	}
+
+	function createDailyModeChart(metric: DailyModeMetric) {
+		if (!ChartConstructor) return;
+
+		const canvas = metric === 'guesses' ? modeGuessesCanvas : modeWinsCanvas;
+		if (!canvas) return;
+
+		const chart = new ChartConstructor(canvas, getDailyModeChartConfig(metric)) as DailyModeChart;
+
+		if (metric === 'guesses') {
+			modeGuessesChart = chart;
+		} else {
+			modeWinsChart = chart;
+		}
+	}
+
+	function updateCharts() {
+		updateTrendChart();
+		updateDailyModeChart('guesses');
+		updateDailyModeChart('wins');
+	}
+
 	function updateTrendChart() {
 		if (!trendChart) return;
 
@@ -62,6 +99,16 @@
 		trendChart.data = config.data;
 		trendChart.options = config.options ?? {};
 		trendChart.update();
+	}
+
+	function updateDailyModeChart(metric: DailyModeMetric) {
+		const chart = metric === 'guesses' ? modeGuessesChart : modeWinsChart;
+		if (!chart) return;
+
+		const config = getDailyModeChartConfig(metric);
+		chart.data = config.data;
+		chart.options = config.options ?? {};
+		chart.update();
 	}
 
 	function getTrendChartConfig(): ChartConfiguration<'line', number[], string> {
@@ -167,6 +214,93 @@
 		return value ? `hsl(${value})` : fallback;
 	}
 
+	function getDailyModeChartConfig(
+		metric: DailyModeMetric
+	): ChartConfiguration<'bar', number[], string> {
+		const mutedColor = cssHsl('--muted-foreground', 'rgb(120 113 108)');
+		const borderColor = cssHsl('--border', 'rgb(214 211 209)');
+		const cardColor = cssHsl('--card', 'rgb(255 255 255)');
+		const modeColors: Record<ModeKey, string> = {
+			weapon: cssHsl('--primary', 'rgb(234 88 12)'),
+			'weapon-2': 'rgb(56 189 248)',
+			map: 'rgb(34 197 94)',
+			cosmetic: 'rgb(217 70 239)',
+			unusual: 'rgb(245 158 11)'
+		};
+
+		return {
+			type: 'bar',
+			data: {
+				labels: metrics.dailyModes.map((day) => day.label),
+				datasets:
+					metrics.dailyModes[0]?.modes.map((mode) => ({
+						label: mode.label,
+						data: metrics.dailyModes.map(
+							(day) =>
+								day.modes.find((dailyMode) => dailyMode.gameMode === mode.gameMode)?.[metric] ?? 0
+						),
+						backgroundColor: modeColors[mode.gameMode as ModeKey],
+						borderSkipped: false,
+						borderWidth: 0,
+						borderRadius: 3,
+						maxBarThickness: 28,
+						stack: 'game-modes'
+					})) ?? []
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				interaction: {
+					intersect: false,
+					mode: 'index'
+				},
+				plugins: {
+					legend: {
+						align: 'start',
+						labels: {
+							boxHeight: 8,
+							boxWidth: 8,
+							color: mutedColor,
+							usePointStyle: true
+						}
+					},
+					tooltip: {
+						backgroundColor: cardColor,
+						borderColor,
+						borderWidth: 1,
+						bodyColor: mutedColor,
+						padding: 12,
+						titleColor: cssHsl('--primary', 'rgb(234 88 12)')
+					}
+				},
+				scales: {
+					x: {
+						stacked: true,
+						grid: {
+							display: false
+						},
+						ticks: {
+							autoSkip: true,
+							color: mutedColor,
+							maxRotation: 0
+						}
+					},
+					y: {
+						beginAtZero: true,
+						stacked: true,
+						grid: {
+							color: borderColor
+						},
+						ticks: {
+							color: mutedColor,
+							precision: 0
+						}
+					}
+				}
+			}
+		};
+	}
+
 	function barWidth(value: number, max: number) {
 		return `${Math.round((value / max) * 100)}%`;
 	}
@@ -249,6 +383,38 @@
 	<section class="grid gap-6 xl:grid-cols-2">
 		<Card.Root class="bg-card/90">
 			<Card.Header>
+				<Card.Title>Daily guesses by mode</Card.Title>
+				<Card.Description
+					>Each day split by the game mode that received the guesses.</Card.Description
+				>
+			</Card.Header>
+			<Card.Content>
+				<div class="min-h-[340px]">
+					<canvas bind:this={modeGuessesCanvas} aria-label="Daily guesses by game mode chart">
+						Daily guesses by game mode chart
+					</canvas>
+				</div>
+			</Card.Content>
+		</Card.Root>
+
+		<Card.Root class="bg-card/90">
+			<Card.Header>
+				<Card.Title>Daily solves by mode</Card.Title>
+				<Card.Description>Each day split by the game mode players solved.</Card.Description>
+			</Card.Header>
+			<Card.Content>
+				<div class="min-h-[340px]">
+					<canvas bind:this={modeWinsCanvas} aria-label="Daily solves by game mode chart">
+						Daily solves by game mode chart
+					</canvas>
+				</div>
+			</Card.Content>
+		</Card.Root>
+	</section>
+
+	<section class="grid gap-6 xl:grid-cols-2">
+		<Card.Root class="bg-card/90">
+			<Card.Header>
 				<Card.Title>Mode summary</Card.Title>
 				<Card.Description>Exact gameplay totals for the month.</Card.Description>
 			</Card.Header>
@@ -300,7 +466,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							{#each metrics.daily as day}
+							{#each dailyTotals as day}
 								<tr class="border-b last:border-0">
 									<td class="py-2 pr-3 font-medium">{day.label}</td>
 									<td class="py-2 pr-3 text-right">{formatNumber(day.starts)}</td>

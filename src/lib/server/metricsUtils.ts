@@ -55,6 +55,17 @@ export type DashboardMetrics = {
 		wins: number;
 		patchNotesViews: number;
 	}>;
+	dailyModes: Array<{
+		date: string;
+		label: string;
+		modes: Array<{
+			gameMode: GameMode;
+			label: string;
+			starts: number;
+			guesses: number;
+			wins: number;
+		}>;
+	}>;
 	modes: Array<{
 		gameMode: GameMode;
 		label: string;
@@ -110,8 +121,8 @@ export function buildDashboardMetrics(
 	pageRows: PageMetricRow[]
 ) {
 	const monthStart = dayjs.utc(`${selection.year}-${String(selection.month).padStart(2, '0')}-01`);
-	const daysInMonth = monthStart.daysInMonth();
-	const daily = Array.from({ length: daysInMonth }, (_, index) => {
+	const visibleDaysInMonth = selection.isCurrentMonth ? dayjs.utc().date() : monthStart.daysInMonth();
+	const daily = Array.from({ length: visibleDaysInMonth }, (_, index) => {
 		const date = monthStart.add(index, 'day');
 
 		return {
@@ -124,6 +135,18 @@ export function buildDashboardMetrics(
 		};
 	});
 	const dailyByDate = new Map(daily.map((day) => [day.date, day]));
+	const dailyModes = daily.map((day) => ({
+		date: day.date,
+		label: day.label,
+		modes: GAME_MODES.map((gameMode) => ({
+			gameMode,
+			label: GAME_MODE_LABELS[gameMode],
+			starts: 0,
+			guesses: 0,
+			wins: 0
+		}))
+	}));
+	const dailyModesByDate = new Map(dailyModes.map((day) => [day.date, day]));
 	const modes = GAME_MODES.map((gameMode) => ({
 		gameMode,
 		label: GAME_MODE_LABELS[gameMode],
@@ -137,12 +160,21 @@ export function buildDashboardMetrics(
 	for (const row of gameRows) {
 		const dateKey = dayjs.utc(row.date).format('YYYY-MM-DD');
 		const day = dailyByDate.get(dateKey);
+		const dayMode = dailyModesByDate
+			.get(dateKey)
+			?.modes.find((mode) => mode.gameMode === row.gameMode);
 		const mode = modesByGameMode.get(row.gameMode as GameMode);
 
 		if (day) {
 			day.starts += row.starts;
 			day.guesses += row.guesses;
 			day.wins += row.wins;
+		}
+
+		if (dayMode) {
+			dayMode.starts += row.starts;
+			dayMode.guesses += row.guesses;
+			dayMode.wins += row.wins;
 		}
 
 		if (mode) {
@@ -186,6 +218,7 @@ export function buildDashboardMetrics(
 			patchNotesViews
 		},
 		daily,
+		dailyModes,
 		modes: modes.map(({ totalGuessesToWin, ...mode }) => ({
 			...mode,
 			solveRate: rate(mode.wins, mode.starts),
