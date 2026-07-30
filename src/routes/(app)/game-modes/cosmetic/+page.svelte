@@ -1,28 +1,24 @@
 <script lang="ts">
+	import CompletedResult from '$lib/components/games/CompletedResult.svelte';
+	import CommunityStatus from '$lib/components/games/CommunityStatus.svelte';
+	import GameShell from '$lib/components/games/GameShell.svelte';
 	import Input from '$lib/components/games/Input.svelte';
-	import * as Card from '$lib/components/ui/card';
+	import CosmeticShowcase from '$lib/components/games/IconShowcase.svelte';
+	import YesterdayAnswer from '$lib/components/games/YesterdayAnswer.svelte';
 	import { useLocalStorage } from '$lib/composables/useLocalStorage';
+	import { useStats } from '$lib/composables/useStats';
+	import { CDN_URL } from '$lib/constants';
 	import dayjs from '$lib/configs/dayjsConfig.js';
 	import type { CosmeticDto, CosmeticGuessResponse, CurrentCosmeticDto } from '$lib/dtos.js';
-	import { AreaChart, Dices, Flame, Loader2, RotateCw } from 'lucide-svelte';
 	import { onMount } from 'svelte';
+	import { writable } from 'svelte/store';
 	import { toast } from 'svelte-sonner';
-	import Hints from './Hints.svelte';
 	import GuessesList from './GuessesList.svelte';
-	import VictoryDialog from '$lib/components/games/VictoryDialog.svelte';
-	import ColorExplanation from '$lib/components/games/ColorExplanation.svelte';
-	import { useStats } from '$lib/composables/useStats';
-	import StatsDialog from '$lib/components/games/StatsDialog.svelte';
-	import CosmeticShowcase from '$lib/components/games/IconShowcase.svelte';
-	import WinterDecore from '$lib/features/theme/components/winter/WinterDecore.svelte';
-	import { CDN_URL } from '$lib/constants';
-	import CommunityStatus from '$lib/components/games/CommunityStatus.svelte';
-	import CompletedResult from '$lib/components/games/CompletedResult.svelte';
+	import Hints from './Hints.svelte';
 
 	export let data;
 
 	const stats = useStats('cosmetic');
-	let openStatsDialog = false;
 
 	// State persisted in local storage
 	let guesses = useLocalStorage<CosmeticGuessResponse[]>('cosmetic_guesses', []);
@@ -37,12 +33,12 @@
 	let loadingState: 'loading' | 'error' | 'success' = 'loading';
 	let gameState: 'guessing' | 'won' = 'guessing';
 	let validating = false;
-	let openDialog = false;
+	let openVictoryDialog = writable(false);
 
 	// Data
 	let cosmetics: CosmeticDto[] = [];
 	let todaysCosmetic: CurrentCosmeticDto | undefined;
-	let numberOfCorrectGuesses: number;
+	let numberOfCorrectGuesses = writable<number | undefined>(undefined);
 
 	onMount(async () => {
 		// Load data
@@ -50,7 +46,7 @@
 			const [res1, res2] = await Promise.all([data.cosmetics, data.todaysCosmetic]);
 			cosmetics = res1 ?? [];
 			todaysCosmetic = res2;
-			numberOfCorrectGuesses = res2?.numbersOfCorrectGuesses ?? 0;
+			numberOfCorrectGuesses.set(res2?.numbersOfCorrectGuesses ?? 0);
 		} catch (err) {
 			loadingState = 'error';
 			return;
@@ -162,109 +158,64 @@
 		setTimeout(() => {
 			streak.update((streak) => streak + 1);
 			stats.incrementAttempt($guesses.length);
-			numberOfCorrectGuesses = numberOfCorrectGuesses ? numberOfCorrectGuesses + 1 : 1;
+			numberOfCorrectGuesses.update((numberOfCorrectGuesses) =>
+				numberOfCorrectGuesses ? numberOfCorrectGuesses + 1 : 1
+			);
 			gameState = 'won';
-			openDialog = true;
+			openVictoryDialog.set(true);
 		}, 500);
 	}
 </script>
 
-<div class="grid gap-4">
-	<Card.Root class="relative">
-		<Card.Header>
-			<div class="flex justify-between">
-				<div>
-					<Card.Title>Cosmetic</Card.Title>
-					<Card.Description>Guess today's cosmetic</Card.Description>
-				</div>
-				<div class="flex gap-4">
-					<p class="flex items-center">
-						<Dices aria-label="Number of guesses" />
-						{$guesses.length}
-					</p>
-					<p class="flex items-center">
-						<Flame aria-label="streak" />
-						{$streak}
-					</p>
-					<button on:click={() => (openStatsDialog = true)}>
-						<AreaChart aria-label="Stats" />
-					</button>
-				</div>
-			</div>
-		</Card.Header>
-		<Card.Content>
-			<WinterDecore />
-			{#if loadingState === 'loading'}
-				<div class="flex justify-center p-4">
-					<Loader2 class="h-4 w-4 animate-spin" />
-				</div>
-			{:else if loadingState === 'error'}
-				<a href="/game-modes/cosmetic" class="grid justify-items-center gap-4 p-4">
-					Something went wrong. Please try to refresh.
-					<RotateCw class="w-4 h-4" />
-				</a>
-			{:else}
-				<div class="grid gap-8">
-					{#if todaysCosmetic}
-						<CosmeticShowcase
-							gamemode="cosmetics"
-							icon={todaysCosmetic?.cosmetic}
-							guesses={$guesses.length}
-							hasWon={gameState === 'won'}
-						/>
-					{/if}
-					<Hints guesses={$guesses.length} usedBy={$usedBy} />
-					{#if gameState === 'guessing'}
-						<CommunityStatus challenge="cosmetic" correctGuesses={numberOfCorrectGuesses} />
-						<Input
-							data={cosmetics?.map((c) => ({
-								img: `${CDN_URL}/cosmetics/${c.thumbnail}.png`,
-								value: c.name
-							}))}
-							guessed={$guesses.map((guess) => guess.name)}
-							{validating}
-							on:select={(e) => handleSelect(e.detail)}
-						/>
-					{:else}
-						<CompletedResult
-							mode="cosmetic"
-							challenge="cosmetic"
-							guesses={$guesses}
-							streak={$streak}
-							correctGuesses={numberOfCorrectGuesses}
-						/>
-					{/if}
-					<GuessesList guesses={$guesses} />
-				</div>
-			{/if}
-		</Card.Content>
-		<Card.Footer class="text-sm text-muted-foreground justify-center">
-			{#await data.yesterdaysAnswer then yesterdaysAnswer}
-				<p>Yesterday's cosmetic was: <span class="text-foreground">{yesterdaysAnswer}</span></p>
-			{/await}
-		</Card.Footer>
-	</Card.Root>
-
-	<ColorExplanation />
-
-	<StatsDialog bind:open={openStatsDialog} stats={$stats} />
-
-	{#if $guesses.length > 0}
-		<VictoryDialog
-			bind:open={openDialog}
-			img={{
-				src: `${CDN_URL}/cosmetics/${todaysCosmetic?.cosmetic.thumbnail}.png`,
-				alt: 'Todays cosmetic'
-			}}
-			imgSize="96px"
-			challenge="Cosmetic"
-			value={$guesses[0].name}
-			tries={$guesses.length}
-			streak={$streak}
-			correctGuesses={numberOfCorrectGuesses ?? 1}
-			nextChallenge="/game-modes/unusual"
-			shareMode="cosmetic"
-			shareGuesses={$guesses}
-		/>
-	{/if}
-</div>
+<GameShell
+	title="Cosmetic"
+	challenge="Cosmetic"
+	shareMode="cosmetic"
+	description="Guess today's cosmetic"
+	img={{ basePath: `${CDN_URL}/cosmetics/`, guessKey: 'thumbnail' }}
+	nextChallenge="/game-modes/unusual"
+	{loadingState}
+	{guesses}
+	{streak}
+	{stats}
+	{numberOfCorrectGuesses}
+	{openVictoryDialog}
+>
+	<div class="grid gap-4">
+		{#if todaysCosmetic}
+			<CosmeticShowcase
+				gamemode="cosmetics"
+				icon={todaysCosmetic?.cosmetic}
+				guesses={$guesses.length}
+				hasWon={gameState === 'won'}
+			/>
+		{/if}
+		<Hints guesses={$guesses.length} usedBy={$usedBy} hasWon={gameState === 'won'} />
+		{#if gameState === 'guessing'}
+			<CommunityStatus challenge="cosmetic" correctGuesses={$numberOfCorrectGuesses} />
+			<Input
+				data={cosmetics?.map((c) => ({
+					img: `${CDN_URL}/cosmetics/${c.thumbnail}.png`,
+					value: c.name
+				}))}
+				guessed={$guesses.map((guess) => guess.name)}
+				bind:validating
+				on:select={(e) => handleSelect(e.detail)}
+			/>
+		{:else}
+			<CompletedResult
+				mode="cosmetic"
+				challenge="cosmetic"
+				guesses={$guesses}
+				streak={$streak}
+				correctGuesses={$numberOfCorrectGuesses}
+			/>
+		{/if}
+		<GuessesList guesses={$guesses} />
+	</div>
+	<div slot="footer" class="flex justify-center w-full">
+		{#await data.yesterdaysAnswer then yesterdaysAnswer}
+			<YesterdayAnswer challenge="cosmetic" answer={yesterdaysAnswer} />
+		{/await}
+	</div>
+</GameShell>
