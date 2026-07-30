@@ -11,6 +11,7 @@
 	import { CDN_URL } from '$lib/constants';
 	import CommunityStatus from '$lib/components/games/CommunityStatus.svelte';
 	import CompletedResult from '$lib/components/games/CompletedResult.svelte';
+	import YesterdayAnswer from '$lib/components/games/YesterdayAnswer.svelte';
 
 	export let data;
 
@@ -60,9 +61,10 @@
 				guesses={$guesses.length}
 				hasWon={$gameState === 'won'}
 				size={{ width: 200, height: 200 }}
+				framed={false}
 			/>
 		{/if}
-		<Hints guesses={$guesses.length} series={$series} />
+		<Hints guesses={$guesses.length} series={$series} hasWon={$gameState === 'won'} />
 		{#if $gameState === 'guessing'}
 			<CommunityStatus challenge="unusual" correctGuesses={$numberOfCorrectGuesses} />
 			<Input
@@ -87,7 +89,7 @@
 	</div>
 	<div slot="footer" class="flex justify-center w-full">
 		{#await data.yesterdaysAnswer then yesterdaysAnswer}
-			<p>Yesterday's unusual was: <span class="text-foreground">{yesterdaysAnswer}</span></p>
+			<YesterdayAnswer challenge="unusual" answer={yesterdaysAnswer} />
 		{/await}
 	</div>
 </GameShell>

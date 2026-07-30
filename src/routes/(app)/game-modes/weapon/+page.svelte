@@ -9,6 +9,7 @@
 	import { CDN_URL } from '$lib/constants';
 	import CommunityStatus from '$lib/components/games/CommunityStatus.svelte';
 	import CompletedResult from '$lib/components/games/CompletedResult.svelte';
+	import YesterdayAnswer from '$lib/components/games/YesterdayAnswer.svelte';
 
 	// Data
 	export let data;
@@ -74,7 +75,7 @@
 	</div>
 	<div slot="footer" class="flex justify-center w-full">
 		{#await data.yesterdaysAnswer then yesterdaysAnswer}
-			<p>Yesterday's weapon was: <span class="text-foreground">{yesterdaysAnswer}</span></p>
+			<YesterdayAnswer challenge="weapon" answer={yesterdaysAnswer} />
 		{/await}
 	</div>
 </GameShell>

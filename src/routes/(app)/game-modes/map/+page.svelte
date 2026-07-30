@@ -17,6 +17,7 @@
 	import { CDN_URL } from '$lib/constants';
 	import CommunityStatus from '$lib/components/games/CommunityStatus.svelte';
 	import CompletedResult from '$lib/components/games/CompletedResult.svelte';
+	import YesterdayAnswer from '$lib/components/games/YesterdayAnswer.svelte';
 
 	export let data;
 
@@ -228,7 +229,7 @@
 		</Card.Content>
 		<Card.Footer class="text-sm text-muted-foreground justify-center">
 			{#await data.yesterdaysAnswer then yesterdaysAnswer}
-				<p>Yesterday's map was: <span class="text-foreground">{yesterdaysAnswer}</span></p>
+				<YesterdayAnswer challenge="map" answer={yesterdaysAnswer} />
 			{/await}
 		</Card.Footer>
 	</Card.Root>

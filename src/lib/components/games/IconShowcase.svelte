@@ -12,6 +12,7 @@
 	export let hasWon: boolean;
 	// Icon size
 	export let size: { width: number; height: number } = { width: 96, height: 75 };
+	export let framed = true;
 
 	let wrapper: HTMLDivElement;
 	let canvas: HTMLCanvasElement;
@@ -77,7 +78,7 @@
 </script>
 
 <div class="flex justify-center">
-	<div class="border py-2 rounded-sm">
+	<div class={framed ? 'rounded-xl border border-border/70 bg-muted/20 p-4 shadow-sm' : ''}>
 		<div
 			bind:this={wrapper}
 			style="width: {size.width}px; height: {size.height}px"

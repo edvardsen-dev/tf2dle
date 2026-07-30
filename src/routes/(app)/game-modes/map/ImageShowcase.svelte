@@ -77,12 +77,26 @@
 <svelte:window on:resize={handleWindowResize} />
 
 <div>
-	<div class="relative overflow-hidden aspect-video rounded" bind:this={container}>
+	<div
+		class="relative overflow-hidden aspect-video rounded-lg border border-border bg-muted"
+		bind:this={container}
+	>
 		<div class="absolute inset-0 bg-muted animate-pulse"></div>
 		<!-- svelte-ignore a11y-img-redundant-alt -->
 		<canvas bind:this={canvas} class="absolute w-full h-full"></canvas>
+		{#if hasWon}
+			<div
+				class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/95 via-background/70 to-transparent p-4 pt-12"
+			>
+				<div
+					class="mx-auto w-fit rounded-lg border border-primary/30 bg-background/90 px-4 py-2 text-center shadow-lg shadow-background/40 backdrop-blur"
+				>
+					<p class="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-primary">
+						Map revealed
+					</p>
+					<p class="text-lg font-semibold text-foreground">{mapName}</p>
+				</div>
+			</div>
+		{/if}
 	</div>
-	{#if hasWon}
-		<p class="text-center mt-2 font-semibold">{mapName}</p>
-	{/if}
 </div>
