@@ -8,8 +8,11 @@
 	import type { UseStats } from '$lib/composables/useStats';
 	import { page } from '$app/stores';
 	import WinterDecore from '$lib/features/theme/components/winter/WinterDecore.svelte';
+	import type { ShareMode } from '$lib/share';
 
 	export let title: string;
+	export let challenge: string;
+	export let shareMode: ShareMode;
 	export let description: string;
 	export let img: { basePath: string; guessKey: string };
 	export let loadingState: 'loading' | 'error' | 'success';
@@ -81,12 +84,14 @@
 		<VictoryDialog
 			img={{ src: `${img.basePath}${$guesses[0][img.guessKey]}.png`, alt: $guesses[0].name }}
 			imgSize="10rem"
-			challenge="Weapon"
+			{challenge}
 			value={$guesses[0].name}
 			tries={$guesses.length}
 			streak={$streak}
 			correctGuesses={$numberOfCorrectGuesses ?? 1}
 			{nextChallenge}
+			{shareMode}
+			shareGuesses={$guesses}
 			bind:open={$openVictoryDialog}
 		/>
 	{/if}

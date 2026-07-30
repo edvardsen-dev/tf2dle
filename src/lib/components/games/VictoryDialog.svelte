@@ -1,8 +1,9 @@
 <script lang="ts">
 	import Button from '$lib/components/ui/button/button.svelte';
 	import * as Dialog from '$lib/components/ui/dialog';
-	import TwitterShare from '$lib/components/games/TwitterShare.svelte';
 	import { Dices, Flame } from 'lucide-svelte';
+	import ShareResult from '$lib/components/games/ShareResult.svelte';
+	import type { ShareMode } from '$lib/share';
 
 	// Image of the correct guess
 	export let img: { src: string; alt: string };
@@ -19,6 +20,9 @@
 	export let correctGuesses: number;
 	// A link to the next challenge
 	export let nextChallenge: string | null = null;
+	// Share metadata for the solved challenge
+	export let shareMode: ShareMode;
+	export let shareGuesses: unknown[];
 
 	export let open: boolean;
 </script>
@@ -26,10 +30,7 @@
 <Dialog.Root bind:open>
 	<Dialog.Content>
 		<Dialog.Header>
-			<Dialog.Title>
-				Correct!
-				<TwitterShare {challenge} {tries} {streak} class="mb-2" />
-			</Dialog.Title>
+			<Dialog.Title>Correct!</Dialog.Title>
 			<Dialog.Description
 				>You are gamer number {correctGuesses} to guess the correct {challenge.toLowerCase()}!</Dialog.Description
 			>
@@ -61,11 +62,9 @@
 				</div>
 			</div>
 			{#if nextChallenge}
-				<Button href={nextChallenge} class="mb-2">Next challenge</Button>
+				<Button href={nextChallenge} variant="secondary" class="mb-2">Next challenge</Button>
 			{/if}
-			<Button on:click={() => (open = false)} variant="secondary" data-testId="victoryClose"
-				>Close</Button
-			>
+			<ShareResult mode={shareMode} guesses={shareGuesses} {streak} class="w-full" />
 		</div>
 	</Dialog.Content>
 </Dialog.Root>
