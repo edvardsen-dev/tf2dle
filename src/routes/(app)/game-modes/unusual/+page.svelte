@@ -9,7 +9,8 @@
 	import { useLocalStorage } from '$lib/composables/useLocalStorage';
 	import GuessesList from './GuessesList.svelte';
 	import { CDN_URL } from '$lib/constants';
-	import ShareResult from '$lib/components/games/ShareResult.svelte';
+	import CommunityStatus from '$lib/components/games/CommunityStatus.svelte';
+	import CompletedResult from '$lib/components/games/CompletedResult.svelte';
 
 	export let data;
 
@@ -63,10 +64,7 @@
 		{/if}
 		<Hints guesses={$guesses.length} series={$series} />
 		{#if $gameState === 'guessing'}
-			<p class="text-sm text-center text-muted-foreground">
-				{$numberOfCorrectGuesses}
-				{$numberOfCorrectGuesses === 1 ? 'gamer' : 'gamers'} have guessed todays unusual
-			</p>
+			<CommunityStatus challenge="unusual" correctGuesses={$numberOfCorrectGuesses} />
 			<Input
 				data={unusuals?.map((u) => ({
 					img: `${CDN_URL}/unusuals/${u.thumbnail}.png`,
@@ -77,10 +75,13 @@
 				on:select={(e) => guess(e.detail)}
 			/>
 		{:else}
-			<p class="text-sm text-center text-muted-foreground">
-				You are 1 out of {$numberOfCorrectGuesses} that have guessed todays unusual
-			</p>
-			<ShareResult mode="unusual" guesses={$guesses} streak={$streak} class="w-full" />
+			<CompletedResult
+				mode="unusual"
+				challenge="unusual"
+				guesses={$guesses}
+				streak={$streak}
+				correctGuesses={$numberOfCorrectGuesses}
+			/>
 		{/if}
 		<GuessesList guesses={$guesses} />
 	</div>

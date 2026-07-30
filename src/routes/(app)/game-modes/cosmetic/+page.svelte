@@ -16,7 +16,8 @@
 	import CosmeticShowcase from '$lib/components/games/IconShowcase.svelte';
 	import WinterDecore from '$lib/features/theme/components/winter/WinterDecore.svelte';
 	import { CDN_URL } from '$lib/constants';
-	import ShareResult from '$lib/components/games/ShareResult.svelte';
+	import CommunityStatus from '$lib/components/games/CommunityStatus.svelte';
+	import CompletedResult from '$lib/components/games/CompletedResult.svelte';
 
 	export let data;
 
@@ -214,10 +215,7 @@
 					{/if}
 					<Hints guesses={$guesses.length} usedBy={$usedBy} />
 					{#if gameState === 'guessing'}
-						<p class="text-sm text-center text-muted-foreground">
-							{numberOfCorrectGuesses}
-							{numberOfCorrectGuesses === 1 ? 'gamer' : 'gamers'} have guessed todays cosmetic
-						</p>
+						<CommunityStatus challenge="cosmetic" correctGuesses={numberOfCorrectGuesses} />
 						<Input
 							data={cosmetics?.map((c) => ({
 								img: `${CDN_URL}/cosmetics/${c.thumbnail}.png`,
@@ -228,12 +226,13 @@
 							on:select={(e) => handleSelect(e.detail)}
 						/>
 					{:else}
-						<div class="grid gap-3">
-							<ShareResult mode="cosmetic" guesses={$guesses} streak={$streak} class="w-full" />
-							<p class="text-sm text-center text-muted-foreground">
-								You are 1 out of {numberOfCorrectGuesses} that have guessed todays cosmetic!
-							</p>
-						</div>
+						<CompletedResult
+							mode="cosmetic"
+							challenge="cosmetic"
+							guesses={$guesses}
+							streak={$streak}
+							correctGuesses={numberOfCorrectGuesses}
+						/>
 					{/if}
 					<GuessesList guesses={$guesses} />
 				</div>

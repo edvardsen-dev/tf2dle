@@ -15,7 +15,8 @@
 	import StatsDialog from '$lib/components/games/StatsDialog.svelte';
 	import WinterDecore from '$lib/features/theme/components/winter/WinterDecore.svelte';
 	import { CDN_URL } from '$lib/constants';
-	import ShareResult from '$lib/components/games/ShareResult.svelte';
+	import CommunityStatus from '$lib/components/games/CommunityStatus.svelte';
+	import CompletedResult from '$lib/components/games/CompletedResult.svelte';
 
 	export let data;
 
@@ -190,12 +191,7 @@
 						/>
 						{#await data.maps then maps}
 							{#if gameState === 'guessing'}
-								{#if numberOfCorrectGuesses !== undefined}
-									<p class="text-center text-sm text-muted-foreground">
-										{numberOfCorrectGuesses}
-										{numberOfCorrectGuesses === 1 ? 'gamer' : 'gamers'} has guessed todays map
-									</p>
-								{/if}
+								<CommunityStatus challenge="map" correctGuesses={numberOfCorrectGuesses} />
 								<Input
 									on:select={(event) => handleSelect(event.detail)}
 									data={maps?.map((map) => ({
@@ -206,10 +202,13 @@
 									bind:validating
 								/>
 							{:else if numberOfCorrectGuesses !== undefined}
-								<p class="text-center text-sm text-muted-foreground">
-									You are 1 out of {numberOfCorrectGuesses} that have guessed todays map!
-								</p>
-								<ShareResult mode="map" guesses={$guesses} streak={$streak} class="w-full" />
+								<CompletedResult
+									mode="map"
+									challenge="map"
+									guesses={$guesses}
+									streak={$streak}
+									correctGuesses={numberOfCorrectGuesses}
+								/>
 							{/if}
 						{/await}
 						<GuessesList guesses={$guesses} />
