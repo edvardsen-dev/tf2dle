@@ -7,6 +7,7 @@
 	import { writable } from 'svelte/store';
 	import GameShell from '$lib/components/games/GameShell.svelte';
 	import { CDN_URL } from '$lib/constants';
+	import ShareResult from '$lib/components/games/ShareResult.svelte';
 
 	// Data
 	export let data;
@@ -35,6 +36,8 @@
 
 <GameShell
 	title="Weapon"
+	challenge="Weapon"
+	shareMode="weapon"
 	description="Guess today's weapon"
 	img={{ basePath: `${CDN_URL}/weapons/thumbnails/`, guessKey: 'name' }}
 	nextChallenge="/game-modes/weapon-2"
@@ -61,9 +64,10 @@
 				bind:validating={$validating}
 			/>
 		{:else}
-			<p class="text-center text-sm text-muted-foreground my-10" data-testId="completed-message">
+			<p class="text-center text-sm text-muted-foreground my-6" data-testId="completed-message">
 				You are 1 out of {$numberOfCorrectGuesses} that have guessed todays weapon!
 			</p>
+			<ShareResult mode="weapon" guesses={$guesses} streak={$streak} class="w-full" />
 		{/if}
 		<GuessesList guesses={$guesses} />
 	</div>

@@ -14,6 +14,7 @@
 	import VictoryDialog from '$lib/components/games/VictoryDialog.svelte';
 	import WinterDecore from '$lib/features/theme/components/winter/WinterDecore.svelte';
 	import { CDN_URL } from '$lib/constants';
+	import ShareResult from '$lib/components/games/ShareResult.svelte';
 
 	export let data;
 
@@ -228,9 +229,12 @@
 									bind:validating
 								/>
 							{:else}
-								<p class="text-sm text-center text-muted-foreground">
-									You are 1 out of {numberOfCorrectGuesses} that have guessed todays weapon
-								</p>
+								<div class="grid gap-3">
+									<ShareResult mode="weapon-2" guesses={$guesses} streak={$streak} class="w-full" />
+									<p class="text-sm text-center text-muted-foreground">
+										You are 1 out of {numberOfCorrectGuesses} that have guessed todays weapon
+									</p>
+								</div>
 							{/if}
 						{/await}
 						<GuessesList guesses={$guesses} />
@@ -273,6 +277,8 @@
 			streak={$streak}
 			correctGuesses={numberOfCorrectGuesses ?? 1}
 			nextChallenge="/game-modes/map"
+			shareMode="weapon-2"
+			shareGuesses={$guesses}
 		/>
 	{/await}
 </div>

@@ -9,6 +9,7 @@
 	import { useLocalStorage } from '$lib/composables/useLocalStorage';
 	import GuessesList from './GuessesList.svelte';
 	import { CDN_URL } from '$lib/constants';
+	import ShareResult from '$lib/components/games/ShareResult.svelte';
 
 	export let data;
 
@@ -39,6 +40,8 @@
 
 <GameShell
 	title="Unusuals"
+	challenge="Unusual"
+	shareMode="unusual"
 	description="Guess today's unusual effect"
 	img={{ basePath: `${CDN_URL}/unusuals/`, guessKey: 'thumbnail' }}
 	{loadingState}
@@ -77,6 +80,7 @@
 			<p class="text-sm text-center text-muted-foreground">
 				You are 1 out of {$numberOfCorrectGuesses} that have guessed todays unusual
 			</p>
+			<ShareResult mode="unusual" guesses={$guesses} streak={$streak} class="w-full" />
 		{/if}
 		<GuessesList guesses={$guesses} />
 	</div>

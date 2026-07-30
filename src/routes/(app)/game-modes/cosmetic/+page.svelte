@@ -16,6 +16,7 @@
 	import CosmeticShowcase from '$lib/components/games/IconShowcase.svelte';
 	import WinterDecore from '$lib/features/theme/components/winter/WinterDecore.svelte';
 	import { CDN_URL } from '$lib/constants';
+	import ShareResult from '$lib/components/games/ShareResult.svelte';
 
 	export let data;
 
@@ -227,9 +228,12 @@
 							on:select={(e) => handleSelect(e.detail)}
 						/>
 					{:else}
-						<p class="text-sm text-center text-muted-foreground">
-							You are 1 out of {numberOfCorrectGuesses} that have guessed todays cosmetic!
-						</p>
+						<div class="grid gap-3">
+							<ShareResult mode="cosmetic" guesses={$guesses} streak={$streak} class="w-full" />
+							<p class="text-sm text-center text-muted-foreground">
+								You are 1 out of {numberOfCorrectGuesses} that have guessed todays cosmetic!
+							</p>
+						</div>
 					{/if}
 					<GuessesList guesses={$guesses} />
 				</div>
@@ -260,6 +264,8 @@
 			streak={$streak}
 			correctGuesses={numberOfCorrectGuesses ?? 1}
 			nextChallenge="/game-modes/unusual"
+			shareMode="cosmetic"
+			shareGuesses={$guesses}
 		/>
 	{/if}
 </div>

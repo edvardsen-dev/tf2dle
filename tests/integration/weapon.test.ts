@@ -85,6 +85,7 @@ test('Won state is persisted on page navigation', async ({ page }) => {
 	await page.goto('/game-modes/weapon');
 
 	await expect(page.getByTestId('completed-message')).toBeVisible();
+	await expect(page.getByTestId('share-result')).toBeVisible();
 });
 
 test('Toast is shown when guess fetch fails', async ({ page }) => {
@@ -188,7 +189,7 @@ test('Stats are saved and displayed', async ({ page }) => {
 
 	await page.waitForTimeout(3000);
 
-	await page.getByTestId('victoryClose').click();
+	await page.getByRole('button', { name: 'Close' }).click();
 
 	await page.getByTestId('openStatsDialog').click();
 

@@ -15,6 +15,7 @@
 	import StatsDialog from '$lib/components/games/StatsDialog.svelte';
 	import WinterDecore from '$lib/features/theme/components/winter/WinterDecore.svelte';
 	import { CDN_URL } from '$lib/constants';
+	import ShareResult from '$lib/components/games/ShareResult.svelte';
 
 	export let data;
 
@@ -208,6 +209,7 @@
 								<p class="text-center text-sm text-muted-foreground">
 									You are 1 out of {numberOfCorrectGuesses} that have guessed todays map!
 								</p>
+								<ShareResult mode="map" guesses={$guesses} streak={$streak} class="w-full" />
 							{/if}
 						{/await}
 						<GuessesList guesses={$guesses} />
@@ -249,6 +251,8 @@
 			streak={$streak}
 			correctGuesses={numberOfCorrectGuesses ?? 1}
 			nextChallenge="/game-modes/cosmetic"
+			shareMode="map"
+			shareGuesses={$guesses}
 		/>
 	{/await}
 </div>
