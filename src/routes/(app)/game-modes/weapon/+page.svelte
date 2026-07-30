@@ -7,7 +7,8 @@
 	import { writable } from 'svelte/store';
 	import GameShell from '$lib/components/games/GameShell.svelte';
 	import { CDN_URL } from '$lib/constants';
-	import ShareResult from '$lib/components/games/ShareResult.svelte';
+	import CommunityStatus from '$lib/components/games/CommunityStatus.svelte';
+	import CompletedResult from '$lib/components/games/CompletedResult.svelte';
 
 	// Data
 	export let data;
@@ -50,10 +51,7 @@
 >
 	<div class="grid gap-4">
 		{#if $gameState === 'guessing'}
-			<p class="text-center text-sm text-muted-foreground" data-testId="number-of-correct-guesses">
-				{$numberOfCorrectGuesses}
-				{$numberOfCorrectGuesses === 1 ? 'gamer' : 'gamers'} have guessed todays weapon
-			</p>
+			<CommunityStatus challenge="weapon" correctGuesses={$numberOfCorrectGuesses} />
 			<Input
 				data={weapons?.map((weapon) => ({
 					img: `${CDN_URL}/weapons/thumbnails/${weapon}.png`,
@@ -64,10 +62,13 @@
 				bind:validating={$validating}
 			/>
 		{:else}
-			<p class="text-center text-sm text-muted-foreground my-6" data-testId="completed-message">
-				You are 1 out of {$numberOfCorrectGuesses} that have guessed todays weapon!
-			</p>
-			<ShareResult mode="weapon" guesses={$guesses} streak={$streak} class="w-full" />
+			<CompletedResult
+				mode="weapon"
+				challenge="weapon"
+				guesses={$guesses}
+				streak={$streak}
+				correctGuesses={$numberOfCorrectGuesses}
+			/>
 		{/if}
 		<GuessesList guesses={$guesses} />
 	</div>
