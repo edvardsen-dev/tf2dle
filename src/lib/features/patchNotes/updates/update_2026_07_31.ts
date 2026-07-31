@@ -15,6 +15,10 @@ export default {
 					title: 'Added game mode status to the landing page.',
 					description:
 						'The game mode cards now show when you have started or solved today’s challenge.'
+				},
+				{
+					title: 'Added more stats to the stats dialog.',
+					description: 'Stats now show wins, average guesses, and your best solve.'
 				}
 			],
 			improved: [
