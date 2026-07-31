@@ -15,12 +15,12 @@
 				<p>Image</p>
 				<p>Used By</p>
 				<p>Slot</p>
-				<p>Magazine size</p>
+				<p>Magazine</p>
 				<p>Release Year</p>
 				<p>Qualities</p>
 			</div>
 		{/if}
-		<div class="grid grid-cols-6 gap-2 items-center text-sm">
+		<div class="grid grid-cols-6 gap-2 items-stretch text-sm">
 			{#each guesses as guess (guess.name)}
 				{@const fadeDuration = 500}
 				<div class="relative flex items-center justify-center w-full min-h-24">

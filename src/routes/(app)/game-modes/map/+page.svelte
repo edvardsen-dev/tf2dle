@@ -17,6 +17,7 @@
 	import { CDN_URL } from '$lib/constants';
 	import CommunityStatus from '$lib/components/games/CommunityStatus.svelte';
 	import CompletedResult from '$lib/components/games/CompletedResult.svelte';
+	import GameLoadingSkeleton from '$lib/components/games/GameLoadingSkeleton.svelte';
 	import YesterdayAnswer from '$lib/components/games/YesterdayAnswer.svelte';
 
 	export let data;
@@ -180,7 +181,7 @@
 			<WinterDecore />
 			<div class="grid gap-4">
 				{#await data.todaysMap}
-					<div class="aspect-video bg-muted animate-pulse"></div>
+					<GameLoadingSkeleton />
 				{:then todaysMap}
 					{#if todaysMap}
 						<ImageShowcase

@@ -15,7 +15,7 @@
 
 	function clearStat(gamemode: string, stat: UseStats) {
 		stat.clearStats();
-		toast.success(`Stats related to the ${gamemode} gamemode has been deleted!`);
+		toast.success(`Stats related to the ${gamemode} game mode have been deleted!`);
 	}
 
 	function clearAllStats() {
@@ -95,7 +95,7 @@
 									<AlertDialog.Header>
 										<AlertDialog.Title>Clear {lowerCaseName} stats</AlertDialog.Title>
 										<AlertDialog.Description>
-											Are you sure you want to clear all stats related to the {lowerCaseName} gamemode?
+											Are you sure you want to clear all stats related to the {lowerCaseName} game mode?
 											This action cannot be undone!
 										</AlertDialog.Description>
 									</AlertDialog.Header>

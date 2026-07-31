@@ -1,7 +1,8 @@
 <script lang="ts">
 	import * as Card from '$lib/components/ui/card';
-	import { AreaChart, Dices, Flame, Loader2, RotateCw } from 'lucide-svelte';
+	import { AreaChart, Dices, Flame, RotateCw } from 'lucide-svelte';
 	import ColorExplanation from './ColorExplanation.svelte';
+	import GameLoadingSkeleton from './GameLoadingSkeleton.svelte';
 	import StatsDialog from './StatsDialog.svelte';
 	import VictoryDialog from './VictoryDialog.svelte';
 	import type { Writable } from 'svelte/store';
@@ -54,9 +55,7 @@
 		<Card.Content>
 			<WinterDecore />
 			{#if loadingState === 'loading'}
-				<div class="flex justify-center p-4">
-					<Loader2 class="h-4 w-4 animate-spin" />
-				</div>
+				<GameLoadingSkeleton />
 			{:else if loadingState === 'error'}
 				<a
 					data-sveltekit-reload
