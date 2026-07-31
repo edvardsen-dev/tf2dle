@@ -6,7 +6,7 @@
 	import type { WeaponTwoGuessResponse } from '$lib/dtos.js';
 	import { onMount } from 'svelte';
 	import * as Card from '$lib/components/ui/card';
-	import { AreaChart, Dices, Flame, Loader2, RotateCw } from 'lucide-svelte';
+	import { AreaChart, Dices, Flame, RotateCw } from 'lucide-svelte';
 	import { toast } from 'svelte-sonner';
 	import GuessesList from './GuessesList.svelte';
 	import ColorExplanation from '$lib/components/games/ColorExplanation.svelte';
@@ -16,6 +16,7 @@
 	import { CDN_URL } from '$lib/constants';
 	import CommunityStatus from '$lib/components/games/CommunityStatus.svelte';
 	import CompletedResult from '$lib/components/games/CompletedResult.svelte';
+	import GameLoadingSkeleton from '$lib/components/games/GameLoadingSkeleton.svelte';
 	import YesterdayAnswer from '$lib/components/games/YesterdayAnswer.svelte';
 
 	export let data;
@@ -175,9 +176,7 @@
 			<WinterDecore />
 			<div class="grid gap-4">
 				{#await data.todaysWeapon}
-					<div class="flex justify-center p-4">
-						<Loader2 class="w-4 h-4 animate-spin" />
-					</div>
+					<GameLoadingSkeleton />
 				{:then todaysWeapon}
 					{#if todaysWeapon}
 						<div class="grid gap-4 text-sm justify-items-center mb-8">

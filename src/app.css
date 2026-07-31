@@ -20,11 +20,11 @@
 		--accent-foreground: 24 9.8% 10%;
 		--destructive: 0 72.22% 50.59%;
 		--destructive-foreground: 60 9.1% 97.8%;
-		--correct: 151 44% 38%;
-		--correct-foreground: 20 14.3% 4.1%;
-		--partial: 42 82% 46%;
+		--correct: 146 52% 34%;
+		--correct-foreground: 60 9.1% 97.8%;
+		--partial: 43 74% 49%;
 		--partial-foreground: 20 14.3% 4.1%;
-		--incorrect: 4 62% 43%;
+		--incorrect: 8 68% 45%;
 		--incorrect-foreground: 60 9.1% 97.8%;
 		--border: 20 5.9% 90%;
 		--input: 20 5.9% 90%;
