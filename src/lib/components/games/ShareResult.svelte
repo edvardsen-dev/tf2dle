@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
 	import { buildShareText, type ShareMode } from '$lib/share';
-	import { Share } from 'lucide-svelte';
+	import { Check, Share } from 'lucide-svelte';
 	import { onDestroy } from 'svelte';
 	import { toast } from 'svelte-sonner';
 
@@ -38,7 +38,7 @@
 
 			resetCopiedTimeout = setTimeout(() => {
 				copied = false;
-			}, 2500);
+			}, 2000);
 		} catch (err) {
 			toast.error('Could not copy result to clipboard.', {
 				action: {
@@ -51,6 +51,10 @@
 </script>
 
 <Button {variant} class={clazz} on:click={copy} data-testId="share-result">
-	<Share class="mr-2 h-4 w-4" />
+	{#if copied}
+		<Check class="mr-2 h-4 w-4" />
+	{:else}
+		<Share class="mr-2 h-4 w-4" />
+	{/if}
 	{copied ? copiedLabel : label}
 </Button>
