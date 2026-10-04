@@ -24,6 +24,18 @@ jobs:
     timeout-minutes: 90
 
     steps:
+      - name: Require intended repository
+        if: github.repository != 'edvardsen-dev/tf2dle' || github.event.repository.fork
+        run: |
+          echo '::error::Data updates can only run in the original edvardsen-dev/tf2dle repository, not forks.'
+          exit 1
+
+      - name: Require main for scheduled runs
+        if: github.event_name == 'schedule' && (github.event.repository.default_branch != 'main' || github.ref != 'refs/heads/main')
+        run: |
+          echo '::error::Scheduled data updates require main to be the default branch and the run ref.'
+          exit 1
+
       - name: Require main when publishing
         if: github.event_name == 'workflow_dispatch' && inputs.create_pr && github.ref != 'refs/heads/main'
         run: |
@@ -89,6 +101,7 @@ jobs:
 
       - name: Create review PR
         if: >-
+          github.repository == 'edvardsen-dev/tf2dle' &&
           steps.update.outputs.changed == 'true' && github.ref == 'refs/heads/main' &&
           (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.create_pr))
         env:
