@@ -2068,5 +2068,50 @@
             "King of the Hill"
         ],
         "releaseDate": "2026-07-07"
+    },
+    {
+        "name": "HolyHell",
+        "thumbnail": "7141515863352965209",
+        "image": "7141515863352965209",
+        "gameModes": [
+            "Control Point"
+        ],
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Medi-Evil",
+        "thumbnail": "2842932685173133622",
+        "image": "2842932685173133622",
+        "gameModes": [
+            "Capture the FlagMedieval Mode"
+        ],
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Scaredy-Cat",
+        "thumbnail": "10572188812006388799",
+        "image": "10572188812006388799",
+        "gameModes": [
+            "Attack/Defend"
+        ],
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Scarypass",
+        "thumbnail": "186718717111771708",
+        "image": "186718717111771708",
+        "gameModes": [
+            "Payload"
+        ],
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Trainsawlaser",
+        "thumbnail": "1642664155748627465",
+        "image": "1642664155748627465",
+        "gameModes": [
+            "King of the Hill"
+        ],
+        "releaseDate": "2026-10-01"
     }
 ]

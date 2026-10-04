@@ -11128,5 +11128,143 @@
         "image": "12878993160614167191",
         "usedBy": "Engineer",
         "releaseDate": "2026-07-07"
+    },
+    {
+        "name": "Batter's Jersey",
+        "image": "6443918989986157698",
+        "usedBy": "Scout",
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Bone Chiller",
+        "image": "6396873428428014759",
+        "usedBy": "All class",
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Bounty Hunter's Brim",
+        "image": "12889413703206753538",
+        "usedBy": "Spy",
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Clowning Cowl",
+        "image": "6787252807338996740",
+        "usedBy": "Pyro",
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Cogwork Cargos",
+        "image": "13129498145906990244",
+        "usedBy": "Demoman",
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Crown of the Ye Olde Kingdom",
+        "image": "17865453984457657483",
+        "usedBy": "Medic",
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Damage Dealer",
+        "image": "18272345407396291494",
+        "usedBy": "Heavy",
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Desperado Disguise",
+        "image": "1986983553523579308",
+        "usedBy": "Spy",
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "General's Greatcoat",
+        "image": "5301457248871673562",
+        "usedBy": "Soldier",
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Grenadier's Goggles",
+        "image": "17964607218285703790",
+        "usedBy": "Soldier",
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Gunpowder Grin",
+        "image": "13352285833887388364",
+        "usedBy": "Demoman",
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Hell-Bent Leather",
+        "image": "5582297739600937313",
+        "usedBy": "Sniper",
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "High Caliber Earner",
+        "image": "8706218340392631343",
+        "usedBy": "Heavy",
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Mined Mind",
+        "image": "11000230916095082555",
+        "usedBy": "Engineer",
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Rough Rider",
+        "image": "4055336444792307210",
+        "usedBy": "Sniper",
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Royal Remains",
+        "image": "6562343138337591238",
+        "usedBy": "All class",
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Scaled Surcoat",
+        "image": "16668642177772059391",
+        "usedBy": "Medic",
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Showdown Slacks",
+        "image": "6132187738815437759",
+        "usedBy": "Heavy",
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Skeleton Crew",
+        "image": "15757789595421404265",
+        "usedBy": "All class",
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Twain Tassets",
+        "image": "8660191556902995842",
+        "usedBy": "Medic",
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Two Faced Terror",
+        "image": "12328718369264099619",
+        "usedBy": "Pyro",
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Wayward Wrap",
+        "image": "5430125353440827436",
+        "usedBy": "Sniper",
+        "releaseDate": "2026-10-01"
+    },
+    {
+        "name": "Vance's Vest",
+        "image": "3229835320135275043",
+        "usedBy": "Demoman",
+        "releaseDate": "unknown"
     }
 ]
