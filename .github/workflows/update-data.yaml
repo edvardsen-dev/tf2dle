@@ -86,6 +86,8 @@ jobs:
 
       - name: Check app with updated data
         if: steps.update.outputs.changed == 'true'
+        env:
+          PUBLIC_APP_VERSION: data-update-check
         run: |
           pnpm install --frozen-lockfile
           pnpm db:client
