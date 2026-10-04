@@ -5,21 +5,12 @@
 		"image": "/w/images/thumb/1/13/Item_icon_Blutsauger.png/100px-Item_icon_Blutsauger.png",
 		"killIcon": "/w/images/b/b6/Killicon_blutsauger.png",
 		"releaseDate": "2008-04-29",
-		"usedBy": [
-			"Medic"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Medic"],
+		"slot": ["Primary"],
 		"ammoLoaded": "40",
 		"ammoCarried": "150",
 		"reloadType": "Clip",
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 Syringe GunSyringe Gun",
@@ -41,21 +32,12 @@
 		"image": "/w/images/thumb/8/85/Item_icon_Kritzkrieg.png/100px-Item_icon_Kritzkrieg.png",
 		"killIcon": null,
 		"releaseDate": "2008-04-29",
-		"usedBy": [
-			"Medic"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Medic"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 8 Medi GunMedi Gun",
@@ -77,22 +59,12 @@
 		"image": "/w/images/thumb/0/04/Item_icon_Ubersaw.png/100px-Item_icon_Ubersaw.png",
 		"killIcon": "/w/images/9/9a/Killicon_ubersaw.png",
 		"releaseDate": "2008-04-29",
-		"usedBy": [
-			"Medic"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Medic"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 10 BonesawBonesaw",
@@ -114,21 +86,12 @@
 		"image": "/w/images/thumb/c/c9/Item_icon_Axtinguisher.png/100px-Item_icon_Axtinguisher.png",
 		"killIcon": "/w/images/5/59/Killicon_axtinguisher.png",
 		"releaseDate": "2008-06-19",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 Fire AxeFire Axe",
@@ -158,21 +121,12 @@
 		"image": "/w/images/thumb/5/5d/Item_icon_Backburner.png/100px-Item_icon_Backburner.png",
 		"killIcon": "/w/images/3/3a/Killicon_backburner.png",
 		"releaseDate": "2008-06-19",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Primary"],
 		"ammoLoaded": "200",
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 Flame ThrowerFlame Thrower",
@@ -198,21 +152,12 @@
 		"image": "/w/images/thumb/7/7b/Item_icon_Flare_Gun.png/100px-Item_icon_Flare_Gun.png",
 		"killIcon": "/w/images/d/d4/Killicon_flare_gun.png",
 		"releaseDate": "2008-06-19",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "16",
 		"ammoCarried": null,
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 Flare GunFlare Gun",
@@ -234,21 +179,12 @@
 		"image": "/w/images/thumb/f/f6/Item_icon_Killing_Gloves_of_Boxing.png/100px-Item_icon_Killing_Gloves_of_Boxing.png",
 		"killIcon": "/w/images/f/f3/Killicon_killing_gloves_of_boxing.png",
 		"releaseDate": "2008-08-19",
-		"usedBy": [
-			"Heavy"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Heavy"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 7 Boxing GlovesBoxing Gloves",
@@ -270,21 +206,12 @@
 		"image": "/w/images/thumb/c/cc/Item_icon_Natascha.png/100px-Item_icon_Natascha.png",
 		"killIcon": "/w/images/f/f1/Killicon_natascha.png",
 		"releaseDate": "2008-08-19",
-		"usedBy": [
-			"Heavy"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Heavy"],
+		"slot": ["Primary"],
 		"ammoLoaded": "200",
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 MinigunMinigun",
@@ -314,21 +241,12 @@
 		"image": "/w/images/thumb/5/5e/Item_icon_Sandvich.png/100px-Item_icon_Sandvich.png",
 		"killIcon": null,
 		"releaseDate": "2008-08-19",
-		"usedBy": [
-			"Heavy"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Heavy"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "Recharge (30 seconds)",
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 Lunch BoxLunch Box",
@@ -346,21 +264,12 @@
 		"image": "/w/images/thumb/8/8f/Item_icon_Bonk%21_Atomic_Punch.png/100px-Item_icon_Bonk%21_Atomic_Punch.png",
 		"killIcon": null,
 		"releaseDate": "2009-02-24",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "Recharge (30 seconds)",
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 Lunch BoxLunch Box",
@@ -378,21 +287,12 @@
 		"image": "/w/images/thumb/e/ed/Item_icon_Force-A-Nature.png/100px-Item_icon_Force-A-Nature.png",
 		"killIcon": "/w/images/5/51/Killicon_force-a-nature.png",
 		"releaseDate": "2009-02-24",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Primary"],
 		"ammoLoaded": "2",
 		"ammoCarried": "32",
 		"reloadType": "Clip",
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 ScattergunScattergun",
@@ -430,21 +330,12 @@
 		"image": "/w/images/thumb/7/70/Item_icon_Sandman.png/100px-Item_icon_Sandman.png",
 		"killIcon": "/w/images/2/2c/Killicon_sandman.png",
 		"releaseDate": "2009-02-24",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "Recharge (10 Seconds)",
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 15 BatBat",
@@ -466,21 +357,12 @@
 		"image": "/w/images/thumb/e/ec/Item_icon_Ambassador.png/100px-Item_icon_Ambassador.png",
 		"killIcon": "/w/images/d/dd/Killicon_ambassador.png",
 		"releaseDate": "2009-05-21",
-		"usedBy": [
-			"Spy"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Spy"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "6",
 		"ammoCarried": "24",
 		"reloadType": "Clip",
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 RevolverRevolver",
@@ -514,21 +396,12 @@
 		"image": "/w/images/thumb/0/00/Item_icon_Cloak_and_Dagger.png/100px-Item_icon_Cloak_and_Dagger.png",
 		"killIcon": null,
 		"releaseDate": "2009-05-21",
-		"usedBy": [
-			"Spy"
-		],
-		"slot": [
-			"PDA 2"
-		],
+		"usedBy": ["Spy"],
+		"slot": ["PDA 2"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 Invis WatchInvis Watch",
@@ -558,21 +431,12 @@
 		"image": "/w/images/thumb/b/b7/Item_icon_Dead_Ringer.png/100px-Item_icon_Dead_Ringer.png",
 		"killIcon": null,
 		"releaseDate": "2009-05-21",
-		"usedBy": [
-			"Spy"
-		],
-		"slot": [
-			"PDA 2"
-		],
+		"usedBy": ["Spy"],
+		"slot": ["PDA 2"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 Invis WatchInvis Watch",
@@ -602,21 +466,12 @@
 		"image": "/w/images/thumb/f/f8/Item_icon_Huntsman.png/100px-Item_icon_Huntsman.png",
 		"killIcon": "/w/images/a/ad/Killicon_huntsman.png",
 		"releaseDate": "2009-05-21",
-		"usedBy": [
-			"Sniper"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Sniper"],
+		"slot": ["Primary"],
 		"ammoLoaded": "1",
 		"ammoCarried": "12",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 BowBow",
@@ -630,21 +485,12 @@
 		"image": "/w/images/thumb/b/b3/Item_icon_Jarate.png/100px-Item_icon_Jarate.png",
 		"killIcon": null,
 		"releaseDate": "2009-05-21",
-		"usedBy": [
-			"Sniper"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Sniper"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "Recharge (20 seconds)",
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 Jar Based KarateJar Based Karate",
@@ -666,21 +512,12 @@
 		"image": "/w/images/thumb/0/0f/Item_icon_Razorback.png/100px-Item_icon_Razorback.png",
 		"killIcon": null,
 		"releaseDate": "2009-05-21",
-		"usedBy": [
-			"Sniper"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Sniper"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "Recharge (30 Seconds)",
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 ShieldShield",
@@ -702,21 +539,12 @@
 		"image": "/w/images/thumb/7/7c/Item_icon_Buff_Banner.png/100px-Item_icon_Buff_Banner.png",
 		"killIcon": null,
 		"releaseDate": "2009-12-17",
-		"usedBy": [
-			"Soldier"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Soldier"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 Battle BannerBattle Banner",
@@ -734,21 +562,12 @@
 		"image": "/w/images/thumb/7/7a/Item_icon_Chargin%27_Targe.png/100px-Item_icon_Chargin%27_Targe.png",
 		"killIcon": "/w/images/3/38/Killicon_chargin%27_targe.png",
 		"releaseDate": "2009-12-17",
-		"usedBy": [
-			"Demoman"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Demoman"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "Recharge",
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 - 99 ShieldShield",
@@ -774,21 +593,12 @@
 		"image": "/w/images/thumb/e/e7/Item_icon_Direct_Hit.png/100px-Item_icon_Direct_Hit.png",
 		"killIcon": "/w/images/1/16/Killicon_direct_hit.png",
 		"releaseDate": "2009-12-17",
-		"usedBy": [
-			"Soldier"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Soldier"],
+		"slot": ["Primary"],
 		"ammoLoaded": "4",
 		"ammoCarried": "20",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 Rocket LauncherRocket Launcher",
@@ -818,21 +628,12 @@
 		"image": "/w/images/thumb/b/ba/Item_icon_Equalizer.png/100px-Item_icon_Equalizer.png",
 		"killIcon": "/w/images/a/a5/Killicon_equalizer.png",
 		"releaseDate": "2009-12-17",
-		"usedBy": [
-			"Soldier"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Soldier"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 PickaxePickaxe",
@@ -858,21 +659,12 @@
 		"image": "/w/images/thumb/9/94/Item_icon_Eyelander.png/100px-Item_icon_Eyelander.png",
 		"killIcon": "/w/images/5/53/Killicon_eyelander.png",
 		"releaseDate": "2009-12-17",
-		"usedBy": [
-			"Demoman"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Demoman"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 SwordSword",
@@ -902,20 +694,12 @@
 		"image": "/w/images/thumb/0/0c/Item_icon_Gunboats.png/100px-Item_icon_Gunboats.png",
 		"killIcon": null,
 		"releaseDate": "2009-12-17",
-		"usedBy": [
-			"Soldier"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Soldier"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 BootsBoots",
@@ -933,21 +717,12 @@
 		"image": "/w/images/thumb/2/2c/Item_icon_Scottish_Resistance.png/100px-Item_icon_Scottish_Resistance.png",
 		"killIcon": "/w/images/1/1b/Killicon_scottish_resistance.png",
 		"releaseDate": "2009-12-17",
-		"usedBy": [
-			"Demoman"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Demoman"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "8",
 		"ammoCarried": "36",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 Stickybomb LauncherStickybomb Launcher",
@@ -985,21 +760,12 @@
 		"image": "/w/images/thumb/3/35/Item_icon_Dalokohs_Bar.png/100px-Item_icon_Dalokohs_Bar.png",
 		"killIcon": null,
 		"releaseDate": "2010-03-18",
-		"usedBy": [
-			"Heavy"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Heavy"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "Recharge (10 Seconds)",
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 Lunch BoxLunch Box",
@@ -1021,21 +787,12 @@
 		"image": "/w/images/thumb/4/4a/Item_icon_Homewrecker.png/100px-Item_icon_Homewrecker.png",
 		"killIcon": "/w/images/7/72/Killicon_homewrecker.png",
 		"releaseDate": "2010-03-18",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 SledgehammerSledgehammer",
@@ -1061,22 +818,12 @@
 		"image": "/w/images/thumb/4/4b/Item_icon_Pain_Train.png/100px-Item_icon_Pain_Train.png",
 		"killIcon": "/w/images/7/79/Killicon_pain_train.png",
 		"releaseDate": "2010-03-18",
-		"usedBy": [
-			"Soldier",
-			"Demoman"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Soldier", "Demoman"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 Makeshift ClubMakeshift Club",
@@ -1098,18 +845,12 @@
 		"image": "/w/images/thumb/3/31/Item_icon_Big_Kill.png/100px-Item_icon_Big_Kill.png",
 		"killIcon": "/w/images/e/e8/Killicon_big_kill.png",
 		"releaseDate": "2010-04-15",
-		"usedBy": [
-			"Spy"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Spy"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "6",
 		"ammoCarried": "24",
 		"reloadType": "Clip",
-		"qualities": [
-			"Unique"
-		],
+		"qualities": ["Unique"],
 		"attributes": [
 			{
 				"text": "Limited Level 5 RevolverRevolver",
@@ -1127,20 +868,12 @@
 		"image": "/w/images/thumb/8/86/Item_icon_Lugermorph.png/100px-Item_icon_Lugermorph.png",
 		"killIcon": "/w/images/e/e7/Killicon_lugermorph.png",
 		"releaseDate": "2010-04-15",
-		"usedBy": [
-			"Scout",
-			"Engineer"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Scout", "Engineer"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "12",
 		"ammoCarried": "36 (Scout) 200 (Engineer)",
 		"reloadType": "Clip",
-		"qualities": [
-			"Unique",
-			"Vintage"
-		],
+		"qualities": ["Unique", "Vintage"],
 		"attributes": [
 			{
 				"text": "Level 5 PistolPistol",
@@ -1174,21 +907,12 @@
 		"image": "/w/images/thumb/a/ae/Item_icon_Crit-a-Cola.png/100px-Item_icon_Crit-a-Cola.png",
 		"killIcon": null,
 		"releaseDate": "2010-04-28",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "Recharge (22 seconds)",
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 Lunch BoxLunch Box",
@@ -1206,22 +930,12 @@
 		"image": "/w/images/thumb/c/c6/Item_icon_Scotsman%27s_Skullcutter.png/100px-Item_icon_Scotsman%27s_Skullcutter.png",
 		"killIcon": "/w/images/2/20/Killicon_scotsman%27s_skullcutter.png",
 		"releaseDate": "2010-05-20",
-		"usedBy": [
-			"Demoman"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Demoman"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 5 AxeAxe",
@@ -1251,21 +965,12 @@
 		"image": "/w/images/thumb/5/55/Item_icon_Tribalman%27s_Shiv.png/100px-Item_icon_Tribalman%27s_Shiv.png",
 		"killIcon": "/w/images/c/ce/Killicon_tribalman%27s_shiv.png",
 		"releaseDate": "2010-05-20",
-		"usedBy": [
-			"Sniper"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Sniper"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 KukriKukri",
@@ -1287,18 +992,12 @@
 		"image": "/w/images/thumb/9/95/Item_icon_Golden_Wrench.png/100px-Item_icon_Golden_Wrench.png",
 		"killIcon": "/w/images/0/0e/Killicon_golden_wrench.png",
 		"releaseDate": "2010-07-01",
-		"usedBy": [
-			"Engineer"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Engineer"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique"
-		],
+		"qualities": ["Unique"],
 		"attributes": [
 			{
 				"text": "Limited Level 25 WrenchWrench",
@@ -1324,21 +1023,12 @@
 		"image": "/w/images/thumb/2/26/Item_icon_Frontier_Justice.png/100px-Item_icon_Frontier_Justice.png",
 		"killIcon": "/w/images/c/c8/Killicon_frontier_justice.png",
 		"releaseDate": "2010-07-08",
-		"usedBy": [
-			"Engineer"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Engineer"],
+		"slot": ["Primary"],
 		"ammoLoaded": "3",
 		"ammoCarried": "32",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 ShotgunShotgun",
@@ -1368,21 +1058,12 @@
 		"image": "/w/images/thumb/c/ca/Item_icon_Gunslinger.png/100px-Item_icon_Gunslinger.png",
 		"killIcon": "/w/images/b/b2/Killicon_gunslinger.png",
 		"releaseDate": "2010-07-08",
-		"usedBy": [
-			"Engineer"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Engineer"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 15 Robot ArmRobot Arm",
@@ -1416,21 +1097,12 @@
 		"image": "/w/images/thumb/e/ec/Item_icon_Southern_Hospitality.png/100px-Item_icon_Southern_Hospitality.png",
 		"killIcon": "/w/images/1/1d/Killicon_southern_hospitality.png",
 		"releaseDate": "2010-07-08",
-		"usedBy": [
-			"Engineer"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Engineer"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 20 WrenchWrench",
@@ -1456,21 +1128,12 @@
 		"image": "/w/images/thumb/c/ce/Item_icon_Wrangler.png/100px-Item_icon_Wrangler.png",
 		"killIcon": "/w/images/e/e0/Killicon_wrangler.png",
 		"releaseDate": "2010-07-08",
-		"usedBy": [
-			"Engineer"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Engineer"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 Laser PointerLaser Pointer",
@@ -1488,20 +1151,12 @@
 		"image": "/w/images/thumb/d/d8/Item_icon_Battalion%27s_Backup.png/100px-Item_icon_Battalion%27s_Backup.png",
 		"killIcon": null,
 		"releaseDate": "2010-09-30",
-		"usedBy": [
-			"Soldier"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Soldier"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 Battle BannerBattle Banner",
@@ -1523,21 +1178,12 @@
 		"image": "/w/images/thumb/d/d2/Item_icon_Black_Box.png/100px-Item_icon_Black_Box.png",
 		"killIcon": "/w/images/5/56/Killicon_black_box.png",
 		"releaseDate": "2010-09-30",
-		"usedBy": [
-			"Soldier"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Soldier"],
+		"slot": ["Primary"],
 		"ammoLoaded": "3",
 		"ammoCarried": "20",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 5 Rocket LauncherRocket Launcher",
@@ -1559,20 +1205,12 @@
 		"image": "/w/images/thumb/4/46/Item_icon_Bushwacka.png/100px-Item_icon_Bushwacka.png",
 		"killIcon": "/w/images/4/42/Killicon_bushwacka.png",
 		"releaseDate": "2010-09-30",
-		"usedBy": [
-			"Sniper"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Sniper"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 KukriKukri",
@@ -1602,19 +1240,12 @@
 		"image": "/w/images/thumb/4/44/Item_icon_Darwin%27s_Danger_Shield.png/100px-Item_icon_Darwin%27s_Danger_Shield.png",
 		"killIcon": null,
 		"releaseDate": "2010-09-30",
-		"usedBy": [
-			"Sniper"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Sniper"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 ShieldShield",
@@ -1636,21 +1267,12 @@
 		"image": "/w/images/thumb/9/94/Item_icon_Degreaser.png/100px-Item_icon_Degreaser.png",
 		"killIcon": "/w/images/0/0f/Killicon_degreaser.png",
 		"releaseDate": "2010-09-30",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Primary"],
 		"ammoLoaded": "200",
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 10 Flame ThrowerFlame Thrower",
@@ -1684,19 +1306,12 @@
 		"image": "/w/images/thumb/c/c1/Item_icon_Frying_Pan.png/100px-Item_icon_Frying_Pan.png",
 		"killIcon": "/w/images/6/61/Killicon_frying_pan.png",
 		"releaseDate": "2010-09-30",
-		"usedBy": [
-			"All classes (except Engineer and Spy )"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["All classes (except Engineer and Spy )"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange"
-		],
+		"qualities": ["Unique", "Strange"],
 		"attributes": [
 			{
 				"text": "Level 5 Frying PanFrying Pan",
@@ -1710,20 +1325,12 @@
 		"image": "/w/images/thumb/4/4f/Item_icon_Gloves_of_Running_Urgently.png/100px-Item_icon_Gloves_of_Running_Urgently.png",
 		"killIcon": "/w/images/1/13/Killicon_gloves_of_running_urgently.png",
 		"releaseDate": "2010-09-30",
-		"usedBy": [
-			"Heavy"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Heavy"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 Boxing GlovesBoxing Gloves",
@@ -1749,21 +1356,12 @@
 		"image": "/w/images/thumb/8/86/Item_icon_Holy_Mackerel.png/100px-Item_icon_Holy_Mackerel.png",
 		"killIcon": "/w/images/e/e7/Killicon_holy_mackerel.png",
 		"releaseDate": "2010-09-30",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 42 FishFish",
@@ -1781,20 +1379,12 @@
 		"image": "/w/images/thumb/b/bd/Item_icon_L%27%C3%89tranger.png/100px-Item_icon_L%27%C3%89tranger.png",
 		"killIcon": "/w/images/2/2e/Killicon_l%27%C3%A9tranger.png",
 		"releaseDate": "2010-09-30",
-		"usedBy": [
-			"Spy"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Spy"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "6",
 		"ammoCarried": "24",
 		"reloadType": "Clip",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 RevolverRevolver",
@@ -1820,20 +1410,12 @@
 		"image": "/w/images/thumb/5/56/Item_icon_Mad_Milk.png/100px-Item_icon_Mad_Milk.png",
 		"killIcon": null,
 		"releaseDate": "2010-09-30",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "Recharge (20 seconds)",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 Non-Milk SubstanceNon-Milk Substance",
@@ -1855,21 +1437,12 @@
 		"image": "/w/images/thumb/c/cf/Item_icon_Powerjack.png/100px-Item_icon_Powerjack.png",
 		"killIcon": "/w/images/5/51/Killicon_powerjack.png",
 		"releaseDate": "2010-09-30",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 5 SledgehammerSledgehammer",
@@ -1899,19 +1472,12 @@
 		"image": "/w/images/thumb/5/53/Item_icon_Rocket_Jumper.png/100px-Item_icon_Rocket_Jumper.png",
 		"killIcon": null,
 		"releaseDate": "2010-09-30",
-		"usedBy": [
-			"Soldier"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Soldier"],
+		"slot": ["Primary"],
 		"ammoLoaded": "4",
 		"ammoCarried": "60",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 Rocket LauncherRocket Launcher",
@@ -1949,21 +1515,12 @@
 		"image": "/w/images/thumb/8/84/Item_icon_Shortstop.png/100px-Item_icon_Shortstop.png",
 		"killIcon": "/w/images/2/2b/Killicon_shortstop.png",
 		"releaseDate": "2010-09-30",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Primary"],
 		"ammoLoaded": "4",
 		"ammoCarried": "32",
 		"reloadType": "Clip",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 1 PeppergunPeppergun",
@@ -1989,20 +1546,12 @@
 		"image": "/w/images/thumb/6/6a/Item_icon_Sydney_Sleeper.png/100px-Item_icon_Sydney_Sleeper.png",
 		"killIcon": "/w/images/3/3b/Killicon_sydney_sleeper.png",
 		"releaseDate": "2010-09-30",
-		"usedBy": [
-			"Sniper"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Sniper"],
+		"slot": ["Primary"],
 		"ammoLoaded": "25",
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 Sniper RifleSniper Rifle",
@@ -2032,19 +1581,12 @@
 		"image": "/w/images/thumb/7/70/Item_icon_Vita-Saw.png/100px-Item_icon_Vita-Saw.png",
 		"killIcon": "/w/images/c/c3/Killicon_vita-saw.png",
 		"releaseDate": "2010-09-30",
-		"usedBy": [
-			"Medic"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Medic"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 BonesawBonesaw",
@@ -2070,20 +1612,12 @@
 		"image": "/w/images/thumb/d/d3/Item_icon_Your_Eternal_Reward.png/100px-Item_icon_Your_Eternal_Reward.png",
 		"killIcon": "/w/images/6/6f/Killicon_your_eternal_reward.png",
 		"releaseDate": "2010-09-30",
-		"usedBy": [
-			"Spy"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Spy"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 KnifeKnife",
@@ -2113,19 +1647,12 @@
 		"image": "/w/images/thumb/1/1f/Item_icon_Horseless_Headless_Horsemann%27s_Headtaker.png/100px-Item_icon_Horseless_Headless_Horsemann%27s_Headtaker.png",
 		"killIcon": "/w/images/f/fa/Killicon_horseless_headless_horsemann%27s_headtaker.png",
 		"releaseDate": "2010-10-27",
-		"usedBy": [
-			"Demoman"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Demoman"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Strange",
-			"Unusual"
-		],
+		"qualities": ["Strange", "Unusual"],
 		"attributes": [
 			{
 				"text": "Level 1 - 100 AxeAxe",
@@ -2159,19 +1686,12 @@
 		"image": "/w/images/thumb/5/56/Item_icon_Sticky_Jumper.png/100px-Item_icon_Sticky_Jumper.png",
 		"killIcon": null,
 		"releaseDate": "2010-10-27",
-		"usedBy": [
-			"Demoman"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Demoman"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "8",
 		"ammoCarried": "72",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 Stickybomb LauncherStickybomb Launcher",
@@ -2213,18 +1733,12 @@
 		"image": "/w/images/thumb/1/10/Item_icon_Enthusiast%27s_Timepiece.png/100px-Item_icon_Enthusiast%27s_Timepiece.png",
 		"killIcon": null,
 		"releaseDate": "2010-11-19",
-		"usedBy": [
-			"Spy"
-		],
-		"slot": [
-			"PDA 2"
-		],
+		"usedBy": ["Spy"],
+		"slot": ["PDA 2"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique"
-		],
+		"qualities": ["Unique"],
 		"attributes": [
 			{
 				"text": "Level 5 Invis WatchInvis Watch",
@@ -2258,18 +1772,12 @@
 		"image": "/w/images/thumb/d/da/Item_icon_Iron_Curtain.png/100px-Item_icon_Iron_Curtain.png",
 		"killIcon": "/w/images/3/3d/Killicon_iron_curtain.png",
 		"releaseDate": "2010-11-19",
-		"usedBy": [
-			"Heavy"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Heavy"],
+		"slot": ["Primary"],
 		"ammoLoaded": "200",
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique"
-		],
+		"qualities": ["Unique"],
 		"attributes": [
 			{
 				"text": "Level 5 MinigunMinigun",
@@ -2295,22 +1803,12 @@
 		"image": "/w/images/thumb/a/ab/Item_icon_Amputator.png/100px-Item_icon_Amputator.png",
 		"killIcon": "/w/images/3/35/Killicon_amputator.png",
 		"releaseDate": "2010-12-17",
-		"usedBy": [
-			"Medic"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Medic"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 15 BonesawBonesaw",
@@ -2340,21 +1838,12 @@
 		"image": "/w/images/thumb/4/48/Item_icon_Back_Scratcher.png/100px-Item_icon_Back_Scratcher.png",
 		"killIcon": "/w/images/f/ff/Killicon_back_scratcher.png",
 		"releaseDate": "2010-12-17",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 10 Garden RakeGarden Rake",
@@ -2380,20 +1869,12 @@
 		"image": "/w/images/thumb/b/b5/Item_icon_Boston_Basher.png/100px-Item_icon_Boston_Basher.png",
 		"killIcon": "/w/images/f/f1/Killicon_boston_basher.png",
 		"releaseDate": "2010-12-17",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 25 BatBat",
@@ -2415,22 +1896,12 @@
 		"image": "/w/images/thumb/6/64/Item_icon_Brass_Beast.png/100px-Item_icon_Brass_Beast.png",
 		"killIcon": "/w/images/0/03/Killicon_brass_beast.png",
 		"releaseDate": "2010-12-17",
-		"usedBy": [
-			"Heavy"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Heavy"],
+		"slot": ["Primary"],
 		"ammoLoaded": "200",
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 5 MinigunMinigun",
@@ -2460,20 +1931,12 @@
 		"image": "/w/images/thumb/6/62/Item_icon_Buffalo_Steak_Sandvich.png/100px-Item_icon_Buffalo_Steak_Sandvich.png",
 		"killIcon": null,
 		"releaseDate": "2010-12-17",
-		"usedBy": [
-			"Heavy"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Heavy"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "Recharge (30 Seconds)",
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 Lunch BoxLunch Box",
@@ -2495,20 +1958,12 @@
 		"image": "/w/images/thumb/0/05/Item_icon_Candy_Cane.png/100px-Item_icon_Candy_Cane.png",
 		"killIcon": "/w/images/d/d1/Killicon_candy_cane.png",
 		"releaseDate": "2010-12-17",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 25 BatBat",
@@ -2530,21 +1985,12 @@
 		"image": "/w/images/thumb/0/0f/Item_icon_Claidheamh_M%C3%B2r.png/100px-Item_icon_Claidheamh_M%C3%B2r.png",
 		"killIcon": "/w/images/9/9e/Killicon_claidheamh_m%C3%B2r.png",
 		"releaseDate": "2010-12-17",
-		"usedBy": [
-			"Demoman"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Demoman"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 5 SwordSword",
@@ -2582,22 +2028,12 @@
 		"image": "/w/images/thumb/9/9c/Item_icon_Crusader%27s_Crossbow.png/100px-Item_icon_Crusader%27s_Crossbow.png",
 		"killIcon": "/w/images/9/95/Killicon_crusader%27s_crossbow.png",
 		"releaseDate": "2010-12-17",
-		"usedBy": [
-			"Medic"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Medic"],
+		"slot": ["Primary"],
 		"ammoLoaded": "1",
 		"ammoCarried": "38",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 15 CrossbowCrossbow",
@@ -2623,20 +2059,12 @@
 		"image": "/w/images/thumb/9/9c/Item_icon_Fists_of_Steel.png/100px-Item_icon_Fists_of_Steel.png",
 		"killIcon": "/w/images/c/ce/Killicon_fists_of_steel.png",
 		"releaseDate": "2010-12-17",
-		"usedBy": [
-			"Heavy"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Heavy"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 Boxing GlovesBoxing Gloves",
@@ -2670,21 +2098,12 @@
 		"image": "/w/images/thumb/4/49/Item_icon_Jag.png/100px-Item_icon_Jag.png",
 		"killIcon": "/w/images/0/0c/Killicon_jag.png",
 		"releaseDate": "2010-12-17",
-		"usedBy": [
-			"Engineer"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Engineer"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 15 WrenchWrench",
@@ -2718,22 +2137,12 @@
 		"image": "/w/images/thumb/6/62/Item_icon_Loch-n-Load.png/100px-Item_icon_Loch-n-Load.png",
 		"killIcon": "/w/images/6/6a/Killicon_loch-n-load.png",
 		"releaseDate": "2010-12-17",
-		"usedBy": [
-			"Demoman"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Demoman"],
+		"slot": ["Primary"],
 		"ammoLoaded": "3",
 		"ammoCarried": "16",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 10 Grenade LauncherGrenade Launcher",
@@ -2767,21 +2176,12 @@
 		"image": "/w/images/thumb/a/a5/Item_icon_Ullapool_Caber.png/100px-Item_icon_Ullapool_Caber.png",
 		"killIcon": "/w/images/7/74/Killicon_ullapool_caber.png",
 		"releaseDate": "2010-12-17",
-		"usedBy": [
-			"Demoman"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Demoman"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 Stick BombStick Bomb",
@@ -2811,21 +2211,12 @@
 		"image": "/w/images/thumb/8/87/Item_icon_Warrior%27s_Spirit.png/100px-Item_icon_Warrior%27s_Spirit.png",
 		"killIcon": "/w/images/d/d8/Killicon_warrior%27s_spirit.png",
 		"releaseDate": "2010-12-17",
-		"usedBy": [
-			"Heavy"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Heavy"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 Boxing GlovesBoxing Gloves",
@@ -2855,21 +2246,12 @@
 		"image": "/w/images/thumb/a/ac/Item_icon_Sharpened_Volcano_Fragment.png/100px-Item_icon_Sharpened_Volcano_Fragment.png",
 		"killIcon": "/w/images/8/80/Killicon_sharpened_volcano_fragment.png",
 		"releaseDate": "2011-02-03",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Genuine",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Genuine", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 RIFT Fire AxeRIFT Fire Axe",
@@ -2895,21 +2277,12 @@
 		"image": "/w/images/thumb/0/06/Item_icon_Sun-on-a-Stick.png/100px-Item_icon_Sun-on-a-Stick.png",
 		"killIcon": "/w/images/0/00/Killicon_sun-on-a-stick.png",
 		"releaseDate": "2011-02-03",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Genuine",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Genuine", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 RIFT Fire MaceRIFT Fire Mace",
@@ -2939,22 +2312,12 @@
 		"image": "/w/images/thumb/7/7e/Item_icon_Concheror.png/100px-Item_icon_Concheror.png",
 		"killIcon": null,
 		"releaseDate": "2011-03-10",
-		"usedBy": [
-			"Soldier"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Soldier"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Genuine",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Genuine", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 SashimonoSashimono",
@@ -2976,22 +2339,12 @@
 		"image": "/w/images/thumb/0/02/Item_icon_Conniver%27s_Kunai.png/100px-Item_icon_Conniver%27s_Kunai.png",
 		"killIcon": "/w/images/1/1a/Killicon_conniver%27s_kunai.png",
 		"releaseDate": "2011-03-10",
-		"usedBy": [
-			"Spy"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Spy"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Genuine",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Genuine", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 KunaiKunai",
@@ -3017,22 +2370,12 @@
 		"image": "/w/images/thumb/f/f4/Item_icon_Fan_O%27War.png/100px-Item_icon_Fan_O%27War.png",
 		"killIcon": "/w/images/6/65/Killicon_fan_o%27war.png",
 		"releaseDate": "2011-03-10",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Genuine",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Genuine", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 GunbaiGunbai",
@@ -3062,23 +2405,12 @@
 		"image": "/w/images/thumb/a/a9/Item_icon_Half-Zatoichi.png/100px-Item_icon_Half-Zatoichi.png",
 		"killIcon": "/w/images/9/93/Killicon_half-zatoichi.png",
 		"releaseDate": "2011-03-10",
-		"usedBy": [
-			"Soldier",
-			"Demoman"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Soldier", "Demoman"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Genuine",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Genuine", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 KatanaKatana",
@@ -3112,18 +2444,12 @@
 		"image": "/w/images/thumb/9/94/Item_icon_Fishcake.png/100px-Item_icon_Fishcake.png",
 		"killIcon": null,
 		"releaseDate": "2011-04-28",
-		"usedBy": [
-			"Heavy"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Heavy"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "Recharge (10 seconds)",
-		"qualities": [
-			"Unique"
-		],
+		"qualities": ["Unique"],
 		"attributes": [
 			{
 				"text": "Level 1 FishcakeFishcake",
@@ -3145,19 +2471,12 @@
 		"image": "/w/images/thumb/f/f6/Item_icon_Three-Rune_Blade.png/100px-Item_icon_Three-Rune_Blade.png",
 		"killIcon": "/w/images/9/9d/Killicon_three-rune_blade.png",
 		"releaseDate": "2011-05-12",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Genuine"
-		],
+		"qualities": ["Unique", "Genuine"],
 		"attributes": [
 			{
 				"text": "Level 10 SwordSword",
@@ -3179,19 +2498,12 @@
 		"image": "/w/images/thumb/2/2e/Item_icon_Maul.png/100px-Item_icon_Maul.png",
 		"killIcon": "/w/images/9/91/Killicon_maul.png",
 		"releaseDate": "2011-06-03",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Genuine"
-		],
+		"qualities": ["Unique", "Genuine"],
 		"attributes": [
 			{
 				"text": "Level 5 SledgehammerSledgehammer",
@@ -3221,18 +2533,12 @@
 		"image": "/w/images/thumb/1/18/Item_icon_Saxxy.png/100px-Item_icon_Saxxy.png",
 		"killIcon": "/w/images/e/ea/Killicon_saxxy.png",
 		"releaseDate": "2011-06-08",
-		"usedBy": [
-			"All classes"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["All classes"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Strange"
-		],
+		"qualities": ["Strange"],
 		"attributes": [
 			{
 				"text": "Strange  AwardAward - Kills: 0",
@@ -3258,19 +2564,12 @@
 		"image": "/w/images/thumb/a/a4/Item_icon_Ali_Baba%27s_Wee_Booties.png/100px-Item_icon_Ali_Baba%27s_Wee_Booties.png",
 		"killIcon": null,
 		"releaseDate": "2011-06-23",
-		"usedBy": [
-			"Demoman"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Demoman"],
+		"slot": ["Primary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 BootsBoots",
@@ -3300,20 +2599,12 @@
 		"image": "/w/images/thumb/2/29/Item_icon_Atomizer.png/100px-Item_icon_Atomizer.png",
 		"killIcon": "/w/images/b/b1/Killicon_atomizer.png",
 		"releaseDate": "2011-06-23",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 BatBat",
@@ -3339,21 +2630,12 @@
 		"image": "/w/images/thumb/f/f4/Item_icon_Bazaar_Bargain.png/100px-Item_icon_Bazaar_Bargain.png",
 		"killIcon": "/w/images/6/60/Killicon_bazaar_bargain.png",
 		"releaseDate": "2011-06-23",
-		"usedBy": [
-			"Sniper"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Sniper"],
+		"slot": ["Primary"],
 		"ammoLoaded": "25",
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 10 Sniper RifleSniper Rifle",
@@ -3375,20 +2657,12 @@
 		"image": "/w/images/thumb/c/c9/Item_icon_Big_Earner.png/100px-Item_icon_Big_Earner.png",
 		"killIcon": "/w/images/0/08/Killicon_big_earner.png",
 		"releaseDate": "2011-06-23",
-		"usedBy": [
-			"Spy"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Spy"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 KnifeKnife",
@@ -3414,21 +2688,12 @@
 		"image": "/w/images/thumb/5/53/Item_icon_Detonator.png/100px-Item_icon_Detonator.png",
 		"killIcon": "/w/images/9/9e/Killicon_detonator.png",
 		"releaseDate": "2011-06-23",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "16",
 		"ammoCarried": null,
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 10 Flare GunFlare Gun",
@@ -3458,21 +2723,12 @@
 		"image": "/w/images/thumb/c/cf/Item_icon_Disciplinary_Action.png/100px-Item_icon_Disciplinary_Action.png",
 		"killIcon": "/w/images/1/12/Killicon_disciplinary_action.png",
 		"releaseDate": "2011-06-23",
-		"usedBy": [
-			"Soldier"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Soldier"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 10 Riding CropRiding Crop",
@@ -3494,20 +2750,12 @@
 		"image": "/w/images/thumb/b/b6/Item_icon_Enforcer.png/100px-Item_icon_Enforcer.png",
 		"killIcon": "/w/images/7/78/Killicon_enforcer.png",
 		"releaseDate": "2011-06-23",
-		"usedBy": [
-			"Spy"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Spy"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "6",
 		"ammoCarried": "24",
 		"reloadType": "Clip",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 RevolverRevolver",
@@ -3537,20 +2785,12 @@
 		"image": "/w/images/thumb/6/62/Item_icon_Eviction_Notice.png/100px-Item_icon_Eviction_Notice.png",
 		"killIcon": "/w/images/4/44/Killicon_eviction_notice.png",
 		"releaseDate": "2011-06-23",
-		"usedBy": [
-			"Heavy"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Heavy"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 Boxing GlovesBoxing Gloves",
@@ -3584,21 +2824,12 @@
 		"image": "/w/images/thumb/c/cd/Item_icon_Family_Business.png/100px-Item_icon_Family_Business.png",
 		"killIcon": "/w/images/3/38/Killicon_family_business.png",
 		"releaseDate": "2011-06-23",
-		"usedBy": [
-			"Heavy"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Heavy"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "8",
 		"ammoCarried": "32",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 10 ShotgunShotgun",
@@ -3624,20 +2855,12 @@
 		"image": "/w/images/thumb/2/24/Item_icon_Liberty_Launcher.png/100px-Item_icon_Liberty_Launcher.png",
 		"killIcon": "/w/images/7/77/Killicon_liberty_launcher.png",
 		"releaseDate": "2011-06-23",
-		"usedBy": [
-			"Soldier"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Soldier"],
+		"slot": ["Primary"],
 		"ammoLoaded": "5",
 		"ammoCarried": "20",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 25 Rocket LauncherRocket Launcher",
@@ -3667,20 +2890,12 @@
 		"image": "/w/images/thumb/6/6a/Item_icon_Mantreads.png/100px-Item_icon_Mantreads.png",
 		"killIcon": "/w/images/a/ac/Killicon_mantreads.png",
 		"releaseDate": "2011-06-23",
-		"usedBy": [
-			"Soldier"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Soldier"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 BootsBoots",
@@ -3710,20 +2925,12 @@
 		"image": "/w/images/thumb/a/ac/Item_icon_Market_Gardener.png/100px-Item_icon_Market_Gardener.png",
 		"killIcon": "/w/images/0/00/Killicon_market_gardener.png",
 		"releaseDate": "2011-06-23",
-		"usedBy": [
-			"Soldier"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Soldier"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 ShovelShovel",
@@ -3749,20 +2956,12 @@
 		"image": "/w/images/thumb/f/fe/Item_icon_Overdose.png/100px-Item_icon_Overdose.png",
 		"killIcon": "/w/images/8/8d/Killicon_overdose.png",
 		"releaseDate": "2011-06-23",
-		"usedBy": [
-			"Medic"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Medic"],
+		"slot": ["Primary"],
 		"ammoLoaded": "40",
 		"ammoCarried": "150",
 		"reloadType": "Clip",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 Syringe Gun PrototypeSyringe Gun Prototype",
@@ -3784,21 +2983,12 @@
 		"image": "/w/images/thumb/9/98/Item_icon_Persian_Persuader.png/100px-Item_icon_Persian_Persuader.png",
 		"killIcon": "/w/images/c/c5/Killicon_persian_persuader.png",
 		"releaseDate": "2011-06-23",
-		"usedBy": [
-			"Demoman"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Demoman"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 10 SwordSword",
@@ -3836,20 +3026,12 @@
 		"image": "/w/images/thumb/5/50/Item_icon_Quick-Fix.png/100px-Item_icon_Quick-Fix.png",
 		"killIcon": null,
 		"releaseDate": "2011-06-23",
-		"usedBy": [
-			"Medic"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Medic"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 8 Medi Gun PrototypeMedi Gun Prototype",
@@ -3883,22 +3065,12 @@
 		"image": "/w/images/thumb/3/34/Item_icon_Reserve_Shooter.png/100px-Item_icon_Reserve_Shooter.png",
 		"killIcon": "/w/images/6/68/Killicon_reserve_shooter.png",
 		"releaseDate": "2011-06-23",
-		"usedBy": [
-			"Soldier",
-			"Pyro"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Soldier", "Pyro"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "4",
 		"ammoCarried": "32",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 10 ShotgunShotgun",
@@ -3924,21 +3096,12 @@
 		"image": "/w/images/thumb/8/8d/Item_icon_Shahanshah.png/100px-Item_icon_Shahanshah.png",
 		"killIcon": "/w/images/6/6e/Killicon_shahanshah.png",
 		"releaseDate": "2011-06-23",
-		"usedBy": [
-			"Sniper"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Sniper"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 5 KukriKukri",
@@ -3960,21 +3123,12 @@
 		"image": "/w/images/thumb/f/f1/Item_icon_Soda_Popper.png/100px-Item_icon_Soda_Popper.png",
 		"killIcon": "/w/images/3/34/Killicon_soda_popper.png",
 		"releaseDate": "2011-06-23",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Primary"],
 		"ammoLoaded": "2",
 		"ammoCarried": "32",
 		"reloadType": "Clip",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 10 ScattergunScattergun",
@@ -4008,20 +3162,12 @@
 		"image": "/w/images/thumb/d/db/Item_icon_Solemn_Vow.png/100px-Item_icon_Solemn_Vow.png",
 		"killIcon": "/w/images/9/98/Killicon_solemn_vow.png",
 		"releaseDate": "2011-06-23",
-		"usedBy": [
-			"Medic"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Medic"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 Bust of HippocratesBust of Hippocrates",
@@ -4047,20 +3193,12 @@
 		"image": "/w/images/thumb/c/c3/Item_icon_Splendid_Screen.png/100px-Item_icon_Splendid_Screen.png",
 		"killIcon": "/w/images/f/fb/Killicon_splendid_screen.png",
 		"releaseDate": "2011-06-23",
-		"usedBy": [
-			"Demoman"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Demoman"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "Recharge",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 ShieldShield",
@@ -4094,21 +3232,12 @@
 		"image": "/w/images/thumb/3/3e/Item_icon_Tomislav.png/100px-Item_icon_Tomislav.png",
 		"killIcon": "/w/images/2/27/Killicon_tomislav.png",
 		"releaseDate": "2011-06-23",
-		"usedBy": [
-			"Heavy"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Heavy"],
+		"slot": ["Primary"],
 		"ammoLoaded": "200",
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 5 MinigunMinigun",
@@ -4138,21 +3267,12 @@
 		"image": "/w/images/thumb/4/4e/Item_icon_Winger.png/100px-Item_icon_Winger.png",
 		"killIcon": "/w/images/3/35/Killicon_winger.png",
 		"releaseDate": "2011-06-23",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "5",
 		"ammoCarried": "36",
 		"reloadType": "Clip",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 15 PistolPistol",
@@ -4178,19 +3298,12 @@
 		"image": "/w/images/thumb/5/5a/Item_icon_Nessie%27s_Nine_Iron.png/100px-Item_icon_Nessie%27s_Nine_Iron.png",
 		"killIcon": "/w/images/3/34/Killicon_nessie%27s_nine_iron.png",
 		"releaseDate": "2011-07-01",
-		"usedBy": [
-			"Demoman"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Demoman"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 Golf ClubGolf Club",
@@ -4220,19 +3333,12 @@
 		"image": "/w/images/thumb/2/2d/Item_icon_Postal_Pummeler.png/100px-Item_icon_Postal_Pummeler.png",
 		"killIcon": "/w/images/a/a3/Killicon_postal_pummeler.png",
 		"releaseDate": "2011-07-01",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 MailboxMailbox",
@@ -4262,20 +3368,12 @@
 		"image": "/w/images/thumb/4/46/Item_icon_Cow_Mangler_5000.png/100px-Item_icon_Cow_Mangler_5000.png",
 		"killIcon": "/w/images/9/94/Killicon_cow_mangler_5000.png",
 		"releaseDate": "2011-07-20",
-		"usedBy": [
-			"Soldier"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Soldier"],
+		"slot": ["Primary"],
 		"ammoLoaded": "4",
 		"ammoCarried": "Unlimited",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 30 Focused Wave ProjectorFocused Wave Projector",
@@ -4309,21 +3407,12 @@
 		"image": "/w/images/thumb/1/1d/Item_icon_Righteous_Bison.png/100px-Item_icon_Righteous_Bison.png",
 		"killIcon": "/w/images/a/a4/Killicon_righteous_bison.png",
 		"releaseDate": "2011-07-20",
-		"usedBy": [
-			"Soldier"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Soldier"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "4",
 		"ammoCarried": "Unlimited",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Genuine",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Genuine", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 30 Indivisible Particle SmasherIndivisible Particle Smasher",
@@ -4353,21 +3442,12 @@
 		"image": "/w/images/thumb/8/88/Item_icon_Original.png/100px-Item_icon_Original.png",
 		"killIcon": "/w/images/e/e0/Killicon_original.png",
 		"releaseDate": "2011-08-03",
-		"usedBy": [
-			"Soldier"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Soldier"],
+		"slot": ["Primary"],
 		"ammoLoaded": "4",
 		"ammoCarried": "20",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Genuine",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Genuine", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 Rocket LauncherRocket Launcher",
@@ -4381,21 +3461,12 @@
 		"image": "/w/images/thumb/b/b4/Item_icon_Diamondback.png/100px-Item_icon_Diamondback.png",
 		"killIcon": "/w/images/c/ce/Killicon_diamondback.png",
 		"releaseDate": "2011-08-18",
-		"usedBy": [
-			"Spy"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Spy"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "6",
 		"ammoCarried": "24",
 		"reloadType": "Clip",
-		"qualities": [
-			"Unique",
-			"Genuine",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Genuine", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 RevolverRevolver",
@@ -4421,21 +3492,12 @@
 		"image": "/w/images/thumb/a/ae/Item_icon_Machina.png/100px-Item_icon_Machina.png",
 		"killIcon": "/w/images/0/09/Killicon_machina.png",
 		"releaseDate": "2011-08-18",
-		"usedBy": [
-			"Sniper"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Sniper"],
+		"slot": ["Primary"],
 		"ammoLoaded": "25",
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Genuine",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Genuine", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 Sniper RifleSniper Rifle",
@@ -4465,20 +3527,12 @@
 		"image": "/w/images/thumb/3/36/Item_icon_Short_Circuit.png/100px-Item_icon_Short_Circuit.png",
 		"killIcon": "/w/images/1/10/Killicon_short_circuit.png",
 		"releaseDate": "2011-08-18",
-		"usedBy": [
-			"Engineer"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Engineer"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "1 per 5 Metal",
 		"ammoCarried": "200 Metal (allows 40 uses)",
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Genuine",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Genuine", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 Robot ArmRobot Arm",
@@ -4512,21 +3566,12 @@
 		"image": "/w/images/thumb/b/b8/Item_icon_Widowmaker.png/100px-Item_icon_Widowmaker.png",
 		"killIcon": "/w/images/0/0a/Killicon_widowmaker.png",
 		"releaseDate": "2011-08-18",
-		"usedBy": [
-			"Engineer"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Engineer"],
+		"slot": ["Primary"],
 		"ammoLoaded": "1 per 30 Metal",
 		"ammoCarried": "200 Metal (allows 6 shots)",
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Genuine",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Genuine", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 ShotgunShotgun",
@@ -4560,19 +3605,12 @@
 		"image": "/w/images/thumb/4/4c/Item_icon_Bootlegger.png/100px-Item_icon_Bootlegger.png",
 		"killIcon": null,
 		"releaseDate": "2011-10-13",
-		"usedBy": [
-			"Demoman"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Demoman"],
+		"slot": ["Primary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 BootsBoots",
@@ -4606,19 +3644,12 @@
 		"image": "/w/images/thumb/c/cb/Item_icon_Conscientious_Objector.png/100px-Item_icon_Conscientious_Objector.png",
 		"killIcon": "/w/images/4/4b/Killicon_conscientious_objector.png",
 		"releaseDate": "2011-10-13",
-		"usedBy": [
-			"All classes (except Engineer and Spy )"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["All classes (except Engineer and Spy )"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 25 SignSign",
@@ -4636,19 +3667,12 @@
 		"image": "/w/images/thumb/1/1a/Item_icon_Scottish_Handshake.png/100px-Item_icon_Scottish_Handshake.png",
 		"killIcon": "/w/images/6/6e/Killicon_scottish_handshake.png",
 		"releaseDate": "2011-10-13",
-		"usedBy": [
-			"Demoman"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Demoman"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 BottleBottle",
@@ -4666,18 +3690,12 @@
 		"image": "/w/images/thumb/9/96/Item_icon_Unarmed_Combat.png/100px-Item_icon_Unarmed_Combat.png",
 		"killIcon": "/w/images/d/db/Killicon_unarmed_combat.png",
 		"releaseDate": "2011-10-27",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique"
-		],
+		"qualities": ["Unique"],
 		"attributes": [
 			{
 				"text": "Level 1 - 100 Severed ArmSevered Arm",
@@ -4695,18 +3713,12 @@
 		"image": "/w/images/thumb/f/f5/Item_icon_Wanga_Prick.png/100px-Item_icon_Wanga_Prick.png",
 		"killIcon": "/w/images/9/97/Killicon_wanga_prick.png",
 		"releaseDate": "2011-10-27",
-		"usedBy": [
-			"Spy"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Spy"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique"
-		],
+		"qualities": ["Unique"],
 		"attributes": [
 			{
 				"text": "Level 1 - 100 KnifeKnife",
@@ -4736,20 +3748,12 @@
 		"image": "/w/images/thumb/9/91/Item_icon_Apoco-Fists.png/100px-Item_icon_Apoco-Fists.png",
 		"killIcon": "/w/images/2/23/Killicon_apoco-fists.png",
 		"releaseDate": "2011-11-10",
-		"usedBy": [
-			"Heavy"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Heavy"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Genuine",
-			"Strange"
-		],
+		"qualities": ["Unique", "Genuine", "Strange"],
 		"attributes": [
 			{
 				"text": "Level 10 FistsFists",
@@ -4771,19 +3775,12 @@
 		"image": "/w/images/thumb/e/eb/Item_icon_Sharp_Dresser.png/100px-Item_icon_Sharp_Dresser.png",
 		"killIcon": "/w/images/c/ca/Killicon_sharp_dresser.png",
 		"releaseDate": "2011-11-23",
-		"usedBy": [
-			"Spy"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Spy"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Genuine"
-		],
+		"qualities": ["Unique", "Genuine"],
 		"attributes": [
 			{
 				"text": "Level 1 KnifeKnife",
@@ -4801,19 +3798,12 @@
 		"image": "/w/images/thumb/c/cf/Item_icon_Eureka_Effect.png/100px-Item_icon_Eureka_Effect.png",
 		"killIcon": "/w/images/2/2c/Killicon_eureka_effect.png",
 		"releaseDate": "2011-12-15",
-		"usedBy": [
-			"Engineer"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Engineer"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 20 WrenchWrench",
@@ -4847,20 +3837,12 @@
 		"image": "/w/images/thumb/5/54/Item_icon_Holiday_Punch.png/100px-Item_icon_Holiday_Punch.png",
 		"killIcon": "/w/images/1/11/Killicon_holiday_punch.png",
 		"releaseDate": "2011-12-15",
-		"usedBy": [
-			"Heavy"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Heavy"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 FistsFists",
@@ -4894,20 +3876,12 @@
 		"image": "/w/images/thumb/9/9d/Item_icon_Manmelter.png/100px-Item_icon_Manmelter.png",
 		"killIcon": "/w/images/a/ad/Killicon_manmelter.png",
 		"releaseDate": "2011-12-15",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "Unlimited",
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 30 Indivisible Particle SmasherIndivisible Particle Smasher",
@@ -4945,20 +3919,12 @@
 		"image": "/w/images/thumb/2/22/Item_icon_Phlogistinator.png/100px-Item_icon_Phlogistinator.png",
 		"killIcon": "/w/images/6/66/Killicon_phlogistinator.png",
 		"releaseDate": "2011-12-15",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Primary"],
 		"ammoLoaded": "200",
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 Flame ThrowerFlame Thrower",
@@ -4988,20 +3954,12 @@
 		"image": "/w/images/thumb/8/89/Item_icon_Pomson_6000.png/100px-Item_icon_Pomson_6000.png",
 		"killIcon": "/w/images/b/b5/Killicon_pomson_6000.png",
 		"releaseDate": "2011-12-15",
-		"usedBy": [
-			"Engineer"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Engineer"],
+		"slot": ["Primary"],
 		"ammoLoaded": "4",
 		"ammoCarried": "Unlimited",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 Indivisible Particle SmasherIndivisible Particle Smasher",
@@ -5039,20 +3997,12 @@
 		"image": "/w/images/thumb/7/72/Item_icon_Spy-Cicle.png/100px-Item_icon_Spy-Cicle.png",
 		"killIcon": "/w/images/8/8d/Killicon_spy-cicle.png",
 		"releaseDate": "2011-12-15",
-		"usedBy": [
-			"Spy"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Spy"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 KnifeKnife",
@@ -5082,20 +4032,12 @@
 		"image": "/w/images/thumb/9/91/Item_icon_Third_Degree.png/100px-Item_icon_Third_Degree.png",
 		"killIcon": "/w/images/2/22/Killicon_third_degree.png",
 		"releaseDate": "2011-12-15",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 Fire AxeFire Axe",
@@ -5117,20 +4059,12 @@
 		"image": "/w/images/thumb/6/6b/Item_icon_Wrap_Assassin.png/100px-Item_icon_Wrap_Assassin.png",
 		"killIcon": "/w/images/7/79/Killicon_wrap_assassin.png",
 		"releaseDate": "2011-12-15",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 15 BatBat",
@@ -5160,18 +4094,12 @@
 		"image": "/w/images/thumb/3/33/Item_icon_Black_Rose.png/100px-Item_icon_Black_Rose.png",
 		"killIcon": "/w/images/6/67/Killicon_black_rose.png",
 		"releaseDate": "2012-02-14",
-		"usedBy": [
-			"Spy"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Spy"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique"
-		],
+		"qualities": ["Unique"],
 		"attributes": [
 			{
 				"text": "Level 1 KnifeKnife",
@@ -5193,19 +4121,12 @@
 		"image": "/w/images/thumb/0/01/Item_icon_Cozy_Camper.png/100px-Item_icon_Cozy_Camper.png",
 		"killIcon": null,
 		"releaseDate": "2012-03-15",
-		"usedBy": [
-			"Sniper"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Sniper"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 BackpackBackpack",
@@ -5231,20 +4152,12 @@
 		"image": "/w/images/thumb/e/e6/Item_icon_Baby_Face%27s_Blaster.png/100px-Item_icon_Baby_Face%27s_Blaster.png",
 		"killIcon": "/w/images/5/56/Killicon_baby_face%27s_blaster.png",
 		"releaseDate": "2012-06-27",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Primary"],
 		"ammoLoaded": "4",
 		"ammoCarried": "32",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 ScattergunScattergun",
@@ -5278,20 +4191,12 @@
 		"image": "/w/images/thumb/7/77/Item_icon_Beggar%27s_Bazooka.png/100px-Item_icon_Beggar%27s_Bazooka.png",
 		"killIcon": "/w/images/7/7d/Killicon_beggar%27s_bazooka.png",
 		"releaseDate": "2012-06-27",
-		"usedBy": [
-			"Soldier"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Soldier"],
+		"slot": ["Primary"],
 		"ammoLoaded": "0",
 		"ammoCarried": "20",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 - 100 Rocket LauncherRocket Launcher",
@@ -5325,20 +4230,12 @@
 		"image": "/w/images/thumb/6/64/Item_icon_Cleaner%27s_Carbine.png/100px-Item_icon_Cleaner%27s_Carbine.png",
 		"killIcon": "/w/images/8/81/Killicon_cleaner%27s_carbine.png",
 		"releaseDate": "2012-06-27",
-		"usedBy": [
-			"Sniper"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Sniper"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "20",
 		"ammoCarried": "75",
 		"reloadType": "Clip",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 SMGSMG",
@@ -5372,21 +4269,12 @@
 		"image": "/w/images/thumb/0/0c/Item_icon_Escape_Plan.png/100px-Item_icon_Escape_Plan.png",
 		"killIcon": "/w/images/d/de/Killicon_escape_plan.png",
 		"releaseDate": "2012-06-27",
-		"usedBy": [
-			"Soldier"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Soldier"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Vintage",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Vintage", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 PickaxePickaxe",
@@ -5416,20 +4304,12 @@
 		"image": "/w/images/thumb/1/18/Item_icon_Hitman%27s_Heatmaker.png/100px-Item_icon_Hitman%27s_Heatmaker.png",
 		"killIcon": "/w/images/1/17/Killicon_hitman%27s_heatmaker.png",
 		"releaseDate": "2012-06-27",
-		"usedBy": [
-			"Sniper"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Sniper"],
+		"slot": ["Primary"],
 		"ammoLoaded": "25",
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 Sniper RifleSniper Rifle",
@@ -5459,20 +4339,12 @@
 		"image": "/w/images/thumb/6/65/Item_icon_Lollichop.png/100px-Item_icon_Lollichop.png",
 		"killIcon": "/w/images/4/44/Killicon_lollichop.png",
 		"releaseDate": "2012-06-27",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 - 100 Fire AxeFire Axe",
@@ -5498,20 +4370,12 @@
 		"image": "/w/images/thumb/f/f6/Item_icon_Pretty_Boy%27s_Pocket_Pistol.png/100px-Item_icon_Pretty_Boy%27s_Pocket_Pistol.png",
 		"killIcon": "/w/images/b/b8/Killicon_pretty_boy%27s_pocket_pistol.png",
 		"releaseDate": "2012-06-27",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "9",
 		"ammoCarried": "36",
 		"reloadType": "Clip",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 PistolPistol",
@@ -5541,20 +4405,12 @@
 		"image": "/w/images/thumb/3/3c/Item_icon_Rainblower.png/100px-Item_icon_Rainblower.png",
 		"killIcon": "/w/images/f/f6/Killicon_rainblower.png",
 		"releaseDate": "2012-06-27",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Primary"],
 		"ammoLoaded": "200",
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 Flame ThrowerFlame Thrower",
@@ -5584,21 +4440,12 @@
 		"image": "/w/images/thumb/b/be/Item_icon_Scorch_Shot.png/100px-Item_icon_Scorch_Shot.png",
 		"killIcon": "/w/images/2/20/Killicon_scorch_shot.png",
 		"releaseDate": "2012-06-27",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "16",
 		"ammoCarried": null,
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 10 Flare GunFlare Gun",
@@ -5632,21 +4479,12 @@
 		"image": "/w/images/thumb/5/5a/Item_icon_Flying_Guillotine.png/100px-Item_icon_Flying_Guillotine.png",
 		"killIcon": "/w/images/f/ff/Killicon_flying_guillotine.png",
 		"releaseDate": "2012-08-02",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "Recharge",
-		"qualities": [
-			"Unique",
-			"Genuine",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Genuine", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 - 100 CleaverCleaver",
@@ -5668,21 +4506,12 @@
 		"image": "/w/images/thumb/8/81/Item_icon_Huo-Long_Heater.png/100px-Item_icon_Huo-Long_Heater.png",
 		"killIcon": "/w/images/0/09/Killicon_huo-long_heater.png",
 		"releaseDate": "2012-08-02",
-		"usedBy": [
-			"Heavy"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Heavy"],
+		"slot": ["Primary"],
 		"ammoLoaded": "200",
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Genuine",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Genuine", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 - 100 MinigunMinigun",
@@ -5712,21 +4541,12 @@
 		"image": "/w/images/thumb/e/e9/Item_icon_Neon_Annihilator.png/100px-Item_icon_Neon_Annihilator.png",
 		"killIcon": "/w/images/5/5b/Killicon_neon_annihilator.png",
 		"releaseDate": "2012-08-02",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Genuine",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Genuine", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 - 100 SignSign",
@@ -5756,21 +4576,12 @@
 		"image": "/w/images/thumb/7/7d/Item_icon_Red-Tape_Recorder.png/100px-Item_icon_Red-Tape_Recorder.png",
 		"killIcon": "/w/images/f/ff/Killicon_red-tape_recorder.png",
 		"releaseDate": "2012-08-02",
-		"usedBy": [
-			"Spy"
-		],
-		"slot": [
-			"Building"
-		],
+		"usedBy": ["Spy"],
+		"slot": ["Building"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Genuine",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Genuine", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 - 100 SapperSapper",
@@ -5792,20 +4603,12 @@
 		"image": "/w/images/thumb/2/24/Item_icon_AWPer_Hand.png/100px-Item_icon_AWPer_Hand.png",
 		"killIcon": "/w/images/f/fe/Killicon_sniper_rifle.png",
 		"releaseDate": "2012-08-15",
-		"usedBy": [
-			"Sniper"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Sniper"],
+		"slot": ["Primary"],
 		"ammoLoaded": "25",
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Genuine",
-			"Strange"
-		],
+		"qualities": ["Unique", "Genuine", "Strange"],
 		"attributes": [
 			{
 				"text": "Level 1 Sniper RifleSniper Rifle",
@@ -5823,18 +4626,12 @@
 		"image": "/w/images/thumb/c/cb/Item_icon_Robo-Sandvich.png/100px-Item_icon_Robo-Sandvich.png",
 		"killIcon": null,
 		"releaseDate": "2012-09-21",
-		"usedBy": [
-			"Heavy"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Heavy"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "Recharge (30 seconds)",
-		"qualities": [
-			"Genuine"
-		],
+		"qualities": ["Genuine"],
 		"attributes": [
 			{
 				"text": "Level 1 Lunch BoxLunch Box",
@@ -5852,19 +4649,12 @@
 		"image": "/w/images/thumb/2/28/Item_icon_Freedom_Staff.png/100px-Item_icon_Freedom_Staff.png",
 		"killIcon": "/w/images/3/35/Killicon_freedom_staff.png",
 		"releaseDate": "2012-09-27",
-		"usedBy": [
-			"All classes (except Engineer and Spy )"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["All classes (except Engineer and Spy )"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Genuine"
-		],
+		"qualities": ["Unique", "Genuine"],
 		"attributes": [
 			{
 				"text": "Level 25 StaffStaff",
@@ -5882,20 +4672,12 @@
 		"image": "/w/images/thumb/c/c5/Item_icon_Bat_Outta_Hell.png/100px-Item_icon_Bat_Outta_Hell.png",
 		"killIcon": "/w/images/7/74/Killicon_bat_outta_hell.png",
 		"releaseDate": "2012-10-26",
-		"usedBy": [
-			"All classes (except Engineer and Spy )"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["All classes (except Engineer and Spy )"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Haunted",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Haunted", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 5 Skull BatSkull Bat",
@@ -5909,19 +4691,12 @@
 		"image": "/w/images/thumb/f/f6/Item_icon_Quackenbirdt.png/100px-Item_icon_Quackenbirdt.png",
 		"killIcon": null,
 		"releaseDate": "2012-11-16",
-		"usedBy": [
-			"Spy"
-		],
-		"slot": [
-			"PDA 2"
-		],
+		"usedBy": ["Spy"],
+		"slot": ["PDA 2"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Genuine"
-		],
+		"qualities": ["Unique", "Genuine"],
 		"attributes": [
 			{
 				"text": "Level 1 - 100 Invis WatchInvis Watch",
@@ -5939,18 +4714,12 @@
 		"image": "/w/images/thumb/9/93/Item_icon_Memory_Maker.png/100px-Item_icon_Memory_Maker.png",
 		"killIcon": "/w/images/1/10/Killicon_memory_maker.png",
 		"releaseDate": "2012-11-29",
-		"usedBy": [
-			"All classes (except Engineer and Spy )"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["All classes (except Engineer and Spy )"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Strange"
-		],
+		"qualities": ["Strange"],
 		"attributes": [
 			{
 				"text": "Strange  CameraCamera - Kills: 0",
@@ -5976,21 +4745,12 @@
 		"image": "/w/images/thumb/7/70/Item_icon_Loose_Cannon.png/100px-Item_icon_Loose_Cannon.png",
 		"killIcon": "/w/images/e/e1/Killicon_loose_cannon.png",
 		"releaseDate": "2012-12-20",
-		"usedBy": [
-			"Demoman"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Demoman"],
+		"slot": ["Primary"],
 		"ammoLoaded": "4",
 		"ammoCarried": "16",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 10 Grenade LauncherGrenade Launcher",
@@ -6024,21 +4784,12 @@
 		"image": "/w/images/thumb/2/29/Item_icon_Rescue_Ranger.png/100px-Item_icon_Rescue_Ranger.png",
 		"killIcon": "/w/images/1/14/Killicon_rescue_ranger.png",
 		"releaseDate": "2012-12-20",
-		"usedBy": [
-			"Engineer"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Engineer"],
+		"slot": ["Primary"],
 		"ammoLoaded": "4",
 		"ammoCarried": "16",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 1 - 100 ShotgunShotgun",
@@ -6076,20 +4827,12 @@
 		"image": "/w/images/thumb/9/9d/Item_icon_Vaccinator.png/100px-Item_icon_Vaccinator.png",
 		"killIcon": null,
 		"releaseDate": "2012-12-20",
-		"usedBy": [
-			"Medic"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Medic"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 8 VaccinatorVaccinator",
@@ -6123,19 +4866,12 @@
 		"image": "/w/images/thumb/1/17/Item_icon_Ap-Sap.png/100px-Item_icon_Ap-Sap.png",
 		"killIcon": "/w/images/9/92/Killicon_ap-sap.png",
 		"releaseDate": "2013-03-12",
-		"usedBy": [
-			"Spy"
-		],
-		"slot": [
-			"Building"
-		],
+		"usedBy": ["Spy"],
+		"slot": ["Building"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Genuine"
-		],
+		"qualities": ["Unique", "Genuine"],
 		"attributes": [
 			{
 				"text": "Level 1 - 100 SapperSapper",
@@ -6153,19 +4889,12 @@
 		"image": "/w/images/thumb/6/6a/Item_icon_Ham_Shank.png/100px-Item_icon_Ham_Shank.png",
 		"killIcon": "/w/images/c/ca/Killicon_ham_shank.png",
 		"releaseDate": "2013-03-12",
-		"usedBy": [
-			"All classes (except Engineer and Spy )"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["All classes (except Engineer and Spy )"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Genuine"
-		],
+		"qualities": ["Unique", "Genuine"],
 		"attributes": [
 			{
 				"text": "Level 5 Pork ProductPork Product",
@@ -6183,18 +4912,12 @@
 		"image": "/w/images/thumb/8/8f/Item_icon_Golden_Frying_Pan.png/100px-Item_icon_Golden_Frying_Pan.png",
 		"killIcon": "/w/images/c/cb/Killicon_golden_frying_pan.png",
 		"releaseDate": "2013-11-21",
-		"usedBy": [
-			"All classes"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["All classes"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Strange"
-		],
+		"qualities": ["Strange"],
 		"attributes": [
 			{
 				"text": "Strange  Golden Frying PanGolden Frying Pan - Kills: 0",
@@ -6224,20 +4947,12 @@
 		"image": "/w/images/thumb/8/89/Item_icon_Fortified_Compound.png/100px-Item_icon_Fortified_Compound.png",
 		"killIcon": "/w/images/a/ad/Killicon_huntsman.png",
 		"releaseDate": "2014-02-11",
-		"usedBy": [
-			"Sniper"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Sniper"],
+		"slot": ["Primary"],
 		"ammoLoaded": "1",
 		"ammoCarried": "12",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Genuine",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Genuine", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 10 BowBow",
@@ -6251,21 +4966,12 @@
 		"image": "/w/images/thumb/f/f8/Item_icon_Air_Strike.png/100px-Item_icon_Air_Strike.png",
 		"killIcon": "/w/images/d/dc/Killicon_air_strike.png",
 		"releaseDate": "2014-06-18",
-		"usedBy": [
-			"Soldier"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Soldier"],
+		"slot": ["Primary"],
 		"ammoLoaded": "4-8",
 		"ammoCarried": "20",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Collector's", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 1 - 100 Rocket LauncherRocket Launcher",
@@ -6299,21 +5005,12 @@
 		"image": "/w/images/thumb/b/b2/Item_icon_B.A.S.E._Jumper.png/100px-Item_icon_B.A.S.E._Jumper.png",
 		"killIcon": null,
 		"releaseDate": "2014-06-18",
-		"usedBy": [
-			"Soldier",
-			"Demoman"
-		],
-		"slot": [
-			"Primary",
-			"Secondary"
-		],
+		"usedBy": ["Soldier", "Demoman"],
+		"slot": ["Primary", "Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 - 100 ParachuteParachute",
@@ -6331,20 +5028,12 @@
 		"image": "/w/images/thumb/1/11/Item_icon_Back_Scatter.png/100px-Item_icon_Back_Scatter.png",
 		"killIcon": "/w/images/b/b9/Killicon_back_scatter.png",
 		"releaseDate": "2014-06-18",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Primary"],
 		"ammoLoaded": "4",
 		"ammoCarried": "32",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 - 100 ScattergunScattergun",
@@ -6374,19 +5063,12 @@
 		"image": "/w/images/thumb/a/a4/Item_icon_Bread_Bite.png/100px-Item_icon_Bread_Bite.png",
 		"killIcon": "/w/images/4/4f/Killicon_bread_bite.png",
 		"releaseDate": "2014-06-18",
-		"usedBy": [
-			"Heavy"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Heavy"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange"
-		],
+		"qualities": ["Unique", "Strange"],
 		"attributes": [
 			{
 				"text": "Limited Level 1 - 100 Boxing GlovesBoxing Gloves",
@@ -6416,20 +5098,12 @@
 		"image": "/w/images/thumb/7/73/Item_icon_Classic.png/100px-Item_icon_Classic.png",
 		"killIcon": "/w/images/4/40/Killicon_classic.png",
 		"releaseDate": "2014-06-18",
-		"usedBy": [
-			"Sniper"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Sniper"],
+		"slot": ["Primary"],
 		"ammoLoaded": "25",
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Strange", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 - 100 Sniper RifleSniper Rifle",
@@ -6455,19 +5129,12 @@
 		"image": "/w/images/thumb/b/bd/Item_icon_Mutated_Milk.png/100px-Item_icon_Mutated_Milk.png",
 		"killIcon": null,
 		"releaseDate": "2014-06-18",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "Recharge (20 seconds)",
-		"qualities": [
-			"Unique",
-			"Strange"
-		],
+		"qualities": ["Unique", "Strange"],
 		"attributes": [
 			{
 				"text": "Limited Level 1 - 99 Non-Milk SubstanceNon-Milk Substance",
@@ -6478,7 +5145,11 @@
 				"variant": "positive"
 			},
 			{
-				"text": "Players heal 60% of the damage done to an enemy covered with milk.\n\nInspired by the TF2 Movie 'Expiration Date'Players heal 60% of the damage done to an enemy covered with milk.\n\nInspired by the TF2 Movie 'Expiration Date'",
+				"text": "Players heal 60% of the damage done to an enemy covered with milk.",
+				"variant": "neutral"
+			},
+			{
+				"text": "Inspired by the TF2 Movie 'Expiration Date'",
 				"variant": "neutral"
 			}
 		]
@@ -6489,19 +5160,12 @@
 		"image": "/w/images/thumb/2/2e/Item_icon_Self-Aware_Beauty_Mark.png/100px-Item_icon_Self-Aware_Beauty_Mark.png",
 		"killIcon": null,
 		"releaseDate": "2014-06-18",
-		"usedBy": [
-			"Sniper"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Sniper"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "Recharge (20 seconds)",
-		"qualities": [
-			"Unique",
-			"Strange"
-		],
+		"qualities": ["Unique", "Strange"],
 		"attributes": [
 			{
 				"text": "Limited Level 1 - 100 Jar Based KarateJar Based Karate",
@@ -6527,19 +5191,12 @@
 		"image": "/w/images/thumb/2/27/Item_icon_Snack_Attack.png/100px-Item_icon_Snack_Attack.png",
 		"killIcon": "/w/images/b/bf/Killicon_snack_attack.png",
 		"releaseDate": "2014-06-18",
-		"usedBy": [
-			"Spy"
-		],
-		"slot": [
-			"Building"
-		],
+		"usedBy": ["Spy"],
+		"slot": ["Building"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Strange"
-		],
+		"qualities": ["Unique", "Strange"],
 		"attributes": [
 			{
 				"text": "Limited Level 1 - 100 SapperSapper",
@@ -6557,19 +5214,12 @@
 		"image": "/w/images/thumb/c/cd/Item_icon_Tide_Turner.png/100px-Item_icon_Tide_Turner.png",
 		"killIcon": "/w/images/f/fd/Killicon_tide_turner.png",
 		"releaseDate": "2014-06-18",
-		"usedBy": [
-			"Demoman"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Demoman"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "Recharge",
-		"qualities": [
-			"Unique",
-			"Collector's"
-		],
+		"qualities": ["Unique", "Collector's"],
 		"attributes": [
 			{
 				"text": "Level 1 - 100 ShieldShield",
@@ -6607,19 +5257,12 @@
 		"image": "/w/images/thumb/d/d3/Item_icon_Nostromo_Napalmer.png/100px-Item_icon_Nostromo_Napalmer.png",
 		"killIcon": "/w/images/c/c4/Killicon_nostromo_napalmer.png",
 		"releaseDate": "2014-09-17",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Primary"],
 		"ammoLoaded": "200",
 		"ammoCarried": "N/A",
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Genuine"
-		],
+		"qualities": ["Unique", "Genuine"],
 		"attributes": [
 			{
 				"text": "Level 10 Flame ThrowerFlame Thrower",
@@ -6637,19 +5280,12 @@
 		"image": "/w/images/thumb/1/1a/Item_icon_Necro_Smasher.png/100px-Item_icon_Necro_Smasher.png",
 		"killIcon": "/w/images/9/97/Killicon_necro_smasher.png",
 		"releaseDate": "2014-10-29",
-		"usedBy": [
-			"All classes (except Spy )"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["All classes (except Spy )"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange"
-		],
+		"qualities": ["Unique", "Strange"],
 		"attributes": [
 			{
 				"text": "Level 50 HammerHammer",
@@ -6667,19 +5303,12 @@
 		"image": "/w/images/thumb/8/8c/Item_icon_Crossing_Guard.png/100px-Item_icon_Crossing_Guard.png",
 		"killIcon": "/w/images/8/80/Killicon_crossing_guard.png",
 		"releaseDate": "2014-12-08",
-		"usedBy": [
-			"All classes (except Engineer and Spy )"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["All classes (except Engineer and Spy )"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange"
-		],
+		"qualities": ["Unique", "Strange"],
 		"attributes": [
 			{
 				"text": "Level 25 SignSign",
@@ -6693,20 +5322,12 @@
 		"image": "/w/images/thumb/c/cd/Item_icon_Iron_Bomber.png/100px-Item_icon_Iron_Bomber.png",
 		"killIcon": "/w/images/3/34/Killicon_iron_bomber.png",
 		"releaseDate": "2014-12-22",
-		"usedBy": [
-			"Demoman"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Demoman"],
+		"slot": ["Primary"],
 		"ammoLoaded": "4",
 		"ammoCarried": "16",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 1 - 99 Grenade LauncherGrenade Launcher",
@@ -6732,24 +5353,12 @@
 		"image": "/w/images/thumb/b/be/Item_icon_Panic_Attack.png/100px-Item_icon_Panic_Attack.png",
 		"killIcon": "/w/images/c/c5/Killicon_panic_attack.png",
 		"releaseDate": "2014-12-22",
-		"usedBy": [
-			"Engineer",
-			"Soldier",
-			"Pyro",
-			"Heavy"
-		],
-		"slot": [
-			"Primary",
-			"Secondary"
-		],
+		"usedBy": ["Engineer", "Soldier", "Pyro", "Heavy"],
+		"slot": ["Primary", "Secondary"],
 		"ammoLoaded": "6",
 		"ammoCarried": "32",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Strange",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Strange", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 1 - 99 ShotgunShotgun",
@@ -6783,19 +5392,12 @@
 		"image": "/w/images/thumb/f/f9/Item_icon_Quickiebomb_Launcher.png/100px-Item_icon_Quickiebomb_Launcher.png",
 		"killIcon": "/w/images/6/6a/Killicon_quickiebomb_launcher.png",
 		"releaseDate": "2014-12-22",
-		"usedBy": [
-			"Demoman"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Demoman"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "4",
 		"ammoCarried": "24",
 		"reloadType": "Single",
-		"qualities": [
-			"Unique",
-			"Strange"
-		],
+		"qualities": ["Unique", "Strange"],
 		"attributes": [
 			{
 				"text": "Level 1 - 99 Stickybomb LauncherStickybomb Launcher",
@@ -6833,19 +5435,12 @@
 		"image": "/w/images/thumb/e/ef/Item_icon_Batsaber.png/100px-Item_icon_Batsaber.png",
 		"killIcon": "/w/images/2/29/Killicon_batsaber.png",
 		"releaseDate": "2015-10-06",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange"
-		],
+		"qualities": ["Unique", "Strange"],
 		"attributes": [
 			{
 				"text": "\nBatBat",
@@ -6863,20 +5458,12 @@
 		"image": "/w/images/thumb/a/a6/Item_icon_C.A.P.P.E.R.png/100px-Item_icon_C.A.P.P.E.R.png",
 		"killIcon": "/w/images/e/e0/Killicon_c.a.p.p.e.r.png",
 		"releaseDate": "2015-10-06",
-		"usedBy": [
-			"Scout",
-			"Engineer"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Scout", "Engineer"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "12",
 		"ammoCarried": "36 (Scout) 200 (Engineer)",
 		"reloadType": "Clip",
-		"qualities": [
-			"Unique",
-			"Strange"
-		],
+		"qualities": ["Unique", "Strange"],
 		"attributes": [
 			{
 				"text": "\nPistolPistol",
@@ -6894,19 +5481,12 @@
 		"image": "/w/images/thumb/5/5d/Item_icon_Giger_Counter.png/100px-Item_icon_Giger_Counter.png",
 		"killIcon": "/w/images/0/03/Killicon_giger_counter.png",
 		"releaseDate": "2015-10-06",
-		"usedBy": [
-			"Engineer"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Engineer"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Strange"
-		],
+		"qualities": ["Unique", "Strange"],
 		"attributes": [
 			{
 				"text": "\nLaser PointerLaser Pointer",
@@ -6920,19 +5500,12 @@
 		"image": "/w/images/thumb/d/d7/Item_icon_Shooting_Star.png/100px-Item_icon_Shooting_Star.png",
 		"killIcon": "/w/images/5/51/Killicon_shooting_star.png",
 		"releaseDate": "2015-10-06",
-		"usedBy": [
-			"Sniper"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Sniper"],
+		"slot": ["Primary"],
 		"ammoLoaded": "25",
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Strange"
-		],
+		"qualities": ["Unique", "Strange"],
 		"attributes": [
 			{
 				"text": "\nSniper RifleSniper Rifle",
@@ -6966,19 +5539,12 @@
 		"image": "/w/images/thumb/e/ef/Item_icon_Prinny_Machete.png/100px-Item_icon_Prinny_Machete.png",
 		"killIcon": "/w/images/b/bc/Killicon_prinny_machete.png",
 		"releaseDate": "2016-07-07",
-		"usedBy": [
-			"All classes"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["All classes"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique",
-			"Genuine"
-		],
+		"qualities": ["Unique", "Genuine"],
 		"attributes": [
 			{
 				"text": "Level 5 MacheteMachete",
@@ -6996,19 +5562,12 @@
 		"image": "/w/images/thumb/1/1f/Item_icon_Dragon%27s_Fury.png/100px-Item_icon_Dragon%27s_Fury.png",
 		"killIcon": "/w/images/e/e8/Killicon_dragon%27s_fury_afterburn.png",
 		"releaseDate": "2017-10-20",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Primary"],
 		"ammoLoaded": "40",
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Unique",
-			"Decorated"
-		],
+		"qualities": ["Unique", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 1 - 100 Flame LauncherFlame Launcher",
@@ -7042,18 +5601,12 @@
 		"image": "/w/images/thumb/0/0e/Item_icon_Gas_Passer.png/100px-Item_icon_Gas_Passer.png",
 		"killIcon": null,
 		"releaseDate": "2017-10-20",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "Recharge (60 seconds max)",
-		"qualities": [
-			"Unique"
-		],
+		"qualities": ["Unique"],
 		"attributes": [
 			{
 				"text": "Level 1 - 100 Gas-Like SubstanceGas-Like Substance",
@@ -7083,18 +5636,12 @@
 		"image": "/w/images/thumb/f/f6/Item_icon_Hot_Hand.png/100px-Item_icon_Hot_Hand.png",
 		"killIcon": "/w/images/8/8a/Killicon_hot_hand.png",
 		"releaseDate": "2017-10-20",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Unique"
-		],
+		"qualities": ["Unique"],
 		"attributes": [
 			{
 				"text": "Level 1 - 100 SlapSlap",
@@ -7120,18 +5667,12 @@
 		"image": "/w/images/thumb/7/77/Item_icon_Second_Banana.png/100px-Item_icon_Second_Banana.png",
 		"killIcon": null,
 		"releaseDate": "2017-10-20",
-		"usedBy": [
-			"Heavy"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Heavy"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "Recharge (10 seconds)",
-		"qualities": [
-			"Unique"
-		],
+		"qualities": ["Unique"],
 		"attributes": [
 			{
 				"text": "Level 1 Lunch BoxLunch Box",
@@ -7157,18 +5698,12 @@
 		"image": "/w/images/thumb/0/00/Item_icon_Thermal_Thruster.png/100px-Item_icon_Thermal_Thruster.png",
 		"killIcon": "/w/images/a/ac/Killicon_mantreads.png",
 		"releaseDate": "2017-10-20",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "Recharge (15 seconds per charge)",
-		"qualities": [
-			"Unique"
-		],
+		"qualities": ["Unique"],
 		"attributes": [
 			{
 				"text": "Level 1 - 100 Rocket PackRocket Pack",
@@ -7190,20 +5725,12 @@
 		"image": "/w/images/thumb/b/b5/Item_icon_Bat.png/100px-Item_icon_Bat.png",
 		"killIcon": "/w/images/d/de/Killicon_bat.png",
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange"
-		],
+		"qualities": ["Normal", "Unique", "Strange"],
 		"attributes": [
 			{
 				"text": "Level 1 BatBat",
@@ -7217,20 +5744,12 @@
 		"image": "/w/images/thumb/8/8d/Item_icon_Bonesaw.png/100px-Item_icon_Bonesaw.png",
 		"killIcon": "/w/images/0/08/Killicon_bonesaw.png",
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Medic"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Medic"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange"
-		],
+		"qualities": ["Normal", "Unique", "Strange"],
 		"attributes": [
 			{
 				"text": "Level 1 BonesawBonesaw",
@@ -7244,20 +5763,12 @@
 		"image": "/w/images/thumb/b/b2/Item_icon_Bottle.png/100px-Item_icon_Bottle.png",
 		"killIcon": "/w/images/6/68/Killicon_bottle.png",
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Demoman"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Demoman"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange"
-		],
+		"qualities": ["Normal", "Unique", "Strange"],
 		"attributes": [
 			{
 				"text": "Level 1 BottleBottle",
@@ -7271,21 +5782,12 @@
 		"image": "/w/images/thumb/2/26/Item_icon_PDA_Destroy.png/100px-Item_icon_PDA_Destroy.png",
 		"killIcon": null,
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Engineer"
-		],
-		"slot": [
-			"PDA 1",
-			"PDA 2"
-		],
+		"usedBy": ["Engineer"],
+		"slot": ["PDA 1", "PDA 2"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange"
-		],
+		"qualities": ["Normal", "Unique", "Strange"],
 		"attributes": [
 			{
 				"text": "Level 1 PDA",
@@ -7299,20 +5801,12 @@
 		"image": "/w/images/thumb/9/9f/Item_icon_Fire_Axe.png/100px-Item_icon_Fire_Axe.png",
 		"killIcon": "/w/images/d/da/Killicon_fire_axe.png",
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange"
-		],
+		"qualities": ["Normal", "Unique", "Strange"],
 		"attributes": [
 			{
 				"text": "Level 1 Fire AxeFire Axe",
@@ -7326,20 +5820,12 @@
 		"image": "/w/images/thumb/1/19/Item_icon_Fists.png/100px-Item_icon_Fists.png",
 		"killIcon": "/w/images/2/27/Killicon_fists.png",
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Heavy"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Heavy"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange"
-		],
+		"qualities": ["Normal", "Unique", "Strange"],
 		"attributes": [
 			{
 				"text": "Level 1 FistsFists",
@@ -7353,21 +5839,12 @@
 		"image": "/w/images/thumb/e/ec/Item_icon_Flame_Thrower.png/100px-Item_icon_Flame_Thrower.png",
 		"killIcon": "/w/images/e/eb/Killicon_flame_thrower.png",
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Pyro"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Pyro"],
+		"slot": ["Primary"],
 		"ammoLoaded": "200",
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange",
-			"Decorated"
-		],
+		"qualities": ["Normal", "Unique", "Strange", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 1 Flame ThrowerFlame Thrower",
@@ -7389,21 +5866,12 @@
 		"image": "/w/images/thumb/e/e6/Item_icon_Grenade_Launcher.png/100px-Item_icon_Grenade_Launcher.png",
 		"killIcon": "/w/images/d/db/Killicon_grenade_launcher.png",
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Demoman"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Demoman"],
+		"slot": ["Primary"],
 		"ammoLoaded": "4 / 6",
 		"ammoCarried": "16 / 30",
 		"reloadType": "Single",
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange",
-			"Decorated"
-		],
+		"qualities": ["Normal", "Unique", "Strange", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 1 Grenade LauncherGrenade Launcher",
@@ -7417,21 +5885,12 @@
 		"image": "/w/images/thumb/5/57/Item_icon_Knife.png/100px-Item_icon_Knife.png",
 		"killIcon": "/w/images/2/24/Killicon_knife.png",
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Spy"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Spy"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange",
-			"Decorated"
-		],
+		"qualities": ["Normal", "Unique", "Strange", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 1 KnifeKnife",
@@ -7449,20 +5908,12 @@
 		"image": "/w/images/thumb/e/ea/Item_icon_Kukri.png/100px-Item_icon_Kukri.png",
 		"killIcon": "/w/images/9/9d/Killicon_kukri.png",
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Sniper"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Sniper"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange"
-		],
+		"qualities": ["Normal", "Unique", "Strange"],
 		"attributes": [
 			{
 				"text": "Level 1 KukriKukri",
@@ -7476,21 +5927,12 @@
 		"image": "/w/images/thumb/4/4a/Item_icon_Medi_Gun.png/100px-Item_icon_Medi_Gun.png",
 		"killIcon": null,
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Medic"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Medic"],
+		"slot": ["Secondary"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange",
-			"Decorated"
-		],
+		"qualities": ["Normal", "Unique", "Strange", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 1 Medi GunMedi Gun",
@@ -7504,21 +5946,12 @@
 		"image": "/w/images/thumb/a/a7/Item_icon_Minigun.png/100px-Item_icon_Minigun.png",
 		"killIcon": "/w/images/e/ee/Killicon_minigun.png",
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Heavy"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Heavy"],
+		"slot": ["Primary"],
 		"ammoLoaded": "200",
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange",
-			"Decorated"
-		],
+		"qualities": ["Normal", "Unique", "Strange", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 1 MinigunMinigun",
@@ -7532,22 +5965,12 @@
 		"image": "/w/images/thumb/5/52/Item_icon_Pistol.png/100px-Item_icon_Pistol.png",
 		"killIcon": "/w/images/1/1a/Killicon_pistol.png",
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Scout",
-			"Engineer"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Scout", "Engineer"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "12",
 		"ammoCarried": "36 (Scout) 200 (Engineer)",
 		"reloadType": "Clip",
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange",
-			"Decorated"
-		],
+		"qualities": ["Normal", "Unique", "Strange", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 1 PistolPistol",
@@ -7561,21 +5984,12 @@
 		"image": "/w/images/thumb/1/1f/Item_icon_Revolver.png/100px-Item_icon_Revolver.png",
 		"killIcon": "/w/images/3/34/Killicon_revolver.png",
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Spy"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Spy"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "6",
 		"ammoCarried": "24",
 		"reloadType": "Clip",
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange",
-			"Decorated"
-		],
+		"qualities": ["Normal", "Unique", "Strange", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 1 RevolverRevolver",
@@ -7589,21 +6003,12 @@
 		"image": "/w/images/thumb/f/fe/Item_icon_Rocket_Launcher.png/100px-Item_icon_Rocket_Launcher.png",
 		"killIcon": "/w/images/8/8c/Killicon_rocket_launcher.png",
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Soldier"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Soldier"],
+		"slot": ["Primary"],
 		"ammoLoaded": "4",
 		"ammoCarried": "20 / 36",
 		"reloadType": "Single",
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange",
-			"Decorated"
-		],
+		"qualities": ["Normal", "Unique", "Strange", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 1 Rocket LauncherRocket Launcher",
@@ -7617,20 +6022,12 @@
 		"image": "/w/images/thumb/6/6c/Item_icon_Sapper.png/100px-Item_icon_Sapper.png",
 		"killIcon": "/w/images/6/6a/Killicon_electro_sapper.png",
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Spy"
-		],
-		"slot": [
-			"Building"
-		],
+		"usedBy": ["Spy"],
+		"slot": ["Building"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange"
-		],
+		"qualities": ["Normal", "Unique", "Strange"],
 		"attributes": [
 			{
 				"text": "Level 1 SapperSapper",
@@ -7648,21 +6045,12 @@
 		"image": "/w/images/thumb/1/1b/Item_icon_Scattergun.png/100px-Item_icon_Scattergun.png",
 		"killIcon": "/w/images/3/34/Killicon_scattergun.png",
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Scout"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Scout"],
+		"slot": ["Primary"],
 		"ammoLoaded": "6",
 		"ammoCarried": "32",
 		"reloadType": "Single",
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange",
-			"Decorated"
-		],
+		"qualities": ["Normal", "Unique", "Strange", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 1 ScattergunScattergun",
@@ -7676,25 +6064,12 @@
 		"image": "/w/images/thumb/5/5f/Item_icon_Shotgun.png/100px-Item_icon_Shotgun.png",
 		"killIcon": "/w/images/6/61/Killicon_shotgun.png",
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Engineer",
-			"Soldier",
-			"Pyro",
-			"Heavy"
-		],
-		"slot": [
-			"Primary",
-			"Secondary"
-		],
+		"usedBy": ["Engineer", "Soldier", "Pyro", "Heavy"],
+		"slot": ["Primary", "Secondary"],
 		"ammoLoaded": "6",
 		"ammoCarried": "32",
 		"reloadType": "Single",
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange",
-			"Decorated"
-		],
+		"qualities": ["Normal", "Unique", "Strange", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 1 ShotgunShotgun",
@@ -7708,20 +6083,12 @@
 		"image": "/w/images/thumb/7/73/Item_icon_Shovel.png/100px-Item_icon_Shovel.png",
 		"killIcon": "/w/images/6/6e/Killicon_shovel.png",
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Soldier"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Soldier"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange"
-		],
+		"qualities": ["Normal", "Unique", "Strange"],
 		"attributes": [
 			{
 				"text": "Level 1 ShovelShovel",
@@ -7735,21 +6102,12 @@
 		"image": "/w/images/thumb/5/50/Item_icon_SMG.png/100px-Item_icon_SMG.png",
 		"killIcon": "/w/images/5/51/Killicon_SMG.png",
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Sniper"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Sniper"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "25",
 		"ammoCarried": "75",
 		"reloadType": "Clip",
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange",
-			"Decorated"
-		],
+		"qualities": ["Normal", "Unique", "Strange", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 1 SMGSMG",
@@ -7763,21 +6121,12 @@
 		"image": "/w/images/thumb/a/a1/Item_icon_Sniper_Rifle.png/100px-Item_icon_Sniper_Rifle.png",
 		"killIcon": "/w/images/f/fe/Killicon_sniper_rifle.png",
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Sniper"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Sniper"],
+		"slot": ["Primary"],
 		"ammoLoaded": "25",
 		"ammoCarried": null,
 		"reloadType": "No reload",
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange",
-			"Decorated"
-		],
+		"qualities": ["Normal", "Unique", "Strange", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 1 Sniper RifleSniper Rifle",
@@ -7791,21 +6140,12 @@
 		"image": "/w/images/thumb/7/7c/Item_icon_Stickybomb_Launcher.png/100px-Item_icon_Stickybomb_Launcher.png",
 		"killIcon": "/w/images/0/08/Killicon_stickybomb_launcher.png",
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Demoman"
-		],
-		"slot": [
-			"Secondary"
-		],
+		"usedBy": ["Demoman"],
+		"slot": ["Secondary"],
 		"ammoLoaded": "8",
 		"ammoCarried": "24 / 40",
 		"reloadType": "Single",
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange",
-			"Decorated"
-		],
+		"qualities": ["Normal", "Unique", "Strange", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 1 Stickybomb LauncherStickybomb Launcher",
@@ -7823,20 +6163,12 @@
 		"image": "/w/images/thumb/c/c4/Item_icon_Syringe_Gun.png/100px-Item_icon_Syringe_Gun.png",
 		"killIcon": "/w/images/8/8b/Killicon_syringe_gun.png",
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Medic"
-		],
-		"slot": [
-			"Primary"
-		],
+		"usedBy": ["Medic"],
+		"slot": ["Primary"],
 		"ammoLoaded": "40",
 		"ammoCarried": "150",
 		"reloadType": "Clip",
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange"
-		],
+		"qualities": ["Normal", "Unique", "Strange"],
 		"attributes": [
 			{
 				"text": "Level 1 Syringe GunSyringe Gun",
@@ -7850,21 +6182,12 @@
 		"image": "/w/images/thumb/7/7d/Item_icon_Wrench.png/100px-Item_icon_Wrench.png",
 		"killIcon": "/w/images/7/7a/Killicon_wrench.png",
 		"releaseDate": "unknown",
-		"usedBy": [
-			"Engineer"
-		],
-		"slot": [
-			"Melee"
-		],
+		"usedBy": ["Engineer"],
+		"slot": ["Melee"],
 		"ammoLoaded": null,
 		"ammoCarried": null,
 		"reloadType": null,
-		"qualities": [
-			"Normal",
-			"Unique",
-			"Strange",
-			"Decorated"
-		],
+		"qualities": ["Normal", "Unique", "Strange", "Decorated"],
 		"attributes": [
 			{
 				"text": "Level 1 WrenchWrench",
