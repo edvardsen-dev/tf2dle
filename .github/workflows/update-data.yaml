@@ -3,8 +3,6 @@ name: Update Game Data
 on:
   schedule:
     - cron: '17 6 1 * *'
-  pull_request:
-    types: [labeled]
   workflow_dispatch:
     inputs:
       create_pr:
@@ -22,10 +20,6 @@ concurrency:
 
 jobs:
   update:
-    if: >-
-      github.event_name != 'pull_request' ||
-      (github.event.label.name == 'test-data-update' &&
-       github.event.pull_request.head.repo.full_name == github.repository)
     runs-on: ubuntu-latest
     timeout-minutes: 90
 
@@ -115,7 +109,7 @@ jobs:
           printf 'Created update PR: %s\n' "$pr_url" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Report preview
-        if: github.event_name == 'pull_request' || (github.event_name == 'workflow_dispatch' && !inputs.create_pr)
+        if: github.event_name == 'workflow_dispatch' && !inputs.create_pr
         run: printf '\nPreview only. No branch was pushed and no PR was created.\n' >> "$GITHUB_STEP_SUMMARY"
 
       - name: Write run summary
