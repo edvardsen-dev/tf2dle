@@ -2,7 +2,7 @@
 
 Python scrapers and image utilities for generating TF2DLE data. Scripts live in `src/` and write generated files to `output/`.
 
-`output/` is a local ignored cache. See [the manual runbook](docs/runbook.md) for individual scraper commands and copying reviewed output into the app. See [automated updates](docs/automation.md) for the monthly workflow, pre-merge testing, and the local updater.
+`output/` is a local ignored cache. See [the manual runbook](docs/runbook.md) for individual scraper commands and copying reviewed output into the app. See [automated updates](docs/automation.md) for the monthly workflow and the local updater.
 
 ## Setup
 

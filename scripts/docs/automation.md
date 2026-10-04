@@ -13,21 +13,6 @@ Scheduled runs use `main` on the first of every month at 06:17 UTC. GitHub sched
 
 Each update uses a new branch under `automation/update-game-data/`. The workflow never force-pushes or overwrites an existing branch. Review the data and images, wait for PR checks, merge, and manually publish a release targeting the merged commit to deploy.
 
-## Test Before Merge
-
-The new workflow's schedule and manual-dispatch button require it to exist on `main`. To test this PR before merging, add the **test-data-update** label to it. This explicitly triggers a preview using the PR's merge ref, including the proposed workflow and scraper code.
-
-From the PR branch checkout, create the label once if it does not already exist, then apply it:
-
-```sh
-gh label create test-data-update --description "Run the live data updater without publishing" --color 0E8A16
-gh pr edit --add-label test-data-update
-```
-
-Only PRs from branches in this repository can trigger the preview. It uses the same scrape, validation, copy, metadata, and app-check steps as a publishing run, but changes exist only in the disposable runner. It never pushes a branch or creates a PR, and checkout credentials are not persisted. No production credentials are used.
-
-Inspect **Update Game Data** in Actions for the report. To repeat a preview with newer commits, remove and re-add the label. Other labels and ordinary PR pushes do not trigger live scraping. This preview does not test GitHub branch push or PR-creation permissions.
-
 ## Manual Runs After Merge
 
 Open **Actions > Update Game Data > Run workflow** and select the branch to test. Leave **Create a data update PR** unchecked for a preview. Check it only when running from `main` to publish validated additions as a PR. Scheduled runs publish automatically when additions exist.
