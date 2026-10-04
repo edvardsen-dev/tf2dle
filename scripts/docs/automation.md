@@ -6,6 +6,8 @@ The **Update Game Data** workflow seeds all four scrapers from app JSON, runs th
 
 Scheduled runs use `main` on the first of every month at 06:17 UTC. GitHub schedules are best-effort and may be disabled in public repositories after 60 days without repository activity.
 
+Runs fail before scraping or publishing outside the original `edvardsen-dev/tf2dle` repository, including forks. Scheduled runs also require `main` to be both the default branch and the run ref. Manual previews on other branches remain available in the original repository.
+
 - No additions: a successful summary, no metadata change, and no PR.
 - Additions: a PR to `main` containing new records, required PNGs, and an updated `DATA_LAST_UPDATED` UTC date. Its report lists counts, names, and unknown release dates.
 - Scraper, image, or app-check failure: a failed run with no PR. Inspect the logs and summary.
