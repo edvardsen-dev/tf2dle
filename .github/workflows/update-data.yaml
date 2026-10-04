@@ -3,7 +3,14 @@ name: Update Game Data
 on:
   schedule:
     - cron: '17 6 1 * *'
+  pull_request:
+    types: [labeled]
   workflow_dispatch:
+    inputs:
+      create_pr:
+        description: Create a data update PR (main only)
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -15,20 +22,25 @@ concurrency:
 
 jobs:
   update:
+    if: >-
+      github.event_name != 'pull_request' ||
+      (github.event.label.name == 'test-data-update' &&
+       github.event.pull_request.head.repo.full_name == github.repository)
     runs-on: ubuntu-latest
     timeout-minutes: 90
-    env:
-      GH_TOKEN: ${{ github.token }}
 
     steps:
-      - name: Require main for manual runs
-        if: github.ref != 'refs/heads/main'
+      - name: Require main when publishing
+        if: github.event_name == 'workflow_dispatch' && inputs.create_pr && github.ref != 'refs/heads/main'
         run: |
-          echo 'Run this workflow from main.'
+          echo 'PR creation is only allowed from main. Disable create_pr to preview another branch.'
           exit 1
 
       - name: Check for an update awaiting review
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.create_pr)
         id: pending
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           pr_url=$(gh pr list --repo "$GITHUB_REPOSITORY" --base main --state open --limit 100 --json headRefName,url --jq '[.[] | select(.headRefName | startswith("automation/update-game-data/"))][0].url // empty')
           if [ -n "$pr_url" ]; then
@@ -38,21 +50,21 @@ jobs:
             echo 'pending=false' >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Checkout main
-        if: steps.pending.outputs.pending == 'false'
+      - name: Checkout selected ref
+        if: steps.pending.outputs.pending != 'true'
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
-          ref: main
+          persist-credentials: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.create_pr) }}
 
       - name: Setup Python and uv
-        if: steps.pending.outputs.pending == 'false'
+        if: steps.pending.outputs.pending != 'true'
         uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6.8.0
         with:
           version: '0.10.4'
           python-version: '3.12'
 
       - name: Find and validate new records
-        if: steps.pending.outputs.pending == 'false'
+        if: steps.pending.outputs.pending != 'true'
         id: update
         working-directory: scripts
         run: |
@@ -80,8 +92,11 @@ jobs:
           pnpm check
 
       - name: Create review PR
-        if: steps.update.outputs.changed == 'true'
+        if: >-
+          steps.update.outputs.changed == 'true' && github.ref == 'refs/heads/main' &&
+          (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.create_pr))
         env:
+          GH_TOKEN: ${{ github.token }}
           UPDATE_BRANCH: automation/update-game-data/${{ github.run_id }}-${{ github.run_attempt }}
           GIT_AUTHOR_NAME: github-actions[bot]
           GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
@@ -97,8 +112,12 @@ jobs:
           pr_url=$(gh pr create --repo "$GITHUB_REPOSITORY" --base main --head "$UPDATE_BRANCH" --title 'chore: update game data' --body-file scripts/output/update-report.md)
           printf 'Created update PR: %s\n' "$pr_url" >> "$GITHUB_STEP_SUMMARY"
 
+      - name: Report preview
+        if: github.event_name == 'pull_request' || (github.event_name == 'workflow_dispatch' && !inputs.create_pr)
+        run: printf '\nPreview only. No branch was pushed and no PR was created.\n' >> "$GITHUB_STEP_SUMMARY"
+
       - name: Write run summary
-        if: always() && steps.pending.outputs.pending == 'false'
+        if: always() && steps.pending.outputs.pending != 'true'
         env:
           JOB_STATUS: ${{ job.status }}
         run: |

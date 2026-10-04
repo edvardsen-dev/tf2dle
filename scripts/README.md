@@ -2,7 +2,7 @@
 
 Python scrapers and image utilities for generating TF2DLE data. Scripts live in `src/` and write generated files to `output/`.
 
-`output/` is a local ignored cache. Use `src/update_app_data.py` to validate and copy incremental additions, or review and copy individual scraper output manually. The monthly GitHub workflow proposes incremental updates as review PRs. See `docs/runbook.md` for setup, recovery, and the full app update flow.
+`output/` is a local ignored cache. See [the manual runbook](docs/runbook.md) for individual scraper commands and copying reviewed output into the app. See [automated updates](docs/automation.md) for the monthly workflow, pre-merge testing, and the local updater.
 
 ## Setup
 
@@ -50,4 +50,4 @@ If `output/<name>/data.json` already exists, scraper records with the same `name
 
 Requests use timeouts, bounded retries, and a one-second minimum interval within each scraper. Unexpected source structures and conflicting records fail rather than reporting no additions. Downloads must be valid PNGs; original image bytes, including animation, are preserved.
 
-More detail: `docs/scrapers.md` and `docs/runbook.md`.
+More detail: [scraper reference](docs/scrapers.md), [manual runbook](docs/runbook.md), and [automated updates](docs/automation.md).

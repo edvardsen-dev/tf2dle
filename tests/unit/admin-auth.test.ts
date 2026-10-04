@@ -26,9 +26,9 @@ test('validates signed admin session tokens', () => {
 	const laterToken = createAdminSessionToken(password, issuedAt + 1000);
 
 	expect(token).not.toBe(laterToken);
-	expect(isValidAdminSessionToken(token, password)).toBe(true);
-	expect(isValidAdminSessionToken('wrong-token', password)).toBe(false);
-	expect(isValidAdminSessionToken(token, 'wrong-password')).toBe(false);
+	expect(isValidAdminSessionToken(token, password, issuedAt)).toBe(true);
+	expect(isValidAdminSessionToken('wrong-token', password, issuedAt)).toBe(false);
+	expect(isValidAdminSessionToken(token, 'wrong-password', issuedAt)).toBe(false);
 });
 
 test('rejects tampered, future, and expired admin session tokens', () => {
