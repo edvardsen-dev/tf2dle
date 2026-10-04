@@ -1,0 +1,108 @@
+name: Update Game Data
+
+on:
+  schedule:
+    - cron: '17 6 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: update-game-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - name: Require main for manual runs
+        if: github.ref != 'refs/heads/main'
+        run: |
+          echo 'Run this workflow from main.'
+          exit 1
+
+      - name: Check for an update awaiting review
+        id: pending
+        run: |
+          pr_url=$(gh pr list --repo "$GITHUB_REPOSITORY" --base main --state open --limit 100 --json headRefName,url --jq '[.[] | select(.headRefName | startswith("automation/update-game-data/"))][0].url // empty')
+          if [ -n "$pr_url" ]; then
+            echo 'pending=true' >> "$GITHUB_OUTPUT"
+            printf 'Update PR awaiting review: %s\n\nThe existing PR was left unchanged.\n' "$pr_url" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'pending=false' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout main
+        if: steps.pending.outputs.pending == 'false'
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: main
+
+      - name: Setup Python and uv
+        if: steps.pending.outputs.pending == 'false'
+        uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6.8.0
+        with:
+          version: '0.10.4'
+          python-version: '3.12'
+
+      - name: Find and validate new records
+        if: steps.pending.outputs.pending == 'false'
+        id: update
+        working-directory: scripts
+        run: |
+          uv sync --locked
+          uv run --locked python src/update_app_data.py
+
+      - name: Setup pnpm
+        if: steps.update.outputs.changed == 'true'
+        uses: pnpm/action-setup@7088e561eb65bb68695d245aa206f005ef30921d # v4.1.0
+        with:
+          version: 10.21.0
+
+      - name: Setup Node.js
+        if: steps.update.outputs.changed == 'true'
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '24'
+          cache: pnpm
+
+      - name: Check app with updated data
+        if: steps.update.outputs.changed == 'true'
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm db:client
+          pnpm check
+
+      - name: Create review PR
+        if: steps.update.outputs.changed == 'true'
+        env:
+          UPDATE_BRANCH: automation/update-game-data/${{ github.run_id }}-${{ github.run_attempt }}
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          printf '\nApp type checks passed. Approve PR workflows if prompted and wait for CI before merging. Publish a release after merge to deploy.\n' >> scripts/output/update-report.md
+          git switch -c "$UPDATE_BRANCH"
+          git add -- src/lib/server/data/maps.json src/lib/server/data/weapons.json src/lib/server/data/cosmetics.json src/lib/server/data/unusuals.json src/lib/appMetadata.ts static/images/maps/originals static/images/maps/thumbnails static/images/weapons/thumbnails static/images/cosmetics static/images/unusuals
+          git diff --cached --check
+          git commit -m 'chore: add new game data'
+          git push origin "HEAD:refs/heads/$UPDATE_BRANCH"
+          pr_url=$(gh pr create --repo "$GITHUB_REPOSITORY" --base main --head "$UPDATE_BRANCH" --title 'chore: update game data' --body-file scripts/output/update-report.md)
+          printf 'Created update PR: %s\n' "$pr_url" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Write run summary
+        if: always() && steps.pending.outputs.pending == 'false'
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          if [ -f scripts/output/update-report.md ]; then
+            cat scripts/output/update-report.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+          printf '\nWorkflow result: %s\n' "$JOB_STATUS" >> "$GITHUB_STEP_SUMMARY"

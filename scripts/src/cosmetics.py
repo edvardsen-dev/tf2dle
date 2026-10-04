@@ -1,10 +1,8 @@
 import argparse
-import time
 
-import requests
 from bs4 import BeautifulSoup
 
-from common import add_scraper_args, ensure_dir, find_table_value, format_date, hash_id, load_existing_records, log, log_scraper_start, output_dir, parse_wiki_date, reached_limit, release_date_sort_key, save_progress_json, should_skip_date, validate_limit, write_merged_json
+from common import add_scraper_args, check_discovery, download_image, ensure_dir, find_table_value, format_date, hash_id, index_unique, load_existing_records, log, log_scraper_start, output_dir, parse_wiki_date, reached_limit, release_date_sort_key, request_wiki, save_progress_json, should_skip_date, validate_limit, wiki_url, write_merged_json
 
 
 class Cosmetic:
@@ -47,10 +45,25 @@ if args.img_download and not args.dry_run:
   log(f"Writing cosmetic images to {image_dir.resolve()}")
 
 log(f"Fetching cosmetic index: {URL}")
-page = requests.get(URL)
+page = request_wiki(URL)
 soup = BeautifulSoup(page.content, "html.parser")
-class_pages = [item.find("a")["href"] for item in soup.find("h2", string="List of cosmetic items").find_next("ul").find_all("li")]
-log(f"Found {len(class_pages[:-1])} cosmetic class pages")
+heading = soup.find(lambda tag: tag.name == "h2" and tag.get_text(strip=True) == "List of cosmetic items")
+class_list = heading.find_next_sibling("ul") if heading else None
+if class_list is None:
+  raise ValueError("Missing cosmetic class list")
+class_pages = []
+for item in class_list.find_all("li"):
+  link = item.find("a")
+  href = wiki_url(link.get("href") if link else None)
+  if href.rsplit("/", 1)[-1] == "List_of_retired_items":
+    continue
+  if not href.rsplit("/", 1)[-1].startswith("List_of_") or not href.endswith("_cosmetics"):
+    raise ValueError(f"Unexpected cosmetic class page: {href}")
+  if href not in class_pages:
+    class_pages.append(href)
+if not class_pages:
+  raise ValueError("No cosmetic class pages discovered")
+log(f"Found {len(class_pages)} cosmetic class pages")
 
 cosmetics = {}
 skipped_older = 0
@@ -59,68 +72,66 @@ skipped_existing = 0
 scanned = 0
 existing_records, existing_names = load_existing_records("cosmetics")
 
-for class_page in class_pages[:-1]:
-  if reached_limit(cosmetics, args.limit):
-    break
+cosmetic_index = {}
+cosmetic_classes = {}
+for class_page in class_pages:
+  log(f"Fetching cosmetic class page: {class_page}")
 
-  time.sleep(2)
-  log(f"Fetching cosmetic class page: {BASE_URL + class_page}")
-
-  cosmetic_page = requests.get(BASE_URL + class_page)
+  cosmetic_page = request_wiki(class_page)
   cosmetic_soup = BeautifulSoup(cosmetic_page.content, "html.parser")
   used_by = used_by_from_page_path(class_page)
-  page_candidates = []
+  page_names = set()
 
   for row in cosmetic_soup.find_all("tr", attrs={"style": "vertical-align:top;"}):
     for link in row.find_all("a"):
       image = link.find("img")
       name = link.get("title")
       href = link.get("href")
-      if not image or not name or not href or name.startswith("List of ") or name in cosmetics:
+      if not image or (name and name.startswith("List of ")):
         continue
+      index_unique(cosmetic_index, name, (wiki_url(href), wiki_url(image.get("src"))))
+      # Multi-class items appear on several lists; retain the first class as before.
+      cosmetic_classes.setdefault(name, used_by)
+      page_names.add(name)
+  if not page_names:
+    raise ValueError(f"No cosmetic items discovered on {class_page}")
 
-      if name in existing_names:
-        skipped_existing += 1
-        continue
+check_discovery(cosmetic_index, existing_names, "cosmetics")
+skipped_existing = len(set(cosmetic_index) & existing_names)
+log(f"Pending cosmetics to inspect: {len(cosmetic_index) - skipped_existing}")
+for name, (href, image_url) in cosmetic_index.items():
+  if name in existing_names:
+    continue
+  scanned += 1
+  log(f"Scraping cosmetic candidate {scanned}: {name}")
+  item_page = request_wiki(href)
+  item_soup = BeautifulSoup(item_page.content, "html.parser")
+  if not find_table_value(item_soup, "Worn by:"):
+    raise ValueError(f"Missing cosmetic infobox: {name}")
+  release_text = find_table_value(item_soup, "Released:")
+  release_date = parse_wiki_date(release_text)
 
-      page_candidates.append((name, href, image))
+  if should_skip_date(release_date, args.start_date):
+    if release_date:
+      skipped_older += 1
+    else:
+      skipped_unknown += 1
+    continue
 
-  log(f"Pending cosmetics on this page: {len(page_candidates)}")
+  image_id = hash_id(name)
+  log(f"Including cosmetic {len(cosmetics) + 1}: {name} ({format_date(release_date)})")
 
-  for name, href, image in page_candidates:
-    if reached_limit(cosmetics, args.limit):
-      break
+  if args.img_download and not args.dry_run:
+    log(f"Downloading cosmetic image for {name}")
+    download_image(image_url, image_dir / f"{image_id}.png")
 
-    scanned += 1
-    time.sleep(1)
-    log(f"Scraping cosmetic candidate {scanned}: {name}")
-    item_page = requests.get(BASE_URL + href)
-    item_soup = BeautifulSoup(item_page.content, "html.parser")
-    release_text = find_table_value(item_soup, "Released:")
-    release_date = parse_wiki_date(release_text)
+  cosmetics[name] = Cosmetic(name, image_id, cosmetic_classes[name], release_date)
+  records = [cosmetic.to_dict() for cosmetic in sorted(cosmetics.values(), key=release_date_sort_key)]
+  save_progress_json("cosmetics", existing_records, records, dry_run=args.dry_run)
 
-    if should_skip_date(release_date, args.start_date):
-      if release_date:
-        skipped_older += 1
-      else:
-        skipped_unknown += 1
-      continue
-
-    image_id = hash_id(name)
-    image_url = BASE_URL + image["src"]
-    log(f"Including cosmetic {len(cosmetics) + 1}: {name} ({format_date(release_date)})")
-
-    if args.img_download and not args.dry_run:
-      log(f"Downloading cosmetic image for {name}")
-      (image_dir / f"{image_id}.png").write_bytes(requests.get(image_url).content)
-
-    cosmetics[name] = Cosmetic(name, image_id, used_by, release_date)
-    records = [cosmetic.to_dict() for cosmetic in sorted(cosmetics.values(), key=release_date_sort_key)]
-    save_progress_json("cosmetics", existing_records, records, dry_run=args.dry_run)
-
-    if reached_limit(cosmetics, args.limit):
-      log(f"Reached limit of {args.limit} cosmetics")
-      break
+  if reached_limit(cosmetics, args.limit):
+    log(f"Reached limit of {args.limit} cosmetics")
+    break
 
 records = [cosmetic.to_dict() for cosmetic in sorted(cosmetics.values(), key=release_date_sort_key)]
 write_merged_json("cosmetics", existing_records, records, dry_run=args.dry_run)

@@ -1,10 +1,9 @@
 import argparse
 from datetime import date
 
-import requests
 from bs4 import BeautifulSoup
 
-from common import add_scraper_args, ensure_dir, format_date, hash_id, load_existing_records, log, log_scraper_start, output_dir, parse_date, reached_limit, release_date_sort_key, save_progress_json, should_skip_date, validate_limit, write_merged_json
+from common import add_scraper_args, check_discovery, download_image, ensure_dir, format_date, hash_id, index_unique, load_existing_records, log, log_scraper_start, output_dir, parse_date, reached_limit, release_date_sort_key, request_wiki, save_progress_json, should_skip_date, validate_limit, wiki_url, write_merged_json
 
 
 class Unusual:
@@ -89,9 +88,11 @@ if args.img_download and not args.dry_run:
   log(f"Writing unusual images to {image_dir.resolve()}")
 
 log(f"Fetching unusual effects page: {URL}")
-page = requests.get(URL)
+page = request_wiki(URL)
 soup = BeautifulSoup(page.content, "html.parser")
 tables = soup.find_all("table", class_="wikitable")[:-3]
+if not tables or any(table.find("th", class_="header") is None for table in tables):
+  raise ValueError("Missing unusual effect series tables")
 tables = sorted(tables, key=unusual_table_sort_key)
 log(f"Found {len(tables)} unusual effect tables")
 
@@ -100,79 +101,51 @@ skipped_older = 0
 skipped_unknown = 0
 skipped_existing = 0
 existing_records, existing_names = load_existing_records("unusuals")
-pending_unusual_count = 0
+unusual_index = {}
 for table in tables:
-  for image in table.find_all("img"):
-    image_alt = image["alt"]
-    if image_alt in REMOVED_UNUSUALS:
-      continue
-
-    name = image_alt.replace("Unusual ", "").replace(".png", "")
-    if name in existing_names:
-      skipped_existing += 1
-      continue
-
-    pending_unusual_count += 1
-
-log(f"Pending unusuals to inspect: {pending_unusual_count}")
-
-for table in tables:
-  if reached_limit(unusuals, args.limit):
-    break
-
   series = table.find("th", class_="header").get_text(strip=True)
+  if not series.endswith("Unusual effects"):
+    raise ValueError(f"Unexpected unusual series header: {series}")
   release_date = parse_date(SERIES_RELEASE_DATES[series]) if series in SERIES_RELEASE_DATES else None
-  log(f"Processing unusual series: {series} ({format_date(release_date)})")
-
-  if should_skip_date(release_date, args.start_date):
-    skipped_count = len(table.find_all("img"))
-    if release_date:
-      skipped_older += skipped_count
-    else:
-      skipped_unknown += skipped_count
-    log(f"Skipping series {series}: release date before filter or unknown")
-    continue
-
-  rows = table.find_all("tr")
   item_type = None
-  index = 1
-
-  while index < len(rows):
-    first_cell = rows[index].find("td")
-    if first_cell and first_cell.has_attr("rowspan"):
+  for row in table.find_all("tr")[1:]:
+    first_cell = row.find("td")
+    images = row.find_all("img")
+    # Text-only rowspanned cells name effects, not categories.
+    if images and first_cell and first_cell.has_attr("rowspan") and not first_cell.find("img"):
       item_type = first_cell.get_text(strip=True)
-
-    images = rows[index].find_all("img")
-    has_variant = index + 2 < len(rows) and rows[index + 2].find("img") is None
-
     for image in images:
-      image_alt = image["alt"]
+      image_alt = image.get("alt", "")
       if image_alt in REMOVED_UNUSUALS:
         continue
+      if not image_alt.startswith("Unusual ") or not image_alt.endswith(".png") or not item_type:
+        raise ValueError(f"Malformed unusual effect in {series}: {image_alt}")
+      name = image_alt.removeprefix("Unusual ").removesuffix(".png")
+      index_unique(unusual_index, name, (wiki_url(image.get("src")), series, item_type, release_date))
 
-      name = image_alt.replace("Unusual ", "").replace(".png", "")
-      if name in existing_names:
-        continue
-
-      image_id = hash_id(name)
-      log(f"Including unusual {len(unusuals) + 1}: {name} ({series})")
-
-      if args.img_download and not args.dry_run:
-        log(f"Downloading unusual image for {name}")
-        (image_dir / f"{image_id}.png").write_bytes(requests.get(BASE_URL + image["src"]).content)
-
-      unusuals[name] = Unusual(name, image_id, series, item_type, release_date)
-      records = [unusual.to_dict() for unusual in sorted(unusuals.values(), key=release_date_sort_key)]
-      save_progress_json("unusuals", existing_records, records, dry_run=args.dry_run)
-
-      if reached_limit(unusuals, args.limit):
-        log(f"Reached limit of {args.limit} unusuals")
-        break
-
-    if reached_limit(unusuals, args.limit):
-      break
-
-    index += 3 if has_variant else 2
+check_discovery(unusual_index, existing_names, "unusuals")
+skipped_existing = len(set(unusual_index) & existing_names)
+log(f"Pending unusuals to inspect: {len(unusual_index) - skipped_existing}")
+for name, (image_url, series, item_type, release_date) in unusual_index.items():
+  if name in existing_names:
+    continue
+  if should_skip_date(release_date, args.start_date):
+    if release_date:
+      skipped_older += 1
+    else:
+      skipped_unknown += 1
+    continue
+  image_id = hash_id(name)
+  log(f"Including unusual {len(unusuals) + 1}: {name} ({series})")
+  if args.img_download and not args.dry_run:
+    log(f"Downloading unusual image for {name}")
+    download_image(image_url, image_dir / f"{image_id}.png")
+  unusuals[name] = Unusual(name, image_id, series, item_type, release_date)
+  records = [unusual.to_dict() for unusual in sorted(unusuals.values(), key=release_date_sort_key)]
+  save_progress_json("unusuals", existing_records, records, dry_run=args.dry_run)
+  if reached_limit(unusuals, args.limit):
+    log(f"Reached limit of {args.limit} unusuals")
+    break
 
 records = [unusual.to_dict() for unusual in sorted(unusuals.values(), key=release_date_sort_key)]
 write_merged_json("unusuals", existing_records, records, dry_run=args.dry_run)
