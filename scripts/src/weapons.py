@@ -1,4 +1,5 @@
 import argparse
+import re
 
 from bs4 import BeautifulSoup
 
@@ -172,6 +173,10 @@ for weapon in pending_weapons:
     weapon.qualities.append(quality.find("a").find("span").text.strip())
 
   attribute_container = weapon_soup.find("td", class_="loadout-tooltip-container")
+  if attribute_container:
+    # Wiki tooltips include hidden copies of item types and descriptions.
+    for hidden in attribute_container.find_all(style=re.compile(r"(?:^|;)\s*display\s*:\s*none\b", re.IGNORECASE)):
+      hidden.decompose()
   attributes = attribute_container.find_all("span", class_=lambda x: x and x.startswith("att_")) if attribute_container else []
   for attribute in attributes:
     attribute_class = attribute.get("class")[0]
@@ -179,7 +184,11 @@ for weapon in pending_weapons:
       br.replace_with("\n")
 
     if attribute_class in ATTRIBUTE_CLASS_MAP:
-      weapon.add_attribute(Attribute(attribute.text, ATTRIBUTE_CLASS_MAP[attribute_class]))
+      # Split completed statements, but join breaks used to wrap a sentence.
+      for part in re.split(r"(?<=[.!?])[ \t]*\r?\n", attribute.text):
+        text = " ".join(line.strip() for line in part.splitlines() if line.strip())
+        if text:
+          weapon.add_attribute(Attribute(text, ATTRIBUTE_CLASS_MAP[attribute_class]))
 
   if args.img_download and not args.dry_run:
     log(f"Downloading weapon images for {weapon.name}")
