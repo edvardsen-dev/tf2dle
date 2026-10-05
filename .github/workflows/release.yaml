@@ -1,0 +1,49 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+env:
+  IMAGE_REPOSITORY: ghcr.io/edvardsen-dev/tf2dle/sveltekit
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    env:
+      RELEASE_TAG: ${{ github.event.release.tag_name }}
+
+    steps:
+      - name: Checkout release
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+
+      - name: Log in to GitHub Container Registry
+        env:
+          GHCR_TOKEN: ${{ secrets.GHCR_TOKEN }}
+        run: echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+
+      - name: Build Docker image
+        run: |
+          docker build \
+            --build-arg PUBLIC_CDN_URL="https://cdn.jsdelivr.net/gh/edvardsen-dev/tf2dle@$(git rev-parse HEAD)/static/images" \
+            --build-arg PUBLIC_APP_VERSION="$RELEASE_TAG" \
+            -t "$IMAGE_REPOSITORY:$RELEASE_TAG" \
+            -t "$IMAGE_REPOSITORY:latest" .
+
+      - name: Push Docker image
+        run: |
+          docker push "$IMAGE_REPOSITORY:$RELEASE_TAG"
+          docker push "$IMAGE_REPOSITORY:latest"
+
+  deploy:
+    needs: build-and-publish
+    uses: ./.github/workflows/deploy-shared.yaml
+    with:
+      version: ${{ github.event.release.tag_name }}
+    secrets: inherit

@@ -76,7 +76,13 @@ pnpm dev
 
 ## Deployment
 
-The deploy workflow builds the Docker image with `PUBLIC_CDN_URL` pinned to the deployed commit SHA, so production image URLs resolve to the same repository revision as the app build. Local development ignores this value and serves images from `/images`.
+Publishing a GitHub release runs **Release**, which builds and publishes `ghcr.io/edvardsen-dev/tf2dle/sveltekit` with the release tag and `latest`, then calls the shared deployment workflow. The build pins `PUBLIC_CDN_URL` to the release commit SHA, so production image URLs match the app build. Local development serves images from `/images`.
+
+To deploy an existing image or roll back, run **Deploy** from `main` in GitHub Actions and enter its exact version tag, including `v` if present. `latest` is not accepted. This workflow does not build or publish an image, and a missing image fails before the app container is replaced. Both workflows use the current default branch's Compose file and deployment script.
+
+Server deployments are serialized across both workflows. After the selected app image responds successfully on port 3010, deployment removes unused local images from this app's exact repository. Images referenced by running or stopped containers, images with tags or digest references under another repository, unrelated images, and database volumes are preserved. Existing dangling images without an identifiable repository are left alone. GHCR images are not deleted; deploying a removed local version pulls it again.
+
+Rollback selects an older app image but reapplies the current Compose configuration and secrets to the whole stack. It can also pull a newer `postgres:14-alpine` image and recreate the database container. Prisma migrations run at app startup and are not reversed, so the selected version must be compatible with the current database. A failed startup check leaves old images available but does not automatically restore the previous container.
 
 ## Testing
 
