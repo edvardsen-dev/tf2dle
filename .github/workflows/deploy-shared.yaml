@@ -1,0 +1,104 @@
+name: Shared Deployment
+
+on:
+  workflow_call:
+    inputs:
+      version:
+        required: true
+        type: string
+    secrets:
+      GHCR_TOKEN:
+        required: true
+      SSH_KEY:
+        required: true
+      VM_IP:
+        required: true
+      SSH_USER:
+        required: true
+      ORIGIN:
+        required: true
+      DATABASE_URL:
+        required: true
+      DATABASE_USER:
+        required: true
+      DATABASE_PASSWORD:
+        required: true
+      DATABASE_NAME:
+        required: true
+      ADMIN_PASSWORD:
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    concurrency:
+      group: tf2dle-production-deploy
+      cancel-in-progress: false
+    env:
+      APP_DIR: /root/apps/tf2dle
+      DEPLOY_TAG: ${{ inputs.version }}
+
+    steps:
+      - name: Validate deployment request
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          if [[ "$GITHUB_EVENT_NAME" == 'workflow_dispatch' && "$GITHUB_REF" != "refs/heads/$DEFAULT_BRANCH" ]]; then
+            echo "::error::Run manual deployments from $DEFAULT_BRANCH. Use the version input to select the app release."
+            exit 1
+          fi
+          if [[ ! "$DEPLOY_TAG" =~ ^[a-zA-Z0-9_][a-zA-Z0-9_.-]{0,127}$ || "$DEPLOY_TAG" == 'latest' ]]; then
+            echo '::error::Version must be an exact Docker image tag, not latest.'
+            exit 1
+          fi
+
+      - name: Checkout current deployment configuration
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY }}
+
+      - name: Create deployment directory
+        uses: appleboy/ssh-action@v1.1.0
+        with:
+          host: ${{ secrets.VM_IP }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          envs: APP_DIR
+          script: mkdir -p "$APP_DIR"
+
+      - name: Copy deployment files to VM
+        env:
+          SSH_USER: ${{ secrets.SSH_USER }}
+          VM_IP: ${{ secrets.VM_IP }}
+        run: |
+          scp -o StrictHostKeyChecking=no ./docker-compose.prod.yaml ./.github/scripts/deploy.sh "$SSH_USER@$VM_IP:$APP_DIR/"
+
+      - name: Deploy to VM
+        uses: appleboy/ssh-action@v1.1.0
+        env:
+          GHCR_TOKEN: ${{ secrets.GHCR_TOKEN }}
+          GHCR_USER: ${{ github.actor }}
+          ORIGIN: ${{ secrets.ORIGIN }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DATABASE_USER: ${{ secrets.DATABASE_USER }}
+          DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+          DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
+          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+        with:
+          host: ${{ secrets.VM_IP }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          envs: GHCR_TOKEN,GHCR_USER,DEPLOY_TAG,APP_DIR,ORIGIN,DATABASE_URL,DATABASE_USER,DATABASE_PASSWORD,DATABASE_NAME,ADMIN_PASSWORD
+          command_timeout: 10m
+          script: |
+            cd "$APP_DIR" && bash ./deploy.sh
