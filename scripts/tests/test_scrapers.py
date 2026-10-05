@@ -129,6 +129,76 @@ class ScraperTests(unittest.TestCase):
     self.assertEqual(list((self.root / "weapons" / "images").iterdir()), [])
     self.assertEqual(list((self.root / "weapons" / "kill-icons").iterdir()), [])
 
+  def test_weapon_attributes_exclude_hidden_wiki_duplicates(self):
+    description = ("These lovely festive ornaments are so beautifully crafted, your enemies are going to want to see them close up. "
+                   "Indulge them by batting those fragile glass bulbs into their eyes at 90 mph.")
+    self.pages["/wiki/Weapons"] = weapon_page("/wiki/Wrap_Assassin", "Wrap Assassin")
+    for style in ("display:none", "display: none;", "color: red; DISPLAY : NONE !important", "\n display : none "):
+      with self.subTest(style=style):
+        self.pages["/wiki/Wrap_Assassin"] = infobox() + f'''<table><tr><td class="loadout-tooltip-container">
+          <span class="att_level">Level 15 Bat<span style="{style}">Bat</span></span>
+          <span class="att_positive">+25% increase in recharge rate</span>
+          <span class="att_positive">Alt-Fire:<br><a>Launches a festive ornament</a> that shatters causing bleed</span>
+          <span class="att_negative">-65% damage penalty</span>
+          <span class="att_neutral">{description}<span style="{style}">{description}</span></span>
+          <div style="{style}"><span class="att_positive">Hidden attribute</span></div>
+          </td></tr></table><span class="att_neutral">Outside the tooltip</span>'''
+        result = self.scrape("weapons", "--dry-run")
+        self.assertEqual(result["records"][0]["attributes"], [
+          {"text": "Level 15 Bat", "variant": "level"},
+          {"text": "+25% increase in recharge rate", "variant": "positive"},
+          {"text": "Alt-Fire: Launches a festive ornament that shatters causing bleed", "variant": "positive"},
+          {"text": "-65% damage penalty", "variant": "negative"},
+          {"text": description, "variant": "neutral"},
+        ])
+
+  def test_weapon_attributes_preserve_visible_repetition(self):
+    self.pages.update({"/wiki/Weapons": weapon_page(), "/wiki/Bat": infobox() + '''
+      <table><tr><td class="loadout-tooltip-container">
+        <span class="att_level">Level 1 Bat</span>
+        <span class="att_neutral">Go! Go!<span style="display:inline"> Go!</span></span>
+      </td></tr></table>'''})
+    self.scrape("weapons")
+    self.assertEqual(self.records("weapons")[0]["attributes"], [
+      {"text": "Level 1 Bat", "variant": "level"},
+      {"text": "Go! Go! Go!", "variant": "neutral"},
+    ])
+
+  def test_weapon_attributes_split_completed_statements_and_skip_blank_lines(self):
+    self.pages.update({"/wiki/Weapons": weapon_page(), "/wiki/Bat": infobox() + '''
+      <table><tr><td class="loadout-tooltip-container">
+        <span class="att_neutral"> Drink to become invulnerable for 8 seconds.  Cannot attack during this time.<br><br>
+          Damage absorbed will slow you when the effect ends.
+          <span style="display:none">Drink to become invulnerable for 8 seconds.  Cannot attack during this time.<br>
+            Damage absorbed will slow you when the effect ends.</span>
+        </span>
+        <span class="att_negative"> First penalty\n Second penalty </span>
+        <span class="att_neutral"><br>   <br></span>
+      </td></tr></table>'''})
+    self.scrape("weapons")
+    self.assertEqual(self.records("weapons")[0]["attributes"], [
+      {"text": "Drink to become invulnerable for 8 seconds.  Cannot attack during this time.", "variant": "neutral"},
+      {"text": "Damage absorbed will slow you when the effect ends.", "variant": "neutral"},
+      {"text": "First penalty Second penalty", "variant": "negative"},
+    ])
+
+  def test_weapon_attributes_join_wrapped_rocket_jumper_description(self):
+    self.pages.update({"/wiki/Weapons": weapon_page("/wiki/Rocket_Jumper", "Rocket Jumper"),
+                       "/wiki/Rocket_Jumper": infobox() + '''
+      <table><tr><td class="loadout-tooltip-container">
+        <span class="att_neutral">A special rocket launcher for learning<br>
+          rocket jump tricks and patterns.<br>This weapon deals ZERO damage.</span>
+        <span class="att_positive">Ready! <br>Go?<br>Again.</span>
+      </td></tr></table>'''})
+    self.scrape("weapons")
+    self.assertEqual(self.records("weapons")[0]["attributes"], [
+      {"text": "A special rocket launcher for learning rocket jump tricks and patterns.", "variant": "neutral"},
+      {"text": "This weapon deals ZERO damage.", "variant": "neutral"},
+      {"text": "Ready!", "variant": "positive"},
+      {"text": "Go?", "variant": "positive"},
+      {"text": "Again.", "variant": "positive"},
+    ])
+
   def test_unseeded_weapon_aliases_keep_wiki_names(self):
     names = ("Force-a-Nature", "Spy-Cicle", "\u00dcbersaw", "L'\u00c9tranger")
     self.pages["/wiki/Weapons"] = "".join(weapon_page(f"/wiki/Weapon{index}", name) for index, name in enumerate(names))
