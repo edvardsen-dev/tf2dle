@@ -35,7 +35,7 @@ app_container=$(docker compose -f docker-compose.prod.yaml ps -q app)
 
 ready=false
 if [[ -n "$app_container" ]]; then
-  for attempt in {1..30}; do
+  for ((attempt = 1; attempt <= 30; attempt++)); do
     container_state=$(docker inspect --format '{{.Image}} {{.State.Running}}' "$app_container")
     if [[ "$container_state" == "$expected_image true" ]] &&
       curl --fail --silent --show-error --max-time 5 http://127.0.0.1:3010/ >/dev/null; then
