@@ -21,8 +21,10 @@ import update_2025_12_07 from './updates/update_2025_12_07';
 import update_2026_07_24 from './updates/update_2026_07_24';
 import update_2026_07_25 from './updates/update_2026_07_25';
 import update_2026_07_31 from './updates/update_2026_07_31';
+import update_2026_10_05 from './updates/update_2026_10_05';
 
 const updates = [
+	update_2026_10_05,
 	update_2026_07_31,
 	update_2026_07_25,
 	update_2026_07_24,
