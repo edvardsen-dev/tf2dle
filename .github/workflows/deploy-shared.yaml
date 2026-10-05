@@ -56,6 +56,21 @@ jobs:
             exit 1
           fi
 
+      - name: Verify image is available in GHCR
+        timeout-minutes: 2
+        env:
+          GHCR_TOKEN: ${{ secrets.GHCR_TOKEN }}
+        run: |
+          if ! echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin; then
+            echo '::error::Could not authenticate to GHCR. The VM has not been touched.'
+            exit 1
+          fi
+          image="ghcr.io/edvardsen-dev/tf2dle/sveltekit:$DEPLOY_TAG"
+          if ! docker manifest inspect "$image" > /dev/null; then
+            echo "::error::Could not access image $image. Verify the tag exists and GHCR_TOKEN has read access, or check GHCR availability. The VM has not been touched."
+            exit 1
+          fi
+
       - name: Checkout current deployment configuration
         uses: actions/checkout@v4
         with:
