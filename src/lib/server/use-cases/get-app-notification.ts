@@ -9,7 +9,9 @@ type Dependencies = {
 export async function getAppNotification(deps: Dependencies) {
 	const notification = await deps.repo.getAppNotification();
 
-	if (!notification || notification.enabled) return null;
+	if (!notification || !notification.enabled) return null;
 
-	return notification;
+	const { enabled, ...rest } = notification;
+
+	return rest;
 }

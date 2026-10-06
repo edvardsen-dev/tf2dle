@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { AlertCircle, AlertTriangle, Info, X } from 'lucide-svelte';
 	import { Button } from '$lib/components/ui/button';
-	import { NotificationLevel } from '.';
+	import { NotificationLevel } from '$lib/types';
 
 	export let type: NotificationLevel;
 	export let content: string;
