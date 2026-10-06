@@ -83,3 +83,11 @@ model AdminSettings {
   metricsLoggingEnabled Boolean  @default(true)
   updatedAt             DateTime @updatedAt
 }
+
+model AppNotification {
+  id Int @id
+  version Int
+  enabled Boolean
+  type String 
+  content String
+}
