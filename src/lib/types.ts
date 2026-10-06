@@ -51,3 +51,16 @@ export type Unusual = {
 	series: string;
 	type: string;
 };
+
+export enum NotificationLevel {
+	INFO = 'info',
+	WARNING = 'warning',
+	ERROR = 'error'
+}
+
+export type AppNotification = {
+	id: number;
+	version: number;
+	type: NotificationLevel;
+	content: string;
+};

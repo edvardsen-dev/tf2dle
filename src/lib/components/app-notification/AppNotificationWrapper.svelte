@@ -1,14 +1,10 @@
 <script lang="ts">
 	import { useLocalStorage } from '$lib/composables/useLocalStorage';
 	import { onMount } from 'svelte';
-	import { NotificationLevel } from '.';
 	import AppNotificationUI from './AppNotificationUI.svelte';
+	import type { AppNotification } from '$lib/types';
 
-	const notification = {
-		version: 3,
-		type: NotificationLevel.WARNING,
-		content: 'There is on-going maintanence, the page might be down for a few minutes...'
-	};
+	export let notification: AppNotification | null;
 
 	let mounted = false;
 
