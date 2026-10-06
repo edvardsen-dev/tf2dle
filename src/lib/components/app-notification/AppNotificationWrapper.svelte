@@ -7,7 +7,7 @@
 	const notification = {
 		version: 3,
 		enabled: true,
-		type: NotificationLevel.ERROR,
+		type: NotificationLevel.WARNING,
 		content: 'There is on-going maintanence, the page might be down for a few minutes...'
 	};
 
