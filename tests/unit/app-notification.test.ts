@@ -1,7 +1,7 @@
 import { cleanup, fireEvent, render } from '@testing-library/svelte';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import AppNotificationUI from '../../src/lib/components/app-notification/AppNotificationUI.svelte';
-import { NotificationLevel } from '../../src/lib/components/app-notification';
+import { NotificationLevel } from '$lib/types';
 
 afterEach(cleanup);
 
