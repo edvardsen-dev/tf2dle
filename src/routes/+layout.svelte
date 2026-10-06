@@ -11,6 +11,7 @@
 	import Background from '$lib/features/theme/components/Background.svelte';
 	import { DevBanner } from '$lib/components/ui/dev-banner';
 	import { page } from '$app/stores';
+	import { AppNotification } from '$lib/components/app-notification';
 
 	setMode('dark');
 
@@ -33,6 +34,7 @@
 {#if isAdminRoute}
 	<slot />
 {:else}
+	<AppNotification />
 	<Command />
 
 	<XmasLights />
