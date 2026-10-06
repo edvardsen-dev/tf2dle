@@ -6,7 +6,6 @@
 
 	const notification = {
 		version: 3,
-		enabled: true,
 		type: NotificationLevel.WARNING,
 		content: 'There is on-going maintanence, the page might be down for a few minutes...'
 	};
@@ -19,8 +18,15 @@
 	);
 
 	onMount(() => {
-		if (notification && $notificationStore && notification.version > $notificationStore.version) {
-			notificationStore.set({ version: notification.version, show: true });
+		if (notification) {
+			const state = $notificationStore;
+
+			if (!state || notification.version > state.version) {
+				notificationStore.set({
+					version: notification.version,
+					show: true
+				});
+			}
 		}
 
 		mounted = true;
@@ -31,7 +37,7 @@
 	}
 </script>
 
-{#if mounted && notification && $notificationStore && $notificationStore.show}
+{#if mounted && notification && $notificationStore?.show}
 	<AppNotificationUI
 		type={notification.type}
 		content={notification.content}
