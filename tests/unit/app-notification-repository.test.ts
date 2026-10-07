@@ -5,7 +5,8 @@ const { db } = vi.hoisted(() => ({
 	db: {
 		appNotification: {
 			findUnique: vi.fn(),
-			upsert: vi.fn()
+			upsert: vi.fn(),
+			update: vi.fn()
 		}
 	}
 }));
@@ -42,6 +43,28 @@ test('upserts type and content, defaulting only new notifications to disabled', 
 			type: 'warning',
 			content: 'Scheduled maintenance'
 		}
+	});
+});
+
+test('increments the version atomically when enabling the notification', async () => {
+	db.appNotification.update.mockResolvedValue({ id: 1 });
+
+	await expect(appNotificationRepository.setEnabledState(true)).resolves.toBeUndefined();
+	expect(db.appNotification.update).toHaveBeenCalledOnce();
+	expect(db.appNotification.update).toHaveBeenCalledWith({
+		where: { id: 1 },
+		data: { enabled: true, version: { increment: 1 } }
+	});
+});
+
+test('leaves the version unchanged when disabling the notification', async () => {
+	db.appNotification.update.mockResolvedValue({ id: 1 });
+
+	await expect(appNotificationRepository.setEnabledState(false)).resolves.toBeUndefined();
+	expect(db.appNotification.update).toHaveBeenCalledOnce();
+	expect(db.appNotification.update).toHaveBeenCalledWith({
+		where: { id: 1 },
+		data: { enabled: false }
 	});
 });
 

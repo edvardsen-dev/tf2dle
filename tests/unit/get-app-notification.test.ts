@@ -31,12 +31,11 @@ test('returns null when the notification is disabled', async () => {
 	await expect(getAppNotification({ repo })).resolves.toBeNull();
 });
 
-test('returns an enabled notification without the enabled field and leaves the original unchanged', async () => {
+test('returns an enabled notification without id or enabled and leaves the original unchanged', async () => {
 	const storedNotification = { ...notification };
 	repo.getAppNotification.mockResolvedValue(storedNotification);
 
 	await expect(getAppNotification({ repo })).resolves.toEqual({
-		id: notification.id,
 		version: notification.version,
 		type: notification.type,
 		content: notification.content
