@@ -59,7 +59,6 @@ export enum NotificationLevel {
 }
 
 export type AppNotification = {
-	id: number;
 	version: number;
 	type: NotificationLevel;
 	content: string;

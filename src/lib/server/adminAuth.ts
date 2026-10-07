@@ -71,7 +71,9 @@ function safeCompare(actual: string | undefined | null, expected: string | undef
 	const actualBuffer = Buffer.from(actual, 'utf8');
 	const expectedBuffer = Buffer.from(expected, 'utf8');
 
-	return actualBuffer.length === expectedBuffer.length && timingSafeEqual(actualBuffer, expectedBuffer);
+	return (
+		actualBuffer.length === expectedBuffer.length && timingSafeEqual(actualBuffer, expectedBuffer)
+	);
 }
 
 function signAdminSessionTimestamp(timestamp: string, password: string) {
