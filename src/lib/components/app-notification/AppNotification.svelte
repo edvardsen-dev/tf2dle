@@ -1,10 +1,12 @@
 <script lang="ts">
 	import { useLocalStorage } from '$lib/composables/useLocalStorage';
 	import { onMount } from 'svelte';
-	import AppNotificationUI from './AppNotificationUI.svelte';
+	import NotificationBanner from './NotificationBanner.svelte';
 	import type { AppNotification } from '$lib/types';
 
 	export let notification: AppNotification | null;
+	let className: string | undefined = undefined;
+	export { className as class };
 
 	let mounted = false;
 
@@ -34,7 +36,8 @@
 </script>
 
 {#if mounted && notification && $notificationStore?.show}
-	<AppNotificationUI
+	<NotificationBanner
+		class={className}
 		type={notification.type}
 		content={notification.content}
 		onDismiss={handleDismissNotification}
