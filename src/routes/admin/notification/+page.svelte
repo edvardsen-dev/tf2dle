@@ -1,9 +1,11 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
 	import { NotificationBanner } from '$lib/components/app-notification';
 	import { Button } from '$lib/components/ui/button';
 	import { NotificationLevel } from '$lib/types';
 
 	export let data;
+	export let form;
 
 	let type: NotificationLevel =
 		(data.notification?.type as NotificationLevel) ?? NotificationLevel.INFO;
@@ -44,23 +46,30 @@
 		>
 	</form>
 
-	<form method="POST" action="?/setEnabled" class="flex items-center gap-3 border-t pt-4">
+	<form class="flex flex-col gap-2" method="POST" action="?/setActiveState" use:enhance>
 		<input type="hidden" name="enabled" value={data.notification?.enabled ? 'false' : 'true'} />
-		<button
-			type="submit"
-			role="switch"
-			aria-checked={data.notification?.enabled ?? false}
-			aria-labelledby="notification-enabled-label"
-			disabled={!data.notification}
-			data-state={data.notification?.enabled ? 'checked' : 'unchecked'}
-			class="group inline-flex h-6 w-11 shrink-0 items-center rounded-full border-2 border-transparent focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-input"
-		>
-			<span
-				aria-hidden="true"
-				class="h-5 w-5 rounded-full bg-background group-data-[state=checked]:translate-x-5"
-			></span>
-		</button>
-		<span id="notification-enabled-label" class="text-sm">Enabled</span>
+		<div class="flex items-center gap-3 border-t pt-4">
+			<button
+				type="submit"
+				role="switch"
+				aria-checked={data.notification?.enabled ?? false}
+				aria-labelledby="notification-enabled-label"
+				disabled={!data.notification}
+				data-state={data.notification?.enabled ? 'checked' : 'unchecked'}
+				class="group inline-flex h-6 w-11 shrink-0 items-center rounded-full border-2 border-transparent focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-input"
+			>
+				<span
+					aria-hidden="true"
+					class="h-5 w-5 rounded-full bg-background group-data-[state=checked]:translate-x-5"
+				></span>
+			</button>
+			<span id="notification-enabled-label" class="text-sm">Enabled</span>
+		</div>
+		{#if form?.action === 'setActiveState' && form?.message}
+			<p role="alert" class="text-sm text-destructive">
+				{form.message}
+			</p>
+		{/if}
 		{#if !data.notification}
 			<span class="text-sm text-muted-foreground">Save a notification first.</span>
 		{/if}
