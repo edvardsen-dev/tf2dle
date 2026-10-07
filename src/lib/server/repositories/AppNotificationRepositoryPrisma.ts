@@ -23,6 +23,13 @@ class AppNotificationRepositoryPrisma implements AppNotificationRepository {
 			}
 		});
 	}
+
+	public async setEnabledState(enabled: boolean): Promise<void> {
+		await db.appNotification.update({
+			where: { id: APP_NOTIFICATION_ID },
+			data: { enabled }
+		});
+	}
 }
 
 export const appNotificationRepository = new AppNotificationRepositoryPrisma();
