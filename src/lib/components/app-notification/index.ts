@@ -1,3 +1,4 @@
-import Root from './AppNotificationWrapper.svelte';
+import AppNotification from './AppNotification.svelte';
+import NotificationBanner from './NotificationBanner.svelte';
 
-export { Root as AppNotification };
+export { AppNotification, NotificationBanner };
