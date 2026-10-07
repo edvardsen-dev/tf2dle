@@ -7,7 +7,5 @@ export const load = (async () => {
 		repo: appNotificationRepository
 	});
 
-	console.log('Notification:', notification);
-
 	return { notification };
 }) satisfies LayoutServerLoad;

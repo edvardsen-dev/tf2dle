@@ -1,17 +1,17 @@
 import { cleanup, fireEvent, render } from '@testing-library/svelte';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import AppNotificationUI from '../../src/lib/components/app-notification/AppNotificationUI.svelte';
+import NotificationBanner from '../../src/lib/components/app-notification/NotificationBanner.svelte';
 import { NotificationLevel } from '$lib/types';
 
 afterEach(cleanup);
 
-describe('AppNotificationUI', () => {
+describe('NotificationBanner', () => {
 	it.each([
 		[NotificationLevel.INFO, 'Announcement', 'status'],
 		[NotificationLevel.WARNING, 'Heads up', 'status'],
 		[NotificationLevel.ERROR, 'Important notice', 'alert']
 	])('renders the %s severity with an accessible message', (type, label, role) => {
-		const { getByRole } = render(AppNotificationUI, {
+		const { getByRole } = render(NotificationBanner, {
 			type,
 			content: 'The site may be temporarily unavailable.',
 			onDismiss: vi.fn()
@@ -24,7 +24,7 @@ describe('AppNotificationUI', () => {
 
 	it('calls the dismissal callback', async () => {
 		const onDismiss = vi.fn();
-		const { getByRole } = render(AppNotificationUI, {
+		const { getByRole } = render(NotificationBanner, {
 			type: NotificationLevel.INFO,
 			content: 'An announcement.',
 			onDismiss
@@ -35,7 +35,7 @@ describe('AppNotificationUI', () => {
 	});
 
 	it('updates the severity when the type changes', async () => {
-		const { getByRole, rerender } = render(AppNotificationUI, {
+		const { getByRole, rerender } = render(NotificationBanner, {
 			type: NotificationLevel.INFO,
 			content: 'An announcement.',
 			onDismiss: vi.fn()
@@ -43,5 +43,18 @@ describe('AppNotificationUI', () => {
 
 		await rerender({ type: NotificationLevel.ERROR });
 		expect(getByRole('alert').textContent).toContain('Important notice');
+	});
+
+	it('leaves width and centering to the caller', async () => {
+		const { getByRole, rerender } = render(NotificationBanner, {
+			type: NotificationLevel.INFO,
+			content: 'An announcement.',
+			onDismiss: vi.fn()
+		});
+		const banner = getByRole('status').parentElement!;
+		expect(banner.className).not.toMatch(/max-w-|mx-auto/);
+
+		await rerender({ class: 'mx-auto w-full max-w-[700px]' });
+		expect(banner.className).toContain('mx-auto w-full max-w-[700px]');
 	});
 });

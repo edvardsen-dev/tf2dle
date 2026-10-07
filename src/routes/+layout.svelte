@@ -48,7 +48,7 @@
 	<DevBanner />
 
 	<div class="flex flex-col gap-10 px-2 m-auto pt-14 pb-10 min-h-screen">
-		<AppNotification notification={data.notification} />
+		<AppNotification notification={data.notification} class="mx-auto w-full max-w-[700px]" />
 		<Header />
 		<div class="flex-grow">
 			<slot />
