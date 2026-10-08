@@ -8,9 +8,11 @@ import { setAppNotificationActive } from '$lib/server/use-cases/set-app-notifica
 export const load: PageServerLoad = async ({ cookies }) => {
 	requireAdmin(cookies);
 
-	const notification = await getAdminAppNotification({
+	const res = await getAdminAppNotification({
 		repo: appNotificationRepository
 	});
+
+	const notification = res.ok ? res.data : null;
 
 	return {
 		notification
