@@ -4,6 +4,8 @@ import type { Actions, PageServerLoad } from './$types';
 import { getAdminAppNotification } from '$lib/server/use-cases/get-admin-app-notification';
 import { appNotificationRepository } from '$lib/server/repositories/AppNotificationRepositoryPrisma';
 import { setAppNotificationActive } from '$lib/server/use-cases/set-app-notification-active';
+import { updateAppNotification } from '$lib/server/use-cases/update-app-notification';
+import { NotificationLevel } from '$lib/types';
 
 export const load: PageServerLoad = async ({ cookies }) => {
 	requireAdmin(cookies);
@@ -59,6 +61,50 @@ export const actions: Actions = {
 		}
 
 		return { action: 'setActiveState' as const, success: true };
+	},
+	update: async ({ cookies, request }) => {
+		requireAdmin(cookies);
+
+		const formData = await request.formData();
+		const type = formData.get('type') as string;
+		const content = formData.get('content') as string;
+
+		if (!type || !['info', 'warning', 'error'].includes(type)) {
+			return fail(400, {
+				action: 'update' as const,
+				message: "Type must be one of: 'info', 'warning', 'error'."
+			});
+		}
+
+		if (!content || content.length < 1 || content.length > 500) {
+			return fail(400, {
+				action: 'update' as const,
+				message: 'Content must be between 1 and 500 characters'
+			});
+		}
+
+		const res = await updateAppNotification(
+			{ repo: appNotificationRepository },
+			{ type: type as NotificationLevel, content }
+		);
+
+		if (!res.ok) {
+			const reason = res.reason;
+			switch (reason) {
+				case 'db_error':
+					return fail(500, {
+						action: 'update' as const,
+						message: 'Could not update the notification. Please try again.'
+					});
+				default:
+					return fail(500, {
+						action: 'update' as const,
+						message: `Unhandled error: ${reason satisfies never}`
+					});
+			}
+		}
+
+		return { action: 'update' as const, success: true };
 	}
 };
 

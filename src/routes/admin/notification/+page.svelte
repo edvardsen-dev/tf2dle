@@ -3,6 +3,7 @@
 	import { NotificationBanner } from '$lib/components/app-notification';
 	import { Button } from '$lib/components/ui/button';
 	import { NotificationLevel } from '$lib/types';
+	import { onDestroy } from 'svelte';
 
 	export let data;
 	export let form;
@@ -10,12 +11,37 @@
 	let type: NotificationLevel =
 		(data.notification?.type as NotificationLevel) ?? NotificationLevel.INFO;
 	let content: string = data.notification?.content ?? '';
+
+	let showSuccess = false;
+	let successTimeout: ReturnType<typeof setTimeout>;
+
+	$: updateSuccessMessage(form);
+
+	function updateSuccessMessage(result: typeof form) {
+		clearTimeout(successTimeout);
+		showSuccess = result?.action === 'update' && result?.success === true;
+		if (showSuccess) {
+			successTimeout = setTimeout(() => {
+				showSuccess = false;
+			}, 3000);
+		}
+	}
+
+	onDestroy(() => clearTimeout(successTimeout));
 </script>
 
 <main class="mx-auto max-w-2xl space-y-6 px-4">
 	<h1 class="text-xl font-semibold">App notification</h1>
 
-	<form method="POST" action="?/update" class="grid gap-4">
+	<form
+		method="POST"
+		action="?/update"
+		use:enhance={() =>
+			async ({ update }) => {
+				await update({ reset: false });
+			}}
+		class="grid gap-4"
+	>
 		<label class="grid gap-2 text-sm font-medium">
 			Type *
 			<select
@@ -44,6 +70,14 @@
 			disabled={data.notification?.content === content && data.notification?.type === type}
 			class="w-fit">Save</Button
 		>
+		{#if form?.action === 'update' && form?.message}
+			<p role="alert" class="text-sm text-destructive">
+				{form.message}
+			</p>
+		{/if}
+		{#if showSuccess}
+			<p role="status" class="text-sm text-green-400">App notification updated!</p>
+		{/if}
 	</form>
 
 	<form class="flex flex-col gap-2" method="POST" action="?/setActiveState" use:enhance>
