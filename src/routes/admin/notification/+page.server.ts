@@ -30,7 +30,7 @@ export const actions: Actions = {
 		if (enabled !== 'true' && enabled !== 'false') {
 			return fail(400, {
 				action: 'setActiveState' as const,
-				message: 'Enabled must be true or false.'
+				message: 'Could not read the visibility setting. Refresh the page and try again.'
 			});
 		}
 
@@ -45,12 +45,13 @@ export const actions: Actions = {
 				case 'not_found':
 					return fail(404, {
 						action: 'setActiveState' as const,
-						message: 'Save a notification before you can enable it!'
+						message: 'Save a notification before enabling it.'
 					});
 				case 'db_error':
 					return fail(500, {
 						action: 'setActiveState' as const,
-						message: 'Could not update the notification. Please try again.'
+						message:
+							'Could not change visibility. The previous setting was restored. Please try again.'
 					});
 				default:
 					return fail(500, {
@@ -67,19 +68,19 @@ export const actions: Actions = {
 
 		const formData = await request.formData();
 		const type = formData.get('type') as string;
-		const content = formData.get('content') as string;
+		const content = formData.get('content');
 
 		if (!type || !['info', 'warning', 'error'].includes(type)) {
 			return fail(400, {
 				action: 'update' as const,
-				message: "Type must be one of: 'info', 'warning', 'error'."
+				message: 'Choose Info, Warning, or Error as the notification type.'
 			});
 		}
 
-		if (!content || content.length < 1 || content.length > 500) {
+		if (typeof content !== 'string' || !content.trim() || content.length > 500) {
 			return fail(400, {
 				action: 'update' as const,
-				message: 'Content must be between 1 and 500 characters'
+				message: 'Enter a message between 1 and 500 characters.'
 			});
 		}
 
@@ -94,7 +95,7 @@ export const actions: Actions = {
 				case 'db_error':
 					return fail(500, {
 						action: 'update' as const,
-						message: 'Could not update the notification. Please try again.'
+						message: 'Could not save the notification. Your edits are still here. Please try again.'
 					});
 				default:
 					return fail(500, {
