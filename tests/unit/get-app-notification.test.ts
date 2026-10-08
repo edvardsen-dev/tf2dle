@@ -1,6 +1,6 @@
 import type { AppNotification } from '@prisma/client';
 import { getAppNotification } from '$lib/server/use-cases/get-app-notification';
-import { beforeEach, expect, test, vi } from 'vitest';
+import { afterEach, beforeEach, expect, test, vi } from 'vitest';
 
 const repo = {
 	getAppNotification: vi.fn<[], Promise<AppNotification | null>>()
@@ -18,17 +18,21 @@ beforeEach(() => {
 	vi.resetAllMocks();
 });
 
-test('returns null when no notification exists', async () => {
+afterEach(() => {
+	vi.restoreAllMocks();
+});
+
+test('returns a successful empty result when no notification exists', async () => {
 	repo.getAppNotification.mockResolvedValue(null);
 
-	await expect(getAppNotification({ repo })).resolves.toBeNull();
+	await expect(getAppNotification({ repo })).resolves.toEqual({ ok: true, notification: null });
 	expect(repo.getAppNotification).toHaveBeenCalledOnce();
 });
 
-test('returns null when the notification is disabled', async () => {
+test('returns a successful empty result when the notification is disabled', async () => {
 	repo.getAppNotification.mockResolvedValue({ ...notification, enabled: false });
 
-	await expect(getAppNotification({ repo })).resolves.toBeNull();
+	await expect(getAppNotification({ repo })).resolves.toEqual({ ok: true, notification: null });
 });
 
 test('returns an enabled notification without id or enabled and leaves the original unchanged', async () => {
@@ -36,16 +40,21 @@ test('returns an enabled notification without id or enabled and leaves the origi
 	repo.getAppNotification.mockResolvedValue(storedNotification);
 
 	await expect(getAppNotification({ repo })).resolves.toEqual({
-		version: notification.version,
-		type: notification.type,
-		content: notification.content
+		ok: true,
+		notification: {
+			version: notification.version,
+			type: notification.type,
+			content: notification.content
+		}
 	});
 	expect(storedNotification).toEqual(notification);
 });
 
-test('propagates repository errors', async () => {
+test('logs repository errors and returns db_error', async () => {
+	const logError = vi.spyOn(console, 'error').mockImplementation(() => {});
 	const error = new Error('Database unavailable');
 	repo.getAppNotification.mockRejectedValue(error);
 
-	await expect(getAppNotification({ repo })).rejects.toBe(error);
+	await expect(getAppNotification({ repo })).resolves.toEqual({ ok: false, reason: 'db_error' });
+	expect(logError).toHaveBeenCalledWith(error);
 });
