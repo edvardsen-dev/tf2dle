@@ -58,8 +58,12 @@ export enum NotificationLevel {
 	ERROR = 'error'
 }
 
-export type AppNotification = {
+export type AdminAppNotification = {
+	id: number;
 	version: number;
 	type: NotificationLevel;
 	content: string;
+	enabled: boolean;
 };
+
+export type AppNotification = Pick<AdminAppNotification, 'version' | 'type' | 'content'>;
