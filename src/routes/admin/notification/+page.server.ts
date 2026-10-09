@@ -97,6 +97,11 @@ export const actions: Actions = {
 						action: 'update' as const,
 						message: 'Could not save the notification. Your edits are still here. Please try again.'
 					});
+				case 'notification_enabled':
+					return fail(500, {
+						action: 'update' as const,
+						message: 'Cannot update notification when its enabled. Disable it before updating.'
+					});
 				default:
 					return fail(500, {
 						action: 'update' as const,
