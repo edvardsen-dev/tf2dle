@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AlertCircle, AlertTriangle, Info, X } from 'lucide-svelte';
+	import { AlertCircle, AlertTriangle, Megaphone, X } from 'lucide-svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { NotificationLevel } from '$lib/types';
 	import { cn } from '$lib/utils';
@@ -12,25 +12,22 @@
 
 	const levels = {
 		info: {
-			icon: Info,
+			icon: Megaphone,
 			label: 'Announcement',
-			bg: 'bg-blue-400/10',
-			text: 'text-blue-400',
-			border: 'border-l-blue-400/70'
+			text: 'text-orange-700 dark:text-orange-400',
+			border: 'border-primary/50'
 		},
 		warning: {
 			icon: AlertTriangle,
 			label: 'Heads up',
-			bg: 'bg-amber-400/10',
-			text: 'text-amber-400',
-			border: 'border-l-amber-400/70'
+			text: 'text-amber-700 dark:text-amber-400',
+			border: 'border-amber-500/50'
 		},
 		error: {
 			icon: AlertCircle,
 			label: 'Important notice',
-			bg: 'bg-red-400/10',
-			text: 'text-red-400',
-			border: 'border-l-destructive/70'
+			text: 'text-red-700 dark:text-red-400',
+			border: 'border-destructive/50'
 		}
 	};
 
@@ -39,30 +36,28 @@
 
 <div
 	class={cn(
-		'relative flex items-start gap-3 rounded-lg border border-l-[3px] bg-card/95 p-3 text-card-foreground shadow-lg backdrop-blur-sm sm:p-4',
+		'flex items-start gap-3 rounded-sm border-2 bg-secondary px-4 py-4 text-secondary-foreground sm:px-5',
 		activeLevel.border,
 		className
 	)}
 >
 	<div
 		role={type === NotificationLevel.ERROR ? 'alert' : 'status'}
-		class="flex min-w-0 flex-1 items-start gap-3"
+		class="min-w-0 flex-1 space-y-2"
 	>
-		<span
-			class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md {activeLevel.bg} {activeLevel.text}"
+		<p
+			class="flex items-center gap-2.5 font-mono text-xs font-semibold uppercase tracking-widest {activeLevel.text}"
 		>
-			<svelte:component this={activeLevel.icon} class="h-5 w-5" aria-hidden="true" />
-		</span>
-		<div class="min-w-0 flex-1 space-y-1 py-0.5">
-			<p class="text-sm font-semibold">{activeLevel.label}</p>
-			<p class="break-words text-sm leading-relaxed text-muted-foreground">{content}</p>
-		</div>
+			<svelte:component this={activeLevel.icon} class="h-5 w-5 shrink-0" aria-hidden="true" />
+			{activeLevel.label}
+		</p>
+		<p class="break-words text-base font-medium leading-relaxed">{content}</p>
 	</div>
 	<Button
 		type="button"
 		variant="ghost"
 		size="icon"
-		class="shrink-0 text-muted-foreground"
+		class="-mr-2 -mt-2 shrink-0 text-muted-foreground"
 		on:click={onDismiss}
 		aria-label="Dismiss notification"
 	>
