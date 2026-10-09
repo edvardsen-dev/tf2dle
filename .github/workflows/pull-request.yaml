@@ -1,0 +1,30 @@
+name: Pull Request
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    uses: ./.github/workflows/test-shared.yaml
+
+  docker-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - name: Build Docker image
+        run: |
+          docker build \
+            --build-arg PUBLIC_CDN_URL="https://cdn.jsdelivr.net/gh/edvardsen-dev/tf2dle@$(git rev-parse HEAD)/static/images" \
+            --build-arg PUBLIC_APP_VERSION="dev" \
+            -t tf2dle:ci .
