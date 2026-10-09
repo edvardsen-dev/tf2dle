@@ -1,7 +1,7 @@
 import type { NotificationLevel } from '$lib/types';
 import type { AppNotificationRepository } from '../repositories/AppNotificationRepository';
 
-type UpdateAppNotificationRepo = Pick<AppNotificationRepository, 'update'>;
+type UpdateAppNotificationRepo = Pick<AppNotificationRepository, 'update' | 'getAppNotification'>;
 
 type Dependencies = {
 	repo: UpdateAppNotificationRepo;
@@ -12,10 +12,18 @@ type Input = {
 	content: string;
 };
 
-type Result = { ok: true } | { ok: false; reason: 'db_error' };
+type Result =
+	| { ok: true }
+	| { ok: false; reason: 'db_error' }
+	| { ok: false; reason: 'notification_enabled' };
 
 export async function updateAppNotification(deps: Dependencies, input: Input): Promise<Result> {
 	try {
+		const found = await deps.repo.getAppNotification();
+		if (found?.enabled) {
+			return { ok: false, reason: 'notification_enabled' };
+		}
+
 		await deps.repo.update(input.type, input.content);
 	} catch (err) {
 		console.error(err);

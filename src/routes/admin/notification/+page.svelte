@@ -192,7 +192,12 @@
 					<div class="flex flex-wrap items-center gap-3 border-t border-border pt-5">
 						<Button
 							type="submit"
-							disabled={!contentValid || !hasChanges || saving || pendingEnabled !== null}
+							disabled={enabled ||
+								!contentValid ||
+								!hasChanges ||
+								saving ||
+								pendingEnabled !== null}
+							aria-describedby="notification-save-description"
 							class="gap-2"
 						>
 							{#if saving}<Loader2
@@ -202,8 +207,13 @@
 								/>{/if}
 							{saving ? 'Saving...' : 'Save notification'}
 						</Button>
-						<p class="text-xs text-muted-foreground">
-							{#if !contentValid}Enter a message to save.
+						<p
+							id="notification-save-description"
+							class="text-xs text-muted-foreground"
+							aria-live="polite"
+						>
+							{#if enabled}Disable the notification before saving changes.
+							{:else if !contentValid}Enter a message to save.
 							{:else if hasChanges}You have unsaved changes.
 							{:else}All changes saved.{/if}
 						</p>

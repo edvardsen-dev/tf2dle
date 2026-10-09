@@ -105,6 +105,38 @@ describe('admin notification form', () => {
 		expect(save.disabled).toBe(false);
 	});
 
+	it('blocks saving while enabled and allows saving the same edits after disabling', async () => {
+		const notification = {
+			id: 1,
+			version: 1,
+			type: NotificationLevel.INFO,
+			content: 'Saved announcement',
+			enabled: true
+		};
+		const { getByRole, getByLabelText, getByText, queryByText, rerender } = render(
+			NotificationPage,
+			{ data: { notification }, form: null }
+		);
+		const save = getByRole('button', { name: 'Save notification' }) as HTMLButtonElement;
+		const message = 'Disable the notification before saving changes.';
+		expect(save.disabled).toBe(true);
+		expect(getByText(message).id).toBe(save.getAttribute('aria-describedby'));
+
+		const content = getByLabelText('Content *') as HTMLTextAreaElement;
+		await fireEvent.input(content, { target: { value: 'Unsaved edits' } });
+		await fireEvent.change(getByLabelText('Type *'), {
+			target: { value: NotificationLevel.WARNING }
+		});
+		expect(save.disabled).toBe(true);
+		expect(getByText(message)).toBeTruthy();
+
+		await rerender({ data: { notification: { ...notification, enabled: false } } });
+		expect(save.disabled).toBe(false);
+		expect(queryByText(message)).toBeNull();
+		expect(content.value).toBe('Unsaved edits');
+		expect((getByLabelText('Type *') as HTMLSelectElement).value).toBe(NotificationLevel.WARNING);
+	});
+
 	it('shows saving feedback and keeps edits after a network error', async () => {
 		const { getByRole, getByLabelText } = render(NotificationPage, {
 			data: { notification: null },
@@ -160,10 +192,13 @@ describe('notification visibility', () => {
 				content: 'Saved announcement',
 				enabled: initialEnabled
 			};
-			const { getByRole, rerender } = render(NotificationPage, {
+			const { getByRole, getByLabelText, rerender } = render(NotificationPage, {
 				data: { notification },
 				form: null
 			});
+			await fireEvent.input(getByLabelText('Content *'), { target: { value: 'Unsaved edits' } });
+			const save = getByRole('button', { name: 'Save notification' }) as HTMLButtonElement;
+			expect(save.disabled).toBe(initialEnabled);
 			const toggle = getByRole('switch', { name: 'Enabled' }) as HTMLButtonElement;
 			const [formElement, submit] = vi
 				.mocked(enhance)
@@ -182,6 +217,7 @@ describe('notification visibility', () => {
 			await tick();
 			expect(toggle.getAttribute('aria-checked')).toBe(String(!initialEnabled));
 			expect(toggle.disabled).toBe(true);
+			expect(save.disabled).toBe(true);
 			expect(toggle.classList.contains('transition-colors')).toBe(true);
 			expect(toggle.firstElementChild?.classList.contains('transition-transform')).toBe(true);
 			if (typeof callback !== 'function') throw new Error('Expected a submission callback');
@@ -202,6 +238,8 @@ describe('notification visibility', () => {
 			expect(update).toHaveBeenCalledWith({ reset: false });
 			expect(toggle.getAttribute('aria-checked')).toBe(String(!initialEnabled));
 			expect(toggle.disabled).toBe(false);
+			expect(save.disabled).toBe(!initialEnabled);
+			expect((getByLabelText('Content *') as HTMLTextAreaElement).value).toBe('Unsaved edits');
 		}
 	);
 
