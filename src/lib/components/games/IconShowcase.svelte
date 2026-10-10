@@ -1,41 +1,53 @@
 <script lang="ts">
-	import { CDN_URL } from '$lib/constants';
-	import { onMount } from 'svelte';
+	import { CDN_URL } from '#lib/constants.ts';
 
-	// Gamemode
-	export let gamemode: string;
-	// The icon to display
-	export let icon: { thumbnail: string; rotation: number };
-	// The number of guesses the user has made
-	export let guesses: number;
-	// Whether the user has won the game
-	export let hasWon: boolean;
-	// Icon size
-	export let size: { width: number; height: number } = { width: 96, height: 75 };
-	export let framed = true;
+	interface Props {
+		gamemode: string;
+		icon: { thumbnail: string; rotation: number };
+		guesses: number;
+		hasWon: boolean;
+		size?: { width: number; height: number };
+		framed?: boolean;
+	}
+	let {
+		gamemode,
+		icon,
+		guesses,
+		hasWon,
+		size = { width: 96, height: 75 },
+		framed = true
+	}: Props = $props();
 
-	let wrapper: HTMLDivElement;
-	let canvas: HTMLCanvasElement;
+	let wrapper = $state.raw<HTMLDivElement>();
+	let canvas = $state.raw<HTMLCanvasElement>();
+	let img = $state.raw<HTMLImageElement>();
 
-	let img: HTMLImageElement;
-
-	$: drawImage(img, guesses, hasWon);
-
-	onMount(() => {
-		// Load and draw image
+	$effect(() => {
+		if (!canvas || !wrapper) return;
+		// Track size changes before measuring the updated DOM.
+		size.width;
+		size.height;
 		drawCanvas();
-
-		img = new Image();
-		img.src = `${CDN_URL}/${gamemode}/${icon.thumbnail}.png`;
-		img.onload = () => {
-			drawImage(img, guesses, hasWon);
+		img = undefined;
+		const image = new Image();
+		image.onload = () => {
+			img = image;
 		};
+		image.src = `${CDN_URL}/${gamemode}/${icon.thumbnail}.png`;
+		return () => {
+			image.onload = null;
+		};
+	});
+
+	$effect(() => {
+		drawImage(img, guesses, hasWon);
 	});
 
 	/**
 	 * Draw the	canvas to the correct size
 	 */
 	function drawCanvas() {
+		if (!canvas || !wrapper) return;
 		canvas.width = wrapper.clientWidth;
 		canvas.height = wrapper.clientHeight;
 	}
@@ -46,8 +58,8 @@
 	 * @param guesses made by the user
 	 * @param hasWon whether the user has won the game
 	 */
-	function drawImage(img: HTMLImageElement, guesses: number, hasWon: boolean) {
-		if (!canvas || !img) return;
+	function drawImage(img: HTMLImageElement | undefined, guesses: number, hasWon: boolean) {
+		if (!canvas || !wrapper || !img) return;
 
 		const ctx = canvas.getContext('2d');
 
@@ -84,7 +96,7 @@
 			style="width: {size.width}px; height: {size.height}px"
 			class="overflow-hidden"
 		>
-			<canvas bind:this={canvas}></canvas>
+			<canvas bind:this={canvas} aria-label="Today's game icon"></canvas>
 		</div>
 	</div>
 </div>

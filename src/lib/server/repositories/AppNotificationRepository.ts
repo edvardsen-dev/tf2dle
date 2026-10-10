@@ -1,5 +1,5 @@
-import type { NotificationLevel } from '$lib/types';
-import type { AppNotification } from '@prisma/client';
+import type { NotificationLevel } from '#lib/types.ts';
+import type { AppNotification } from '#lib/server/generated/prisma/browser.ts';
 
 export interface AppNotificationRepository {
 	getAppNotification(): Promise<AppNotification | null>;

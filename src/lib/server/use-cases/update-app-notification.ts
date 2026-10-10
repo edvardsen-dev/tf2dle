@@ -1,5 +1,5 @@
-import type { NotificationLevel } from '$lib/types';
-import type { AppNotificationRepository } from '../repositories/AppNotificationRepository';
+import type { NotificationLevel } from '#lib/types.ts';
+import type { AppNotificationRepository } from '#lib/server/repositories/AppNotificationRepository.ts';
 
 type UpdateAppNotificationRepo = Pick<AppNotificationRepository, 'update' | 'getAppNotification'>;
 
@@ -13,9 +13,7 @@ type Input = {
 };
 
 type Result =
-	| { ok: true }
-	| { ok: false; reason: 'db_error' }
-	| { ok: false; reason: 'notification_enabled' };
+	{ ok: true } | { ok: false; reason: 'db_error' } | { ok: false; reason: 'notification_enabled' };
 
 export async function updateAppNotification(deps: Dependencies, input: Input): Promise<Result> {
 	try {

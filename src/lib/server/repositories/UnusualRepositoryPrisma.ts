@@ -1,8 +1,8 @@
-import type { Unusual } from '$lib/types';
+import type { Unusual } from '#lib/types.ts';
 import type { Dayjs } from 'dayjs';
-import type { UnusualRepository } from './UnusualRepository';
-import { db } from '../prisma';
-import dayjs from '$lib/configs/dayjsConfig';
+import type { UnusualRepository } from '#lib/server/repositories/UnusualRepository.ts';
+import { db } from '#lib/server/prisma.ts';
+import dayjs from '#lib/configs/dayjsConfig.ts';
 
 class UnusualRepositoryPrisma implements UnusualRepository {
 	public async findUnusual(date: Dayjs) {

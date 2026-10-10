@@ -1,12 +1,12 @@
-import dayjs from '$lib/configs/dayjsConfig';
+import dayjs from '#lib/configs/dayjsConfig.ts';
 import {
 	buildDashboardMetrics,
 	getMonthBounds,
 	normalizeAttemptNumber,
 	resolveMonthSelection,
 	type GameMode
-} from '$lib/server/metricsUtils';
-import { db } from '../prisma';
+} from '#lib/server/metricsUtils.ts';
+import { db } from '#lib/server/prisma.ts';
 
 const ADMIN_SETTINGS_ID = 1;
 

@@ -1,5 +1,5 @@
-import dayjs from '$lib/configs/dayjsConfig';
-import { db } from '../prisma';
+import dayjs from '#lib/configs/dayjsConfig.ts';
+import { db } from '#lib/server/prisma.ts';
 
 class LogService {
 	private constructor() {}

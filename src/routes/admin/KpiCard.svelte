@@ -1,8 +1,7 @@
 <script lang="ts">
-	import * as Card from '$lib/components/ui/card';
+	import * as Card from '#lib/components/ui/card/index.ts';
 
-	export let label: string;
-	export let value: string;
+	let { label, value }: { label: string; value: string } = $props();
 </script>
 
 <Card.Root class="bg-card/90">

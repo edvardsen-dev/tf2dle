@@ -1,35 +1,39 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
-	import { NotificationBanner } from '$lib/components/app-notification';
-	import { Button } from '$lib/components/ui/button';
-	import * as Card from '$lib/components/ui/card';
-	import { NotificationLevel } from '$lib/types';
-	import type { SubmitFunction } from '@sveltejs/kit';
-	import { AlertCircle, CheckCircle2, Loader2 } from 'lucide-svelte';
-	import { onDestroy } from 'svelte';
+	import { enhance, type SubmitFunction } from '$app/forms';
+	import { NotificationBanner } from '#lib/components/app-notification/index.ts';
+	import { Button } from '#lib/components/ui/button/index.ts';
+	import * as Card from '#lib/components/ui/card/index.ts';
+	import { NotificationLevel } from '#lib/types.ts';
+	import { AlertCircle, CheckCircle2, Loader2 } from '@lucide/svelte';
+	import { untrack } from 'svelte';
+	import type { PageProps } from './$types.js';
 
-	export let data;
-	export let form;
+	let { data, form }: Pick<PageProps, 'data' | 'form'> = $props();
 
-	let type: NotificationLevel =
-		(data.notification?.type as NotificationLevel) ?? NotificationLevel.INFO;
-	let content: string = data.notification?.content ?? '';
+	let type = $state<NotificationLevel>(
+		untrack(() => (data.notification?.type as NotificationLevel) ?? NotificationLevel.INFO)
+	);
+	let content = $state(untrack(() => data.notification?.content ?? ''));
 
-	let showSuccess = false;
-	let successTimeout: ReturnType<typeof setTimeout>;
-	let saving = false;
-	let saveError: string | null = null;
-	let toggleError: string | null = null;
-	let pendingEnabled: boolean | null = null;
+	let showSuccess = $state(false);
+	let saving = $state(false);
+	let saveError = $state<string | null>(null);
+	let toggleError = $state<string | null>(null);
+	let pendingEnabled = $state<boolean | null>(null);
 
-	$: enabled = pendingEnabled ?? data.notification?.enabled ?? false;
-	$: hasChanges = data.notification?.content !== content || data.notification?.type !== type;
-	$: contentValid = content.trim().length > 0 && content.length <= 500;
-	$: updateError = saving ? null : (saveError ?? (form?.action === 'update' ? form.message : null));
-	$: activeStateError =
+	const enabled = $derived(pendingEnabled ?? data.notification?.enabled ?? false);
+	const hasChanges = $derived(
+		data.notification?.content !== content || data.notification?.type !== type
+	);
+	const contentValid = $derived(content.trim().length > 0 && content.length <= 500);
+	const updateError = $derived(
+		saving ? null : (saveError ?? (form?.action === 'update' ? form.message : null))
+	);
+	const activeStateError = $derived(
 		pendingEnabled !== null
 			? null
-			: (toggleError ?? (form?.action === 'setActiveState' ? form.message : null));
+			: (toggleError ?? (form?.action === 'setActiveState' ? form.message : null))
+	);
 
 	const saveNotification: SubmitFunction = () => {
 		saving = true;
@@ -68,19 +72,15 @@
 		};
 	};
 
-	$: updateSuccessMessage(form);
-
-	function updateSuccessMessage(result: typeof form) {
-		clearTimeout(successTimeout);
-		showSuccess = result?.action === 'update' && result?.success === true;
-		if (showSuccess) {
-			successTimeout = setTimeout(() => {
-				showSuccess = false;
-			}, 3000);
-		}
-	}
-
-	onDestroy(() => clearTimeout(successTimeout));
+	$effect(() => {
+		const succeeded = form?.action === 'update' && form?.success === true;
+		showSuccess = succeeded;
+		if (!succeeded) return;
+		const timeout = setTimeout(() => {
+			showSuccess = false;
+		}, 3000);
+		return () => clearTimeout(timeout);
+	});
 </script>
 
 <main class="mx-auto grid w-full max-w-7xl gap-6 px-4">

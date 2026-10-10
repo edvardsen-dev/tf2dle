@@ -1,8 +1,7 @@
-import { weaponService } from '$lib/server/services/WeaponService';
-import { json } from '@sveltejs/kit';
+import { weaponService } from '#lib/server/services/WeaponService.ts';
 
 export async function GET() {
 	const yesterdayAnswer = await weaponService.getYesterdaysAnswer();
 
-	return json(yesterdayAnswer, { status: 200 });
+	return Response.json(yesterdayAnswer, { status: 200 });
 }

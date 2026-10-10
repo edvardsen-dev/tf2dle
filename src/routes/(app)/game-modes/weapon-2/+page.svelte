@@ -1,51 +1,54 @@
 <script lang="ts">
-	import Input from '$lib/components/games/Input.svelte';
-	import { useLocalStorage } from '$lib/composables/useLocalStorage.js';
-	import { useStats } from '$lib/composables/useStats.js';
-	import dayjs from '$lib/configs/dayjsConfig.js';
-	import type { WeaponTwoGuessResponse } from '$lib/dtos.js';
+	import Input from '#lib/components/games/Input.svelte';
+	import { useLocalStorage } from '#lib/composables/useLocalStorage.ts';
+	import { useStats } from '#lib/composables/useStats.ts';
+	import dayjs from '#lib/configs/dayjsConfig.ts';
+	import type { WeaponTwoGuessResponse } from '#lib/dtos.ts';
 	import { onMount } from 'svelte';
-	import * as Card from '$lib/components/ui/card';
-	import { AreaChart, Dices, Flame, RotateCw } from 'lucide-svelte';
+	import * as Card from '#lib/components/ui/card/index.ts';
+	import { ChartArea, Dices, Flame, RotateCw } from '@lucide/svelte';
 	import { toast } from 'svelte-sonner';
 	import GuessesList from './GuessesList.svelte';
-	import ColorExplanation from '$lib/components/games/ColorExplanation.svelte';
-	import StatsDialog from '$lib/components/games/StatsDialog.svelte';
-	import VictoryDialog from '$lib/components/games/VictoryDialog.svelte';
-	import WinterDecore from '$lib/features/theme/components/winter/WinterDecore.svelte';
-	import { CDN_URL } from '$lib/constants';
-	import CommunityStatus from '$lib/components/games/CommunityStatus.svelte';
-	import CompletedResult from '$lib/components/games/CompletedResult.svelte';
-	import GameLoadingSkeleton from '$lib/components/games/GameLoadingSkeleton.svelte';
-	import YesterdayAnswer from '$lib/components/games/YesterdayAnswer.svelte';
+	import ColorExplanation from '#lib/components/games/ColorExplanation.svelte';
+	import StatsDialog from '#lib/components/games/StatsDialog.svelte';
+	import VictoryDialog from '#lib/components/games/VictoryDialog.svelte';
+	import WinterDecore from '#lib/features/theme/components/winter/WinterDecore.svelte';
+	import { CDN_URL } from '#lib/constants.ts';
+	import CommunityStatus from '#lib/components/games/CommunityStatus.svelte';
+	import CompletedResult from '#lib/components/games/CompletedResult.svelte';
+	import GameLoadingSkeleton from '#lib/components/games/GameLoadingSkeleton.svelte';
+	import YesterdayAnswer from '#lib/components/games/YesterdayAnswer.svelte';
+	import type { PageData } from './$types.js';
 
-	export let data;
+	let { data }: { data: PageData } = $props();
 
 	const stats = useStats('weapon_2');
-	let openStatsDialog = false;
+	let openStatsDialog = $state(false);
 
 	// State persisted in local storage
-	let lastEvent = useLocalStorage<{ event: 'won' | 'guessed'; date: string } | null>(
+	const lastEvent = useLocalStorage<{ event: 'won' | 'guessed'; date: string } | null>(
 		'weapon_2_last_event',
 		null
 	);
-	let guesses = useLocalStorage<{ name: string; correct: boolean }[]>('weapon_2_guesses', []);
-	let streak = useLocalStorage<number>('weapon_2_streak', 0);
-	let clues = useLocalStorage<{ text: string; variant: 'positive' | 'negative' | 'neutral' }[]>(
+	const guesses = useLocalStorage<{ name: string; correct: boolean }[]>('weapon_2_guesses', []);
+	const streak = useLocalStorage<number>('weapon_2_streak', 0);
+	const clues = useLocalStorage<{ text: string; variant: 'positive' | 'negative' | 'neutral' }[]>(
 		'weapon_2_clues',
 		[]
 	);
-	let correctWeapon = useLocalStorage<string | null>('weapon_2_correct_weapon', null);
+	const correctWeapon = useLocalStorage<string | null>('weapon_2_correct_weapon', null);
 
 	// Current game state
-	let gameState: 'guessing' | 'won' = 'guessing';
-	let validating = false;
-	let openVictoryDialog = false;
+	let gameState = $state<'guessing' | 'won'>('guessing');
+	let validating = $state(false);
+	let openVictoryDialog = $state(false);
 
-	let numberOfCorrectGuesses = 0;
-	let numberOfTotalAttributes = 0;
+	let numberOfCorrectGuesses = $state(0);
+	let numberOfTotalAttributes = $state(0);
 
-	$: hiddenClues = numberOfTotalAttributes > 0 ? numberOfTotalAttributes - $clues.length : 0;
+	let hiddenClues = $derived(
+		numberOfTotalAttributes > 0 ? numberOfTotalAttributes - $clues.length : 0
+	);
 
 	onMount(async () => {
 		const [todaysWeapon, weapons] = await Promise.all([data.todaysWeapon, data.weapons]);
@@ -166,8 +169,8 @@
 				<div class="flex gap-4">
 					<p class="flex items-center"><Dices aria-label="Number of guesses" />{$guesses.length}</p>
 					<p class="flex items-center"><Flame aria-label="streak" /> {$streak}</p>
-					<button on:click={() => (openStatsDialog = true)}>
-						<AreaChart aria-label="Stats" />
+					<button onclick={() => (openStatsDialog = true)} aria-label="Open stats">
+						<ChartArea />
 					</button>
 				</div>
 			</div>
@@ -223,8 +226,8 @@
 										value: weapon
 									}))}
 									guessed={$guesses.map((guess) => guess.name)}
-									on:select={(e) => handleSelect(e.detail)}
-									bind:validating
+									onselect={handleSelect}
+									{validating}
 								/>
 							{:else}
 								<CompletedResult

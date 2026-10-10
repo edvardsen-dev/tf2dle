@@ -1,4 +1,4 @@
-import dayjs from '$lib/configs/dayjsConfig';
+import dayjs from '#lib/configs/dayjsConfig.ts';
 
 export const DATA_LAST_UPDATED = '2026-10-04';
 export const DATA_LAST_UPDATED_DISPLAY = dayjs(DATA_LAST_UPDATED).format('D MMM YYYY');

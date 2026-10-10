@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { CDN_URL } from '$lib/constants';
+	import { CDN_URL } from '#lib/constants.ts';
 	import { scale } from 'svelte/transition';
 
-	export let guesses: { name: string; correct: boolean }[];
+	let { guesses }: { guesses: { name: string; correct: boolean }[] } = $props();
 </script>
 
 <div class="grid gap-2 mt-2">

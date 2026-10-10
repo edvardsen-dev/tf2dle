@@ -1,4 +1,4 @@
-import type { WeaponGuessResponse } from '$lib/dtos';
+import type { WeaponGuessResponse } from '#lib/dtos.ts';
 
 export type ShareMode = 'weapon' | 'weapon-2' | 'map' | 'cosmetic' | 'unusual';
 

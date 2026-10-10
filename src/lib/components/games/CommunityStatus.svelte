@@ -1,8 +1,11 @@
 <script lang="ts">
-	export let challenge: string;
-	export let correctGuesses: number | undefined;
+	interface Props {
+		challenge: string;
+		correctGuesses: number | undefined;
+	}
+	let { challenge, correctGuesses }: Props = $props();
 
-	$: challengeLabel = challenge.toLowerCase();
+	let challengeLabel = $derived(challenge.toLowerCase());
 </script>
 
 {#if correctGuesses !== undefined}

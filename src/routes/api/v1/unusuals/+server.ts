@@ -1,5 +1,4 @@
-import { unusualService } from '$lib/server/services/UnusualService';
-import { json } from '@sveltejs/kit';
+import { unusualService } from '#lib/server/services/UnusualService.ts';
 
 /**
  * Retursn a list of all unusuals
@@ -8,7 +7,7 @@ import { json } from '@sveltejs/kit';
 export async function GET() {
 	const unusuals = unusualService.getUnusuals();
 
-	return json(
+	return Response.json(
 		unusuals.map((u) => ({ name: u.name, thumbnail: u.image })),
 		{ status: 200 }
 	);

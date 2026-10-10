@@ -1,7 +1,7 @@
-import type { Cosmetic } from '$lib/types';
+import type { Cosmetic } from '#lib/types.ts';
 import type { Dayjs } from 'dayjs';
-import { db } from '../prisma';
-import type { CosmeticRepository } from './CosmeticRepository';
+import { db } from '#lib/server/prisma.ts';
+import type { CosmeticRepository } from '#lib/server/repositories/CosmeticRepository.ts';
 
 class CosmeticRepositoryPrisma implements CosmeticRepository {
 	public async findCosmetic(date: Dayjs) {

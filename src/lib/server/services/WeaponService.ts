@@ -1,11 +1,11 @@
-import weapons from '$lib/server/data/weapons.json';
-import type { Weapon } from '$lib/types';
-import { weaponRepository } from '$lib/server/repositories/WeaponRepositoryPrisma';
-import type { WeaponRepository } from '$lib/server/repositories/WeaponRepository';
-import LogService from './LogService';
-import dayjs from '$lib/configs/dayjsConfig';
+import weapons from '#lib/server/data/weapons.json';
+import type { Weapon } from '#lib/types.ts';
+import { weaponRepository } from '#lib/server/repositories/WeaponRepositoryPrisma.ts';
+import type { WeaponRepository } from '#lib/server/repositories/WeaponRepository.ts';
+import LogService from '#lib/server/services/LogService.ts';
+import dayjs from '#lib/configs/dayjsConfig.ts';
 import type { Dayjs } from 'dayjs';
-import { generateRandomNumber } from '../utils';
+import { generateRandomNumber } from '#lib/server/utils.ts';
 
 class WeaponService {
 	private weapons: Weapon[];

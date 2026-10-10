@@ -1,11 +1,11 @@
-import { getAdminPassword, isAdminAuthenticated, isAdminEnabled } from '$lib/server/adminAuth';
+import { getAdminPassword, isAdminAuthenticated, isAdminEnabled } from '#lib/server/adminAuth.ts';
 import { error, fail, redirect, type Cookies } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
-import { getAdminAppNotification } from '$lib/server/use-cases/get-admin-app-notification';
-import { appNotificationRepository } from '$lib/server/repositories/AppNotificationRepositoryPrisma';
-import { setAppNotificationActive } from '$lib/server/use-cases/set-app-notification-active';
-import { updateAppNotification } from '$lib/server/use-cases/update-app-notification';
-import { NotificationLevel } from '$lib/types';
+import { getAdminAppNotification } from '#lib/server/use-cases/get-admin-app-notification.ts';
+import { appNotificationRepository } from '#lib/server/repositories/AppNotificationRepositoryPrisma.ts';
+import { setAppNotificationActive } from '#lib/server/use-cases/set-app-notification-active.ts';
+import { updateAppNotification } from '#lib/server/use-cases/update-app-notification.ts';
+import type { NotificationLevel } from '#lib/types.ts';
 
 export const load: PageServerLoad = async ({ cookies }) => {
 	requireAdmin(cookies);

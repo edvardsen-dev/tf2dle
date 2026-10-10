@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Switch from '$lib/components/ui/switch/switch.svelte';
-	import { BellOff } from 'lucide-svelte';
-	import { muteUpdateNotifications } from '$lib/features/patchNotes';
+	import Switch from '#lib/components/ui/switch/switch.svelte';
+	import { BellOff } from '@lucide/svelte';
+	import { muteUpdateNotifications } from '#lib/features/patchNotes/index.ts';
 </script>
 
 <div class="flex gap-4 justify-between">

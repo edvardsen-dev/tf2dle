@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { disableExtraVisuals } from '../composables/useDisableTheme';
-	import { isDecember, isHalloween } from '../utils';
+	import { disableExtraVisuals } from '../composables/useDisableTheme.ts';
+	import { isDecember, isHalloween } from '../utils.ts';
 	import HalloweenLogoDecor from './halloween/HalloweenLogoDecor.svelte';
 	import XmasHat from './x-mas/XmasHat.svelte';
 </script>

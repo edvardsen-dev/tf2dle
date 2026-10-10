@@ -1,9 +1,13 @@
 <script lang="ts">
-	import * as Card from '$lib/components/ui/card';
-	import { latestUpdateId, lastViewedUpdate, updateMonths } from '$lib/features/patchNotes';
+	import * as Card from '#lib/components/ui/card/index.ts';
+	import {
+		latestUpdateId,
+		lastViewedUpdate,
+		updateMonths
+	} from '#lib/features/patchNotes/index.ts';
 	import { onMount } from 'svelte';
-	import PatchNoteItem from '$lib/features/patchNotes/components/patch-note-item.svelte';
-	import PatchNoteSidebar from '$lib/features/patchNotes/components/patch-note-sidebar.svelte';
+	import PatchNoteItem from '#lib/features/patchNotes/components/patch-note-item.svelte';
+	import PatchNoteSidebar from '#lib/features/patchNotes/components/patch-note-sidebar.svelte';
 
 	onMount(() => {
 		lastViewedUpdate.set(latestUpdateId);

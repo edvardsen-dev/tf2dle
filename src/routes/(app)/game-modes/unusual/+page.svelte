@@ -1,32 +1,34 @@
 <script lang="ts">
-	import GameShell from '$lib/components/games/GameShell.svelte';
-	import Input from '$lib/components/games/Input.svelte';
-	import { useGameEngine } from '$lib/composables/useGameEngine';
-	import type { UnusualGuessResponse } from '$lib/dtos.js';
+	import GameShell from '#lib/components/games/GameShell.svelte';
+	import Input from '#lib/components/games/Input.svelte';
+	import { useGameEngine } from '#lib/composables/useGameEngine.ts';
+	import type { UnusualGuessResponse } from '#lib/dtos.ts';
 	import { writable } from 'svelte/store';
 	import Hints from './Hints.svelte';
-	import IconShowcase from '$lib/components/games/IconShowcase.svelte';
-	import { useLocalStorage } from '$lib/composables/useLocalStorage';
+	import IconShowcase from '#lib/components/games/IconShowcase.svelte';
+	import { useLocalStorage } from '#lib/composables/useLocalStorage.ts';
 	import GuessesList from './GuessesList.svelte';
-	import { CDN_URL } from '$lib/constants';
-	import CommunityStatus from '$lib/components/games/CommunityStatus.svelte';
-	import CompletedResult from '$lib/components/games/CompletedResult.svelte';
-	import YesterdayAnswer from '$lib/components/games/YesterdayAnswer.svelte';
+	import { CDN_URL } from '#lib/constants.ts';
+	import CommunityStatus from '#lib/components/games/CommunityStatus.svelte';
+	import CompletedResult from '#lib/components/games/CompletedResult.svelte';
+	import YesterdayAnswer from '#lib/components/games/YesterdayAnswer.svelte';
+	import type { PageData } from './$types.js';
 
-	export let data;
+	let { data }: { data: PageData } = $props();
 
-	$: ({ todaysUnusual, unusuals } = data);
+	let { todaysUnusual, unusuals } = $derived(data);
 
-	let series = useLocalStorage<string | null>('unusual_series', null);
+	const series = useLocalStorage<string | null>('unusual_series', null);
 
-	let numberOfCorrectGuesses = writable<number>(0);
+	const numberOfCorrectGuesses = writable<number | undefined>(0);
 
-	let loadingState: 'loading' | 'error' | 'success' = 'loading';
+	let loadingState = $derived<'loading' | 'success'>(todaysUnusual ? 'success' : 'loading');
 
-	$: if (todaysUnusual) {
-		numberOfCorrectGuesses.set(todaysUnusual.numberOfCorrectGuesses);
-		loadingState = 'success';
-	}
+	$effect(() => {
+		if (todaysUnusual) {
+			numberOfCorrectGuesses.set(todaysUnusual.numberOfCorrectGuesses);
+		}
+	});
 
 	const { gameState, guesses, streak, stats, validating, openVictoryDialog, handleGuess } =
 		useGameEngine<UnusualGuessResponse>('unusual', 2, numberOfCorrectGuesses);
@@ -73,8 +75,8 @@
 					value: u.name
 				}))}
 				guessed={$guesses.map((guess) => guess.name)}
-				bind:validating={$validating}
-				on:select={(e) => guess(e.detail)}
+				validating={$validating}
+				onselect={guess}
 			/>
 		{:else}
 			<CompletedResult
@@ -87,9 +89,11 @@
 		{/if}
 		<GuessesList guesses={$guesses} />
 	</div>
-	<div slot="footer" class="flex justify-center w-full">
-		{#await data.yesterdaysAnswer then yesterdaysAnswer}
-			<YesterdayAnswer challenge="unusual" answer={yesterdaysAnswer} />
-		{/await}
-	</div>
+	{#snippet footer()}
+		<div class="flex justify-center w-full">
+			{#await data.yesterdaysAnswer then yesterdaysAnswer}
+				<YesterdayAnswer challenge="unusual" answer={yesterdaysAnswer} />
+			{/await}
+		</div>
+	{/snippet}
 </GameShell>

@@ -1,10 +1,10 @@
-import type { AppNotification } from '@prisma/client';
-import { setAppNotificationActive } from '$lib/server/use-cases/set-app-notification-active';
+import type { AppNotification } from '#lib/server/generated/prisma/browser.ts';
+import { setAppNotificationActive } from '#lib/server/use-cases/set-app-notification-active.ts';
 import { afterEach, beforeEach, expect, test, vi } from 'vitest';
 
 const repo = {
-	getAppNotification: vi.fn<[], Promise<AppNotification | null>>(),
-	setEnabledState: vi.fn<[boolean], Promise<void>>()
+	getAppNotification: vi.fn<() => Promise<AppNotification | null>>(),
+	setEnabledState: vi.fn<(enabled: boolean) => Promise<void>>()
 };
 
 const notification: AppNotification = {

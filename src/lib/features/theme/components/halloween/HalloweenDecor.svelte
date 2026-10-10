@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { get } from 'svelte/store';
-	import dayjs from '$lib/configs/dayjsConfig';
-	import { disableExtraVisuals } from '../../composables/useDisableTheme';
-	import { isHalloween } from '../../utils';
+	import dayjs from '#lib/configs/dayjsConfig.ts';
+	import { disableExtraVisuals } from '../../composables/useDisableTheme.ts';
+	import { isHalloween } from '../../utils.ts';
 
 	const SWARM_STORAGE_KEY = 'halloween_bat_swarm_seen_year';
 	const SWARM_DURATION_MS = 5200;
 
-	let showBatSwarm = false;
+	let showBatSwarm = $state(false);
 	let hideBatSwarmTimeout: ReturnType<typeof setTimeout> | undefined;
 
 	const swarmBats = [

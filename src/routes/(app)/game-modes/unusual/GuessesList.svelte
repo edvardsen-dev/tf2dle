@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { CDN_URL } from '$lib/constants';
-	import type { UnusualGuessResponse } from '$lib/dtos';
-	import { fade, scale } from 'svelte/transition';
+	import { CDN_URL } from '#lib/constants.ts';
+	import type { UnusualGuessResponse } from '#lib/dtos.ts';
+	import { fade } from 'svelte/transition';
 
 	// The guesses made by the user
-	export let guesses: UnusualGuessResponse[];
+	let { guesses }: { guesses: UnusualGuessResponse[] } = $props();
 </script>
 
 <div class="grid gap-4">

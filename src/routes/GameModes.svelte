@@ -1,8 +1,8 @@
 <script lang="ts">
-	import * as Card from '$lib/components/ui/card';
-	import dayjs from '$lib/configs/dayjsConfig';
-	import WinterDecore from '$lib/features/theme/components/winter/WinterDecore.svelte';
-	import { gameModes } from '$lib/game-modes';
+	import * as Card from '#lib/components/ui/card/index.ts';
+	import dayjs from '#lib/configs/dayjsConfig.ts';
+	import WinterDecore from '#lib/features/theme/components/winter/WinterDecore.svelte';
+	import { gameModes } from '#lib/game-modes.ts';
 	import { onMount } from 'svelte';
 
 	type ModeStatus = {
@@ -10,7 +10,7 @@
 		guesses: number;
 	};
 
-	let modeStatuses: Record<string, ModeStatus> = {};
+	let modeStatuses = $state<Record<string, ModeStatus>>({});
 
 	onMount(() => {
 		modeStatuses = Object.fromEntries(
@@ -76,7 +76,7 @@
 						class="relative grid gap-3 overflow-hidden rounded bg-secondary px-4 py-3 transition-colors hover:bg-secondary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 sm:flex sm:items-center sm:justify-between"
 					>
 						<div class="flex min-w-0 items-start gap-3 sm:items-center sm:gap-4">
-							<svelte:component this={gameMode.icon} class="mt-0.5 shrink-0 text-primary sm:mt-0" />
+							<gameMode.icon class="mt-0.5 shrink-0 text-primary sm:mt-0" />
 							<div>
 								<h2 class="font-semibold">{gameMode.name}</h2>
 								<p class="text-sm">{gameMode.description}</p>

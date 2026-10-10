@@ -1,14 +1,20 @@
 <script lang="ts">
-	import { AlertCircle, AlertTriangle, Megaphone, X } from 'lucide-svelte';
-	import { Button } from '$lib/components/ui/button';
-	import { NotificationLevel } from '$lib/types';
-	import { cn } from '$lib/utils';
+	import { AlertCircle, AlertTriangle, Megaphone, X } from '@lucide/svelte';
+	import { Button } from '#lib/components/ui/button/index.ts';
+	import { NotificationLevel } from '#lib/types.ts';
+	import { cn } from '#lib/utils.ts';
 
-	export let type: NotificationLevel;
-	export let content: string;
-	export let onDismiss: () => void;
-	let className: string | undefined = undefined;
-	export { className as class };
+	let {
+		type,
+		content,
+		onDismiss,
+		class: className
+	}: {
+		type: NotificationLevel;
+		content: string;
+		onDismiss: () => void;
+		class?: string;
+	} = $props();
 
 	const levels = {
 		info: {
@@ -31,7 +37,7 @@
 		}
 	};
 
-	$: activeLevel = levels[type];
+	const activeLevel = $derived(levels[type]);
 </script>
 
 <div
@@ -48,7 +54,7 @@
 		<p
 			class="flex items-center gap-2.5 font-mono text-xs font-semibold uppercase tracking-widest {activeLevel.text}"
 		>
-			<svelte:component this={activeLevel.icon} class="h-5 w-5 shrink-0" aria-hidden="true" />
+			<activeLevel.icon class="h-5 w-5 shrink-0" aria-hidden="true" />
 			{activeLevel.label}
 		</p>
 		<p class="break-words text-base font-medium leading-relaxed">{content}</p>
@@ -58,7 +64,7 @@
 		variant="ghost"
 		size="icon"
 		class="-mr-2 -mt-2 shrink-0 text-muted-foreground"
-		on:click={onDismiss}
+		onclick={onDismiss}
 		aria-label="Dismiss notification"
 	>
 		<X class="h-4 w-4" aria-hidden="true" />

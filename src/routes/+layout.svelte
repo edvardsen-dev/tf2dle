@@ -1,24 +1,25 @@
 <script lang="ts">
 	import '../app.css';
-	import Footer from '$lib/components/layouts/Footer.svelte';
-	import Header from '$lib/components/layouts/Header.svelte';
-	import { Toaster } from '$lib/components/ui/sonner';
+	import Footer from '#lib/components/layouts/Footer.svelte';
+	import Header from '#lib/components/layouts/Header.svelte';
+	import { Toaster } from '#lib/components/ui/sonner/index.ts';
 	import { ModeWatcher, setMode } from 'mode-watcher';
-	import Command from '$lib/components/command/Command.svelte';
-	import SnowParticles from '$lib/features/theme/components/winter/SnowParticles.svelte';
-	import XmasLights from '$lib/features/theme/components/x-mas/XmasLights.svelte';
-	import HalloweenDecor from '$lib/features/theme/components/halloween/HalloweenDecor.svelte';
-	import Background from '$lib/features/theme/components/Background.svelte';
-	import { DevBanner } from '$lib/components/ui/dev-banner';
-	import { page } from '$app/stores';
-	import { AppNotification } from '$lib/components/app-notification';
-	import type { LayoutData } from './$types';
+	import Command from '#lib/components/command/Command.svelte';
+	import SnowParticles from '#lib/features/theme/components/winter/SnowParticles.svelte';
+	import XmasLights from '#lib/features/theme/components/x-mas/XmasLights.svelte';
+	import HalloweenDecor from '#lib/features/theme/components/halloween/HalloweenDecor.svelte';
+	import Background from '#lib/features/theme/components/Background.svelte';
+	import { DevBanner } from '#lib/components/ui/dev-banner/index.ts';
+	import { page } from '$app/state';
+	import { AppNotification } from '#lib/components/app-notification/index.ts';
+	import type { Snippet } from 'svelte';
+	import type { LayoutData } from './$types.js';
 
-	export let data: LayoutData;
+	let { data, children }: { data: LayoutData; children?: Snippet } = $props();
 
 	setMode('dark');
 
-	$: isAdminRoute = $page.url.pathname.startsWith('/admin');
+	const isAdminRoute = $derived(page.url.pathname.startsWith('/admin'));
 </script>
 
 <svelte:head>
@@ -35,7 +36,7 @@
 <Toaster />
 
 {#if isAdminRoute}
-	<slot />
+	{@render children?.()}
 {:else}
 	<Command />
 
@@ -51,7 +52,7 @@
 		<AppNotification notification={data.notification} class="mx-auto w-full max-w-[700px]" />
 		<Header />
 		<div class="flex-grow">
-			<slot />
+			{@render children?.()}
 		</div>
 		<Footer />
 	</div>

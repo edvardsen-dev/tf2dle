@@ -1,0 +1,14 @@
+engineStrict: true
+strictPeerDependencies: true
+peerDependencyRules:
+  allowedVersions:
+    'runed@0.35.1>@sveltejs/kit': '3.0.1'
+allowBuilds:
+  '@prisma/client': false
+  '@prisma/engines': true
+  esbuild: true
+  prisma: false
+  svelte-preprocess: false
+minimumReleaseAgeExclude:
+  - prettier@3.9.10
+  - '@lucide/svelte@1.55.0'

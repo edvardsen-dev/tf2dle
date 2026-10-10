@@ -1,21 +1,16 @@
 <script lang="ts">
-	import { AlertDialog as AlertDialogPrimitive } from "bits-ui";
-	import { buttonVariants } from "$lib/components/ui/button/index.js";
-	import { cn } from "$lib/utils.js";
+	import { AlertDialog as AlertDialogPrimitive } from 'bits-ui';
+	import { buttonVariants } from '#lib/components/ui/button/index.ts';
+	import { cn } from '#lib/utils.ts';
 
-	type $$Props = AlertDialogPrimitive.ActionProps;
-	type $$Events = AlertDialogPrimitive.ActionEvents;
-
-	let className: $$Props["class"] = undefined;
-	export { className as class };
+	let {
+		class: className,
+		ref = $bindable(null),
+		children,
+		...restProps
+	}: AlertDialogPrimitive.ActionProps = $props();
 </script>
 
-<AlertDialogPrimitive.Action
-	class={cn(buttonVariants(), className)}
-	{...$$restProps}
-	on:click
-	on:keydown
-	let:builder
->
-	<slot {builder} />
+<AlertDialogPrimitive.Action class={cn(buttonVariants(), className)} bind:ref {...restProps}>
+	{@render children?.()}
 </AlertDialogPrimitive.Action>

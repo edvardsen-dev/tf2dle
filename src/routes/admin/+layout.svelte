@@ -1,8 +1,10 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { Activity, ExternalLink, LogOut } from 'lucide-svelte';
+	import { page } from '$app/state';
+	import { Activity, ExternalLink, LogOut } from '@lucide/svelte';
+	import type { Snippet } from 'svelte';
 
-	$: isLoginPage = $page.route.id === '/admin/login';
+	let { children }: { children?: Snippet } = $props();
+	const isLoginPage = $derived(page.route.id === '/admin/login');
 </script>
 
 <div class="min-h-screen bg-background text-foreground">
@@ -44,7 +46,7 @@
 							<a
 								class="flex-1 rounded-md px-4 py-2 text-center text-muted-foreground hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring aria-[current=page]:bg-primary/10 aria-[current=page]:font-semibold aria-[current=page]:text-primary"
 								href={item.href}
-								aria-current={$page.route.id === item.href ? 'page' : undefined}
+								aria-current={page.route.id === item.href ? 'page' : undefined}
 							>
 								{item.label}
 							</a>
@@ -78,6 +80,6 @@
 	</header>
 
 	<div class="py-8">
-		<slot />
+		{@render children?.()}
 	</div>
 </div>

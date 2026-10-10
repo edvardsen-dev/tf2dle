@@ -1,6 +1,5 @@
-import { weaponService } from '$lib/server/services/WeaponService';
-import MetricsService from '$lib/server/services/MetricsService';
-import { json } from '@sveltejs/kit';
+import { weaponService } from '#lib/server/services/WeaponService.ts';
+import MetricsService from '#lib/server/services/MetricsService.ts';
 
 /**
  * Returns info of todays weapon
@@ -9,7 +8,7 @@ import { json } from '@sveltejs/kit';
 export async function GET() {
 	const numberOfCorrectGuesses = await weaponService.getNumberOfCorrectGuesses();
 
-	return json(numberOfCorrectGuesses, { status: 200 });
+	return Response.json(numberOfCorrectGuesses, { status: 200 });
 }
 
 /**
@@ -25,8 +24,8 @@ export async function POST({ request }) {
 		const result = await weaponService.validateGuess(guess);
 		await MetricsService.recordGameGuess('weapon', numberOfGuesses, result.correct);
 
-		return json(result, { status: 200 });
+		return Response.json(result, { status: 200 });
 	} catch (err) {
-		return json('Could not find weapon with name ' + guess, { status: 404 });
+		return Response.json('Could not find weapon with name ' + guess, { status: 404 });
 	}
 }

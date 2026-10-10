@@ -1,8 +1,13 @@
+<script lang="ts">
+	import type { Snippet } from 'svelte';
+	let { children }: { children?: Snippet } = $props();
+</script>
+
 <main class="width m-auto">
-	<slot />
+	{@render children?.()}
 </main>
 
-<style scoped>
+<style>
 	.width {
 		width: min(100%, 700px);
 	}

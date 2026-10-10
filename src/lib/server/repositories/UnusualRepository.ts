@@ -1,5 +1,5 @@
-import type { Unusual } from '$lib/types';
-import type { DailyUnusuals } from '@prisma/client';
+import type { Unusual } from '#lib/types.ts';
+import type { DailyUnusuals } from '#lib/server/generated/prisma/browser.ts';
 import type { Dayjs } from 'dayjs';
 
 export interface UnusualRepository {

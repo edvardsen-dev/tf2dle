@@ -1,10 +1,6 @@
-import {
-	getAdminPassword,
-	isAdminAuthenticated,
-	isAdminEnabled
-} from '$lib/server/adminAuth';
-import { db } from '$lib/server/prisma';
-import { error, json, type RequestHandler } from '@sveltejs/kit';
+import { getAdminPassword, isAdminAuthenticated, isAdminEnabled } from '#lib/server/adminAuth.ts';
+import { db } from '#lib/server/prisma.ts';
+import { error, type RequestHandler } from '@sveltejs/kit';
 
 const DEFAULT_LIMIT = 30;
 const MAX_LIMIT = 100;
@@ -42,7 +38,7 @@ export const GET: RequestHandler = async ({ cookies, url }) => {
 		message: log.message
 	}));
 
-	return json({
+	return Response.json({
 		items,
 		nextCursor: items.at(-1)?.id ?? null,
 		hasMore: logs.length > limit

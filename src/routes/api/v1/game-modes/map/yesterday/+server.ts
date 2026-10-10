@@ -1,8 +1,7 @@
-import { mapService } from '$lib/server/services/MapService';
-import { json } from '@sveltejs/kit';
+import { mapService } from '#lib/server/services/MapService.ts';
 
 export async function GET() {
 	const yesterdayAnswer = await mapService.getYesterdaysAnswer();
 
-	return json(yesterdayAnswer, { status: 200 });
+	return Response.json(yesterdayAnswer, { status: 200 });
 }

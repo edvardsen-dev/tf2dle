@@ -1,9 +1,15 @@
 import { cleanup, fireEvent, render } from '@testing-library/svelte';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import NotificationBanner from '../../src/lib/components/app-notification/NotificationBanner.svelte';
-import { NotificationLevel } from '$lib/types';
+import { NotificationLevel } from '#lib/types.ts';
+import AppNotification from '#lib/components/app-notification/AppNotification.svelte';
 
-afterEach(cleanup);
+vi.mock('$app/env', () => ({ browser: true, dev: false, building: false }));
+
+afterEach(() => {
+	cleanup();
+	localStorage.clear();
+});
 
 describe('NotificationBanner', () => {
 	it.each([
@@ -56,5 +62,31 @@ describe('NotificationBanner', () => {
 
 		await rerender({ class: 'mx-auto w-full max-w-[700px]' });
 		expect(banner.className).toContain('mx-auto w-full max-w-[700px]');
+	});
+});
+
+describe('AppNotification persistence', () => {
+	const notification = {
+		version: 2,
+		type: NotificationLevel.INFO,
+		content: 'Migration announcement'
+	};
+
+	it('persists dismissal and keeps the same version hidden after remounting', async () => {
+		const { getByRole, unmount } = render(AppNotification, { notification });
+		await fireEvent.click(getByRole('button', { name: 'Dismiss notification' }));
+		expect(localStorage.getItem('app_notification')).toBe('{"version":2,"show":false}');
+		unmount();
+		const { queryByRole } = render(AppNotification, { notification });
+		expect(queryByRole('status')).toBeNull();
+		expect(queryByRole('button', { name: 'Dismiss notification' })).toBeNull();
+	});
+
+	it('shows a newer announcement after the previous version was dismissed', () => {
+		localStorage.setItem('app_notification', '{"version":1,"show":false}');
+		const { getByRole } = render(AppNotification, { notification });
+		expect(getByRole('status').textContent).toContain('Migration announcement');
+		expect(getByRole('button', { name: 'Dismiss notification' })).toBeTruthy();
+		expect(localStorage.getItem('app_notification')).toBe('{"version":2,"show":true}');
 	});
 });

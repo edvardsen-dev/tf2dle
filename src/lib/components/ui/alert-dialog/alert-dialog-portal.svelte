@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { AlertDialog as AlertDialogPrimitive } from "bits-ui";
+	import { AlertDialog as AlertDialogPrimitive } from 'bits-ui';
 
-	type $$Props = AlertDialogPrimitive.PortalProps;
+	let { children, ...restProps }: AlertDialogPrimitive.PortalProps = $props();
 </script>
 
-<AlertDialogPrimitive.Portal {...$$restProps}>
-	<slot />
+<AlertDialogPrimitive.Portal {...restProps}>
+	{@render children?.()}
 </AlertDialogPrimitive.Portal>

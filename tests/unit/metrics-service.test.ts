@@ -15,9 +15,9 @@ const { db } = vi.hoisted(() => ({
 	}
 }));
 
-vi.mock('$lib/server/prisma', () => ({ db }));
+vi.mock('#lib/server/prisma.ts', () => ({ db }));
 
-import MetricsService from '$lib/server/services/MetricsService';
+import MetricsService from '#lib/server/services/MetricsService.ts';
 
 beforeEach(() => {
 	vi.clearAllMocks();

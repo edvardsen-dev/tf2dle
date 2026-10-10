@@ -1,5 +1,4 @@
-import { mapService } from '$lib/server/services/MapService';
-import { json } from '@sveltejs/kit';
+import { mapService } from '#lib/server/services/MapService.ts';
 
 /**
  * Returns a list of all maps
@@ -8,5 +7,5 @@ import { json } from '@sveltejs/kit';
 export async function GET() {
 	const maps = mapService.getMaps();
 
-	return json(maps);
+	return Response.json(maps);
 }

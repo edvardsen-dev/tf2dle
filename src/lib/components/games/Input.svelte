@@ -1,50 +1,65 @@
 <script lang="ts">
-	import { Loader2 } from 'lucide-svelte';
-	import { createEventDispatcher } from 'svelte';
+	import { LoaderCircle } from '@lucide/svelte';
+	import { onDestroy } from 'svelte';
 
-	// Data to show in dropdown
-	export let data: { img: string; value: string }[] = [];
-	// Already guessed values
-	export let guessed: string[];
-	export let placeholder = 'Enter your guess';
-	export let validating: boolean;
-	// Size of image to be displayed in the dropdown
-	export let imageSize = 3;
+	interface Props {
+		data?: { img: string; value: string }[];
+		guessed: string[];
+		placeholder?: string;
+		validating: boolean;
+		imageSize?: number;
+		onselect: (value: string) => void;
+	}
 
-	const dispatch = createEventDispatcher<{ select: string }>();
+	let {
+		data = [],
+		guessed,
+		placeholder = 'Enter your guess',
+		validating,
+		imageSize = 3,
+		onselect
+	}: Props = $props();
 
-	let value = '';
-	let inputElement: HTMLInputElement;
-	let selectTimeout = false;
-	let sliceAmount = 10;
-	let activeIndex = 0;
-	let dropdownDismissed = false;
-	let inputId = `guess-input-${Math.random().toString(36).slice(2)}`;
-	let listboxId = `${inputId}-listbox`;
+	let value = $state('');
+	let inputElement = $state.raw<HTMLInputElement>();
+	let selectTimeout = $state(false);
+	let selectTimer: ReturnType<typeof setTimeout> | undefined;
+	let sliceAmount = $state(10);
+	let activeIndex = $state(0);
+	let dropdownDismissed = $state(false);
+	const id = $props.id();
+	const inputId = `guess-input-${id}`;
+	const listboxId = `${inputId}-listbox`;
 
-	$: normalizedValue = value.trim().toLowerCase();
-	$: filteredData = data
-		.filter((d) => !guessed.includes(d.value) && d.value.toLowerCase().includes(normalizedValue))
-		.slice(0, sliceAmount);
-	$: alreadyGuessed = guessed.some((guess) => guess.toLowerCase() === normalizedValue);
-	$: hasSearch = normalizedValue.length > 0;
-	$: showDropdown = hasSearch && !dropdownDismissed;
-	$: activeIndex = Math.min(activeIndex, Math.max(filteredData.length - 1, 0));
-	$: activeOptionId = filteredData.length > 0 ? `${listboxId}-option-${activeIndex}` : undefined;
+	let normalizedValue = $derived(value.trim().toLowerCase());
+	let filteredData = $derived(
+		data
+			.filter((d) => !guessed.includes(d.value) && d.value.toLowerCase().includes(normalizedValue))
+			.slice(0, sliceAmount)
+	);
+	let alreadyGuessed = $derived(guessed.some((guess) => guess.toLowerCase() === normalizedValue));
+	let hasSearch = $derived(normalizedValue.length > 0);
+	let showDropdown = $derived(hasSearch && !dropdownDismissed);
+	let selectedIndex = $derived(Math.min(activeIndex, Math.max(filteredData.length - 1, 0)));
+	let activeOptionId = $derived(
+		filteredData.length > 0 ? `${listboxId}-option-${selectedIndex}` : undefined
+	);
+
+	onDestroy(() => clearTimeout(selectTimer));
 
 	/**
-	 * Handles the select event, dispatching the selected value
+	 * Handles the selected value
 	 * @param selected the value selected
 	 */
 	function handleSelect(selected: string) {
 		if (validating || selectTimeout || value === '') return;
 
 		selectTimeout = true;
-		dispatch('select', selected);
+		onselect(selected);
 		value = '';
-		inputElement.focus();
+		inputElement?.focus();
 
-		setTimeout(() => {
+		selectTimer = setTimeout(() => {
 			selectTimeout = false;
 		}, 100);
 	}
@@ -73,19 +88,19 @@
 
 		if (event.key === 'ArrowDown') {
 			event.preventDefault();
-			activeIndex = (activeIndex + 1) % filteredData.length;
+			activeIndex = (selectedIndex + 1) % filteredData.length;
 			return;
 		}
 
 		if (event.key === 'ArrowUp') {
 			event.preventDefault();
-			activeIndex = (activeIndex - 1 + filteredData.length) % filteredData.length;
+			activeIndex = (selectedIndex - 1 + filteredData.length) % filteredData.length;
 			return;
 		}
 
 		if (event.key === 'Enter') {
 			event.preventDefault();
-			const data = filteredData[activeIndex];
+			const data = filteredData[selectedIndex];
 			if (data) {
 				handleSelect(data.value);
 			}
@@ -109,11 +124,12 @@
 			id={inputId}
 			bind:value
 			bind:this={inputElement}
-			on:input={handleInput}
-			on:keydown={handleKeyPress}
+			oninput={handleInput}
+			onkeydown={handleKeyPress}
 			class="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
 			type="text"
 			{placeholder}
+			aria-label={placeholder}
 			role="combobox"
 			aria-autocomplete="list"
 			aria-controls={listboxId}
@@ -123,7 +139,7 @@
 			data-testId="input"
 		/>
 		{#if validating}
-			<Loader2 class="animate-spin absolute right-3 top-2 text-muted-foreground" />
+			<LoaderCircle class="animate-spin absolute right-3 top-2 text-muted-foreground" />
 		{/if}
 	</div>
 	{#if showDropdown}
@@ -132,7 +148,7 @@
 			role="listbox"
 			data-testId="dropdown"
 			class="dropdown absolute bg-background w-full border border-input ring-offset-background rounded-md max-h-80 overflow-y-auto z-50"
-			on:scroll={handleScroll}
+			onscroll={handleScroll}
 		>
 			{#if filteredData.length > 0}
 				{#each filteredData as d, index}
@@ -140,12 +156,13 @@
 						id={`${listboxId}-option-${index}`}
 						class="p-1"
 						role="option"
-						aria-selected={index === activeIndex}
+						aria-selected={index === selectedIndex}
 					>
 						<button
-							on:mouseenter={() => (activeIndex = index)}
-							on:click={() => handleSelect(d.value)}
-							class="flex items-center gap-4 p-2 w-full rounded-sm text-left {index === activeIndex
+							onmouseenter={() => (activeIndex = index)}
+							onclick={() => handleSelect(d.value)}
+							class="flex items-center gap-4 p-2 w-full rounded-sm text-left {index ===
+							selectedIndex
 								? 'bg-accent text-accent-foreground'
 								: ''}"
 						>

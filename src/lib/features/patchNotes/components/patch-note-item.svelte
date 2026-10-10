@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { UpdateCredit, UpdateEntry } from '$lib/features/patchNotes/types';
+	import type { UpdateCredit, UpdateEntry } from '#lib/features/patchNotes/types.ts';
 
-	export let item: UpdateEntry;
+	let { item }: { item: UpdateEntry } = $props();
 
-	$: gameModeBadges = item.gameModes?.filter(isGameMode) ?? [];
+	const gameModeBadges = $derived(item.gameModes?.filter(isGameMode) ?? []);
 
 	function getCreditLabel(credit: UpdateCredit) {
 		if (credit.type === 'contribution') return 'Contributed by';

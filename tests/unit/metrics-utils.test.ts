@@ -1,9 +1,9 @@
-import dayjs from '$lib/configs/dayjsConfig';
+import dayjs from '#lib/configs/dayjsConfig.ts';
 import {
 	buildDashboardMetrics,
 	normalizeAttemptNumber,
 	resolveMonthSelection
-} from '$lib/server/metricsUtils';
+} from '#lib/server/metricsUtils.ts';
 import { expect, test } from 'vitest';
 
 test('normalizes invalid attempt numbers to first attempt', () => {

@@ -1,18 +1,22 @@
 <script lang="ts">
-	import { useLocalStorage } from '$lib/composables/useLocalStorage';
-	import { onMount } from 'svelte';
+	import { useLocalStorage } from '#lib/composables/useLocalStorage.ts';
+	import { onMount, untrack } from 'svelte';
 	import NotificationBanner from './NotificationBanner.svelte';
-	import type { AppNotification } from '$lib/types';
+	import type { AppNotification } from '#lib/types.ts';
 
-	export let notification: AppNotification | null;
-	let className: string | undefined = undefined;
-	export { className as class };
+	let {
+		notification,
+		class: className
+	}: {
+		notification: AppNotification | null;
+		class?: string;
+	} = $props();
 
-	let mounted = false;
+	let mounted = $state(false);
 
 	const notificationStore = useLocalStorage(
 		'app_notification',
-		notification ? { version: notification.version, show: true } : null
+		untrack(() => (notification ? { version: notification.version, show: true } : null))
 	);
 
 	onMount(() => {

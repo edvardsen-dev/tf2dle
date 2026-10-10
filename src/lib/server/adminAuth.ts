@@ -1,5 +1,5 @@
-import { dev } from '$app/environment';
-import { env } from '$env/dynamic/private';
+import { dev } from '$app/env';
+import { ADMIN_PASSWORD } from '$app/env/private';
 import type { Cookies } from '@sveltejs/kit';
 import { createHmac, timingSafeEqual } from 'node:crypto';
 
@@ -8,7 +8,7 @@ const COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
 const SESSION_MAX_AGE_MS = COOKIE_MAX_AGE * 1000;
 
 export function getAdminPassword() {
-	const password = env.ADMIN_PASSWORD;
+	const password = ADMIN_PASSWORD;
 
 	return password && password.trim().length > 0 ? password : null;
 }

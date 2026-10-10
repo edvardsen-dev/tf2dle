@@ -1,7 +1,6 @@
-import dayjs from '$lib/configs/dayjsConfig';
-import MetricsService from '$lib/server/services/MetricsService';
-import { weaponTwoService } from '$lib/server/services/WeaponTwoService';
-import { json } from '@sveltejs/kit';
+import dayjs from '#lib/configs/dayjsConfig.ts';
+import MetricsService from '#lib/server/services/MetricsService.ts';
+import { weaponTwoService } from '#lib/server/services/WeaponTwoService.ts';
 
 /**
  * Returns number of correct guesses for todays weapon
@@ -11,7 +10,7 @@ export async function GET() {
 	const currentTime = dayjs.utc();
 	const todaysWeapon = await weaponTwoService.getWeaponByDay(currentTime);
 
-	return json({
+	return Response.json({
 		weapon: {
 			numberOfTotalAttributes: todaysWeapon.attributes.length - 1,
 			attributes: [todaysWeapon.attributes[1]]
@@ -26,5 +25,5 @@ export async function POST({ request }) {
 	const result = await weaponTwoService.validateGuess(guess, numberOfGuesses);
 	await MetricsService.recordGameGuess('weapon-2', numberOfGuesses, result.correct);
 
-	return json(result);
+	return Response.json(result);
 }

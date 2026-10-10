@@ -1,4 +1,4 @@
-FROM node:20.19-alpine AS builder
+FROM node:24-alpine AS builder
 WORKDIR /app
 
 ARG PUBLIC_CDN_URL
@@ -7,23 +7,25 @@ ENV PUBLIC_CDN_URL=$PUBLIC_CDN_URL
 ENV PUBLIC_APP_VERSION=$PUBLIC_APP_VERSION
 
 # Install pnpm
-RUN npm install -g pnpm@10.21.0
+RUN npm install -g npm@12.2.0 && npm install -g pnpm@12.10.1
 
 # Copy dependencies
-COPY package.json pnpm-lock.yaml .
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .
 RUN pnpm install --frozen-lockfile
 
 # Copy source code
 COPY . .
 
 # Generate Prisma client
-RUN npx prisma@6.14.0 generate
+RUN pnpm exec prisma generate
 
-RUN pnpm build
+RUN pnpm exec svelte-kit sync && pnpm build
 RUN pnpm prune --production
 
-FROM node:20.19-alpine
+FROM node:24-alpine
 WORKDIR /app
+
+RUN npm install -g npm@12.2.0
 
 ARG PUBLIC_APP_VERSION=dev
 
@@ -32,6 +34,8 @@ RUN apk add --no-cache openssl
 COPY --from=builder /app/build build/
 COPY --from=builder /app/node_modules node_modules/
 COPY --from=builder /app/prisma prisma/
+COPY --from=builder /app/prisma.config.ts .
+COPY server.mjs .
 COPY package.json .
 
 EXPOSE 3000
@@ -39,4 +43,4 @@ EXPOSE 3000
 ENV NODE_ENV=production
 ENV PUBLIC_APP_VERSION=$PUBLIC_APP_VERSION
 
-CMD ["sh", "-c", "npx prisma@6.14.0 migrate deploy && node build"]
+CMD ["sh", "-c", "./node_modules/.bin/prisma migrate deploy && node server.mjs"]

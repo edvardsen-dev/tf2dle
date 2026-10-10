@@ -1,5 +1,5 @@
 import { beforeEach, expect, test, vi } from 'vitest';
-import { NotificationLevel } from '$lib/types';
+import { NotificationLevel } from '#lib/types.ts';
 
 const { db } = vi.hoisted(() => ({
 	db: {
@@ -11,9 +11,9 @@ const { db } = vi.hoisted(() => ({
 	}
 }));
 
-vi.mock('$lib/server/prisma', () => ({ db }));
+vi.mock('#lib/server/prisma.ts', () => ({ db }));
 
-import { appNotificationRepository } from '$lib/server/repositories/AppNotificationRepositoryPrisma';
+import { appNotificationRepository } from '#lib/server/repositories/AppNotificationRepositoryPrisma.ts';
 
 beforeEach(() => {
 	vi.resetAllMocks();

@@ -1,47 +1,48 @@
 <script lang="ts">
-	import { useLocalStorage } from '$lib/composables/useLocalStorage';
+	import { useLocalStorage } from '#lib/composables/useLocalStorage.ts';
 	import { onMount } from 'svelte';
-	import * as Card from '$lib/components/ui/card';
-	import Input from '$lib/components/games/Input.svelte';
+	import * as Card from '#lib/components/ui/card/index.ts';
+	import Input from '#lib/components/games/Input.svelte';
 	import ImageShowcase from './ImageShowcase.svelte';
-	import dayjs from '$lib/configs/dayjsConfig';
-	import type { MapGuessResponse } from '$lib/dtos.js';
-	import ColorExplanation from '$lib/components/games/ColorExplanation.svelte';
+	import dayjs from '#lib/configs/dayjsConfig.ts';
+	import type { MapGuessResponse } from '#lib/dtos.ts';
+	import ColorExplanation from '#lib/components/games/ColorExplanation.svelte';
 	import GuessesList from './GuessesList.svelte';
-	import VictoryDialog from '$lib/components/games/VictoryDialog.svelte';
-	import { AreaChart, Dices, Flame, RotateCw } from 'lucide-svelte';
+	import VictoryDialog from '#lib/components/games/VictoryDialog.svelte';
+	import { ChartArea, Dices, Flame, RotateCw } from '@lucide/svelte';
 	import { toast } from 'svelte-sonner';
-	import { useStats } from '$lib/composables/useStats';
-	import StatsDialog from '$lib/components/games/StatsDialog.svelte';
-	import WinterDecore from '$lib/features/theme/components/winter/WinterDecore.svelte';
-	import { CDN_URL } from '$lib/constants';
-	import CommunityStatus from '$lib/components/games/CommunityStatus.svelte';
-	import CompletedResult from '$lib/components/games/CompletedResult.svelte';
-	import GameLoadingSkeleton from '$lib/components/games/GameLoadingSkeleton.svelte';
-	import YesterdayAnswer from '$lib/components/games/YesterdayAnswer.svelte';
+	import { useStats } from '#lib/composables/useStats.ts';
+	import StatsDialog from '#lib/components/games/StatsDialog.svelte';
+	import WinterDecore from '#lib/features/theme/components/winter/WinterDecore.svelte';
+	import { CDN_URL } from '#lib/constants.ts';
+	import CommunityStatus from '#lib/components/games/CommunityStatus.svelte';
+	import CompletedResult from '#lib/components/games/CompletedResult.svelte';
+	import GameLoadingSkeleton from '#lib/components/games/GameLoadingSkeleton.svelte';
+	import YesterdayAnswer from '#lib/components/games/YesterdayAnswer.svelte';
+	import type { PageData } from './$types.js';
 
-	export let data;
+	let { data }: { data: PageData } = $props();
 
-	$: ({ todaysMap } = data);
+	let todaysMap = $derived(data.todaysMap);
 
 	const stats = useStats('map');
-	let openStatsDialog = false;
+	let openStatsDialog = $state(false);
 
 	// State persisted in local storage
-	let gameState: 'guessing' | 'won' = 'guessing';
-	let lastEvent = useLocalStorage<{ event: 'won' | 'guessed'; date: string } | null>(
+	let gameState = $state<'guessing' | 'won'>('guessing');
+	const lastEvent = useLocalStorage<{ event: 'won' | 'guessed'; date: string } | null>(
 		'map_last_event',
 		null
 	);
-	let guesses = useLocalStorage<MapGuessResponse[]>('map_guesses', []);
-	let streak = useLocalStorage<number>('map_streak', 0);
-	let todaysMapName = useLocalStorage<string>('map_todays_map_name', '');
+	const guesses = useLocalStorage<MapGuessResponse[]>('map_guesses', []);
+	const streak = useLocalStorage<number>('map_streak', 0);
+	const todaysMapName = useLocalStorage<string>('map_todays_map_name', '');
 
 	// Current game state
-	let validating = false;
-	let openDialog = false;
+	let validating = $state(false);
+	let openDialog = $state(false);
 
-	let numberOfCorrectGuesses: number | undefined = undefined;
+	let numberOfCorrectGuesses = $state<number>();
 
 	onMount(async () => {
 		// Load data
@@ -171,8 +172,8 @@
 						{$guesses.length}
 					</p>
 					<p class="flex items-center"><Flame aria-label="streak" /> {$streak}</p>
-					<button on:click={() => (openStatsDialog = true)}>
-						<AreaChart aria-label="Stats" />
+					<button onclick={() => (openStatsDialog = true)} aria-label="Open stats">
+						<ChartArea />
 					</button>
 				</div>
 			</div>
@@ -195,13 +196,13 @@
 							{#if gameState === 'guessing'}
 								<CommunityStatus challenge="map" correctGuesses={numberOfCorrectGuesses} />
 								<Input
-									on:select={(event) => handleSelect(event.detail)}
+									onselect={handleSelect}
 									data={maps?.map((map) => ({
 										img: `${CDN_URL}/maps/thumbnails/${map.thumbnail}.png`,
 										value: map.name
 									}))}
 									guessed={$guesses.map((guess) => guess.name.value)}
-									bind:validating
+									{validating}
 								/>
 							{:else if numberOfCorrectGuesses !== undefined}
 								<CompletedResult

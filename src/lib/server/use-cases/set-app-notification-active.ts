@@ -1,4 +1,4 @@
-import type { AppNotificationRepository } from '../repositories/AppNotificationRepository';
+import type { AppNotificationRepository } from '#lib/server/repositories/AppNotificationRepository.ts';
 
 type UpdateAppNotificationRepo = Pick<
 	AppNotificationRepository,

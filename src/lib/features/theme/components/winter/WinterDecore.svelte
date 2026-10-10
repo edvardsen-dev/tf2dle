@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { disableExtraVisuals } from '../../composables/useDisableTheme';
-	import { isWinter } from '../../utils';
+	import { disableExtraVisuals } from '../../composables/useDisableTheme.ts';
+	import { isWinter } from '../../utils.ts';
 </script>
 
 {#if !$disableExtraVisuals && isWinter()}

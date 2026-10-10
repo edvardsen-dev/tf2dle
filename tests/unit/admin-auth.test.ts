@@ -3,7 +3,7 @@ import {
 	isAdminEnabled,
 	isValidAdminPassword,
 	isValidAdminSessionToken
-} from '$lib/server/adminAuth';
+} from '#lib/server/adminAuth.ts';
 import { expect, test } from 'vitest';
 
 test('admin is disabled without a password', () => {

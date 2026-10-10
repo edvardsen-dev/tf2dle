@@ -1,10 +1,10 @@
-import { get, readable, writable, type Writable } from 'svelte/store';
-import { useLocalStorage } from './useLocalStorage';
-import { type GuessResponse, type WeaponGuessResponse } from '$lib/dtos';
+import { get, writable, type Writable } from 'svelte/store';
+import { useLocalStorage } from './useLocalStorage.ts';
+import type { GuessResponse } from '#lib/dtos.ts';
 import { onMount } from 'svelte';
-import dayjs from '$lib/configs/dayjsConfig';
+import dayjs from '#lib/configs/dayjsConfig.ts';
 import { toast } from 'svelte-sonner';
-import { useStats } from './useStats';
+import { useStats } from './useStats.ts';
 
 export function useGameEngine<T extends GuessResponse>(
 	gamemode: string,
