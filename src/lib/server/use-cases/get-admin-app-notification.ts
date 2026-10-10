@@ -1,5 +1,5 @@
-import type { AdminAppNotification } from '$lib/types';
-import type { AppNotificationRepository } from '../repositories/AppNotificationRepository';
+import type { AdminAppNotification } from '#lib/types.ts';
+import type { AppNotificationRepository } from '#lib/server/repositories/AppNotificationRepository.ts';
 
 type GetAppNotificationRepo = Pick<AppNotificationRepository, 'getAppNotification'>;
 

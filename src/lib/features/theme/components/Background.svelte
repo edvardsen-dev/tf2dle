@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { isDecember, isHalloween } from '../utils';
-	import { browser } from '$app/environment';
+	import { isDecember, isHalloween } from '../utils.ts';
+	import { browser } from '$app/env';
 
-	$: backgroundImage = getBackgroundImage();
+	const backgroundImage = getBackgroundImage();
 
 	function getBackgroundImage() {
 		if (isHalloween()) {
@@ -19,6 +19,8 @@
 
 	onMount(() => {
 		if (browser) {
+			const previousBackground = document.body.style.backgroundImage;
+			const previousSeason = document.documentElement.dataset.season;
 			document.body.style.backgroundImage = backgroundImage;
 
 			if (isHalloween()) {
@@ -26,6 +28,12 @@
 			} else {
 				delete document.documentElement.dataset.season;
 			}
+
+			return () => {
+				document.body.style.backgroundImage = previousBackground;
+				if (previousSeason === undefined) delete document.documentElement.dataset.season;
+				else document.documentElement.dataset.season = previousSeason;
+			};
 		}
 	});
 </script>

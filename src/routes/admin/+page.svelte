@@ -1,17 +1,19 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
-	import type { SubmitFunction } from '@sveltejs/kit';
-	import { ChevronLeft, ChevronRight } from 'lucide-svelte';
+	import { enhance, type SubmitFunction } from '$app/forms';
+	import { ChevronLeft, ChevronRight } from '@lucide/svelte';
 	import { onMount } from 'svelte';
 	import type { Chart as ChartInstance, ChartConfiguration } from 'chart.js';
-	import * as Card from '$lib/components/ui/card';
+	import * as Card from '#lib/components/ui/card/index.ts';
+	import type { PageProps } from './$types.js';
 	import AdminLogs from './AdminLogs.svelte';
 	import KpiCard from './KpiCard.svelte';
 
-	export let data;
+	let { data }: Pick<PageProps, 'data'> = $props();
 
-	let pendingMetricsLoggingEnabled: boolean | null = null;
-	$: metricsLoggingEnabled = pendingMetricsLoggingEnabled ?? data.metricsLoggingEnabled;
+	let pendingMetricsLoggingEnabled = $state<boolean | null>(null);
+	const metricsLoggingEnabled = $derived(
+		pendingMetricsLoggingEnabled ?? data.metricsLoggingEnabled
+	);
 
 	const optimisticallyToggleMetrics: SubmitFunction = () => {
 		pendingMetricsLoggingEnabled = !metricsLoggingEnabled;
@@ -27,19 +29,19 @@
 	type DailyModeMetric = 'guesses' | 'wins';
 	type ModeKey = 'weapon' | 'weapon-2' | 'map' | 'cosmetic' | 'unusual';
 
-	let trendCanvas: HTMLCanvasElement;
-	let modeGuessesCanvas: HTMLCanvasElement;
-	let modeWinsCanvas: HTMLCanvasElement;
-	let trendChart: TrendChart | undefined;
-	let modeGuessesChart: DailyModeChart | undefined;
-	let modeWinsChart: DailyModeChart | undefined;
+	let trendCanvas = $state<HTMLCanvasElement>();
+	let modeGuessesCanvas = $state<HTMLCanvasElement>();
+	let modeWinsCanvas = $state<HTMLCanvasElement>();
+	let trendChart = $state.raw<TrendChart>();
+	let modeGuessesChart = $state.raw<DailyModeChart>();
+	let modeWinsChart = $state.raw<DailyModeChart>();
 	let ChartConstructor: typeof import('chart.js/auto').default | undefined;
-	$: metrics = data.metrics;
-	$: dailyTotals = [...metrics.daily].reverse();
-	$: modeStartsMax = Math.max(1, ...metrics.modes.map((mode) => mode.starts));
-	$: if (metrics && (trendChart || modeGuessesChart || modeWinsChart)) {
-		updateCharts();
-	}
+	const metrics = $derived(data.metrics);
+	const dailyTotals = $derived([...metrics.daily].reverse());
+	const modeStartsMax = $derived(Math.max(1, ...metrics.modes.map((mode) => mode.starts)));
+	$effect(() => {
+		if (metrics && (trendChart || modeGuessesChart || modeWinsChart)) updateCharts();
+	});
 
 	onMount(() => {
 		let disposed = false;

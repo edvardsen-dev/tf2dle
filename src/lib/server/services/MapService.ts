@@ -1,11 +1,11 @@
-import maps from '$lib/server/data/maps.json';
-import type { Map } from '$lib/types';
-import dayjs from '$lib/configs/dayjsConfig';
-import type { MapRepository } from '../repositories/MapRepository';
-import { mapRepository } from '../repositories/MapRepositoryPrisma';
-import LogService from './LogService';
+import maps from '#lib/server/data/maps.json';
+import type { Map } from '#lib/types.ts';
+import dayjs from '#lib/configs/dayjsConfig.ts';
+import type { MapRepository } from '#lib/server/repositories/MapRepository.ts';
+import { mapRepository } from '#lib/server/repositories/MapRepositoryPrisma.ts';
+import LogService from '#lib/server/services/LogService.ts';
 import type { Dayjs } from 'dayjs';
-import { generateRandomNumber } from '../utils';
+import { generateRandomNumber } from '#lib/server/utils.ts';
 
 class MapService {
 	private maps: Map[];

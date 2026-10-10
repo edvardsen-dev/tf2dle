@@ -1,4 +1,4 @@
-import type { MapDto, SelectedMapDto } from '$lib/dtos';
+import type { MapDto, SelectedMapDto } from '#lib/dtos.ts';
 import { error } from '@sveltejs/kit';
 
 export const load = async ({ fetch }) => {

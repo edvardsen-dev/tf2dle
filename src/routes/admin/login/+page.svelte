@@ -1,8 +1,9 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button/button.svelte';
-	import * as Card from '$lib/components/ui/card';
+	import Button from '#lib/components/ui/button/button.svelte';
+	import * as Card from '#lib/components/ui/card/index.ts';
+	import type { PageProps } from './$types.js';
 
-	export let form;
+	let { form }: Pick<PageProps, 'form'> = $props();
 </script>
 
 <main class="mx-auto grid min-h-[55vh] w-full max-w-md content-center px-4">

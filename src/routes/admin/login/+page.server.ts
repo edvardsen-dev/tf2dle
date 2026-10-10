@@ -4,7 +4,7 @@ import {
 	isAdminEnabled,
 	isValidAdminPassword,
 	setAdminSessionCookie
-} from '$lib/server/adminAuth';
+} from '#lib/server/adminAuth.ts';
 import { error, fail, redirect } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
 

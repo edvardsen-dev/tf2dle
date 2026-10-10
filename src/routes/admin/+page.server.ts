@@ -3,8 +3,8 @@ import {
 	getAdminPassword,
 	isAdminAuthenticated,
 	isAdminEnabled
-} from '$lib/server/adminAuth';
-import MetricsService from '$lib/server/services/MetricsService';
+} from '#lib/server/adminAuth.ts';
+import MetricsService from '#lib/server/services/MetricsService.ts';
 import { error, redirect, type Cookies } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
 

@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { CDN_URL } from '$lib/constants';
-	import type { CosmeticGuessResponse } from '$lib/dtos';
+	import { CDN_URL } from '#lib/constants.ts';
+	import type { CosmeticGuessResponse } from '#lib/dtos.ts';
 	import { scale } from 'svelte/transition';
 
 	// The guesses made by the user
-	export let guesses: CosmeticGuessResponse[];
+	let { guesses }: { guesses: CosmeticGuessResponse[] } = $props();
 </script>
 
 <div class="grid gap-2">

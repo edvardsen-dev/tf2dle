@@ -19,6 +19,8 @@ Dockerfile
 
 # App
 
+.env
+.env.*
 .svelte-kit
 node_modules
 build

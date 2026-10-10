@@ -1,4 +1,4 @@
-import { browser } from '$app/environment';
+import { browser } from '$app/env';
 import { get, writable } from 'svelte/store';
 
 /**
@@ -21,7 +21,7 @@ export function useStats(gamemode: string) {
 	 * @param attempt it took the player to guess correct
 	 */
 	function incrementAttempt(attempt: number) {
-		let currentStats = get(store);
+		const currentStats = [...get(store)];
 
 		if (currentStats[attempt - 1]) {
 			currentStats[attempt - 1]++;

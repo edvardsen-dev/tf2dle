@@ -1,16 +1,22 @@
 <script lang="ts">
-	import * as Dialog from '$lib/components/ui/dialog';
+	import * as Dialog from '#lib/components/ui/dialog/index.ts';
 
-	export let stats: number[];
-	export let open: boolean;
+	interface Props {
+		stats: number[];
+		open: boolean;
+	}
+
+	let { stats, open = $bindable() }: Props = $props();
 
 	const FULL_WIDTH = 100;
 
-	$: maxWins = getMaxWins(stats);
-	$: totalWins = stats.reduce((total, value) => total + (value ?? 0), 0);
-	$: totalGuesses = stats.reduce((total, value, index) => total + (value ?? 0) * (index + 1), 0);
-	$: averageGuesses = totalWins > 0 ? (totalGuesses / totalWins).toFixed(1) : '-';
-	$: bestSolve = getBestSolve(stats);
+	let maxWins = $derived(getMaxWins(stats));
+	let totalWins = $derived(stats.reduce((total, value) => total + (value ?? 0), 0));
+	let totalGuesses = $derived(
+		stats.reduce((total, value, index) => total + (value ?? 0) * (index + 1), 0)
+	);
+	let averageGuesses = $derived(totalWins > 0 ? (totalGuesses / totalWins).toFixed(1) : '-');
+	let bestSolve = $derived(getBestSolve(stats));
 
 	function getMaxWins(stats: number[]) {
 		let max = 0;

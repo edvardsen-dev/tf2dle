@@ -1,8 +1,8 @@
-import dayjs from '$lib/configs/dayjsConfig';
-import type { Weapon } from '$lib/types';
+import dayjs from '#lib/configs/dayjsConfig.ts';
+import type { Weapon } from '#lib/types.ts';
 import type { Dayjs } from 'dayjs';
-import { db } from '../prisma';
-import type { WeaponRepository } from './WeaponRepository';
+import { db } from '#lib/server/prisma.ts';
+import type { WeaponRepository } from '#lib/server/repositories/WeaponRepository.ts';
 
 class WeaponRepositoryPrisma implements WeaponRepository {
 	async incrementNumberOfCorrectGuesses(date: Dayjs): Promise<void> {

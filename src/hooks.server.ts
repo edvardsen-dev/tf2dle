@@ -1,4 +1,4 @@
-import type { Handle } from '@sveltejs/kit';
+import type { Handle } from '@sveltejs/kit/hooks';
 
 export const handle = (async ({ event, resolve }) => {
 	let colorBlindMode = event.cookies.get('colorBlindMode') === 'true';

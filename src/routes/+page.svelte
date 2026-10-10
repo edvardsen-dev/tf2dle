@@ -6,7 +6,7 @@
 	<GameModes />
 </div>
 
-<style scoped>
+<style>
 	.width {
 		width: min(100%, 700px);
 	}

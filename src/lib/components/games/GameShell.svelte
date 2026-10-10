@@ -1,32 +1,53 @@
 <script lang="ts">
-	import * as Card from '$lib/components/ui/card';
-	import { AreaChart, Dices, Flame, RotateCw } from 'lucide-svelte';
+	import * as Card from '#lib/components/ui/card/index.ts';
+	import { ChartArea, Dices, Flame, RotateCw } from '@lucide/svelte';
 	import ColorExplanation from './ColorExplanation.svelte';
 	import GameLoadingSkeleton from './GameLoadingSkeleton.svelte';
 	import StatsDialog from './StatsDialog.svelte';
 	import VictoryDialog from './VictoryDialog.svelte';
 	import type { Writable } from 'svelte/store';
-	import type { UseStats } from '$lib/composables/useStats';
-	import { page } from '$app/stores';
-	import WinterDecore from '$lib/features/theme/components/winter/WinterDecore.svelte';
-	import type { ShareMode } from '$lib/share';
+	import type { Snippet } from 'svelte';
+	import type { UseStats } from '#lib/composables/useStats.ts';
+	import { page } from '$app/state';
+	import WinterDecore from '#lib/features/theme/components/winter/WinterDecore.svelte';
+	import type { ShareMode } from '#lib/share.ts';
 
-	export let title: string;
-	export let challenge: string;
-	export let shareMode: ShareMode;
-	export let description: string;
-	export let img: { basePath: string; guessKey: string };
-	export let loadingState: 'loading' | 'error' | 'success';
-	export let nextChallenge: string | undefined = undefined;
+	interface Props {
+		title: string;
+		challenge: string;
+		shareMode: ShareMode;
+		description: string;
+		img: { basePath: string; guessKey: string };
+		loadingState: 'loading' | 'error' | 'success';
+		nextChallenge?: string;
+		// TODO: Pass in generic?
+		guesses: Writable<any>;
+		streak: Writable<number>;
+		stats: UseStats;
+		numberOfCorrectGuesses: Writable<number | undefined>;
+		openVictoryDialog: Writable<boolean>;
+		children: Snippet;
+		footer?: Snippet;
+	}
 
-	// TODO: Pass in generic?
-	export let guesses: Writable<any>;
-	export let streak: Writable<number>;
-	export let stats: UseStats;
-	export let numberOfCorrectGuesses: Writable<number | undefined>;
-	export let openVictoryDialog: Writable<boolean>;
+	let {
+		title,
+		challenge,
+		shareMode,
+		description,
+		img,
+		loadingState,
+		nextChallenge,
+		guesses,
+		streak,
+		stats,
+		numberOfCorrectGuesses,
+		openVictoryDialog,
+		children,
+		footer
+	}: Props = $props();
 
-	let openStatsDialog = false;
+	let openStatsDialog = $state(false);
 </script>
 
 <div class="grid gap-4">
@@ -46,8 +67,12 @@
 						<Flame aria-label="Streak" />
 						{$streak}
 					</p>
-					<button on:click={() => (openStatsDialog = true)} data-testId="openStatsDialog">
-						<AreaChart aria-label="Stats" />
+					<button
+						onclick={() => (openStatsDialog = true)}
+						aria-label="Open stats"
+						data-testId="openStatsDialog"
+					>
+						<ChartArea />
 					</button>
 				</div>
 			</div>
@@ -59,7 +84,7 @@
 			{:else if loadingState === 'error'}
 				<a
 					data-sveltekit-reload
-					href={$page.url.pathname}
+					href={page.url.pathname}
 					class="grid justify-items-center gap-4 p-4"
 					data-testId="refresh"
 				>
@@ -67,11 +92,11 @@
 					<RotateCw class="w-4 h-4" />
 				</a>
 			{:else}
-				<slot />
+				{@render children()}
 			{/if}
 		</Card.Content>
 		<Card.Footer class="text-sm text-muted-foreground">
-			<slot name="footer" />
+			{@render footer?.()}
 		</Card.Footer>
 	</Card.Root>
 

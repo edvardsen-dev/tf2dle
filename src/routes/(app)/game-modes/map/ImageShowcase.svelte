@@ -1,39 +1,41 @@
 <script lang="ts">
-	import { onMount, tick } from 'svelte';
-
-	// The image to display
-	export let url: string;
-	// Where to start the zoom
-	export let startingPos: { x: number; y: number };
-	// The number of guesses the user has made
-	export let numberOfGuesses: number;
-	// Whether the user has won the game
-	export let hasWon: boolean;
-	// Name of map to display when user has won
-	export let mapName: string;
+	interface Props {
+		url: string;
+		startingPos: { x: number; y: number };
+		numberOfGuesses: number;
+		hasWon: boolean;
+		mapName: string;
+	}
+	let { url, startingPos, numberOfGuesses, hasWon, mapName }: Props = $props();
 
 	const STEPS = 11;
 
-	let container: HTMLDivElement;
-	let canvas: HTMLCanvasElement;
-	let img: HTMLImageElement;
+	let container = $state.raw<HTMLDivElement>();
+	let canvas = $state.raw<HTMLCanvasElement>();
+	let img = $state.raw<HTMLImageElement>();
 
-	$: drawImage(img, numberOfGuesses, hasWon);
-
-	onMount(async () => {
-		// Load and draw image
-		img = new Image();
-		img.src = url;
-		img.onload = async () => {
+	$effect(() => {
+		img = undefined;
+		const image = new Image();
+		image.onload = () => {
+			img = image;
 			handleWindowResize();
-			drawImage(img, numberOfGuesses, hasWon);
 		};
+		image.src = url;
+		return () => {
+			image.onload = null;
+		};
+	});
+
+	$effect(() => {
+		drawImage(img, numberOfGuesses, hasWon);
 	});
 
 	/**
 	 * Redraw canvas and image when window is resized
 	 */
 	function handleWindowResize() {
+		if (!container || !canvas) return;
 		const { width, height } = container.getBoundingClientRect();
 		canvas.width = width;
 		canvas.height = height;
@@ -47,7 +49,7 @@
 	 * @param guesses the user has made
 	 * @param hasWon whether the user has won the game
 	 */
-	function drawImage(img: HTMLImageElement, guesses: number, hasWon: boolean) {
+	function drawImage(img: HTMLImageElement | undefined, guesses: number, hasWon: boolean) {
 		if (!canvas || !img) return;
 
 		if (guesses >= STEPS) guesses = STEPS - 1;
@@ -74,7 +76,7 @@
 	}
 </script>
 
-<svelte:window on:resize={handleWindowResize} />
+<svelte:window onresize={handleWindowResize} />
 
 <div>
 	<div
@@ -82,8 +84,11 @@
 		bind:this={container}
 	>
 		<div class="absolute inset-0 bg-muted animate-pulse"></div>
-		<!-- svelte-ignore a11y-img-redundant-alt -->
-		<canvas bind:this={canvas} class="absolute w-full h-full"></canvas>
+		<canvas
+			bind:this={canvas}
+			class="absolute w-full h-full"
+			aria-label={hasWon ? mapName : "Today's map clue"}
+		></canvas>
 		{#if hasWon}
 			<div
 				class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/95 via-background/70 to-transparent p-4 pt-12"

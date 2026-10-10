@@ -1,8 +1,7 @@
-import { unusualService } from '$lib/server/services/UnusualService';
-import { json } from '@sveltejs/kit';
+import { unusualService } from '#lib/server/services/UnusualService.ts';
 
 export async function GET() {
 	const yesterdayAnswer = await unusualService.getYesterdaysAnswer();
 
-	return json(yesterdayAnswer, { status: 200 });
+	return Response.json(yesterdayAnswer, { status: 200 });
 }

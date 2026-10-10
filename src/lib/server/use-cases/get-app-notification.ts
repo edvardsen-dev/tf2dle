@@ -1,5 +1,5 @@
-import type { AppNotification } from '$lib/types';
-import type { AppNotificationRepository } from '../repositories/AppNotificationRepository';
+import type { AppNotification } from '#lib/types.ts';
+import type { AppNotificationRepository } from '#lib/server/repositories/AppNotificationRepository.ts';
 
 type GetAppNotificationRepo = Pick<AppNotificationRepository, 'getAppNotification'>;
 
@@ -8,8 +8,7 @@ type Dependencies = {
 };
 
 type Result =
-	| { ok: true; notification: AppNotification | null }
-	| { ok: false; reason: 'db_error' };
+	{ ok: true; notification: AppNotification | null } | { ok: false; reason: 'db_error' };
 
 /**
  * Returns an app notification for users of the app if active.

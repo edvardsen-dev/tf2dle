@@ -1,44 +1,45 @@
 <script lang="ts">
-	import CompletedResult from '$lib/components/games/CompletedResult.svelte';
-	import CommunityStatus from '$lib/components/games/CommunityStatus.svelte';
-	import GameShell from '$lib/components/games/GameShell.svelte';
-	import Input from '$lib/components/games/Input.svelte';
-	import CosmeticShowcase from '$lib/components/games/IconShowcase.svelte';
-	import YesterdayAnswer from '$lib/components/games/YesterdayAnswer.svelte';
-	import { useLocalStorage } from '$lib/composables/useLocalStorage';
-	import { useStats } from '$lib/composables/useStats';
-	import { CDN_URL } from '$lib/constants';
-	import dayjs from '$lib/configs/dayjsConfig.js';
-	import type { CosmeticDto, CosmeticGuessResponse, CurrentCosmeticDto } from '$lib/dtos.js';
+	import CompletedResult from '#lib/components/games/CompletedResult.svelte';
+	import CommunityStatus from '#lib/components/games/CommunityStatus.svelte';
+	import GameShell from '#lib/components/games/GameShell.svelte';
+	import Input from '#lib/components/games/Input.svelte';
+	import CosmeticShowcase from '#lib/components/games/IconShowcase.svelte';
+	import YesterdayAnswer from '#lib/components/games/YesterdayAnswer.svelte';
+	import { useLocalStorage } from '#lib/composables/useLocalStorage.ts';
+	import { useStats } from '#lib/composables/useStats.ts';
+	import { CDN_URL } from '#lib/constants.ts';
+	import dayjs from '#lib/configs/dayjsConfig.ts';
+	import type { CosmeticDto, CosmeticGuessResponse, CurrentCosmeticDto } from '#lib/dtos.ts';
 	import { onMount } from 'svelte';
 	import { writable } from 'svelte/store';
 	import { toast } from 'svelte-sonner';
 	import GuessesList from './GuessesList.svelte';
 	import Hints from './Hints.svelte';
+	import type { PageData } from './$types.js';
 
-	export let data;
+	let { data }: { data: PageData } = $props();
 
 	const stats = useStats('cosmetic');
 
 	// State persisted in local storage
-	let guesses = useLocalStorage<CosmeticGuessResponse[]>('cosmetic_guesses', []);
-	let lastEvent = useLocalStorage<{ event: string; date: string } | null>(
+	const guesses = useLocalStorage<CosmeticGuessResponse[]>('cosmetic_guesses', []);
+	const lastEvent = useLocalStorage<{ event: string; date: string } | null>(
 		'cosmetic_last_event',
 		null
 	);
-	let streak = useLocalStorage('cosmetic_streak', 0);
-	let usedBy = useLocalStorage<string | null>('cosmetic_used_by', null);
+	const streak = useLocalStorage('cosmetic_streak', 0);
+	const usedBy = useLocalStorage<string | null>('cosmetic_used_by', null);
 
 	// Current game state
-	let loadingState: 'loading' | 'error' | 'success' = 'loading';
-	let gameState: 'guessing' | 'won' = 'guessing';
-	let validating = false;
-	let openVictoryDialog = writable(false);
+	let loadingState = $state<'loading' | 'error' | 'success'>('loading');
+	let gameState = $state<'guessing' | 'won'>('guessing');
+	let validating = $state(false);
+	const openVictoryDialog = writable(false);
 
 	// Data
-	let cosmetics: CosmeticDto[] = [];
-	let todaysCosmetic: CurrentCosmeticDto | undefined;
-	let numberOfCorrectGuesses = writable<number | undefined>(undefined);
+	let cosmetics = $state.raw<CosmeticDto[]>([]);
+	let todaysCosmetic = $state.raw<CurrentCosmeticDto>();
+	const numberOfCorrectGuesses = writable<number | undefined>(undefined);
 
 	onMount(async () => {
 		// Load data
@@ -199,8 +200,8 @@
 					value: c.name
 				}))}
 				guessed={$guesses.map((guess) => guess.name)}
-				bind:validating
-				on:select={(e) => handleSelect(e.detail)}
+				{validating}
+				onselect={handleSelect}
 			/>
 		{:else}
 			<CompletedResult
@@ -213,9 +214,11 @@
 		{/if}
 		<GuessesList guesses={$guesses} />
 	</div>
-	<div slot="footer" class="flex justify-center w-full">
-		{#await data.yesterdaysAnswer then yesterdaysAnswer}
-			<YesterdayAnswer challenge="cosmetic" answer={yesterdaysAnswer} />
-		{/await}
-	</div>
+	{#snippet footer()}
+		<div class="flex justify-center w-full">
+			{#await data.yesterdaysAnswer then yesterdaysAnswer}
+				<YesterdayAnswer challenge="cosmetic" answer={yesterdaysAnswer} />
+			{/await}
+		</div>
+	{/snippet}
 </GameShell>

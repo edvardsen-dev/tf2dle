@@ -1,4 +1,4 @@
-import dayjs from '$lib/configs/dayjsConfig';
+import dayjs from '#lib/configs/dayjsConfig.ts';
 
 export function isDecember() {
 	return dayjs().month() === 11;

@@ -1,22 +1,23 @@
 <script lang="ts">
-	import Input from '$lib/components/games/Input.svelte';
+	import Input from '#lib/components/games/Input.svelte';
 	import { onMount } from 'svelte';
-	import type { WeaponGuessResponse } from '$lib/dtos.js';
+	import type { WeaponGuessResponse } from '#lib/dtos.ts';
 	import GuessesList from './GuessesList.svelte';
-	import { useGameEngine } from '$lib/composables/useGameEngine';
+	import { useGameEngine } from '#lib/composables/useGameEngine.ts';
 	import { writable } from 'svelte/store';
-	import GameShell from '$lib/components/games/GameShell.svelte';
-	import { CDN_URL } from '$lib/constants';
-	import CommunityStatus from '$lib/components/games/CommunityStatus.svelte';
-	import CompletedResult from '$lib/components/games/CompletedResult.svelte';
-	import YesterdayAnswer from '$lib/components/games/YesterdayAnswer.svelte';
+	import GameShell from '#lib/components/games/GameShell.svelte';
+	import { CDN_URL } from '#lib/constants.ts';
+	import CommunityStatus from '#lib/components/games/CommunityStatus.svelte';
+	import CompletedResult from '#lib/components/games/CompletedResult.svelte';
+	import YesterdayAnswer from '#lib/components/games/YesterdayAnswer.svelte';
+	import type { PageData } from './$types.js';
 
 	// Data
-	export let data;
-	let numberOfCorrectGuesses = writable<number | undefined>(undefined);
-	let weapons: string[] = [];
+	let { data }: { data: PageData } = $props();
+	const numberOfCorrectGuesses = writable<number | undefined>(undefined);
+	let weapons = $state.raw<string[]>([]);
 
-	let loadingState: 'loading' | 'error' | 'success' = 'loading';
+	let loadingState = $state<'loading' | 'error' | 'success'>('loading');
 
 	const { gameState, guesses, streak, stats, validating, openVictoryDialog, handleGuess } =
 		useGameEngine<WeaponGuessResponse>('weapon', 7, numberOfCorrectGuesses);
@@ -59,8 +60,8 @@
 					value: weapon
 				}))}
 				guessed={$guesses.map((guess) => guess.name)}
-				on:select={(e) => handleGuess(e.detail)}
-				bind:validating={$validating}
+				onselect={handleGuess}
+				validating={$validating}
 			/>
 		{:else}
 			<CompletedResult
@@ -73,9 +74,11 @@
 		{/if}
 		<GuessesList guesses={$guesses} />
 	</div>
-	<div slot="footer" class="flex justify-center w-full">
-		{#await data.yesterdaysAnswer then yesterdaysAnswer}
-			<YesterdayAnswer challenge="weapon" answer={yesterdaysAnswer} />
-		{/await}
-	</div>
+	{#snippet footer()}
+		<div class="flex justify-center w-full">
+			{#await data.yesterdaysAnswer then yesterdaysAnswer}
+				<YesterdayAnswer challenge="weapon" answer={yesterdaysAnswer} />
+			{/await}
+		</div>
+	{/snippet}
 </GameShell>

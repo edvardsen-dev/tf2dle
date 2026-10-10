@@ -1,8 +1,8 @@
 import type { Dayjs } from 'dayjs';
-import type { WeaponTwoRepository } from './WeaponTwoRepository';
-import { db } from '../prisma';
-import type { Weapon } from '$lib/types';
-import dayjs from '$lib/configs/dayjsConfig';
+import type { WeaponTwoRepository } from '#lib/server/repositories/WeaponTwoRepository.ts';
+import { db } from '#lib/server/prisma.ts';
+import type { Weapon } from '#lib/types.ts';
+import dayjs from '#lib/configs/dayjsConfig.ts';
 
 class WeaponTwoRepositoryPrisma implements WeaponTwoRepository {
 	public async findWeapon(date: Dayjs) {

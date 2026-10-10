@@ -2,7 +2,7 @@ services:
   app:
     image: ${IMAGE_URL}
     environment:
-      ORIGIN: ${ORIGIN}
+      APP_ORIGIN: ${ORIGIN}
       DATABASE_URL: ${DATABASE_URL}
       ADMIN_PASSWORD: ${ADMIN_PASSWORD}
     ports:

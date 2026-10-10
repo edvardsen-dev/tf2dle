@@ -1,5 +1,4 @@
-import { weaponService } from '$lib/server/services/WeaponService';
-import { json } from '@sveltejs/kit';
+import { weaponService } from '#lib/server/services/WeaponService.ts';
 
 /**
  * Returns a list of all weapon names
@@ -8,5 +7,5 @@ import { json } from '@sveltejs/kit';
 export async function GET() {
 	const maps = weaponService.getWeaponNames();
 
-	return json(maps, { status: 200 });
+	return Response.json(maps, { status: 200 });
 }

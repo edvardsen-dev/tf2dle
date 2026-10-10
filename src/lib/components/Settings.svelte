@@ -1,20 +1,23 @@
 <script lang="ts">
-	import * as Dialog from '$lib/components/ui/dialog';
-	import { Settings } from 'lucide-svelte';
-	import { buttonVariants } from './ui/button';
+	import * as Dialog from '#lib/components/ui/dialog/index.ts';
+	import { Settings } from '@lucide/svelte';
+	import { buttonVariants } from './ui/button/index.ts';
 	import ColorblindModeToggler from './ColorblindModeToggler.svelte';
 	import Button from './ui/button/button.svelte';
-	import { type UseStats } from '$lib/composables/useStats';
+	import { type UseStats } from '#lib/composables/useStats.ts';
 	import { toast } from 'svelte-sonner';
-	import { openSettings } from '$lib/stores/settings';
-	import { gameModes } from '$lib/game-modes';
-	import * as AlertDialog from '$lib/components/ui/alert-dialog/index.js';
-	import DisableExtraVisualsToggle from '$lib/features/theme/components/DisableExtraVisualsToggle.svelte';
-	import MuteUpdateNotificationsToggle from '$lib/features/patchNotes/components/mute-update-notifications-toggle.svelte';
-	import HideTimerToggle from '$lib/components/HideTimerToggle.svelte';
+	import { openSettings } from '#lib/stores/settings.ts';
+	import { gameModes } from '#lib/game-modes.ts';
+	import * as AlertDialog from '#lib/components/ui/alert-dialog/index.ts';
+	import DisableExtraVisualsToggle from '#lib/features/theme/components/DisableExtraVisualsToggle.svelte';
+	import MuteUpdateNotificationsToggle from '#lib/features/patchNotes/components/mute-update-notifications-toggle.svelte';
+	import HideTimerToggle from '#lib/components/HideTimerToggle.svelte';
+
+	let resetTarget = $state<string | null>(null);
 
 	function clearStat(gamemode: string, stat: UseStats) {
 		stat.clearStats();
+		resetTarget = null;
 		toast.success(`Stats related to the ${gamemode} game mode have been deleted!`);
 	}
 
@@ -22,12 +25,13 @@
 		gameModes.forEach((gamemode) => {
 			gamemode.stats.clearStats();
 		});
+		resetTarget = null;
 		toast.success('All stats have been deleted!');
 	}
 </script>
 
 <Dialog.Root bind:open={$openSettings}>
-	<Dialog.Trigger class={buttonVariants({ variant: 'ghost' })}>
+	<Dialog.Trigger class={buttonVariants({ variant: 'ghost' })} aria-label="Settings">
 		<Settings class="text-muted-foreground" />
 	</Dialog.Trigger>
 	<Dialog.Content class="max-h-[90vh] max-w-3xl gap-0 overflow-hidden p-0 sm:rounded-xl">
@@ -83,13 +87,18 @@
 								<span
 									class="grid h-8 w-8 shrink-0 place-items-center rounded-md bg-primary/10 text-primary"
 								>
-									<svelte:component this={gamemode.icon} class="h-4 w-4" />
+									<gamemode.icon class="h-4 w-4" />
 								</span>
 								<span>{gamemode.name}</span>
 							</p>
-							<AlertDialog.Root>
-								<AlertDialog.Trigger asChild let:builder>
-									<Button builders={[builder]} variant="outline" size="sm">Clear</Button>
+							<AlertDialog.Root
+								open={resetTarget === lowerCaseName}
+								onOpenChange={(open) => (resetTarget = open ? lowerCaseName : null)}
+							>
+								<AlertDialog.Trigger>
+									{#snippet child({ props })}
+										<Button {...props} variant="outline" size="sm">Clear</Button>
+									{/snippet}
 								</AlertDialog.Trigger>
 								<AlertDialog.Content>
 									<AlertDialog.Header>
@@ -101,7 +110,7 @@
 									</AlertDialog.Header>
 									<AlertDialog.Footer>
 										<AlertDialog.Cancel>Cancel</AlertDialog.Cancel>
-										<AlertDialog.Action on:click={() => clearStat(lowerCaseName, gamemode.stats)}
+										<AlertDialog.Action onclick={() => clearStat(lowerCaseName, gamemode.stats)}
 											>Clear stats</AlertDialog.Action
 										>
 									</AlertDialog.Footer>
@@ -110,11 +119,14 @@
 						</div>
 					{/each}
 				</div>
-				<AlertDialog.Root>
-					<AlertDialog.Trigger asChild let:builder>
-						<Button builders={[builder]} variant="outline" class="mt-4 w-full"
-							>Clear all stats</Button
-						>
+				<AlertDialog.Root
+					open={resetTarget === 'all'}
+					onOpenChange={(open) => (resetTarget = open ? 'all' : null)}
+				>
+					<AlertDialog.Trigger>
+						{#snippet child({ props })}
+							<Button {...props} variant="outline" class="mt-4 w-full">Clear all stats</Button>
+						{/snippet}
 					</AlertDialog.Trigger>
 					<AlertDialog.Content>
 						<AlertDialog.Header>
@@ -125,7 +137,7 @@
 						</AlertDialog.Header>
 						<AlertDialog.Footer>
 							<AlertDialog.Cancel>Cancel</AlertDialog.Cancel>
-							<AlertDialog.Action on:click={clearAllStats}>Clear all</AlertDialog.Action>
+							<AlertDialog.Action onclick={clearAllStats}>Clear all</AlertDialog.Action>
 						</AlertDialog.Footer>
 					</AlertDialog.Content>
 				</AlertDialog.Root>

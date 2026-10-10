@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Switch from '$lib/components/ui/switch/switch.svelte';
-	import { EyeOff } from 'lucide-svelte';
-	import { disableExtraVisuals } from '../composables/useDisableTheme';
+	import Switch from '#lib/components/ui/switch/switch.svelte';
+	import { EyeOff } from '@lucide/svelte';
+	import { disableExtraVisuals } from '../composables/useDisableTheme.ts';
 </script>
 
 <div class="flex gap-4 justify-between">

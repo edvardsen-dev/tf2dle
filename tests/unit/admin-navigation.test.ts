@@ -1,21 +1,17 @@
-import { enhance } from '$app/forms';
-import { page } from '$app/stores';
-import dayjs from '$lib/configs/dayjsConfig';
-import { buildDashboardMetrics, resolveMonthSelection } from '$lib/server/metricsUtils';
+import { enhance, type SubmitFunction } from '$app/forms';
+import dayjs from '#lib/configs/dayjsConfig.ts';
+import { buildDashboardMetrics, resolveMonthSelection } from '#lib/server/metricsUtils.ts';
 import { cleanup, render, within } from '@testing-library/svelte';
 import { tick } from 'svelte';
-import type { Writable } from 'svelte/store';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import AdminLayout from '../../src/routes/admin/+layout.svelte';
 import MetricsPage from '../../src/routes/admin/+page.svelte';
+import { setPage } from '../page-state.svelte.ts';
 
-vi.mock('$app/stores', async () => {
-	const { writable } = await import('svelte/store');
-	return { page: writable() };
-});
+vi.mock('$app/state', () => import('../page-state.svelte.ts'));
 
 vi.mock('$app/forms', () => ({
-	enhance: vi.fn(() => ({ destroy: vi.fn() }))
+	enhance: vi.fn((_form: HTMLFormElement, _submit?: SubmitFunction) => ({ destroy: vi.fn() }))
 }));
 
 vi.mock('chart.js/auto', () => ({
@@ -25,11 +21,6 @@ vi.mock('chart.js/auto', () => ({
 	}
 }));
 
-const pageStore = page as unknown as Writable<{
-	route: { id: string };
-	url: URL;
-	data: Record<string, unknown>;
-}>;
 const now = dayjs.utc('2026-07-26T12:00:00Z');
 
 beforeEach(() => {
@@ -57,7 +48,7 @@ afterEach(() => {
 
 describe('admin navigation', () => {
 	it('tracks the active page independently of metrics data and query parameters', async () => {
-		pageStore.set({
+		setPage({
 			route: { id: '/admin' },
 			url: new URL('http://localhost/admin?month=2026-06'),
 			data: {}
@@ -72,7 +63,7 @@ describe('admin navigation', () => {
 		expect(queryByRole('navigation', { name: 'Dashboard month' })).toBeNull();
 		expect(queryByRole('button', { name: 'Metrics logging' })).toBeNull();
 
-		pageStore.set({
+		setPage({
 			route: { id: '/admin/notification' },
 			url: new URL('http://localhost/admin/notification'),
 			data: { notification: null }
@@ -87,7 +78,7 @@ describe('admin navigation', () => {
 	});
 
 	it('keeps admin links and logout off the login page', () => {
-		pageStore.set({
+		setPage({
 			route: { id: '/admin/login' },
 			url: new URL('http://localhost/admin/login'),
 			data: {}
@@ -164,7 +155,7 @@ describe('metrics menu bar', () => {
 			action,
 			formData,
 			formElement,
-			result: { type: 'failure', status: 500 },
+			result: { type: 'failure', status: 500, data: {}, location: action.href },
 			update
 		});
 		await tick();

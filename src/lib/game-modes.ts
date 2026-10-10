@@ -1,6 +1,6 @@
-import { Axe, GraduationCap, Map, Sparkles, Sword } from 'lucide-svelte';
-import { useStats } from '$lib/composables/useStats';
-import dayjs from './configs/dayjsConfig';
+import { Axe, GraduationCap, Map, Sparkles, Sword } from '@lucide/svelte';
+import { useStats } from '#lib/composables/useStats.ts';
+import dayjs from './configs/dayjsConfig.ts';
 
 export const gameModes = [
 	{

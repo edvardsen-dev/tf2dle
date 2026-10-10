@@ -1,27 +1,26 @@
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
-	import type { CommandOption } from '.';
-	import { ChevronLeft } from 'lucide-svelte';
+	import type { CommandOption } from './index.ts';
+	import { ChevronLeft } from '@lucide/svelte';
 
-	const dispatch = createEventDispatcher<{ select: { option: CommandOption }; back: boolean }>();
+	let {
+		title = '',
+		options,
+		input,
+		onselect,
+		onback
+	}: {
+		title?: string;
+		options: CommandOption[];
+		input: string;
+		onselect: (option: CommandOption) => void;
+		onback: () => void;
+	} = $props();
 
-	export let title = '';
-	export let options: CommandOption[];
-	export let input: string;
-
-	$: filteredOptions = options.filter((option) =>
-		option.label.toLowerCase().includes(input.toLowerCase())
+	const filteredOptions = $derived(
+		options.filter((option) => option.label.toLowerCase().includes(input.toLowerCase()))
 	);
 
-	$: searchIncludesBack = 'back'.includes(input.toLowerCase());
-
-	function handleSelect(option: CommandOption) {
-		dispatch('select', { option });
-	}
-
-	function handleNavBack() {
-		dispatch('back', true);
-	}
+	const searchIncludesBack = $derived('back'.includes(input.toLowerCase()));
 </script>
 
 {#if filteredOptions.length > 0 || searchIncludesBack}
@@ -30,15 +29,15 @@
 		<div class="text-sm">
 			{#each filteredOptions as option (option.label)}
 				<button
-					on:click={() => handleSelect(option)}
+					onclick={() => onselect(option)}
 					class="flex items-center gap-2 w-full text-left p-2 focus:outline-none focus:bg-muted rounded"
 				>
-					<svelte:component this={option.icon} />
+					<option.icon />
 					{option.label}
 				</button>
 			{/each}
 			<button
-				on:click={handleNavBack}
+				onclick={onback}
 				class="flex items-center gap-2 w-full text-left p-2 focus:outline-none focus:bg-muted rounded"
 			>
 				<ChevronLeft />

@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { CDN_URL } from '$lib/constants';
-	import type { WeaponGuessResponse } from '$lib/dtos';
-	import { ArrowBigDown, ArrowBigUp, MoveLeft, MoveRight } from 'lucide-svelte';
+	import { CDN_URL } from '#lib/constants.ts';
+	import type { WeaponGuessResponse } from '#lib/dtos.ts';
+	import { ArrowBigDown, ArrowBigUp, MoveLeft, MoveRight } from '@lucide/svelte';
 	import { fade } from 'svelte/transition';
 
 	// The guesses the user has made
-	export let guesses: WeaponGuessResponse[];
+	let { guesses }: { guesses: WeaponGuessResponse[] } = $props();
 </script>
 
 <div class="overflow-x-auto pb-2">
@@ -27,7 +27,7 @@
 					<div
 						in:fade={{ duration: fadeDuration, delay: fadeDuration * 6 }}
 						class="{guess.correct ? 'correct' : 'incorrect'} absolute inset-0 rounded-sm"
-					/>
+					></div>
 					<img
 						in:fade={{ duration: fadeDuration }}
 						src={`${CDN_URL}/weapons/thumbnails/${guess.name}.png`}

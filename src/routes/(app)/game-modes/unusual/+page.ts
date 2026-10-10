@@ -1,4 +1,4 @@
-import type { CurrentUnusualDto, UnusualResponse } from '$lib/dtos';
+import type { CurrentUnusualDto, UnusualResponse } from '#lib/dtos.ts';
 import { error } from '@sveltejs/kit';
 
 export const load = async ({ fetch }) => {

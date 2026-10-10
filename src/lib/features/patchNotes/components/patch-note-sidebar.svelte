@@ -1,11 +1,12 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
-	import * as Card from '$lib/components/ui/card';
-	import { updateMonths } from '$lib/features/patchNotes';
-	import { onMount } from 'svelte';
+	import { browser } from '$app/env';
+	import * as Card from '#lib/components/ui/card/index.ts';
+	import { updateMonths } from '#lib/features/patchNotes/index.ts';
+	import { onDestroy, onMount } from 'svelte';
 
-	let activeMonth = updateMonths[0].id;
+	let activeMonth = $state(updateMonths[0].id);
 	let disableObserver = false;
+	let observerTimeout: ReturnType<typeof setTimeout> | undefined;
 
 	onMount(() => {
 		if (browser) {
@@ -31,14 +32,19 @@
 					}
 				});
 			}
+
+			return () => observer.disconnect();
 		}
 	});
+
+	onDestroy(() => clearTimeout(observerTimeout));
 
 	function handleClick(monthId: string) {
 		disableObserver = true;
 		activeMonth = monthId;
 
-		setTimeout(() => {
+		clearTimeout(observerTimeout);
+		observerTimeout = setTimeout(() => {
 			disableObserver = false;
 		}, 1000);
 	}
@@ -53,7 +59,7 @@
 			{#each updateMonths as month}
 				<a
 					href="#{month.id}"
-					on:click={() => handleClick(month.id)}
+					onclick={() => handleClick(month.id)}
 					class={activeMonth === month.id ? 'text-primary' : 'text-muted-foreground'}
 					>{month.title}</a
 				>

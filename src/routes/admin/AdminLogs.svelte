@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as Card from '$lib/components/ui/card';
+	import * as Card from '#lib/components/ui/card/index.ts';
 	import { onDestroy, onMount } from 'svelte';
 
 	type LogEntry = {
@@ -15,12 +15,12 @@
 		hasMore: boolean;
 	};
 
-	let logs: LogEntry[] = [];
+	let logs = $state<LogEntry[]>([]);
 	let nextCursor: number | null = null;
-	let hasMore = true;
-	let loading = false;
-	let errorMessage = '';
-	let sentinel: HTMLDivElement;
+	let hasMore = $state(true);
+	let loading = $state(false);
+	let errorMessage = $state('');
+	let sentinel = $state<HTMLDivElement>();
 	let observer: IntersectionObserver;
 
 	onMount(() => {
@@ -96,7 +96,9 @@
 				<Card.Title>Operational logs</Card.Title>
 				<Card.Description>Newest first. Scroll to load older entries.</Card.Description>
 			</div>
-			<span class="rounded-full border border-border bg-muted px-3 py-1 text-xs text-muted-foreground">
+			<span
+				class="rounded-full border border-border bg-muted px-3 py-1 text-xs text-muted-foreground"
+			>
 				{logs.length} loaded
 			</span>
 		</div>
@@ -104,7 +106,9 @@
 	<Card.Content>
 		<div class="h-[420px] overflow-y-auto pr-2 text-sm">
 			{#if logs.length === 0 && !loading && !errorMessage}
-				<p class="rounded-md border border-dashed border-border p-4 text-center text-muted-foreground">
+				<p
+					class="rounded-md border border-dashed border-border p-4 text-center text-muted-foreground"
+				>
 					No log entries found.
 				</p>
 			{/if}
@@ -126,7 +130,7 @@
 				{#if loading}
 					<span>Loading older entries...</span>
 				{:else if errorMessage}
-					<button class="text-primary underline" type="button" on:click={loadLogs}>
+					<button class="text-primary underline" type="button" onclick={loadLogs}>
 						{errorMessage} Retry
 					</button>
 				{:else if !hasMore && logs.length > 0}

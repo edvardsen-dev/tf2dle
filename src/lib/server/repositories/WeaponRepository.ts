@@ -1,4 +1,4 @@
-import type { Weapon } from '$lib/types';
+import type { Weapon } from '#lib/types.ts';
 import type { Dayjs } from 'dayjs';
 
 export interface WeaponRepository {

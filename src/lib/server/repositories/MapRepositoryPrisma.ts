@@ -1,7 +1,7 @@
-import dayjs from '$lib/configs/dayjsConfig';
+import dayjs from '#lib/configs/dayjsConfig.ts';
 import type { Dayjs } from 'dayjs';
-import { db } from '../prisma';
-import type { MapRepository } from './MapRepository';
+import { db } from '#lib/server/prisma.ts';
+import type { MapRepository } from '#lib/server/repositories/MapRepository.ts';
 
 class MapRepositoryPrisma implements MapRepository {
 	public async save(name: string, pos: { x: number; y: number }, date: Dayjs) {

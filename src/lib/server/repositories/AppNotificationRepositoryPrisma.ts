@@ -1,7 +1,7 @@
-import { db } from '../prisma';
-import type { AppNotificationRepository } from './AppNotificationRepository';
-import type { AppNotification } from '@prisma/client';
-import type { NotificationLevel } from '$lib/types';
+import { db } from '#lib/server/prisma.ts';
+import type { AppNotificationRepository } from '#lib/server/repositories/AppNotificationRepository.ts';
+import type { AppNotification } from '#lib/server/generated/prisma/browser.ts';
+import type { NotificationLevel } from '#lib/types.ts';
 
 const APP_NOTIFICATION_ID = 1;
 

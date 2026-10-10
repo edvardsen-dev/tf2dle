@@ -1,12 +1,12 @@
-import type { Cosmetic } from '$lib/types';
-import cosmetics from '$lib/server/data/cosmetics.json';
-import type { CosmeticRepository } from '$lib/server/repositories/CosmeticRepository';
-import { cosmeticRepository } from '$lib/server/repositories/CosmeticRepositoryPrisma';
-import LogService from './LogService';
-import dayjs from '$lib/configs/dayjsConfig';
+import type { Cosmetic } from '#lib/types.ts';
+import cosmetics from '#lib/server/data/cosmetics.json';
+import type { CosmeticRepository } from '#lib/server/repositories/CosmeticRepository.ts';
+import { cosmeticRepository } from '#lib/server/repositories/CosmeticRepositoryPrisma.ts';
+import LogService from '#lib/server/services/LogService.ts';
+import dayjs from '#lib/configs/dayjsConfig.ts';
 import type { Dayjs } from 'dayjs';
-import { generateRandomNumber } from '../utils';
-import type { DailyCosmetics } from '@prisma/client';
+import { generateRandomNumber } from '#lib/server/utils.ts';
+import type { DailyCosmetics } from '#lib/server/generated/prisma/browser.ts';
 
 /**
  * Service for handling cosmetics

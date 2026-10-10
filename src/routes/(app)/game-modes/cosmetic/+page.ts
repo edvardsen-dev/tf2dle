@@ -1,4 +1,4 @@
-import type { CosmeticDto, CurrentCosmeticDto } from '$lib/dtos';
+import type { CosmeticDto, CurrentCosmeticDto } from '#lib/dtos.ts';
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 

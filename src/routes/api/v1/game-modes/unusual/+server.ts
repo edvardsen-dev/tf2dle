@@ -1,7 +1,6 @@
-import dayjs from '$lib/configs/dayjsConfig';
-import MetricsService from '$lib/server/services/MetricsService';
-import { unusualService } from '$lib/server/services/UnusualService';
-import { json } from '@sveltejs/kit';
+import dayjs from '#lib/configs/dayjsConfig.ts';
+import MetricsService from '#lib/server/services/MetricsService.ts';
+import { unusualService } from '#lib/server/services/UnusualService.ts';
 
 /**
  * Returns the current unusual with the number of
@@ -12,7 +11,7 @@ export async function GET() {
 	const currentTime = dayjs.utc();
 	const todaysUnusual = await unusualService.getUnusualByDay(currentTime);
 
-	return json({
+	return Response.json({
 		unusual: {
 			thumbnail: todaysUnusual.thumbnail,
 			rotation: todaysUnusual.rotation
@@ -28,5 +27,5 @@ export async function POST({ request }) {
 	const result = await unusualService.validateGuess(guess, numberOfGuesses);
 	await MetricsService.recordGameGuess('unusual', numberOfGuesses, result.correct);
 
-	return json(result);
+	return Response.json(result);
 }

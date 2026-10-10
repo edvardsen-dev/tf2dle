@@ -1,20 +1,23 @@
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
-	import type { CommandType } from '.';
+	import type { CommandType } from './index.ts';
 
-	const dispatch = createEventDispatcher<{ select: { command: CommandType } }>();
+	let {
+		title,
+		commands,
+		input,
+		onselect
+	}: {
+		title: string;
+		commands: CommandType[];
+		input: string;
+		onselect: (command: CommandType) => void;
+	} = $props();
 
-	export let title: string;
-	export let commands: CommandType[];
-	export let input: string;
-
-	$: filteredCommands = commands.filter((command) =>
-		command.keywords.find((keyword) => keyword.toLowerCase().includes(input.toLowerCase()))
+	const filteredCommands = $derived(
+		commands.filter((command) =>
+			command.keywords.find((keyword) => keyword.toLowerCase().includes(input.toLowerCase()))
+		)
 	);
-
-	function handleSelect(command: CommandType) {
-		dispatch('select', { command });
-	}
 </script>
 
 {#if filteredCommands.length > 0}
@@ -23,11 +26,11 @@
 		<div class="text-sm">
 			{#each filteredCommands as command}
 				<button
-					on:click={() => handleSelect(command)}
-					on:mouseenter={() => focus()}
+					onclick={() => onselect(command)}
+					onmouseenter={(event) => event.currentTarget.focus()}
 					class="flex items-center gap-2 w-full text-left p-2 focus:outline-none focus:bg-muted rounded"
 				>
-					<svelte:component this={command.icon} />
+					<command.icon />
 					{command.label}
 				</button>
 			{/each}

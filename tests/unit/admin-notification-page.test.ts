@@ -1,12 +1,12 @@
-import { enhance } from '$app/forms';
-import { NotificationLevel } from '$lib/types';
+import { enhance, type SubmitFunction } from '$app/forms';
+import { NotificationLevel } from '#lib/types.ts';
 import { cleanup, fireEvent, render } from '@testing-library/svelte';
 import { tick } from 'svelte';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import NotificationPage from '../../src/routes/admin/notification/+page.svelte';
 
 vi.mock('$app/forms', () => ({
-	enhance: vi.fn(() => ({ destroy: vi.fn() }))
+	enhance: vi.fn((_form: HTMLFormElement, _submit?: SubmitFunction) => ({ destroy: vi.fn() }))
 }));
 
 afterEach(() => {
@@ -43,7 +43,12 @@ describe('admin notification form', () => {
 			action: new URL('http://localhost/admin/notification?/update'),
 			formData: new FormData(formElement),
 			formElement,
-			result: { type: 'success', status: 200, data: { action: 'update', success: true } },
+			result: {
+				type: 'success',
+				status: 200,
+				data: { action: 'update', success: true },
+				location: 'http://localhost/admin/notification?/update'
+			},
 			update
 		});
 
@@ -166,7 +171,7 @@ describe('admin notification form', () => {
 			action,
 			formData,
 			formElement,
-			result: { type: 'error', status: 500, error: { message: 'Internal error' } },
+			result: { type: 'error', status: 500, error: { status: 500, message: 'Internal error' } },
 			update
 		});
 		await tick();
@@ -231,7 +236,12 @@ describe('notification visibility', () => {
 				action,
 				formData,
 				formElement,
-				result: { type: 'success', status: 200, data: { action: 'setActiveState', success: true } },
+				result: {
+					type: 'success',
+					status: 200,
+					data: { action: 'setActiveState', success: true },
+					location: action.href
+				},
 				update
 			});
 			await tick();
@@ -286,8 +296,13 @@ describe('notification visibility', () => {
 				formElement,
 				result:
 					resultType === 'error'
-						? { type: 'error', status: 500, error: { message: 'Internal error' } }
-						: { type: 'failure', status: 500, data: { action: 'setActiveState', message } },
+						? { type: 'error', status: 500, error: { status: 500, message: 'Internal error' } }
+						: {
+								type: 'failure',
+								status: 500,
+								data: { action: 'setActiveState', message },
+								location: action.href
+							},
 				update
 			});
 			await tick();

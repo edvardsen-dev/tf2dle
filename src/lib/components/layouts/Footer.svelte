@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { PUBLIC_APP_VERSION } from '$env/static/public';
-	import { DATA_LAST_UPDATED_DISPLAY } from '$lib/appMetadata';
-	import dayjs from '$lib/configs/dayjsConfig';
-	import { hideResetTimer } from '$lib/stores/settings';
-	import { getGameModeResetTime } from '$lib/utils/reset';
-	import { onDestroy } from 'svelte';
+	import { PUBLIC_APP_VERSION } from '$app/env/public';
+	import { DATA_LAST_UPDATED_DISPLAY } from '#lib/appMetadata.ts';
+	import dayjs from '#lib/configs/dayjsConfig.ts';
+	import { hideResetTimer } from '#lib/stores/settings.ts';
+	import { getGameModeResetTime } from '#lib/utils/reset.ts';
+	import { onMount } from 'svelte';
 
 	const appVersion = PUBLIC_APP_VERSION || 'dev';
 	const appVersionLabel = `v${appVersion}`;
@@ -13,30 +13,29 @@
 			? undefined
 			: `https://github.com/edvardsen-dev/tf2dle/releases/tag/${appVersion}`;
 
-	let interval: number;
-	let timeTilReset = initializeResetTime();
+	let timeTilReset = $state.raw(initializeResetTime());
 
-	$: hours = timeTilReset.hours() < 10 ? `0${timeTilReset.hours()}` : timeTilReset.hours();
-	$: minutes = timeTilReset.minutes() < 10 ? `0${timeTilReset.minutes()}` : timeTilReset.minutes();
-	$: seconds = timeTilReset.seconds() < 10 ? `0${timeTilReset.seconds()}` : timeTilReset.seconds();
+	const hours = $derived(
+		timeTilReset.hours() < 10 ? `0${timeTilReset.hours()}` : timeTilReset.hours()
+	);
+	const minutes = $derived(
+		timeTilReset.minutes() < 10 ? `0${timeTilReset.minutes()}` : timeTilReset.minutes()
+	);
+	const seconds = $derived(
+		timeTilReset.seconds() < 10 ? `0${timeTilReset.seconds()}` : timeTilReset.seconds()
+	);
 
-	onDestroy(() => {
-		clearInterval(interval);
+	onMount(() => {
+		timeTilReset = initializeResetTime();
+		const interval = setInterval(updateTimer, 1000);
+		return () => clearInterval(interval);
 	});
 
 	function initializeResetTime() {
-		if (interval) {
-			clearInterval(interval);
-		}
-
 		const now = dayjs().local();
 		const resetTime = getGameModeResetTime();
 
 		const diff = resetTime.diff(now);
-
-		interval = setInterval(() => {
-			updateTimer();
-		}, 1000) as unknown as number;
 
 		return dayjs.duration(diff);
 	}
@@ -104,7 +103,7 @@
 	</div>
 </footer>
 
-<style scoped>
+<style>
 	.width {
 		width: min(100%, 700px);
 	}

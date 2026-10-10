@@ -1,4 +1,4 @@
-import dayjs from '$lib/configs/dayjsConfig';
+import dayjs from '#lib/configs/dayjsConfig.ts';
 
 export const GAME_MODES = ['weapon', 'weapon-2', 'map', 'cosmetic', 'unusual'] as const;
 

@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
-import { buildShareText } from '$lib/share';
-import type { WeaponGuessResponse } from '$lib/dtos';
+import { buildShareText } from '#lib/share.ts';
+import type { WeaponGuessResponse } from '#lib/dtos.ts';
 
 describe('buildShareText', () => {
 	test('builds text-only share text for non-weapon modes', () => {

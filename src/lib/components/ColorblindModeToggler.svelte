@@ -1,13 +1,12 @@
 <script lang="ts">
-	import { Palette } from 'lucide-svelte';
-	import Switch from '$lib/components/ui/switch/switch.svelte';
-	import { browser } from '$app/environment';
-	import { page } from '$app/stores';
-	import type { SubmitFunction } from '@sveltejs/kit';
-	import { enhance } from '$app/forms';
+	import { Palette } from '@lucide/svelte';
+	import Switch from '#lib/components/ui/switch/switch.svelte';
+	import { browser } from '$app/env';
+	import { page } from '$app/state';
+	import { enhance, type SubmitFunction } from '$app/forms';
 
-	let form: HTMLFormElement;
-	let active = false;
+	let form = $state<HTMLFormElement>();
+	let active = $state(false);
 
 	if (browser) {
 		const htmlColorblindMode = document.documentElement.dataset.colorblind;
@@ -21,7 +20,7 @@
 
 	function handleKeyUp(event: KeyboardEvent) {
 		if (event.key === 'Enter' || event.key === ' ') {
-			form.requestSubmit();
+			form?.requestSubmit();
 		}
 	}
 </script>
@@ -29,7 +28,7 @@
 <form
 	bind:this={form}
 	method="POST"
-	action="/?/setColorBlindMode&active={active}&redirectTo={$page.url.pathname}"
+	action="/?/setColorBlindMode&active={active}&redirectTo={page.url.pathname}"
 	use:enhance={submitUpdateColorBlindMode}
 >
 	<div class="flex justify-between">
@@ -37,8 +36,8 @@
 			<Palette class="2-4" />
 			Colorblind mode
 		</label>
-		<!-- svelte-ignore a11y-no-static-element-interactions -->
-		<div on:keyup={handleKeyUp}>
+		<!-- svelte-ignore a11y_no_static_element_interactions -->
+		<div onkeyup={handleKeyUp}>
 			<Switch type="submit" id="colorblind" bind:checked={active} />
 		</div>
 	</div>

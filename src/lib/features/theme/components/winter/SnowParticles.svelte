@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { isWinter } from '../../utils';
-	import { disableExtraVisuals } from '../../composables/useDisableTheme';
+	import { isWinter } from '../../utils.ts';
+	import { disableExtraVisuals } from '../../composables/useDisableTheme.ts';
 
 	let animationFrameId: number;
-	let canvas: HTMLCanvasElement;
+	let canvas = $state<HTMLCanvasElement>();
 	let particles: Particle[] = [];
 	const particleCount = 100; // Adjust the number of particles for density
 	const maxSize = 3; // Maximum size of snow particles
@@ -57,6 +57,7 @@
 
 	// Draw particles on canvas
 	function drawParticles(ctx: CanvasRenderingContext2D): void {
+		if (!canvas) return;
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		ctx.fillStyle = 'white';
 
@@ -69,6 +70,7 @@
 
 	// Main animation loop
 	function animate(): void {
+		if (!canvas) return;
 		const ctx = canvas.getContext('2d');
 		if (ctx) {
 			const { width, height } = canvas;
@@ -79,6 +81,7 @@
 	}
 
 	function init() {
+		if (!canvas) return;
 		const { width, height } = canvas.getBoundingClientRect();
 		canvas.width = width;
 		canvas.height = height;
@@ -90,6 +93,7 @@
 		cancelAnimationFrame(animationFrameId);
 		particles = [];
 
+		if (!canvas) return;
 		const ctx = canvas.getContext('2d');
 		if (ctx) {
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -106,7 +110,10 @@
 			}
 		});
 
-		return () => unsubscribe();
+		return () => {
+			unsubscribe();
+			stop();
+		};
 	});
 </script>
 

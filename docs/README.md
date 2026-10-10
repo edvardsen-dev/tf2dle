@@ -31,7 +31,7 @@ A worlde like game for TF2. Inspired by [wordle](https://www.nytimes.com/games/w
 Prerequisites
 
 - Docker
-- Node
+- Node 24 LTS, matching `.nvmrc` and the production image
 
 ### Step by step
 
@@ -54,7 +54,7 @@ pnpm db:up
 pnpm db:client
 ```
 
-> **Note:** The script pins the Prisma CLI version to avoid pulling a newer major version with breaking changes.
+The script uses the installed Prisma CLI from the lockfile. CLI and client versions are pinned together; it does not download a newer CLI through `dlx`.
 
 5. Apply prisma migration to your local database
 
@@ -94,36 +94,68 @@ Playwright browsers
 pnpm exec playwright install
 ```
 
-### Steps
+### Isolated integration database
 
-Run development server
+Integration tests start their own production preview at `http://127.0.0.1:4173` and refuse to use a development database. Stop any preview already using that port. Tests run serially because API regression tests seed and inspect shared database rows.
 
-_**Note:** Make sure the dev server has optimized all the dependencies_
+Start a disposable PostgreSQL instance without mounting your development data:
 
+```sh
+docker run --detach --rm --name tf2dle-migration-postgres \
+  -p 127.0.0.1:55432:5432 \
+  -e POSTGRES_USER=tf2dle_test -e POSTGRES_PASSWORD=tf2dle_test \
+  -e POSTGRES_DB=tf2dle_migration_test postgres:14-alpine
+docker exec tf2dle-migration-postgres pg_isready -U tf2dle_test -d tf2dle_migration_test
 ```
-pnpm dev
-```
 
-Run tests
+Wait for `pg_isready` to report that it accepts connections. In the test shell, explicitly override local configuration before running migrations or tests:
 
-```ts
-// Integration tests
-pnpm test:integration
-
-// With trace viewer
-pnpm test:integration --trace on
-
-// Specific test file
-pnpm test:integration <filename.test.ts>
-
-// Specific test based on name
-pnpm test:integration -g "name of test"
-
-// Unit tests
-pnpm test:unit
-
-// All tests
+```sh
+export DATABASE_URL=postgresql://tf2dle_test:tf2dle_test@127.0.0.1:55432/tf2dle_migration_test
+export ADMIN_PASSWORD=migration-test-password
+export CRON_SECRET=migration-test-secret
+export PUBLIC_CDN_URL=
+export PUBLIC_APP_VERSION=test
+pnpm db:client
+pnpm db:migrate
+pnpm build
+pnpm check
 pnpm test
 ```
+
+The database guard permits only this database/user on loopback, on port 55432 locally or 5432 in CI. Test credentials are public fixtures, not deployment credentials. Stop only the disposable container when finished:
+
+```sh
+docker stop tf2dle-migration-postgres
+```
+
+### Test commands
+
+```sh
+# Integration tests, using the explicit environment above
+pnpm test:integration
+
+# With trace viewer
+pnpm test:integration --trace on
+
+# Specific test file
+pnpm test:integration <filename.test.ts>
+
+# Specific test based on name
+pnpm test:integration -g "name of test"
+
+# Unit tests, non-watch mode
+pnpm test:unit
+
+# Unit tests, watch mode
+pnpm test:unit:watch
+
+# All JavaScript tests
+pnpm test
+```
+
+Run the offline Python suite from `scripts` with `uv run --locked python -m unittest discover -s tests -v`.
+
+The tracked upgrade checklist is [toolchain-migration.md](plans/toolchain-migration.md).
 
 Use [this](https://playwright.dev/docs/running-tests) for more info on flags to run with tests

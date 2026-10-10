@@ -1,5 +1,5 @@
-import type { Cosmetic } from '$lib/types';
-import type { DailyCosmetics } from '@prisma/client';
+import type { Cosmetic } from '#lib/types.ts';
+import type { DailyCosmetics } from '#lib/server/generated/prisma/browser.ts';
 import type { Dayjs } from 'dayjs';
 
 export interface CosmeticRepository {

@@ -1,9 +1,9 @@
 <script lang="ts">
-	import * as Dialog from '$lib/components/ui/dialog';
-	import { onMount } from 'svelte';
-	import { Button } from '$lib/components/ui/button';
-	import { Command as CommandIcon, Menu, Search } from 'lucide-svelte';
-	import { commandGroups, type CommandOption, type CommandType } from '.';
+	import * as Dialog from '#lib/components/ui/dialog/index.ts';
+	import { onMount, untrack } from 'svelte';
+	import { Button } from '#lib/components/ui/button/index.ts';
+	import { Command as CommandIcon, Search } from '@lucide/svelte';
+	import { commandGroups, type CommandOption, type CommandType } from './index.ts';
 	import CommandGroup from './CommandGroup.svelte';
 	import CommandOptions from './CommandOptions.svelte';
 
@@ -11,15 +11,15 @@
 
 	type ActionFunction = (...args: any[]) => any;
 
-	let inputEl: HTMLInputElement;
-	let input = '';
-	let open = false;
-	let selectedCommand: CommandType | null = null;
-	let options: CommandOption[] | null = null;
+	let inputEl = $state<HTMLInputElement>();
+	let input = $state('');
+	let open = $state(false);
+	let selectedCommand = $state.raw<CommandType | null>(null);
+	let options = $state.raw<CommandOption[] | null>(null);
 
-	$: if (!open) {
-		reset();
-	}
+	$effect(() => {
+		if (!open) untrack(reset);
+	});
 
 	onMount(() => {
 		function handleKeydown(e: KeyboardEvent) {
@@ -29,7 +29,7 @@
 			}
 
 			if (open && keypressRegex.test(e.key)) {
-				inputEl.focus();
+				inputEl?.focus();
 			}
 		}
 
@@ -73,7 +73,7 @@
 </script>
 
 <Button
-	on:click={() => (open = !open)}
+	onclick={() => (open = !open)}
 	variant="outline"
 	class="absolute top-2 left-2 flex gap-2 items-center justify-between text-muted-foreground w-[230px] text-xs"
 >
@@ -86,12 +86,17 @@
 
 <Dialog.Root bind:open>
 	<Dialog.Content class="p-0 gap-0">
+		<Dialog.Title class="sr-only">Quick commands</Dialog.Title>
+		<Dialog.Description class="sr-only"
+			>Search for a command or choose an action below.</Dialog.Description
+		>
 		<!-- Command search -->
 		<div class="flex p-4 border-b gap-2 text-sm items-center">
 			<Search class="w-4 h-4" />
-			<!-- svelte-ignore a11y-autofocus -->
+			<!-- svelte-ignore a11y_autofocus -->
 			<input
-				type="test"
+				type="text"
+				aria-label="Search commands"
 				bind:value={input}
 				bind:this={inputEl}
 				autofocus
@@ -102,11 +107,11 @@
 		<div class="p-1">
 			{#if options !== null}
 				<CommandOptions
-					on:select={(e) =>
+					onselect={(option) =>
 						selectedCommand
-							? doAction(selectedCommand.action, e.detail.option.value)
-							: console.error(`No action abailable. Option choosen: ${e.detail.option.value}`)}
-					on:back={navToStart}
+							? doAction(selectedCommand.action, option.value)
+							: console.error(`No action abailable. Option choosen: ${option.value}`)}
+					onback={navToStart}
 					title={selectedCommand?.label}
 					{options}
 					{input}
@@ -114,7 +119,7 @@
 			{:else}
 				{#each commandGroups as group}
 					<CommandGroup
-						on:select={(e) => handleSelect(e.detail.command)}
+						onselect={handleSelect}
 						title={group.title}
 						commands={group.commands}
 						{input}

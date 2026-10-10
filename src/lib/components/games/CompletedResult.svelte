@@ -1,15 +1,18 @@
 <script lang="ts">
-	import ShareResult from '$lib/components/games/ShareResult.svelte';
-	import type { ShareMode } from '$lib/share';
+	import ShareResult from '#lib/components/games/ShareResult.svelte';
+	import type { ShareMode } from '#lib/share.ts';
 
-	export let mode: ShareMode;
-	export let challenge: string;
-	export let guesses: unknown[];
-	export let streak: number;
-	export let correctGuesses: number | undefined;
+	interface Props {
+		mode: ShareMode;
+		challenge: string;
+		guesses: unknown[];
+		streak: number;
+		correctGuesses: number | undefined;
+	}
+	let { mode, challenge, guesses, streak, correctGuesses }: Props = $props();
 
-	$: challengeLabel = challenge.toLowerCase();
-	$: guessLabel = guesses.length === 1 ? 'guess' : 'guesses';
+	let challengeLabel = $derived(challenge.toLowerCase());
+	let guessLabel = $derived(guesses.length === 1 ? 'guess' : 'guesses');
 </script>
 
 <div

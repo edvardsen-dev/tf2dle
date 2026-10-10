@@ -1,5 +1,5 @@
-import { appNotificationRepository } from '$lib/server/repositories/AppNotificationRepositoryPrisma';
-import { getAppNotification } from '$lib/server/use-cases/get-app-notification';
+import { appNotificationRepository } from '#lib/server/repositories/AppNotificationRepositoryPrisma.ts';
+import { getAppNotification } from '#lib/server/use-cases/get-app-notification.ts';
 import type { LayoutServerLoad } from './$types';
 
 export const load = (async () => {

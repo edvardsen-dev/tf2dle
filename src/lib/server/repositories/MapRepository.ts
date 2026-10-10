@@ -1,4 +1,4 @@
-import type { DailyMaps } from '@prisma/client';
+import type { DailyMaps } from '#lib/server/generated/prisma/browser.ts';
 import type { Dayjs } from 'dayjs';
 
 export interface MapRepository {

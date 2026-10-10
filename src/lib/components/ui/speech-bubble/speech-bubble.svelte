@@ -1,17 +1,10 @@
 <script lang="ts">
-    import { speechBubbleVariants, type Props } from '.';
-    import { cn } from '$lib/utils';
+	import { speechBubbleVariants, type Props } from './index.ts';
+	import { cn } from '#lib/utils.ts';
 
-    type $$Props = Props;
-
-    let className: $$Props['class'] = undefined;
-	export let arrowSide: $$Props['arrowSide'] = 'right';
-    export { className as class };
+	let { class: className, arrowSide = 'right', children, ...restProps }: Props = $props();
 </script>
 
-<div 
-    class={cn(speechBubbleVariants({arrowSide, className}))}
-	{...$$restProps}
->
-    <slot />
+<div class={cn(speechBubbleVariants({ arrowSide }), className)} {...restProps}>
+	{@render children?.()}
 </div>

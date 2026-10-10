@@ -1,5 +1,5 @@
 import { goto } from '$app/navigation';
-import { openSettings } from '$lib/stores/settings';
+import { openSettings } from '#lib/stores/settings.ts';
 import {
 	Axe,
 	Gamepad2,
@@ -12,8 +12,9 @@ import {
 	Scroll,
 	Sparkles,
 	Sword
-} from 'lucide-svelte';
-import type { ComponentType } from 'svelte';
+} from '@lucide/svelte';
+import type { LucideProps } from '@lucide/svelte';
+import type { Component } from 'svelte';
 
 export type CommandGroup = {
 	title: string;
@@ -21,7 +22,7 @@ export type CommandGroup = {
 };
 
 export type CommandType = {
-	icon: ComponentType;
+	icon: Component<LucideProps>;
 	label: string;
 	keywords: string[];
 	action: (...args: any[]) => any;
@@ -29,7 +30,7 @@ export type CommandType = {
 };
 
 export type CommandOption = {
-	icon: ComponentType;
+	icon: Component<LucideProps>;
 	label: string;
 	value: string;
 };

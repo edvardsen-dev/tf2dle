@@ -1,9 +1,12 @@
 <script lang="ts">
-	import { Glasses, RefreshCcwDot, Sparkles } from 'lucide-svelte';
+	import { Glasses, RefreshCcwDot, Sparkles } from '@lucide/svelte';
 
-	export let guesses: number;
-	export let series: string | null = null;
-	export let hasWon = false;
+	interface Props {
+		guesses: number;
+		series?: string | null;
+		hasWon?: boolean;
+	}
+	let { guesses, series = null, hasWon = false }: Props = $props();
 
 	const ROTATION_HINT = 3;
 	const GRAYSCALE_HINT = 6;

@@ -1,11 +1,11 @@
-import type { AppNotification } from '@prisma/client';
-import { updateAppNotification } from '$lib/server/use-cases/update-app-notification';
-import { NotificationLevel } from '$lib/types';
+import type { AppNotification } from '#lib/server/generated/prisma/browser.ts';
+import { updateAppNotification } from '#lib/server/use-cases/update-app-notification.ts';
+import { NotificationLevel } from '#lib/types.ts';
 import { afterEach, beforeEach, expect, test, vi } from 'vitest';
 
 const repo = {
-	getAppNotification: vi.fn<[], Promise<AppNotification | null>>(),
-	update: vi.fn<[NotificationLevel, string], Promise<void>>()
+	getAppNotification: vi.fn<() => Promise<AppNotification | null>>(),
+	update: vi.fn<(type: NotificationLevel, content: string) => Promise<void>>()
 };
 
 const notification: AppNotification = {

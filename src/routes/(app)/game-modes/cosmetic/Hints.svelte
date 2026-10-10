@@ -1,11 +1,12 @@
 <script lang="ts">
-	import { Glasses, RefreshCcwDot, Sparkles } from 'lucide-svelte';
+	import { Glasses, RefreshCcwDot, Sparkles } from '@lucide/svelte';
 
-	// The number of guesses the user has made
-	export let guesses: number;
-	// The class the cosmetic is used by (Scout, Soldier, etc.)
-	export let usedBy: string | null;
-	export let hasWon = false;
+	interface Props {
+		guesses: number;
+		usedBy: string | null;
+		hasWon?: boolean;
+	}
+	let { guesses, usedBy, hasWon = false }: Props = $props();
 
 	const ROTATION_HINT = 3;
 	const GRAYSCALE_HINT = 6;

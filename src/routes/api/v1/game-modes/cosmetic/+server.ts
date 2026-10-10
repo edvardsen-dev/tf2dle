@@ -1,7 +1,6 @@
-import dayjs from '$lib/configs/dayjsConfig';
-import { cosmeticService } from '$lib/server/services/CosmeticService';
-import MetricsService from '$lib/server/services/MetricsService';
-import { json } from '@sveltejs/kit';
+import dayjs from '#lib/configs/dayjsConfig.ts';
+import { cosmeticService } from '#lib/server/services/CosmeticService.ts';
+import MetricsService from '#lib/server/services/MetricsService.ts';
 
 /**
  * Returns the current cosmetic with the number of
@@ -12,7 +11,7 @@ export async function GET() {
 	const currentTime = dayjs.utc();
 	const todaysCosmetic = await cosmeticService.getCosmetic(currentTime);
 
-	return json({
+	return Response.json({
 		cosmetic: {
 			thumbnail: todaysCosmetic.thumbnail,
 			rotation: todaysCosmetic.rotation
@@ -34,5 +33,5 @@ export async function POST({ request }) {
 	const result = await cosmeticService.validateGuess(guess, numberOfGuesses);
 	await MetricsService.recordGameGuess('cosmetic', numberOfGuesses, result.correct);
 
-	return json(result);
+	return Response.json(result);
 }

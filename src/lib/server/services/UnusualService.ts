@@ -1,12 +1,12 @@
-import type { Unusual } from '$lib/types';
-import unusuals from '$lib/server/data/unusuals.json';
-import type { UnusualRepository } from '../repositories/UnusualRepository';
-import { unusualRepository } from '../repositories/UnusualRepositoryPrisma';
+import type { Unusual } from '#lib/types.ts';
+import unusuals from '#lib/server/data/unusuals.json';
+import type { UnusualRepository } from '#lib/server/repositories/UnusualRepository.ts';
+import { unusualRepository } from '#lib/server/repositories/UnusualRepositoryPrisma.ts';
 import type { Dayjs } from 'dayjs';
-import LogService from './LogService';
-import dayjs from '$lib/configs/dayjsConfig';
-import { generateRandomNumber } from '../utils';
-import type { DailyUnusuals } from '@prisma/client';
+import LogService from '#lib/server/services/LogService.ts';
+import dayjs from '#lib/configs/dayjsConfig.ts';
+import { generateRandomNumber } from '#lib/server/utils.ts';
+import type { DailyUnusuals } from '#lib/server/generated/prisma/browser.ts';
 
 class UnusualService {
 	private unusuals: Unusual[];
