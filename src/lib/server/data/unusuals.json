@@ -4219,5 +4219,320 @@
         "series": "Smissmas 2025 Unusual effects",
         "type": "Cosmetic effects",
         "releaseDate": "2025-12-09"
+    },
+    {
+        "name": "Iconic Outline BLU",
+        "image": "7196459558388969612",
+        "series": "Summer 2025 Update Unusual effects",
+        "type": "Taunt effects",
+        "releaseDate": "2025-07-24"
+    },
+    {
+        "name": "Iconic Outline RED",
+        "image": "1079913058090103278",
+        "series": "Summer 2025 Update Unusual effects",
+        "type": "Taunt effects",
+        "releaseDate": "2025-07-24"
+    },
+    {
+        "name": "Subtle Silhouette",
+        "image": "11036188942561079754",
+        "series": "Summer 2025 Update Unusual effects",
+        "type": "Taunt effects",
+        "releaseDate": "2025-07-24"
+    },
+    {
+        "name": "Fossil Fueled",
+        "image": "7145485743829397981",
+        "series": "Scream Fortress XVII Unusual effects",
+        "type": "Taunt effects",
+        "releaseDate": "2025-10-09"
+    },
+    {
+        "name": "Tar Pit",
+        "image": "12837101484405092940",
+        "series": "Scream Fortress XVII Unusual effects",
+        "type": "Taunt effects",
+        "releaseDate": "2025-10-09"
+    },
+    {
+        "name": "Blissful Butterflies BLU",
+        "image": "10414140272265948144",
+        "series": "Summer 2026 Update Unusual effects",
+        "type": "Cosmetic effects",
+        "releaseDate": "2026-07-07"
+    },
+    {
+        "name": "Blissful Butterflies RED",
+        "image": "13334793933199161493",
+        "series": "Summer 2026 Update Unusual effects",
+        "type": "Cosmetic effects",
+        "releaseDate": "2026-07-07"
+    },
+    {
+        "name": "Floral Growth BLU",
+        "image": "5039727101312808243",
+        "series": "Summer 2026 Update Unusual effects",
+        "type": "Cosmetic effects",
+        "releaseDate": "2026-07-07"
+    },
+    {
+        "name": "Floral Growth RED",
+        "image": "3853491724631320768",
+        "series": "Summer 2026 Update Unusual effects",
+        "type": "Cosmetic effects",
+        "releaseDate": "2026-07-07"
+    },
+    {
+        "name": "Luminous Drift BLU",
+        "image": "2450653213101022219",
+        "series": "Summer 2026 Update Unusual effects",
+        "type": "Taunt effects",
+        "releaseDate": "2026-07-07"
+    },
+    {
+        "name": "Luminous Drift RED",
+        "image": "1991368297650040554",
+        "series": "Summer 2026 Update Unusual effects",
+        "type": "Taunt effects",
+        "releaseDate": "2026-07-07"
+    },
+    {
+        "name": "Luminous Shift",
+        "image": "10464974489289190951",
+        "series": "Summer 2026 Update Unusual effects",
+        "type": "Taunt effects",
+        "releaseDate": "2026-07-07"
+    },
+    {
+        "name": "Polar Prism",
+        "image": "16993302040869360606",
+        "series": "Summer 2026 Update Unusual effects",
+        "type": "Cosmetic effects",
+        "releaseDate": "2026-07-07"
+    },
+    {
+        "name": "Showtime Spotlights",
+        "image": "12200118284401602734",
+        "series": "Summer 2026 Update Unusual effects",
+        "type": "Taunt effects",
+        "releaseDate": "2026-07-07"
+    },
+    {
+        "name": "Solar Singed",
+        "image": "1985124712940834456",
+        "series": "Summer 2026 Update Unusual effects",
+        "type": "Cosmetic effects",
+        "releaseDate": "2026-07-07"
+    },
+    {
+        "name": "Stellar Orbit",
+        "image": "3150535793622174959",
+        "series": "Summer 2026 Update Unusual effects",
+        "type": "Cosmetic effects",
+        "releaseDate": "2026-07-07"
+    },
+    {
+        "name": "Umbral Lights",
+        "image": "18227900558873764205",
+        "series": "Summer 2026 Update Unusual effects",
+        "type": "Cosmetic effects",
+        "releaseDate": "2026-07-07"
+    },
+    {
+        "name": "Wheat Field",
+        "image": "15063416674339606887",
+        "series": "Summer 2026 Update Unusual effects",
+        "type": "Taunt effects",
+        "releaseDate": "2026-07-07"
+    },
+    {
+        "name": "Wispful Wings",
+        "image": "9759251077607295325",
+        "series": "Summer 2026 Update Unusual effects",
+        "type": "Cosmetic effects",
+        "releaseDate": "2026-07-07"
+    },
+    {
+        "name": "Amethyst Gale",
+        "image": "5420141542477540800",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Taunt effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Autumn Breeze",
+        "image": "5684041229806821411",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Cosmetic effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Boil n' Toil",
+        "image": "7843607702167461827",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Cosmetic effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Electric Impulse BLU",
+        "image": "2263725751776016801",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Taunt effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Electric Impulse RED",
+        "image": "10899092474581302838",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Taunt effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Fable Feathers BLU",
+        "image": "13139465878991825234",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Cosmetic effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Fable Feathers RED",
+        "image": "14866202361323150678",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Cosmetic effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Fable Quills",
+        "image": "16129470156513907476",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Cosmetic effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Flor De Muerto BLU",
+        "image": "791854811825049070",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Cosmetic effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Flor De Muerto RED",
+        "image": "17351532465979269634",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Cosmetic effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Gamma Rays BLU",
+        "image": "3304808356905711705",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Taunt effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Gamma Rays RED",
+        "image": "6434638671164698308",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Taunt effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Geiger Breaker",
+        "image": "4174315449805227013",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Taunt effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Ghost Swirl",
+        "image": "1998959336729759212",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Cosmetic effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Gradient Gale BLU",
+        "image": "4960395914579290529",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Taunt effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Gradient Gale RED",
+        "image": "15736849233760033918",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Taunt effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Grudge n' Drudge",
+        "image": "12365875132681711354",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Cosmetic effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Meltdown",
+        "image": "3629357174814094576",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Taunt effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Primordial Ooze",
+        "image": "1176710558019250963",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Taunt effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Radioactive",
+        "image": "8136473260090117445",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Taunt effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Screaming Soul",
+        "image": "3740972358509552056",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Cosmetic effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Screeching Soul",
+        "image": "9644058171754761592",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Cosmetic effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Shrieking Soul",
+        "image": "3103884216241126629",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Cosmetic effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Shroud of Darkness",
+        "image": "12701283775108918186",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Taunt effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Spirit Swirl",
+        "image": "1476004869896435080",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Cosmetic effects",
+        "releaseDate": "unknown"
+    },
+    {
+        "name": "Sulfuric Acid",
+        "image": "17269876476842093585",
+        "series": "Scream Fortress XVIII Unusual effects",
+        "type": "Taunt effects",
+        "releaseDate": "unknown"
     }
 ]
